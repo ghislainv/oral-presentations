@@ -110,7 +110,19 @@ Deforestation and demography in Africa
 - The fate of African tropical forests
 - Associated to demographic explosion
 - $\text{log}D = \beta_0 + \beta_1 \text{log}F + \beta_2 \text{log}P$
+- Data on deforestation: 
+   * JRC: 1990-2000-2010
+   * GFC: 2000-2005-2010-2015
 - Projection of forest cover in 2050, 2100
+
+***
+
+![](figs/UN-regional-pop-projections.png)
+
+===
+<div align="center">
+<img src="figs/Africa_map_forest_loss.png" height=700>
+</div>
 
 Forecasting spatial deforestation spatially
 ===
