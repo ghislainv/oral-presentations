@@ -19,17 +19,18 @@ Past research
 ***
 
 Present research
-- BioSceneMada project
+- Deforestation estimates
 - Deforestation and demography in Africa
 - Forecasting spatial deforestation spatially
+- Scenarios of oil palm expansion in Africa
 
 Outline
 ====================================
 type: section
 
 Future research
+- Framework
 - Community models
-- Conservation biology
 
 Past research
 ===
@@ -53,7 +54,6 @@ Forest dynamics, species demography
 
 Biogeography and climate change
 ===
-
 - species distribution models
 - climatic data
 - emblematic species: gorillas, baobabs (IUCN)
@@ -90,20 +90,20 @@ Competition and traits in tree species communities
 Present research
 ===
 type: section
-- BioSceneMada project
+- Deforestation estimates
 - Deforestation and demography in Africa
 - Forecasting spatial deforestation spatially
+- Scenarios of oil palm expansion in Africa
 
-BioSceneMada project
+Deforestation estimates
 ===
-- Biodiversity scenarios
-- Climate change
-- Anthropogenic deforestation
-- Madagascar
+- Multidate semi-supervised classification of satellite images
+- Forest mask $+$ tree cover loss
+- `Google Earth Engine`, `R/GRASS`
 
 ***
 
-![](figs/Scheme.png)
+![](figs/fig_fcc.png)
 
 Deforestation and demography in Africa
 ===
@@ -141,33 +141,52 @@ Forecasting spatial deforestation spatially
 <img src="figs/fcc_35yr.png" height=700>
 </div>
 
-Future research
+Scenarios of oil palm expansion in Africa
 ===
-type: section
-- Community models
-- Conservation biology
-
-Community models
-===
-- $\beta$-biodiversity map
-- joint species distribution models
-- explicative ecological factors of species assemblages: environment, phylogeny, traits
-- Madagascar: occurrences for $>$ 5000 species
-
-***
-
-![](figs/GDM_map.png)
-
-Conservation biology
-===
-- implications on conservation strategies and policies
-- protected area network
-- REDD+
-- land management: ex. oil palm expansion in Africa
+- Oil palm suitability map
+- Primate species vulnerability map (proxy for biodiversity)
+- Areas of compromise
 
 ***
 
 ![](figs/Strona2018-PNAS.png)
+
+Future research
+===
+type: section
+- Framework
+- Community models
+
+Framework
+===
+- Modelling and predicting the dynamics of ecological communities
+- Biodiversity scenarios
+   * climatic (RCP from GIEC)
+   * socio-economic (SSP from GIEC), including deforestation
+- At different scales
+   * forest stands (community ecology)
+   * pantropical (biogeography)
+   * on the short or long term
+
+***
+
+- Variability and uncertainty of ecological processes
+- Statistics: developping new approaches and tools, hierarchical Bayesian models
+- Informatics: `R`, `GRASS`, `Python`, `GEE` 
+- Implications on conservation strategies and policies
+
+Community models
+===
+- $\beta$-biodiversity map
+- explicative ecological factors of species assemblages: environment, phylogeny, traits
+- Madagascar: occurrences for $>$ 5000 species
+- `joint SDM`
+- Impact of climate and deforestatio
+- Consequences on conservation strategies
+
+***
+
+![](figs/GDM_map.png)
 
 Thank you for attention
 ===
