@@ -11,7 +11,9 @@ output:
 
 # Deforestation and demography in Africa
 
-### Deforestation and demography in Africa
+## Model
+
+### Model
 
 \bcols
 \bcol{0.5\textwidth}
@@ -30,15 +32,19 @@ output:
 \ecol
 \ecols
 
-----
+## Results
 
-\centering\includegraphics[height=\textheight]{figs/perc_ctry.png}
+### Model averaging per country
 
-----
+\centering\includegraphics[height=0.9\textheight]{figs/perc_ctry.png}
 
-\centering\includegraphics[height=\textheight]{figs/Africa_map_forest_loss.png}
+### Percentage of forest loss 21st century
 
-### Perspectives
+\centering\includegraphics[height=0.9\textheight]{figs/Africa_map_forest_loss.png}
+
+## Reflexion
+
+### Reflexion
 
 - Scientific articles
 - Integration of Roadless data on deforestation?
@@ -47,26 +53,25 @@ output:
 
 # `forestatrisk` Python module
 
-## Specifications
+## Functionality
 
 ### `forestatrisk` Python module specifications
 
 \bcols
-\bcol{0.5\textwidth}
+\bcol{0.6\textwidth}
 
 - Spatial probability of deforestation
 - $\text{logit}(\theta_i)=f(\text{spatial factors}_i)+\rho_j$
 - Factors: accessibility (dist. towns, roads, villages), landscape (dist. forest edge), land-tenure (protected areas)
 - $\rho_j$: spatial random effect
-
-\centering\includegraphics[width=3cm]{figs/iCAR.png}
+- {\small <https://github.com/ghislainv/forestatrisk>}
 
 \ecol
-\bcol{0.5\textwidth}
+\bcol{0.4\textwidth}
 
-![](figs/Bayes.jpg)
+\centering\includegraphics[width=3cm]{figs/Bayes.jpg}
 
-<https://github.com/ghislainv/forestatrisk>
+\centering\includegraphics[width=3cm]{figs/iCAR.png}
 
 \ecol
 \ecols
@@ -91,7 +96,7 @@ output:
 \bcol{0.5\textwidth}
 
 - Computed at 30 m resolution
-- \textcolor{green}{Greener}: lower probability
+- \textcolor{vertmoyen}{Greener}: lower probability
 - \textcolor{red}{Darker red}: higher probability
 
 \ecol
@@ -105,7 +110,7 @@ output:
 \bcols
 \bcol{0.5\textwidth}
 
-- \textcolor{green}{green}: residual forest in 2050
+- \textcolor{vertmoyen}{green}: residual forest in 2050
 - \textcolor{red}{red}: deforested area 2010-2050
 
 \ecol
@@ -122,9 +127,9 @@ output:
 \bcol{0.5\textwidth}
 
 - Python 2.7 and Python 3.x compatible
-- Tests with `reticulate` R package to 
 - Spatial random effects limited to country border
 - Set of new functions for model validation
+- Can be used from R with `reticulate`
 
 \ecol
 \bcol{0.5\textwidth}
@@ -153,6 +158,8 @@ TODO: Add map of differences
 \ecols
 
 # Forecasting spatial deforestation spatially
+
+## Extending at the tropical scale
 
 ### Africa
 
@@ -186,6 +193,16 @@ TODO: Add map of differences
 ![](figs/fcc_35yr_half_VNM.png)
 \ecol
 \ecols
+
+## Computational challenge
+
+### Computational challenge
+
+- Use of Google Cloud Computing
+- Cluster of small machines with some cores
+- Parrallelization: one country per machine
+
+![](figs/architecture.png)
 
 # Perspectives
 
