@@ -1,7 +1,6 @@
 %\usepackage{pslatex} % to see correctly a .pdf file on the computer screen
 \usepackage{pgf}
-%\usepackage[svgnames]{xcolor}
-\usepackage{xcolor}
+\usepackage{color}
 \usepackage{graphicx}
 \usepackage{amssymb} %symbole de maths
 \usepackage{amsmath} %idem
@@ -17,8 +16,6 @@
 \setlength{\LTleft}{-5cm plus 1 fill}
 \setlength{\LTright}{-5cm plus 1 fill}
 \usepackage{booktabs}
-%\usepackage{colortabs} % can't be found
-\usepackage{colortbl} %% color text and table rows
 \usepackage{arydshln} %% dashlines for tabular
 \newcommand{\logit}{\text{logit}}
 \newcommand{\bs}[1]{\boldsymbol{#1}}
@@ -64,6 +61,20 @@
     \end{columns}
   \end{frame}
 \placelogofalse
+}
+
+\AtBeginSubsection[]{
+  \begin{frame}
+    \framesubtitle{Plan}
+    \begin{columns}[c]
+      \begin{column}{0.5\textwidth}
+        \tableofcontents[sections={1-2},currentsection,currentsubsection]
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \tableofcontents[sections={3-4},currentsection,currentsubsection]
+      \end{column}
+    \end{columns}
+  \end{frame}
 }
 
 % Two-columns slides
