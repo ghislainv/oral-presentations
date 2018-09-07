@@ -42,6 +42,11 @@
 % \usetheme{Antibes}
 \useinnertheme{rounded} %% bullets
 
+% Ignore ignorenonframetext class option in default template
+\makeatletter
+\beamer@ignorenonframefalse
+\makeatother
+
 % Logo
 \newif\ifplacelogo % create a new conditional
 \logo{\ifplacelogo\includegraphics[width=2.5cm]{figs/Logo-JRC.jpg}\fi} % replace with your own command

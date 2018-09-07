@@ -2,7 +2,6 @@
 classoption: table
 output: 
   beamer_presentation:
-    template: default.latex
     # keep_tex: true
     # toc: true
     slide_level: 3
@@ -37,10 +36,10 @@ options(knitr.kable.NA="-")
 
 - The fate of African tropical forests
 - Associated to demographic explosion
-- $\text{log}D = \beta_0 + \beta_1 \text{log}F + \beta_2 \text{log}P$
 - Data on deforestation: 
    1. JRC: 1990-2000-2010
    2. GFC: 2000-2005-2010-2015
+- $\text{log}D = \beta_0 + \beta_1 \text{log}F + \beta_2 \text{log}P$
 - Projection of forest cover in 2050, 2100
 
 \ecol
@@ -72,7 +71,7 @@ options(knitr.kable.NA="-")
 
 ## Functionalities
 
-### `forestatrisk` Python module specifications
+### `forestatrisk` Python module functionalities
 
 \bcols
 \bcol{0.6\textwidth}
@@ -127,8 +126,8 @@ options(knitr.kable.NA="-")
 \bcols
 \bcol{0.5\textwidth}
 
-- \textcolor{vertmoyen}{green}: residual forest in 2050
-- \textcolor{red}{red}: deforested area 2010-2050
+- \textcolor{vertmoyen}{Green}: residual forest in 2050
+- \textcolor{red}{Red}: deforested area 2010-2050
 
 \ecol
 \bcol{0.5\textwidth}
@@ -210,13 +209,13 @@ knitr::kable(val, format="latex", digits=0, format.args=list(big.mark=","), book
 ### Africa
 
 \bcols
-\bcol{0.5\textwidth}
+\bcol{0.4\textwidth}
 
 - Map of deforestation probability in 2015
 - Future forest cover in 2050, 2100 
 
 \ecol
-\bcol{0.5\textwidth}
+\bcol{0.6\textwidth}
 \includegraphics[width=\textwidth]{figs/prob.png}
 \ecol
 \ecols
