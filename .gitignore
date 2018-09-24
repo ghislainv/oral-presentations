@@ -1,7 +1,3 @@
-*.html
-*.md
-*_files
-
 # History files
 .Rhistory
 .Rapp.history
