@@ -162,7 +162,7 @@ RITES $\neq$ stochasticity, RITES $=$ structured variability
 
 - Structuring uncertainty in space and time can lead to opposite biodiversity scenarios or slow down changes in biodiversity (transient dynamics)
 - Not all uncertainties are important for biodiversity scenario and decision making (cf. presentation by B. Wintle)
-- One good (or at least better) model $>$ several strongly imperfect models (cf. presentation by P. Leadley)
+- One good model (fewer limitations) $>$ several rather imperfect models (cf. presentation by P. Leadley)
 
 ## Additional remark
 
