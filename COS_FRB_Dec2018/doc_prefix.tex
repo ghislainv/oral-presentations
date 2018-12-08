@@ -1,0 +1,71 @@
+{
+  % Use background image
+  \usebackgroundtemplate{%
+    \includegraphics[height=\paperheight,width=\paperwidth]{figs/Masque.png}
+  }
+  \setbeamertemplate{navigation symbols}{}
+  % Remove shadow from block
+  \setbeamertemplate{blocks}[rounded][shadow=false]
+  \begin{frame}[plain]
+  \end{frame}
+}
+
+% % Title page
+% {
+%   \setbeamertemplate{navigation symbols}{}
+% 
+%   % % Title page
+%   \begin{frame}[plain]
+%     \begin{center}
+%       \small{\textbf{Plénière COS FRB -- Jeudi 13 décembre 2018 -- Paris}}
+%     \end{center}
+%     \vspace{-0.5cm}
+%     \titlepage % Presentation first page
+%     \vspace{-2.5cm}
+%     \begin{center}
+%       \includegraphics[width=10cm]{figs/Banniere.png}
+%     \end{center}
+%     \begin{center}
+% 
+%       {\footnotesize
+%         \begin{tabular}{c}
+%           Ghislain Vieilledent$^{1}$
+%         \end{tabular}
+%       }
+% 
+%       \vspace{0.25cm}
+% 
+%       {\scriptsize
+%         \begin{tabular}{c}
+%           $[1]$ \textbf{Cirad} UPR Forêts et Sociétés
+%         \end{tabular}
+%       }
+% 
+%       \vspace{0.25cm}
+% 
+%       \begin{tabular}{C{1cm}C{2cm}C{1cm}}
+%         ~ &
+%         \includegraphics[height=0.7cm]{figs/Logo-Cirad.png} &
+%         ~
+%       \end{tabular}
+% 
+%     \end{center}
+%     
+%   \end{frame}
+% }
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\placelogotrue
+\begin{frame}
+  \framesubtitle{Outline}
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \tableofcontents[sections={1-2}]
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \tableofcontents[sections={3-4}]
+    \end{column}
+  \end{columns}
+\end{frame}
+\placelogofalse

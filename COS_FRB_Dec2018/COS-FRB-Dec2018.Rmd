@@ -1,0 +1,43 @@
+---
+classoption: table
+output: 
+  beamer_presentation:
+    # keep_tex: true
+    # toc: true
+    slide_level: 3
+    includes:
+      in_header: header.tex
+      before_body: doc_prefix.tex
+      after_body: doc_suffix.tex
+---
+
+```{r options, echo=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=FALSE, cache=FALSE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+```{r comment1, echo=FALSE}
+# (i) Indiquer comment les résultats scientifiques obtenus peuvent aider à la décision et quelles sont les recommandations pour les politiques et les décideurs.
+# (ii) Mettre en avant les liens entre déforestation, changement climatique, gouvernance et aide internationale au développement.
+# (iii) Indiquer en quoi les résultats obtenus sur les forêts tropicales à Madagascar peuvent être généralisés aux autres forêts tropicales dans d'autres pays.
+```
+
+# Résultats scientifiques
+
+## Biodiversité et changement climatique
+
+## Biodiversité et déforestation
+
+# Aide à la décision
+
+# Réflexion sur la gouvernance
+
+# Généralisations des résultats
