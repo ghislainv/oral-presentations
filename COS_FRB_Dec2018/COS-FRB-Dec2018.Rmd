@@ -1,5 +1,6 @@
 ---
 classoption: table
+fontsize: 10pt
 output: 
   beamer_presentation:
     # keep_tex: true
@@ -9,6 +10,11 @@ output:
       in_header: header.tex
       before_body: doc_prefix.tex
       after_body: doc_suffix.tex
+colorlinks: yes
+link-citations: yes
+linkcolor: Blue
+citecolor: Blue
+urlcolor: Maroon
 ---
 
 ```{r options, echo=FALSE}
@@ -24,20 +30,200 @@ opts_chunk$set(echo=FALSE, cache=FALSE,
 options(knitr.kable.NA="-")
 ```
 
-```{r comment1, echo=FALSE}
+```{r comment1, eval=FALSE, include=FALSE}
 # (i) Indiquer comment les résultats scientifiques obtenus peuvent aider à la décision et quelles sont les recommandations pour les politiques et les décideurs.
 # (ii) Mettre en avant les liens entre déforestation, changement climatique, gouvernance et aide internationale au développement.
 # (iii) Indiquer en quoi les résultats obtenus sur les forêts tropicales à Madagascar peuvent être généralisés aux autres forêts tropicales dans d'autres pays.
 ```
 
+# Introduction
+
+## Contexte Madagascar
+
+### Contexte Madagascar
+
+\bcols
+\bcol{0.65\textwidth}
+
+- **Biodiversité**:
+	- nombre d'espèces et endémisme (~90%)
+	- 50% de la biodiversité en forêt
+- **Menaces**:
+	- pauvreté (IDH: 158/188)
+	- démographie (~3%/an)
+	- déforestation (~1%/an)
+	- changement climatique ?    
+
+\vspace{0.25cm}
+
+Biodiversité exceptionnelle $+$ Haut niveau de menaces $=$ **\textcolor{red}{Enjeux extrêmement forts}**
+
+\ecol
+\bcol{0.35\textwidth}
+
+\includegraphics[width=\textwidth]{"figs/natural-history"}
+
+\ecol
+\ecols
+
+### Contexte Madagascar / Biodiversité
+
+Exemples: 
+
+- **Animal**: 50% des espèces de Caméléons sont endémiques de Madagascar, tous les Lémuriens (> 110 espèces)
+- **Végétal**: Sur 9 espèces de Baobab (_Adansonia sp._), 6 endémiques de Madagascar
+
+\centering \includegraphics[width=8cm]{"figs/biodiversity"}
+
+## Projet BioSceneMada
+
+### Projet BioSceneMada
+
+**BioSceneMada**: Scénarios d'évolution de la **biodiversité** sous l'effet conjoint du **changement climatique** et de la **déforestation** à Madagascar. [<https://bioscenemada.cirad.fr>]
+
+\vspace{0.25cm}
+
+\centering \includegraphics[width=\textwidth]{"figs/partners_id"}
+
+\vspace{0.25cm}
+
+\centering \includegraphics[width=\textwidth]{"figs/partners_logos"}
+
+
+### Projet BioSceneMada
+
+**BioSceneMada**: Scénarios d'évolution de la **biodiversité** sous l'effet conjoint du **changement climatique** et de la **déforestation** à Madagascar. [<https://bioscenemada.cirad.fr>]
+
+\vspace{0.25cm}
+
+\bcols
+\bcol{0.5\textwidth}
+
+1. **Anticiper les scénarios** possibles de la biodiversité (risques / opportunités)
+2. **Construire des outils** d'aides à la décision (chiffres, outils informatiques, cartes)
+3. **Proposer des solutions** de gestion: aires protégées $+$ mécanisme REDD (accord de Paris)
+
+\ecol
+\bcol{0.5\textwidth}
+
+\centering \includegraphics[width=\textwidth]{"figs/Scheme"}
+
+\ecol
+\ecols
+
+## Objectifs 
+
+### Objectifs
+
+Objectifs de la présentation:
+
+1. Indiquer comment les résultats scientifiques obtenus peuvent aider à la décision et quelles sont les recommandations pour les politiques et les décideurs.
+2. Mettre en avant les liens entre déforestation, changement climatique, gouvernance et aide internationale au développement.
+3. Indiquer en quoi les résultats obtenus sur les forêts tropicales à Madagascar peuvent être généralisés aux autres forêts tropicales dans d'autres pays.
+
 # Résultats scientifiques
 
-## Biodiversité et changement climatique
+## Changement climatique
 
-## Biodiversité et déforestation
+### Anomalies climatiques
 
-# Aide à la décision
+\centering Présent-2080, RCP 8.5, moyenne de 7 modèles climatiques globaux
+
+\includegraphics[width=0.9\textwidth]{figs/Anomalies}
+
+### Climat et carbone
+
+\flushleft Stock de carbone forestier $\leftarrow$ (Composition en espèces) $\leftarrow$ Climat
+Modèle: $\text{Stock C} = f(\text{Climat} + \ldots)$
+
+\includegraphics[width=\textwidth]{figs/Carbon_Climate}
+
+\small Vieilledent et al. 2016, _Journal of Ecology_
+
+### Zones vulnérables au climat
+
+- $\geq$ 25% de changement $\rightarrow$ zones vulnérables au changement climatique
+- $<$ 25% de changement $\rightarrow$ zones refuges de la biodiversité
+
+
+### Autres outils et résultats
+
+Autres outils et résultats sur les changements climatiques:
+
+- Bases de données de la biodiversité à Madagascar (ReBioMa)
+- Package R `speciesatlas` pour la modélisation de l'aire de distribution des espèces
+- Atlas de la biodiversité à Madagascar
+
+## Déforestation
+
+### Historique de la déforestation
+
+- Déforestation: perte de 44% en 60 ans (1953-2014)
+- Fragmentation des habitats forestiers
+
+\centering \includegraphics[width=6cm]{figs/fig_fcc}
+
+\small Vieilledent et al. 2018, _Biological Conservation_
+
+### Causes de la déforestation
+
+- Culture de rente: exportation maïs et arachide (Océan Indien, Asie)
+- Corruption, non application de la loi environnementale
+
+\centering\includegraphics[width=8cm]{figs/causes}
+
+### Causes de la déforestation
+
+Pas seulement la pauvreté: **Marché global non régulé** $+$ **Etat fragile**
+
+\centering\includegraphics[width=9cm]{figs/tavy}
+
+\small Vieilledent et al., _en prep._
+
+### Projection: intensité et spatialisation
+
+- Package `forestatrisk`
+
+# Généralisations des résultats
+
+## Outils génériques
+
+### Outils génériques
+
+- Méthodes
+- Scripts de calcul
+- Packages R et Python (`hSDM`, `speciesatlas`, `forestatrisk`)
+
+## Déforestation en Afrique
+
+### Déforestation en Afrique
+
+Risque de déforestation à l'échelle du continent Africain
+
+\centering\includegraphics[width=\textwidth]{figs/prob}
+
+### Déforestation en Afrique
+
+Evolution du couvert forestier en Afrique sur la période 2015-2050
+
+\centering\includegraphics[width=\textwidth]{figs/fcc_35yr.png}
+
+# Aide à la décision et recommendations
+
+### Aide
+
+- Alerter les décideurs politiques: ampleur des changements à venir
+- Aide à la décision
+	- Identification des zones à fort risque de déforestation
+  - Identification des forêts vulnérables au climat et des zones refuges pour la biodiversité
+  - Identification des zones refuges à forts risque de déforestation
+- Transfert des résultats auprès des ministères, MNP, BNC REDD
 
 # Réflexion sur la gouvernance
 
-# Généralisations des résultats
+### Réflexion
+
+- Aspects de gouvernance local: lutte contre la corruption, développement agricole, application de la loi environnementale, planning familial et controle des naissances
+- Aspect de gouvernance globale: lutte contre l'importation de produits dérivés de la déforestation, lutte contre le changement climatique
+- Aide internationale: augmenter l'aide (se donner les moyens de nos ambitions) et ajuster les priorités (protection de l'environnement: système de suivi cf. Brésil, application de la loi, agents de terrain, éducation, formation, renforcement de la gouvernance / lutte contre la corruption, conditionnalité des aides, et enfin développement agricole)
+- Aide internationale: on ne peut financer la lutte contre la déforestation d'un côté et continuer à importer des produits dérivés de la déforestation de l'autre.
