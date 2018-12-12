@@ -115,7 +115,7 @@ Exemples:
 
 ### Objectifs
 
-Objectifs de la présentation:
+**Objectifs de la présentation**:
 
 1. Indiquer comment les résultats scientifiques obtenus peuvent aider à la décision et quelles sont les recommandations pour les politiques et les décideurs.
 2. Mettre en avant les liens entre déforestation, changement climatique, gouvernance et aide internationale au développement.
@@ -145,6 +145,7 @@ Modèle: $\text{Stock C} = f(\text{Climat} + \ldots)$
 - $\geq$ 25% de changement $\rightarrow$ zones vulnérables au changement climatique
 - $<$ 25% de changement $\rightarrow$ zones refuges de la biodiversité
 
+\includegraphics[width=4cm]{figs/Refuge_areas}
 
 ### Autres outils et résultats
 
@@ -180,9 +181,44 @@ Pas seulement la pauvreté: **Marché global non régulé** $+$ **Etat fragile**
 
 \small Vieilledent et al., _en prep._
 
-### Projection: intensité et spatialisation
+### Projection de la déforestation
 
-- Package `forestatrisk`
+\bcols
+\bcol{0.5\textwidth}
+
+- **Model**: Risque de déforestation $\leftarrow$ facteurs paysagers
+- $\theta = f(X)$
+
+\ecol
+
+\bcol{0.5\textwidth}
+
+\centering\includegraphics[height=0.85\textheight]{figs/prob_icar_c.png}
+
+\ecol
+\ecols
+
+### Projection de la déforestation
+
+\bcols
+\bcol{0.5\textwidth}
+
+- "Business-as-ususal scenario": 100,000 ha/yr
+- 9,3 Mha en 2010
+- 4 Mha déforestés sur la période 2010-2050
+
+\ecol
+
+\bcol{0.5\textwidth}
+
+\centering\includegraphics[height=0.85\textheight]{figs/proj2050_icar_c.png}
+
+\ecol
+\ecols
+
+### Projection de la déforestation
+
+\centering\includegraphics[width=9cm]{figs/Demography.png}
 
 # Généralisations des résultats
 
@@ -212,18 +248,18 @@ Evolution du couvert forestier en Afrique sur la période 2015-2050
 
 ### Aide
 
-- Alerter les décideurs politiques: ampleur des changements à venir
-- Aide à la décision
+- **Alerter les décideurs politiques**: ampleur des changements à venir
+- **Aide à la décision**:
 	- Identification des zones à fort risque de déforestation
   - Identification des forêts vulnérables au climat et des zones refuges pour la biodiversité
   - Identification des zones refuges à forts risque de déforestation
-- Transfert des résultats auprès des ministères, MNP, BNC REDD
+- **Transfert des résultats** auprès des ministères, MNP, BNC REDD
 
 # Réflexion sur la gouvernance
 
 ### Réflexion
 
-- Aspects de gouvernance local: lutte contre la corruption, développement agricole, application de la loi environnementale, planning familial et controle des naissances
-- Aspect de gouvernance globale: lutte contre l'importation de produits dérivés de la déforestation, lutte contre le changement climatique
-- Aide internationale: augmenter l'aide (se donner les moyens de nos ambitions) et ajuster les priorités (protection de l'environnement: système de suivi cf. Brésil, application de la loi, agents de terrain, éducation, formation, renforcement de la gouvernance / lutte contre la corruption, conditionnalité des aides, et enfin développement agricole)
-- Aide internationale: on ne peut financer la lutte contre la déforestation d'un côté et continuer à importer des produits dérivés de la déforestation de l'autre.
+- **Aspects de gouvernance local**: lutte contre la corruption, développement agricole, application de la loi environnementale, planning familial et controle des naissances
+- **Aspect de gouvernance globale**: lutte contre l'importation de produits dérivés de la déforestation, lutte contre le changement climatique
+- **Aide internationale**: augmenter l'aide (se donner les moyens de nos ambitions) et ajuster les priorités (protection de l'environnement: système de suivi cf. Brésil, application de la loi, agents de terrain, éducation, formation, renforcement de la gouvernance / lutte contre la corruption, conditionnalité des aides, et enfin développement agricole)
+- **Aide internationale**: on ne peut financer la lutte contre la déforestation d'un côté et continuer à importer des produits dérivés de la déforestation de l'autre.
