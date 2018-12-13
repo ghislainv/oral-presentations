@@ -56,7 +56,7 @@ options(knitr.kable.NA="-")
 
 \vspace{0.25cm}
 
-Biodiversité exceptionnelle $+$ Haut niveau de menaces $=$ **\textcolor{red}{Enjeux extrêmement forts}**
+Biodiversité exceptionnelle $+$ Fort niveau de menaces $=$ **\textcolor{red}{Enjeux importants}**
 
 \ecol
 \bcol{0.35\textwidth}
@@ -117,9 +117,9 @@ Exemples:
 
 **Objectifs de la présentation**:
 
-1. Indiquer comment les résultats scientifiques obtenus peuvent aider à la décision et quelles sont les recommandations pour les politiques et les décideurs.
-2. Mettre en avant les liens entre déforestation, changement climatique, gouvernance et aide internationale au développement.
-3. Indiquer en quoi les résultats obtenus sur les forêts tropicales à Madagascar peuvent être généralisés aux autres forêts tropicales dans d'autres pays.
+1. Présenter les **résultats de recherche**
+2. Expliquer en quoi ces résultats peuvent être **généralisables** (autres pays tropicaux)
+3. Montrer comment la recherche peut **aider à la décision** (gestion environnementale, politique publique, aide au développement)
 
 # Résultats scientifiques
 
@@ -133,8 +133,8 @@ Exemples:
 
 ### Climat et carbone
 
-\flushleft Stock de carbone forestier $\leftarrow$ (Composition en espèces) $\leftarrow$ Climat
-Modèle: $\text{Stock C} = f(\text{Climat} + \ldots)$
+- Stock de carbone forestier $\leftarrow$ (Composition en espèces) $\leftarrow$ Climat
+- **Modèle**: $\text{Stock C} = f(\text{Climat} + \ldots)$
 
 \includegraphics[width=\textwidth]{figs/Carbon_Climate}
 
@@ -142,10 +142,19 @@ Modèle: $\text{Stock C} = f(\text{Climat} + \ldots)$
 
 ### Zones vulnérables au climat
 
-- $\geq$ 25% de changement $\rightarrow$ zones vulnérables au changement climatique
-- $<$ 25% de changement $\rightarrow$ zones refuges de la biodiversité
+- $\geq$ 25% de changement $\rightarrow$ zones vulnérables
+- $<$ 25% de changement $\rightarrow$ zones stables
 
-\includegraphics[width=4cm]{figs/Refuge_areas}
+\bcols
+\bcol{0.5\textwidth}
+\textcolor{orange}{Orange}: zones vulnérables  
+\textcolor{vertmoyen}{Vert}: zones stables (refuge de biodiversité)
+\ecol
+
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=0.75\textheight]{figs/Refuge_areas}
+\ecol
+\ecols
 
 ### Autres outils et résultats
 
@@ -159,7 +168,7 @@ Autres outils et résultats sur les changements climatiques:
 
 ### Historique de la déforestation
 
-- Déforestation: perte de 44% en 60 ans (1953-2014)
+- \href{https://bioscenemada.cirad.fr/FileTransfer/gifdefor.gif}{Déforestation}: perte de 44% en 60 ans (1953-2014)
 - Fragmentation des habitats forestiers
 
 \centering \includegraphics[width=6cm]{figs/fig_fcc}
@@ -168,57 +177,54 @@ Autres outils et résultats sur les changements climatiques:
 
 ### Causes de la déforestation
 
+Pas seulement la pauvreté: **Marché global non régulé** $+$ **Etat fragile**
+
 - Culture de rente: exportation maïs et arachide (Océan Indien, Asie)
 - Corruption, non application de la loi environnementale
 
-\centering\includegraphics[width=8cm]{figs/causes}
-
-### Causes de la déforestation
-
-Pas seulement la pauvreté: **Marché global non régulé** $+$ **Etat fragile**
-
-\centering\includegraphics[width=9cm]{figs/tavy}
-
-\small Vieilledent et al., _en prep._
+\centering\includegraphics[width=7.5cm]{figs/tavy}
 
 ### Projection de la déforestation
 
+- Risque de déforestation $\leftarrow$ (Accessibilité) $\leftarrow$ Facteurs paysagers
+- **Model**: $\text{Risque} = f(\text{Paysages} + \ldots)$
+
 \bcols
+
 \bcol{0.5\textwidth}
-
-- **Model**: Risque de déforestation $\leftarrow$ facteurs paysagers
-- $\theta = f(X)$
-
+\textcolor{red}{Rouge}: risque fort de déforestation
+\textcolor{orange}{Orange}: risque fort de déforestation
+\textcolor{vertmoyen}{Vert}: risque faible de déforestation
 \ecol
 
 \bcol{0.5\textwidth}
-
-\centering\includegraphics[height=0.85\textheight]{figs/prob_icar_c.png}
-
+\centering \includegraphics[height=0.75\textheight]{figs/prob_icar_c.png}
 \ecol
 \ecols
 
 ### Projection de la déforestation
 
+- Scénario "Business-as-ususal": 100,000 ha/yr
+- 4 Mha déforestés sur 2010-2050 (pour 9,3 Mha en 2010)
+
 \bcols
+
 \bcol{0.5\textwidth}
-
-- "Business-as-ususal scenario": 100,000 ha/yr
-- 9,3 Mha en 2010
-- 4 Mha déforestés sur la période 2010-2050
-
+\textcolor{red}{Rouge}: déforestation 2010-2050
+\textcolor{vertmoyen}{Vert}: forêt restante en 2050
 \ecol
 
 \bcol{0.5\textwidth}
-
-\centering\includegraphics[height=0.85\textheight]{figs/proj2050_icar_c.png}
-
+\centering \includegraphics[height=0.75\textheight]{figs/proj2050_icar_c.png}
 \ecol
 \ecols
 
 ### Projection de la déforestation
 
-\centering\includegraphics[width=9cm]{figs/Demography.png}
+- Intensité de déforestation $\leftarrow$ (Besoins) $\leftarrow$ Démographie
+- **Model**: $\text{Intensité} = f(\text{Démographie} + \ldots)$
+
+\centering \includegraphics[width=9cm]{figs/Demography.png}
 
 # Généralisations des résultats
 
@@ -236,30 +242,84 @@ Pas seulement la pauvreté: **Marché global non régulé** $+$ **Etat fragile**
 
 Risque de déforestation à l'échelle du continent Africain
 
-\centering\includegraphics[width=\textwidth]{figs/prob}
+\centering \includegraphics[width=\textwidth]{figs/prob}
 
 ### Déforestation en Afrique
 
 Evolution du couvert forestier en Afrique sur la période 2015-2050
 
-\centering\includegraphics[width=\textwidth]{figs/fcc_35yr.png}
+\centering \includegraphics[width=\textwidth]{figs/fcc_35yr.png}
 
-# Aide à la décision et recommendations
+# Impact de la recherche
 
-### Aide
+## Alerte
 
-- **Alerter les décideurs politiques**: ampleur des changements à venir
-- **Aide à la décision**:
-	- Identification des zones à fort risque de déforestation
-  - Identification des forêts vulnérables au climat et des zones refuges pour la biodiversité
-  - Identification des zones refuges à forts risque de déforestation
-- **Transfert des résultats** auprès des ministères, MNP, BNC REDD
+### Alerter les décideurs politiques
 
-# Réflexion sur la gouvernance
+- **Climat**:
+	- Anomalies climatiques fortes: précipitations (-250 mm/an), température (+3.5$^{\circ}$C)
+	- Destabilisation des écosystèmes forestiers (mortalité accrue, -17% de stock de C)
+	
+\vspace{0.25cm}
 
-### Réflexion
+- **Déforestation**:
+  - Perte de 50% du couvert forestier en 60 ans
+  - 9,3 Mha à 5,3 Mha sur la période 2010-2050
+  - Lien démographie-déforestation: accélération
 
-- **Aspects de gouvernance local**: lutte contre la corruption, développement agricole, application de la loi environnementale, planning familial et controle des naissances
-- **Aspect de gouvernance globale**: lutte contre l'importation de produits dérivés de la déforestation, lutte contre le changement climatique
-- **Aide internationale**: augmenter l'aide (se donner les moyens de nos ambitions) et ajuster les priorités (protection de l'environnement: système de suivi cf. Brésil, application de la loi, agents de terrain, éducation, formation, renforcement de la gouvernance / lutte contre la corruption, conditionnalité des aides, et enfin développement agricole)
-- **Aide internationale**: on ne peut financer la lutte contre la déforestation d'un côté et continuer à importer des produits dérivés de la déforestation de l'autre.
+\vspace{0.25cm}
+
+- **Alerter les décideurs politiques**
+	- Risques associés aux changements climatiques ?
+	- Risques associes à la déforestation ?
+	- **Réponse** (oui/non) $+$ **Quantification** $+$ **\textcolor{red}{Alerte}**
+	
+## Aide à la décision
+
+### Aide à la décision
+
+\centering Zones refuges $+$ Zones à fort risque de déforestation  
+$=$ Zones prioritaires pour la conservation de la biodiversité
+
+\includegraphics[height=0.75\textheight]{figs/Refuge_areas}
+\includegraphics[height=0.75\textheight]{figs/proj2050_icar_c.png}
+	
+### Transfert des résultats
+  
+- **Formations** auprès des gestionnaires, techniciens, chercheurs, étudiants
+- **Transfert** vers les ministères et institutions:
+	- Madagascar National Parks (MNP)
+	- Bureau National de Coordination REDD$+$ (BNC REDD)
+	- Office National de l'Environnement
+- **Impacts** sur les politiques publiques / choix de gestion
+	- Optimisation du réseau d'aires naturelles protégées
+	- Choix des sites de consevation (carbone $+$ biodiversité) pour le mécanisme REDD+
+	
+\vspace{0.25cm}
+
+\centering \includegraphics[width=4cm]{figs/MNP.jpg}
+
+## Réflexions sur la gouvernance
+
+### Réflexions sur la gouvernance
+
+**Aspects de gouvernance locale**:
+
+- Lutte contre la corruption, développement agricole
+- Application de la loi environnementale
+- Développement du planning familial
+
+\vspace{0.15cm}
+
+**Aspects de gouvernance internationale**:
+
+- Lutte contre l'importation de produits dérivés de la déforestation
+- Lutte contre le changement climatique
+
+\vspace{0.15cm}
+
+**Aide internationale**:
+
+- **Augmentation de l'aide**: Se donner les moyens de ses ambitions
+- **Ajustement des priorités**: Système de suivi environnemental, renforcement de la gouvernance, éducation, formation, et développement agricole
+- **Cohérence** On ne peut financer la protection de la biodiversité d'un côté et continuer à importer des produits dérivés de la déforestation de l'autre.
