@@ -1,0 +1,33 @@
+---
+classoption: table
+output: 
+  beamer_presentation:
+    # keep_tex: true
+    # toc: true
+    slide_level: 1
+    includes:
+      in_header: header.tex
+      before_body: doc_prefix.tex
+      after_body: doc_suffix.tex
+---
+
+```{r options, echo=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=FALSE, cache=FALSE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+# Modélisation de la Déforestation en Zone Tropicale
+
+\centering \includegraphics[height=0.75\textheight]{figs/prob.png}
+
+# Modèles Joints de Distribution des Espèces
+
+\centering \includegraphics[height=0.65\textwidth]{figs/jSDM.png}
