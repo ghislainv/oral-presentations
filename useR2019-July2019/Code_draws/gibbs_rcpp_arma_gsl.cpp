@@ -18,9 +18,7 @@ using namespace std;
 // [[Rcpp::export]]
 arma::mat gibbs_rcpp_arma_gsl(int N, int thin) {
 	
-	// Initialize random number generator //
-	gsl_rng *s = gsl_rng_alloc(gsl_rng_mt19937);
-
+	gsl_rng *s = gsl_rng_alloc(gsl_rng_mt19937); // Create RNG
 	arma::mat mat; mat.zeros(N, 2);
 	double x = 0, y = 0;
 	
@@ -32,9 +30,7 @@ arma::mat gibbs_rcpp_arma_gsl(int N, int thin) {
 		mat(i, 0) = x;
 		mat(i, 1) = y;
 	}
-	
-	// Free memory
-	gsl_rng_free(s);
+	gsl_rng_free(s); // Free memory
 	
 	return(mat);
 }

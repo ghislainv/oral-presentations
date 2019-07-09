@@ -8,8 +8,8 @@ NumericMatrix gibbs_rcpp(int N, int thin) {
 	
 	for(int i = 0; i < N; i++) {
 		for(int j = 0; j < thin; j++) {
-			x = rgamma(1, 3, 1 / (y * y + 4))[0];
-			y = rnorm(1, 1 / (x + 1), 1 / sqrt(2 * (x + 1)))[0];
+			x = R::rgamma(3, 1 / (y * y + 4)); // Gamma(shape, scale) with R::
+			y = R::rnorm((1 / (x + 1)), 1 / sqrt(2 * (x + 1)));
 		}
 		mat(i, 0) = x;
 		mat(i, 1) = y;

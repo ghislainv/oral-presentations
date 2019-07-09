@@ -222,7 +222,7 @@ mod$coef
 ### Licenses
 
 - Licenses: GNU General Public License, Apache License 2.0 for Armadillo
-- Free software licenses: we can use, modify and redistribute those softwares
+- Free software licenses: we can use, modify and redistribute these softwares
 
 <!-- ================================================================= -->
 <!-- PART 2: Rcpp for Gibbs sampling -->
@@ -232,7 +232,121 @@ mod$coef
 
 ## Gibbs sampling and Bayesian statistics
 
-## Small example with benchmark
+### Gibbs sampling
+
+Gibbs sampling is commonly used for **statistical inference**.
+
+$\Theta=(\theta_1,\ldots,\theta_n)$ from a joint distribution $p(\theta_1,\ldots,\theta_n)$.
+
+1. Begin with some initials values $\Theta^{(i)}$.
+2. Next sample $\Theta^{(i+1)}=(\theta_1^{(i+1)},\ldots,\theta_n^{(i+1)})$?     
+We sample iteratively the parameters.     
+Update $\theta_j^{(i+1)}$ according to $p(\theta_j^{(i+1)}|\theta_0^{(i+1)},\ldots,\theta_{j-1}^{(i+1)},\theta_{j+1}^{(i)},\ldots,\theta_{n}^{(i)})$
+3. We repeat the above steps $k$ times (Markov chain Monte Carlo).
+
+The samples approximate the joint distribution of all variables.
+
+Can incorporate various algorithms (Metropolis-Hastings, slice sampling, adaptive rejection sampling, Hamiltonian Monte-Carlo) to implement one or more of the sampling steps.
+
+### Gibbs sampling
+
+- Involves several loops: MCMC step, parameters.
+- Random draws.
+- Matrix computations in case of conjugated priors in Bayesian statistics.
+
+Rcpp (C++), RcppGSL (random draws) and RcppArmadillo (matrix computations) are useful for efficient Gibbs sampling.
+
+## Simple Gibb sampler
+
+### R
+
+**R code**
+```{r Gibbs_R}
+gibbs_r <- function(N, thin) {
+	mat <- matrix(nrow = N, ncol = 2)
+	x <- y <- 0
+	
+	for (i in 1:N) {
+		for (j in 1:thin) {
+			x <- rgamma(1, 3, y * y + 4) # Gamma(shape, rate) with R
+			y <- rnorm(1, 1 / (x + 1), 1 / sqrt(2 * (x + 1)))
+		}
+		mat[i, ] <- c(x, y)
+	}
+	mat
+}
+```
+
+### Rcpp
+
+**C++ code with Rccp**
+```{Rcpp Gibbs_Rcpp}
+#include <Rcpp.h>
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+NumericMatrix gibbs_rcpp(int N, int thin) {
+	NumericMatrix mat(N, 2);
+	double x = 0, y = 0;
+	
+	for(int i = 0; i < N; i++) {
+		for(int j = 0; j < thin; j++) {
+			x = R::rgamma(3, 1 / (y * y + 4)); // R::rgamma(shape, scale)
+			y = R::rnorm((1 / (x + 1)), 1 / sqrt(2 * (x + 1)));
+		}
+		mat(i, 0) = x;
+		mat(i, 1) = y;
+	}
+	
+	return(mat);
+}
+```
+
+### Rcpp $+$ RcppArmadillo $+$ RcppGSL 
+
+**C++ code with RccpArmadillo and RcppGSL**
+```{Rcpp Gibbs_Rcpp_Arma_GSL}
+#include <RcppArmadillo.h>
+#include <gsl/gsl_rng.h>
+#include <gsl/gsl_randist.h>
+// [[Rcpp::depends(RcppArmadillo)]]
+// [[Rcpp::depends(RcppGSL)]]
+
+// [[Rcpp::export]]
+arma::mat gibbs_rcpp_arma_gsl(int N, int thin) {
+	gsl_rng *s = gsl_rng_alloc(gsl_rng_mt19937); // Create RNG seed
+	arma::mat mat; mat.zeros(N, 2);
+	double x = 0, y = 0;
+	for(int i = 0; i < N; i++) {
+		for(int j = 0; j < thin; j++) {
+			x = gsl_ran_gamma(s, 3,
+                     1 / (y * y + 4)); // Gamma(shape, scale)
+			y = (1 / (x + 1)) + 
+				gsl_ran_gaussian_ziggurat(s, 1 / sqrt(2 * (x + 1)));
+		}
+		mat(i, 0) = x;
+		mat(i, 1) = y;
+	}
+	gsl_rng_free(s); // Free memory
+	return(mat);
+}
+```
+
+### Benchmark
+
+```{r Benchmark}
+# Libraries
+library(rbenchmark)
+# Benchmark
+Benchmark <- benchmark(
+	"R" = {gibbs_r(100, 10)},
+	"rcpp" = {gibbs_rcpp(100, 10)},
+	"rcpp_arma_gsl" = {gibbs_rcpp_arma_gsl(100, 10)},
+	replications=30,
+	columns = c("test", "elapsed", "relative")
+)
+Benchmark
+```
 
 ## Linear regression example
 
@@ -244,7 +358,47 @@ mod$coef
 
 ## Joint Species Distribution Models
 
+### JSDM utility
+
+\bcols
+\bcol{0.5\textwidth}
+- Fit species distribution models
+- Accounting for species interaction
+- Can be used to explain/predict species range and produce species range map
+\ecol
+\bcol{0.9\textwidth}
+\includegraphics[height=1.5cm]{figs/logo_GNU.png}
+\ecol
+\ecols
+
+
+### Data to fit JSDM
+
+- Species presence/absence on sites
+- Environmental variables (climate, lancover) at each sites
+
+\vspace{0.5cm}
+
+```{r jSDM_data}
+df <- read.csv("tabs/jSDM_tab.csv")
+df
+```
+
+
 ## Model specification
+
+### Statistical model
+
+
+
+### Complexity of the model
+
+- Multi-dimensionality (parameters for sites and species)
+- Non Gaussian
+- Latent-variables
+- Mixed model with site random effects
+
+### jSDM R package
 
 ## Comparison with `boral`/`JAGS`
 
