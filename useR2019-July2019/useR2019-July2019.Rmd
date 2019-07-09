@@ -250,9 +250,9 @@ Can incorporate various algorithms (Metropolis-Hastings, slice sampling, adaptiv
 
 ### Gibbs sampling
 
-- Involves several loops: MCMC step, parameters.
-- Random draws.
-- Matrix computations in case of conjugated priors in Bayesian statistics.
+- Involves several loops: MCMC step, parameters
+- Random draws
+- Matrix computations in case of conjugated priors in Bayesian statistics
 
 Rcpp (C++), RcppGSL (random draws) and RcppArmadillo (matrix computations) are useful for efficient Gibbs sampling.
 
@@ -361,44 +361,83 @@ Benchmark
 ### JSDM utility
 
 \bcols
-\bcol{0.5\textwidth}
+\bcol{0.6\textwidth}
+
 - Fit species distribution models
 - Accounting for species interaction
+
+\includegraphics[width=\textwidth]{figs/allfrogs1.jpg}
+
+\vspace{0.5cm}
+
 - Can be used to explain/predict species range and produce species range map
+
+\includegraphics[width=\textwidth]{figs/SDM.jpg}
+
 \ecol
-\bcol{0.9\textwidth}
-\includegraphics[height=1.5cm]{figs/logo_GNU.png}
+\bcol{0.4\textwidth}
+
+\includegraphics[width=\textwidth]{figs/Litoria_ewingii.jpg}     
+
 \ecol
 \ecols
-
 
 ### Data to fit JSDM
 
 - Species presence/absence on sites
-- Environmental variables (climate, lancover) at each sites
+- Environmental variables (climate, lancover) at each site
 
 \vspace{0.5cm}
 
-```{r jSDM_data}
+```{r jSDM_data, echo=FALSE}
 df <- read.csv("tabs/jSDM_tab.csv")
 df
 ```
-
 
 ## Model specification
 
 ### Statistical model
 
+$\blue{Y}=\{\blue{y_{ij}}\}^{i=1,\ldots,nsite}_{j=1,\ldots,nsp}$, with:
 
+$$\blue{y_{ij}}=\begin{cases}
+    0 & \text{ if species $j$ is absent on site $i$}\\
+    1 &  \text{ if species  $j$ is present on site $i$}.
+    \end{cases}$$
+    
+We assume $\blue{y_{ij}} \sim \mathcal{B}ernouilli(\theta_{ij})$, with:
+
+$$\text{probit}(\theta_{ij}) =\red{\alpha_i} + \red{\beta_{0j}} + \blue{X_i}\red{\beta_j} + \red{W_i\lambda_j}$$
+$\red{\alpha_i}$: site random effects, with $\red{\alpha_i} \sim \mathcal{N}(0,\red{V_{\alpha}})$    
+$\blue{X_i}$: known environmental variables on site $i$    
+$\red{W_i}$: latent variables for site $i$     
+$\red{\beta_j, \lambda_j}$: species fixed effects
+
+Latent variables $\red{W_i}$: missing predictors $+$ main axes of covariation across taxa (see Warton et al. 2015 <doi: [10.1016/j.tree.2015.09.007](https://doi.org/10.1016/j.tree.2015.09.007)>).
 
 ### Complexity of the model
 
-- Multi-dimensionality (parameters for sites and species)
-- Non Gaussian
-- Latent-variables
-- Mixed model with site random effects
+\bcols
+\bcol{0.6\textwidth}
+
+- Multi-dimensionality: parameters $\red{\alpha_i}$ for sites and $\red{\beta_j, \lambda_j}$ for species
+- Non Gaussian process
+- Latent-variables: $\red{W_i}$
+- Mixed model with site random effects $\red{\alpha_i} \sim \mathcal{N}(0,\red{V_{\alpha}})$
+
+\ecol
+\bcol{0.4\textwidth}
+
+\includegraphics[width=\textwidth]{figs/complexity.jpg} 
+
+\ecol
+\ecols
 
 ### jSDM R package
+
+\includegraphics[width=\textwidth]{figs/jSDM-website.png}
+\vspace{0.5cm}
+<https://ecology.ghislainv.fr/jSDM>
 
 ## Comparison with `boral`/`JAGS`
 
