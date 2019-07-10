@@ -391,7 +391,9 @@ Benchmark
 
 ```{r jSDM_data, echo=FALSE}
 df <- read.csv("tabs/jSDM_tab.csv")
-df
+colnames <- c("Sites","Sp1","Sp2","...","Sp_nsp","X1","X2","...","X_nvar")
+knitr::kable(df, col.names=colnames, booktabs=TRUE) %>%
+		kableExtra::kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE)
 ```
 
 ## Model specification
@@ -447,7 +449,7 @@ Latent variables $\red{W_i}$: missing predictors $+$ main axes of covariation ac
 - JAGS is Just Another Gibbs Sampler: <http://mcmc-jags.sourceforge.net/>
 - Approach used in Warton et al. 2015:    
 <doi: [10.1016/j.tree.2015.09.007](https://doi.org/10.1016/j.tree.2015.09.007)>
-- boral by Francis K.C. Hui and JAGS by 
+- boral by Francis K.C. Hui and JAGS by Martyn Plummer
 
 ## Comparison with `boral`/`JAGS`
 
@@ -463,6 +465,18 @@ knitr::kable(datasets, booktabs=TRUE) %>%
 		kableExtra::kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE)
 ```
 
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tabular}{cccc}
+\includegraphics[width=2cm]{figs/Mosquitos_.jpg} &
+\includegraphics[width=2cm]{figs/Eucalyptus_.jpg} &
+\includegraphics[width=2cm]{figs/Frogs_.jpg} &
+\includegraphics[width=2cm]{figs/Fungi_.jpg} \\
+\textbf{Mosquitos} & \textbf{Eucalyptus} & \textbf{Frogs} & \textbf{Fungi}
+\end{tabular}
+\end{center}
+
 ### Comparison results
 
 **Compilation time** (in minutes)
@@ -475,15 +489,17 @@ load("Code/boral_fungi.RData")
 load("Code/jSDM_fungi.RData")
 
 result <- data.frame(matrix(NA,2,5), row.names=c("boral","jSDM "))
-colnames(result) <- c("Simulated","Mosquito","Eucalypts","Frogs","Fungi")
+colnames(result) <- c("Simulated","Mosquitos","Eucalyptus","Frogs","Fungi")
 result[1,] <- c(T_boral_sim, T_boral_Mosquito, T_boral_Eucalypts, T_boral_Frogs, T_boral_Fungi)
 result[2,] <- c(T_jSDM_block_sim, T_jSDM_block_Mosquito, T_jSDM_block_Eucalypts, T_jSDM_block_Frogs, T_jSDM_block_Fungi)
-ratio_speed <- round(mean(as.numeric(result[1,]/result[2,]))) 
+ratio_speed <- round(mean(as.numeric(result[1,]/result[2,])))
+min_ratio <- round(min(as.numeric(result[1,]/result[2,])))
+max_ratio <- round(max(as.numeric(result[1,]/result[2,])))
 knitr::kable(result, digits =1, booktabs=TRUE) %>%
 		kableExtra::kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE)
 ```
 
-On average, jSDM is **`r ratio_speed` times faster** than boral/jags.
+jSDM is **`r min_ratio` to `r max_ratio`** times faster than boral/jags.
 
 **Root-mean-square error**    
 Computed for $\text{probit}(\theta_{ij})$ with the simulated data-set.
@@ -501,7 +517,7 @@ knitr::kable(result, digits=1, booktabs=TRUE) %>%
 ```{r deviance, echo=FALSE}
 library(knitr)
 result <- data.frame(matrix(NA,2,5),row.names=c("boral", "jSDM"))
-colnames(result) <- c("Simulated","Mosquito","Eucalypts","Frogs","Fungi")
+colnames(result) <- c("Simulated","Mosquitos","Eucalyptus","Frogs","Fungi")
 result[1,] <- c(Deviance_boral_sim, Deviance_boral_Mosquito, Deviance_boral_Eucalypts, Deviance_boral_Frogs, Deviance_boral_Fungi)
 result[2,] <- c( mean(mod_jSDM_block_sim$mcmc.Deviance),  mean(mod_jSDM_block_Mosquito$mcmc.Deviance),  mean(mod_jSDM_block_Eucalypts$mcmc.Deviance),  mean(mod_jSDM_block_Frogs$mcmc.Deviance), mean(mod_jSDM_block_Fungi$mcmc.Deviance))
 knitr::kable(result, digits=0, booktabs=TRUE) %>%
@@ -510,7 +526,11 @@ knitr::kable(result, digits=0, booktabs=TRUE) %>%
 
 ### Conclusion
 
-- Small data-sets, simple models: R, *BUGS, JAGS, Stan, INLA, MCMCglmm
-- Large data-sets or complex hierarchical models: R $+$ Rcpp $+$ RcppGSL $+$ RcppArmadillo
+- Small data-sets **and** simple models: R, *BUGS, JAGS, Stan, INLA, MCMCglmm
+- Large data-sets **or** complex hierarchical models: R $+$ Rcpp $+$ RcppGSL $+$ RcppArmadillo
 
-The Gibbs sampler can typically be written in about half a day. Reusable. Can save you a lot of time.
+\vspace{0.5cm}
+
+- With Rcpp* packages, the Gibbs sampler can typically be written in about half a day
+- Code is reusable and easily packageable
+- Tools of incomparable efficiency for statisticians
