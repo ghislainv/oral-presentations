@@ -256,7 +256,7 @@ Can incorporate various algorithms (Metropolis-Hastings, slice sampling, adaptiv
 
 Rcpp (C++), RcppGSL (random draws) and RcppArmadillo (matrix computations) are useful for efficient Gibbs sampling.
 
-## Simple Gibb sampler
+## A simple Gibbs sampler
 
 ### R
 
@@ -332,6 +332,8 @@ arma::mat gibbs_rcpp_arma_gsl(int N, int thin) {
 }
 ```
 
+## Benchmark
+
 ### Benchmark
 
 ```{r Benchmark}
@@ -347,8 +349,6 @@ Benchmark <- benchmark(
 )
 Benchmark
 ```
-
-## Linear regression example
 
 <!-- ================================================================= -->
 <!-- PART 3: jSDM R package -->
@@ -437,7 +437,80 @@ Latent variables $\red{W_i}$: missing predictors $+$ main axes of covariation ac
 
 \includegraphics[width=\textwidth]{figs/jSDM-website.png}
 \vspace{0.5cm}
-<https://ecology.ghislainv.fr/jSDM>
+
+- <https://ecology.ghislainv.fr/jSDM>
+- Made with Rcpp* packages
+
+### boral R package
+
+- R package interfacing R with JAGS for fitting Joint Species Distribution Models
+- JAGS is Just Another Gibbs Sampler: <http://mcmc-jags.sourceforge.net/>
+- Approach used in Warton et al. 2015:    
+<doi: [10.1016/j.tree.2015.09.007](https://doi.org/10.1016/j.tree.2015.09.007)>
+- boral by Francis K.C. Hui and JAGS by 
 
 ## Comparison with `boral`/`JAGS`
 
+### Data-sets
+
+```{r data-sets, echo=FALSE}
+library(dplyr)
+datasets <- read.table("tabs/data-sets.csv", header=TRUE, sep=",")
+datasets <- datasets %>%
+	dplyr::mutate(npar=nsite*(1+nlat)+1+nsp*(1+nX+nlat)-1, nobs=nsite*nsp) %>%
+	dplyr::select(dataset,nsite,nsp,nobs,nX,nlat,npar,nmcmc)
+knitr::kable(datasets, booktabs=TRUE) %>%
+		kableExtra::kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE)
+```
+
+### Comparison results
+
+**Compilation time** (in minutes)
+```{r time, echo=FALSE}
+load("Code/jSDM_boral_sim.RData")
+load("Code/jSDM_boral_mosquito.RData")
+load("Code/jSDM_boral_eucalypts.RData")
+load("Code/jSDM_boral_frogs.RData")
+load("Code/boral_fungi.RData")
+load("Code/jSDM_fungi.RData")
+
+result <- data.frame(matrix(NA,2,5), row.names=c("boral","jSDM "))
+colnames(result) <- c("Simulated","Mosquito","Eucalypts","Frogs","Fungi")
+result[1,] <- c(T_boral_sim, T_boral_Mosquito, T_boral_Eucalypts, T_boral_Frogs, T_boral_Fungi)
+result[2,] <- c(T_jSDM_block_sim, T_jSDM_block_Mosquito, T_jSDM_block_Eucalypts, T_jSDM_block_Frogs, T_jSDM_block_Fungi)
+ratio_speed <- round(mean(as.numeric(result[1,]/result[2,]))) 
+knitr::kable(result, digits =1, booktabs=TRUE) %>%
+		kableExtra::kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE)
+```
+
+On average, jSDM is **`r ratio_speed` times faster** than boral/jags.
+
+**Root-mean-square error**    
+Computed for $\text{probit}(\theta_{ij})$ with the simulated data-set.
+```{r RMSE, echo=FALSE}
+library(knitr)
+result <- data.frame(matrix(NA,1,2),row.names=c("RMSE"))
+colnames(result) <- c("boral","jSDM")
+result$boral <- RMSE_boral_sim
+result$jSDM <- RMSE_jSDM_block_sim
+knitr::kable(result, digits=1, booktabs=TRUE) %>%
+	kableExtra::kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE)
+```
+
+**Deviance**
+```{r deviance, echo=FALSE}
+library(knitr)
+result <- data.frame(matrix(NA,2,5),row.names=c("boral", "jSDM"))
+colnames(result) <- c("Simulated","Mosquito","Eucalypts","Frogs","Fungi")
+result[1,] <- c(Deviance_boral_sim, Deviance_boral_Mosquito, Deviance_boral_Eucalypts, Deviance_boral_Frogs, Deviance_boral_Fungi)
+result[2,] <- c( mean(mod_jSDM_block_sim$mcmc.Deviance),  mean(mod_jSDM_block_Mosquito$mcmc.Deviance),  mean(mod_jSDM_block_Eucalypts$mcmc.Deviance),  mean(mod_jSDM_block_Frogs$mcmc.Deviance), mean(mod_jSDM_block_Fungi$mcmc.Deviance))
+knitr::kable(result, digits=0, booktabs=TRUE) %>%
+	kableExtra::kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE)
+```
+
+### Conclusion
+
+- Small data-sets, simple models: R, *BUGS, JAGS, Stan, INLA, MCMCglmm
+- Large data-sets or complex hierarchical models: R $+$ Rcpp $+$ RcppGSL $+$ RcppArmadillo
+
+The Gibbs sampler can typically be written in about half a day. Reusable. Can save you a lot of time.
