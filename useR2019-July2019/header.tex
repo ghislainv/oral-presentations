@@ -11,9 +11,6 @@
 %\usepackage{fancyvrb} %give size to verbatim
 %\usepackage{hyperref}
 \usepackage[english,francais]{babel}
-\definecolor{vertmoyen}{RGB}{51,110,23} % vert moyen
-\definecolor{blueFRB}{HTML}{31859c}
-\usecolortheme[named=vertmoyen]{structure}
 \usepackage{tabularx} % varier la largeur du tableau
 \usepackage{layout}
 \usepackage{longtable}
@@ -48,6 +45,19 @@
 % \usetheme{Antibes}
 \useinnertheme{rounded} %% bullets
 \setbeamertemplate{footline}[frame number]
+
+% Set beamer colors
+\definecolor{Vert}{RGB}{51,110,23} % UBC Blue (primary)
+\definecolor{Grey}{rgb}{0.3686, 0.5255, 0.6235} % UBC Grey (secondary)
+\setbeamercolor{palette primary}{bg=Vert,fg=white}
+\setbeamercolor{palette secondary}{bg=Vert,fg=white}
+\setbeamercolor{palette tertiary}{bg=Vert,fg=white}
+\setbeamercolor{palette quaternary}{bg=Vert,fg=white}
+\setbeamercolor{structure}{fg=Vert} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=Vert} % TOC sections
+
+% Override palette coloring with secondary
+\setbeamercolor{subsection in head/foot}{bg=Grey,fg=white}
 
 % Ignore ignorenonframetext class option in default template
 \makeatletter
@@ -87,7 +97,6 @@
 }
 
 \AtBeginSubsection[]{}
-
 % \AtBeginSubsection[]{
 % \placelogotrue
 %   \begin{frame}

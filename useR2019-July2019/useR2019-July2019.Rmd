@@ -1,10 +1,9 @@
 ---
-citecolor: Blue
-classoption: table
-colorlinks: yes
+classoption: table, dvipsname
+colorlinks: no
 fontsize: 10pt
 link-citations: yes
-linkcolor: Blue
+linkcolor: Black
 output:
   beamer_presentation:
     includes:
@@ -258,6 +257,14 @@ Rcpp (C++), RcppGSL (random draws) and RcppArmadillo (matrix computations) are u
 
 ## A simple Gibbs sampler
 
+### A simple Gibbs sampler
+
+Comparing execution time between:
+
+- R
+- Rcpp
+- Rcpp $+$ RcppArmadillo $+$ RcppGSL
+
 ### R
 
 **R code**
@@ -315,8 +322,7 @@ NumericMatrix gibbs_rcpp(int N, int thin) {
 // [[Rcpp::export]]
 arma::mat gibbs_rcpp_arma_gsl(int N, int thin) {
 	gsl_rng *s = gsl_rng_alloc(gsl_rng_mt19937); // Create RNG seed
-	arma::mat mat; mat.zeros(N, 2);
-	double x = 0, y = 0;
+	arma::mat mat; mat.zeros(N, 2); double x = 0, y = 0;
 	for(int i = 0; i < N; i++) {
 		for(int j = 0; j < thin; j++) {
 			x = gsl_ran_gamma(s, 3,
@@ -407,7 +413,7 @@ $$\blue{y_{ij}}=\begin{cases}
     1 &  \text{ if species  $j$ is present on site $i$}.
     \end{cases}$$
     
-We assume $\blue{y_{ij}} \sim \mathcal{B}ernouilli(\theta_{ij})$, with:
+We assume $\blue{y_{ij}} \sim \mathcal{B}ernoulli(\theta_{ij})$, with:
 
 $$\text{probit}(\theta_{ij}) =\red{\alpha_i} + \red{\beta_{0j}} + \blue{X_i}\red{\beta_j} + \red{W_i\lambda_j}$$
 $\red{\alpha_i}$: site random effects, with $\red{\alpha_i} \sim \mathcal{N}(0,\red{V_{\alpha}})$    
@@ -533,4 +539,4 @@ knitr::kable(result, digits=0, booktabs=TRUE) %>%
 
 - With Rcpp* packages, the Gibbs sampler can typically be written in about half a day
 - Code is reusable and easily packageable
-- Tools of incomparable efficiency for statisticians
+- Tools with incomparable efficiency for statisticians
