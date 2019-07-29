@@ -10,7 +10,7 @@ output:
       after_body: doc_suffix.tex
       before_body: doc_prefix.tex
       in_header: header.tex
-    slide_level: 3
+    slide_level: 1
 urlcolor: Maroon
 ---
 
@@ -28,232 +28,81 @@ options(knitr.kable.NA="-")
 ```
 
 <!-- ================================================================= -->
-<!-- PART 1: Program -->
+<!-- PART 1: Historical deforestation -->
 <!-- ================================================================= -->
 
-# Programme
+# Method
 
-## Beginning
+We combined:
 
-### Programme
+- Harper 2007 map on 1953-2000
+- Hansen 2013 tree cover loss on 2000-2017
 
-**09:00-09:15 Retour sur les objectifs du projet**
+# Historical deforestation
 
-**09:15-10:15 Evolution du couvert forestier à Madagascar**
+\centering \includegraphics[width=8cm]{figs/fig_fcc.png}
 
-- Historique et causes de la déforestation
-- Scénarios d'évolution du couvert forestier dans le futur
-    
-**10:15-10:30 Pause café**
+# Fragmentation
 
-**10:30-11:30 Biodiversité et changement climatique à Madagascar**
+\centering \includegraphics[width=8cm]{figs/dist.png}
 
-- Données climatiques et base de données de biodiversité
-- Vulnérabilité des forêts tropicales au changement climatique à Madagascar
-- Assemblage des communautés d'arbres à Madagascar et carte des types forestiers. Package `jSDM`.
-- Estimation de la vulnérabilité des espèces au changement climatique. Package `speciesatlas`. Application aux espèces de Baobab à Madagascar.
+# Deforestation rates
 
-## End
+\small{\begin{tabular}[t]{lrrrr}
+\hiderowcolors
+\toprule
+Year & Forest (Kha) & Unmap (Kha) & Annual defor. (Kha/yr) & Rate (\%/yr)\\
+\midrule
+\showrowcolors
+1953 & 15,968 & 0 & - & -\\
+1973 & 14,241 & 3,317 & 86 & 0.6\\
+1990 & 10,762 & 0 & 205 & 1.6\\
+2000 & 9,879 & 0 & 88 & 0.8\\
+2005 & 9,673 & 0 & 41 & 0.4\\
+2010 & 9,320 & 0 & 71 & 0.7\\
+2015 & 8,770 & 0 & 110 & 1.2\\
+2017 & 8,446 & 0 & 162 & 1.9\\
+\bottomrule
+\end{tabular}}
 
-### Programme
+# Publication
 
-**11:30-12:30 Synthèse**
+**Vieilledent G., C. Grinand, F. A. Rakotomalala, R. Ranaivosoa, J.-R. Rakotoarijaona, T. F. Allnutt, and F. Achard.** 2018. Combining global tree cover loss data with historical national forest-cover maps to look at six decades of deforestation and forest fragmentation in Madagascar. _Biological Conservation_. 222: 189-197. [doi:10.1016/j.biocon.2018.04.008].
 
-- Effets des changements climatiques et de la déforestation sur les espèces de Lémurien à Madagascar
-- Déforestation et changement climatique: identification des zones prioritaires pour la conservation
-- Perspectives du projet
+# Map
 
-**12:30 Déjeuner collégial à Antaninarenina**
-
-<!-- ================================================================= -->
-<!-- PART 2: Context -->
-<!-- ================================================================= -->
-
-# Context
-
-## Madagascar biodiversity
-
-### An unparralleled biodiversity
-
-\begin{columns}
-\begin{column}{0.5\textwidth}
-\centering \includegraphics[width=4cm]{figs/Gondwana.png}
-\begin{block}{}
-\begin{itemize}
-\item Madagascar: top 3 of the countries with mega-diversity
-\item Vascular plants: 12000 species, endemism$=$85\%
-\item Trees: endemism$=$96\%
-\item Invertebrates: 5800 species, endemism$=$86\%
-\end{itemize}
-\end{block}
-\end{column}
-\begin{column}{0.5\textwidth}
-\centering \includegraphics[width=4.5cm]{figs/natural-history.jpg}
-\end{column}
-\end{columns} 
-
-### Concentrated in forests
-
-\begin{columns}
-\begin{column}{0.5\textwidth}
-\begin{center}
-\begin{block}{Tropical forests}
-$>$50\% of the terrestrial species
-\end{block}
-\vspace{0.25cm}
-\includegraphics[width=6cm]{figs/Radeau.png}
-\end{center}
-\end{column}
-\begin{column}{0.5\textwidth}
-\centering \includegraphics[width=4cm]{figs/Mada_Forest.png}
-\end{column}
-\end{columns} 
-
-## Threats to biodiversity
-
-### Deforestation and demography
-
-\begin{columns}
-\begin{column}{0.5\textwidth}
-\begin{block}{}
-\begin{itemize}
-\item 10 to 15\% of original forest
-\item Deforestation rate: $\sim$1\%$\cdot$yr$^{-1}$
-\item 1950--2000: 10\% of species committed to extinction
-\end{itemize}
-\end{block}
-\centering \includegraphics[width=6cm]{figs/Demography.png}
-\begin{block}{}
-\begin{itemize}
-\item Demographic rate: $>$3\%$\cdot$yr$^{-1}$
-\item Doubling-time: 25 years
-\end{itemize}
-\end{block}
-\end{column}
-\begin{column}{0.5\textwidth}
-\centering \includegraphics[width=4.5cm]{figs/Deforestation.png}
-\end{column}
-\end{columns} 
-
-### Predicted climate change
-
-\begin{columns}
-\begin{column}{0.5\textwidth}
-\begin{block}{}
-\begin{itemize}
-\item Mean temperature increase: +1.1 to +2.7$^{\circ}$C
-\item Wetter summer (up to +200 mm.yr$^{-1}$)
-\item Drier winter in the SE (down to -100 mm.yr$^{-1}$) and wetter winter elsewhere
-(up to +100 mm.yr$^{-1}$)
-\end{itemize}
-\end{block}
-\end{column}
-\begin{column}{0.5\textwidth}
-\centering \includegraphics[width=4cm]{figs/Clim_Hannah.png}
-\end{column}
-\end{columns} 
-
-### Predicted climate change
-
-\begin{tabular}{cc}
-  \includegraphics[width=4cm]{figs/Brachypteracias_leptosomus.jpg} & 
-  \includegraphics[width=4cm]{figs/Asuarezensis.png} \\
-  \includegraphics[width=4cm]{figs/Calumma_tsaratananensis.png} &
-  \includegraphics[width=4cm]{figs/Platypelis_alticola.png} \\
-\end{tabular}
-Andriamasimanana 2013, Vieilledent 2013, Raxworthy 2008
+- Interactive map at <https://forestatrisk.cirad.fr/mada/>
+- GIS files at <http://dx.doi.org/10.18167/DVN1/AUBRRC>
 
 <!-- ================================================================= -->
-<!-- PART 3: Objectives -->
+<!-- PART 2: Causes -->
 <!-- ================================================================= -->
 
-# Objectives
+# Menabe
 
-## Expected results
+\centering \includegraphics[width=\textwidth]{figs/deforestation}
 
-### Expected results
+# Proximate causes
 
-**BioSceneMada**: Scénarios d'évolution de la **biodiversité** sous l'effet conjoint du **changement climatique** et de la **déforestation** à Madagascar. [<https://bioscenemada.cirad.fr>]
+\centering \includegraphics[width=8cm]{figs/causes}
 
-\vspace{0.25cm}
+# Exports
 
-\bcols
-\bcol{0.5\textwidth}
+\centering \includegraphics[width=8cm]{figs/exports}
 
-1. **Anticiper les scénarios** possibles de la biodiversité (risques / opportunités)
-2. **Construire des outils** d'aides à la décision (chiffres, outils informatiques, cartes)
-3. **Proposer des solutions** de gestion: aires protégées $+$ mécanisme REDD (accord de Paris)
-4. **Formation** Etudiants, gestionnaires, décideurs
+# Ultimate causes
 
-\ecol
-\bcol{0.5\textwidth}
+- Unregulated global market
+- Bad governance and weak enforcement of the environmental law
 
-\centering \includegraphics[width=\textwidth]{figs/Scheme}
+# Publication
 
-\ecol
-\ecols
+**Vieilledent G., C. Grinand, M. Pedrono, T. Rabetrano, J.-R. Rakotoarijaona, B. Rakotoarivelo, F. A. Rakotomalala, L. Rakotomalala, A. Razafimpahanana and F. Achard.** It’s not only poverty: global trade and bad governance are responsible for the unceasing deforestation in western Madagascar. _Conservation Letters_. In prep.
 
-## Deliverables
+# Software
 
-### Deliverables
+- `forestatrisk` Python package: <https://github.com/ghislainv/forestatrisk> 
 
-- Databases
-- Maps
-- Methods and softwares
-- Scientific articles
+# Maps
 
-<!-- ================================================================= -->
-<!-- PART 4: Logistic organization -->
-<!-- ================================================================= -->
-
-# Logistic organization
-
-## Funding
-
-### Funding
-
-- Fondation pour la Recherche sur la Bodiversité (FRB)
-- Fond Français pour l'Environnement Mondial (FFEM)
-- Call "Scénarios et modélisation de la biodiversité"
-- Total: 267,000 euros, Funded: 117,000 euros for 5 years
-
-\vspace{0.25cm}
-
-\centering \includegraphics[width=0.5\textwidth]{figs/logos_FRb_FFEM.jpg}
-
-## Partners
-
-### Partners
-
-\begin{center}
-\small{Ghislain Vieilledent$^{1}$\hspace{0.5cm}Tom Allnutt$^{2}$\hspace{0.5cm}Clovis
-Grinand$^{3}$\\Miguel Pedrono$^{4}$\hspace{0.5cm}Jean-Roger Rakotoarijaona
-$^{5}$\hspace{0.5cm}Dimby Razafimpahanana$^{2}$}
-
-\vspace{0.25cm}
-
-\scriptsize{
-\begin{tabular}{l}
-$[1]$ \textbf{Cirad AMAP}, $[2]$ \textbf{WCS}, $[3]$ \textbf{ETC Terra/Nitid\ae}, $[4]$
-\textbf{Cirad ASTRE}, $[5]$ \textbf{ONE}  
-\end{tabular}
-}
-\end{center}
-
-\vspace{0.25cm}
-
-\centering \includegraphics[width=\textwidth]{figs/partners_id}
-
-\vspace{0.25cm}
-
-\centering \includegraphics[width=\textwidth]{figs/partners_logos}
-
-## Planning
-
-### Planning
-
-- **Five years** (May 2014 - October 2019)
-- **Three years** for scientific research
-- **Two years** to transmit and value the research results
-
-\centering \includegraphics[width=6cm]{figs/Timetable.png}
+- Interactive map at <https://forestatrisk.cirad.fr/mada/>
