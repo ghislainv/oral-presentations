@@ -1,0 +1,238 @@
+---
+classoption: table, dvipsname
+colorlinks: no
+fontsize: 10pt
+link-citations: yes
+linkcolor: Black
+output:
+  beamer_presentation:
+    includes:
+      after_body: doc_suffix.tex
+      before_body: doc_prefix.tex
+      in_header: header.tex
+    slide_level: 3
+urlcolor: Maroon
+---
+
+```{r options, include=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=TRUE, cache=TRUE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+<!-- ================================================================= -->
+<!-- PART 1: Science -->
+<!-- ================================================================= -->
+
+# Science
+
+## Articles accepted
+
+### Articles accepted
+
+3 scientific articles accepted
+
+1. **Vieilledent G., C. Grinand, F. A. Rakotomalala, R. Ranaivosoa, J.-R. Rakotoarijaona, T. F. Allnutt, and F. Achard.** 2018. Combining global tree cover loss data with historical national forest-cover maps to look at six decades of deforestation and forest fragmentation in Madagascar. _Biological Conservation_. 222: 189-197. [doi:10.1016/j.biocon.2018.04.008].
+2. **Grinand C., G. Le Maire, G. Vieilledent, H. Razakamanarivo, T. Razafimbelo, and M. Bernoux.** 2017. Estimating temporal changes in soil carbon stocks at the ecoregional scale in Madagascar using remote-sensing. _International Journal of Applied Earth Observation and Geoinformation_. 54: 1-14. [doi:10.1016/j.jag.2016.09.002].
+
+### Articles accepted
+
+3 scientific articles accepted
+
+3. **Vieilledent G., O. Gardi, C. Grinand, C. Burren, M. Andriamanjato, C. Camara, C. J. Gardner, L. Glass, A. Rasolohery, H. Rakoto Ratsimba, V. Gond, J.-R. Rakotoarijaona.** 2016. Bioclimatic envelope models predict a decrease in tropical forest carbon stocks with climate change in Madagascar. _Journal of Ecology_. 104: 703-715. [doi:10.1111/1365-2745.12548].
+
+## Articles submitted
+
+### Articles submitted
+
+2 scientific articles submitted
+
+1. **Vancutsem Ch., F. Achard, J.-F. Pekel, G. Vieilledent, S. Carboni, D. Simonetti, J. Gallego.** Pantropical analysis of the Landsat archive reveals unprecedented deforestation rates in evergreen forests. _Nature Communications_. Submitted.
+2. **Grinand C., G. Vieilledent, T. Razafimbelo, J.-R. Rakotoarijaona, M. Bernoux.** Modelling and forecasting deforestation, land degradation and regeneration in Madagascar using machine learning tools and a global land cover change dataset. _Land Degradation and Development_. Submitted.
+
+## Articles in prep
+
+### Articles in prep
+
+7 articles in preparation
+
+1. **Vieilledent G., Ch. Vancutsem and F. Achard.** High-resolution spatial modelling and long-term forecasting of anthropogenic deforestation in the tropics. In prep.
+2. **Vieilledent G., C. Grinand, M. Pedrono, T. Rabetrano, J.-R. Rakotoarijaona, B. Rakotoarivelo, F. A. Rakotomalala, L. Rakotomalala, A. Razafimpahanana and F. Achard.** It’s not only poverty: global trade and bad governance are responsible for the unceasing deforestation in western Madagascar. _Conservation Letters_. In prep.
+3. **Muniz-Tagliari M., J. Lenoir, P. Danthu, G. Vieilledent.** Species whose range is determined by seasonnality should move towards the equator: the case of baobabs in Madagascar. _Ecography_. In prep.
+
+### Articles in prep
+
+7 articles in preparation
+
+4. **Clement J., G. Vieilledent.** jSM: an R package for Joint Species Distribution Modelling. _Ecography_. In prep.
+5. **Knoploch C., C. Grinand, G. Vieilledent.** Extinction risk of the Lemurs of Madagascar under both the effect of climate change and deforestation. _Conservation Biology_. In prep.
+6. **Vieilledent G., W. F. Laurance, S. Peedell and F. Achard.** The fate of tropical forests associated to the demographic explosion in Africa. _Current Biology_. In prep.
+7. **Vieilledent G., Ph. Verley, and F. Achard.** Including spatial-autocorrelation in deforestation model to obtain realistic deforestation projections at national or continental scales. _Landscape Ecology_. In prep.
+
+<!-- ================================================================= -->
+<!-- PART 2: Formation -->
+<!-- ================================================================= -->
+
+# Formation
+
+## Student training
+
+### Student training
+
+1 PhD student, 1 Master I student, 6 Master II students
+
+- Clovis GRINAND (PhD thesis)
+- Ruoyin LONG (deforestation)
+- Mario MUNIZ-TAGLIARI (SDM Baobabs)
+- Margaux CHARRA (GDM)
+- Aurélien COLAS (`speciesatlas`)
+- Jeanne CLEMENT (`jSDM`)
+- Corentin KNOPLOCH (`speciesatlas`/SDM Lemurs)
+- Vololoniaina Marie Rosine SOJANDRIMALALA (ReBioMa)
+
+\begin{center}
+\begin{tabular}{ccccc}
+\includegraphics[width=1.5cm]{figs/Students/Clovis} &
+\includegraphics[width=1.5cm]{figs/Students/Ruoyin} &
+\includegraphics[width=1.5cm]{figs/Students/Mario} &
+\includegraphics[width=1.5cm]{figs/Students/Margaux} \\
+\includegraphics[width=1.5cm]{figs/Students/Aurelien} &
+\includegraphics[width=1.5cm]{figs/Students/Jeanne} &
+\includegraphics[width=1.5cm]{figs/Students/Corentin} &
+\includegraphics[width=1.5cm]{figs/Students/Volo}
+\end{tabular}
+\end{center}
+
+## Capacity building
+
+### Capacity building
+
+- Deforestation modelling, October 2018, 3 days, 20 participants
+- CeRSAE, FOFIFA
+- Many different institutes: \small{MEDD, Environmental NGOs (WRI, CI, WCS, Blueventures, MBG, WWF), Université d'Antananarivo (MBEV, IOGA, ESSA), Research Institutes (Institut Pasteur, LRI), etc.}
+
+\vspace{0.5cm}
+
+\centering \includegraphics[width=0.45\textwidth]{figs/training3}
+
+### Capacity building
+
+- Deforestation modelling, July 2019, 2 days, 30 participants
+- Niche modelling, July 2019, 2 days, 30 participants
+- Campus Numérique Francophone, Ankatso
+- Many different institutes: \small{MEDD, Environmental NGOs (WRI, CI, WCS, Blueventures, MBG, WWF), Université d'Antananarivo (MBEV, IOGA, ESSA), Research Institutes (Institut Pasteur, LRI), etc.}
+
+\vspace{0.5cm}
+
+\includegraphics[width=0.45\textwidth]{figs/training1}\hspace{0.25cm}\includegraphics[width=0.45\textwidth]{figs/training2}
+
+<!-- ================================================================= -->
+<!-- PART 3: Products -->
+<!-- ================================================================= -->
+
+# Products
+
+## Databases
+
+### Databases
+
+- Biodiversity database
+- Dryad: <https://doi.org/10.5061/dryad.9ph68>
+- Cirad dataverse: <https://doi.org/10.18167/DVN1/AUBRRC>
+
+## Maps
+
+### Maps
+
+- Climatic data (present-future)
+- Forest carbon in 2010
+- Historical deforestation (1953-2017)
+- Spatial probability of deforestation in 2010
+- Future forest cover (2050, 2100)
+- Species distribution (atlas, eg. http://etclab.org/atlas)
+
+\centering <https://forestatrisk.cirad.fr/mada/>
+
+## Methods and softwares
+
+### Methods and softwares
+
+- GitHub repositories with code, eg. <https://github.com/ghislainv/deforestation-maps-Mada>
+- `hSDM`, `jSDM` R packages
+- `speciesatlas` R package
+- `forestatrisk` Python package
+
+<!-- ================================================================= -->
+<!-- PART 4: Communication -->
+<!-- ================================================================= -->
+
+# Communication
+
+## Meetings
+
+### Meetings
+
+8 meetings to present the advances and results of the BioSceneMada project:
+
+- 5 annual meetings: March 2014 Tana (kick-off), Avril 2015 Tana, June 2016 Tana, November 2017 Montpellier, July 2018 Tana (closure)
+- Seminar at Kew Royal Botanic Gardens, July 2015, London
+- Journées FRB,"Les scénarios de la biodiversité à l’heure du changement climatique", October 2015, Paris
+- Plénière du COS de la FRB, December 2018, Paris
+
+## Conferences
+
+### Conferences
+
+Results of the BioSceneMada project have been presented to 5 scientific conferences:
+
+- **ICCB-ECCB 2015**, Montpellier (1 poster, 1 presentation)
+- **ATBC 2016**, Montpellier
+- **Scennet 2016**, Montpellier (2 presentations)
+- **ISEC 2018**, Saint-Andrews (Scotland)
+- **\textcolor{red}{ATBC 2019}**, Antananarivo (4 presentations)
+
+## Websites
+
+### Websites
+
+- <https://bioscenemada.cirad.fr>
+- <https://madaclim.cirad.fr>
+- <https://forestatrisk.cirad.fr>
+- <https://ecology.ghislainv.fr/jSDM>
+
+## Media
+
+### Media
+
+- Press releases:
+  - Forests and climate change: [Cirad](http://www.cirad.fr/en/news/all-news-items/press-releases/2016/climate-change-alters-the-co2-storage-capacity-of-tropical-forests)
+  - Deforestation in Madagascar: [Cirad](https://www.cirad.fr/en/news/all-news-items/press-releases/2018/deforestation-in-madagascar)
+  - Balancing develoment and biodiversity conservation in Madagascar: [Cirad](https://www.cirad.fr/en/news/all-news-items/articles/2019/science/deforestation-in-madagascar-balancing-development-and-biodiversity)
+- Press articles:
+  - Forests and climate change: [The Conversation](https://t.co/pMXLUUrV0I),
+[Le Figaro](https://ecology.ghislainv.fr/images/media/Figaro-16-02-2016.png),
+[Le Point](http://www.lepoint.fr/environnement/le-rechauffement-climatique-risque-d-empecher-les-forets-tropicales-de-stocker-le-carbone-12-02-2016-2017587_1927.php#xtor=RSS-221),
+[FranceTV info](http://www.francetvinfo.fr/monde/environnement/le-rechauffement-climatique-risque-d-empecher-les-forets-tropicales-de-stocker-le-carbone_1312341.html#xtor=AL-54-%5Barticle%5D),
+[El Mercurio](http://www.emol.com/noticias/Tecnologia/2016/02/12/788109/Estudio-asegura-que-cambio-climatico-amenaza-la-absorcion-de-CO2-por-bosques-tropicales.html),
+[Midi-Libre](https://ecology.ghislainv.fr/images/media/MidiLibre-16-02-2016.png)
+- Radio: Radio Classique ([3 minutes pour la planète](http://www.radioclassique.fr/player/progaction/initPlayer/podcast/3-minutes-pour-la-planete-2016-02-16-06-48-50.html)), France Inter (Le temps d'un bivouac)
+- Video: [YouTube](https://www.youtube.com/watch?time_continue=2&v=vWyux19jWjg)
+
+# Impact on policy
+
+### Impact on policy
+
+- Malagasy President's communication to council of ministers on 27/02/2019 untitled ["Recouvrir Madagascar de forêt"](https://ur-forets-societes.cirad.fr/actualites/le-president-malgache-cite-une-publication-du-cirad-pour-le-lancement-d-un-plan-de-conservation-et-de-restauration-des-forets). One Planet Summit Nairobi.
+
+\centering \includegraphics[width=4cm]{figs/Rajoelina}
+
+- On 23 July 2019, the European Commission presented a set of actions to protect and restore the world's forests. [EC Communication](https://bit.ly/2JTAYRh).
+
+\centering \includegraphics[width=\textwidth]{figs/map_tropical_forest}

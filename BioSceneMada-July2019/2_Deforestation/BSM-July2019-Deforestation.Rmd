@@ -1,0 +1,259 @@
+---
+classoption: table, dvipsname
+colorlinks: no
+fontsize: 10pt
+link-citations: yes
+linkcolor: Black
+output:
+  beamer_presentation:
+    includes:
+      after_body: doc_suffix.tex
+      before_body: doc_prefix.tex
+      in_header: header.tex
+    slide_level: 3
+urlcolor: Maroon
+---
+
+```{r options, include=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=TRUE, cache=TRUE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+<!-- ================================================================= -->
+<!-- PART 1: Program -->
+<!-- ================================================================= -->
+
+# Programme
+
+## Beginning
+
+### Programme
+
+**09:00-09:15 Retour sur les objectifs du projet**
+
+**09:15-10:15 Evolution du couvert forestier à Madagascar**
+
+- Historique et causes de la déforestation
+- Scénarios d'évolution du couvert forestier dans le futur
+    
+**10:15-10:30 Pause café**
+
+**10:30-11:30 Biodiversité et changement climatique à Madagascar**
+
+- Données climatiques et base de données de biodiversité
+- Vulnérabilité des forêts tropicales au changement climatique à Madagascar
+- Assemblage des communautés d'arbres à Madagascar et carte des types forestiers. Package `jSDM`.
+- Estimation de la vulnérabilité des espèces au changement climatique. Package `speciesatlas`. Application aux espèces de Baobab à Madagascar.
+
+## End
+
+### Programme
+
+**11:30-12:30 Synthèse**
+
+- Effets des changements climatiques et de la déforestation sur les espèces de Lémurien à Madagascar
+- Déforestation et changement climatique: identification des zones prioritaires pour la conservation
+- Perspectives du projet
+
+**12:30 Déjeuner collégial à Antaninarenina**
+
+<!-- ================================================================= -->
+<!-- PART 2: Context -->
+<!-- ================================================================= -->
+
+# Context
+
+## Madagascar biodiversity
+
+### An unparralleled biodiversity
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centering \includegraphics[width=4cm]{figs/Gondwana.png}
+\begin{block}{}
+\begin{itemize}
+\item Madagascar: top 3 of the countries with mega-diversity
+\item Vascular plants: 12000 species, endemism$=$85\%
+\item Trees: endemism$=$96\%
+\item Invertebrates: 5800 species, endemism$=$86\%
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.5\textwidth}
+\centering \includegraphics[width=4.5cm]{figs/natural-history.jpg}
+\end{column}
+\end{columns} 
+
+### Concentrated in forests
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{center}
+\begin{block}{Tropical forests}
+$>$50\% of the terrestrial species
+\end{block}
+\vspace{0.25cm}
+\includegraphics[width=6cm]{figs/Radeau.png}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}
+\centering \includegraphics[width=4cm]{figs/Mada_Forest.png}
+\end{column}
+\end{columns} 
+
+## Threats to biodiversity
+
+### Deforestation and demography
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{block}{}
+\begin{itemize}
+\item 10 to 15\% of original forest
+\item Deforestation rate: $\sim$1\%$\cdot$yr$^{-1}$
+\item 1950--2000: 10\% of species committed to extinction
+\end{itemize}
+\end{block}
+\centering \includegraphics[width=6cm]{figs/Demography.png}
+\begin{block}{}
+\begin{itemize}
+\item Demographic rate: $>$3\%$\cdot$yr$^{-1}$
+\item Doubling-time: 25 years
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.5\textwidth}
+\centering \includegraphics[width=4.5cm]{figs/Deforestation.png}
+\end{column}
+\end{columns} 
+
+### Predicted climate change
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{block}{}
+\begin{itemize}
+\item Mean temperature increase: +1.1 to +2.7$^{\circ}$C
+\item Wetter summer (up to +200 mm.yr$^{-1}$)
+\item Drier winter in the SE (down to -100 mm.yr$^{-1}$) and wetter winter elsewhere
+(up to +100 mm.yr$^{-1}$)
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.5\textwidth}
+\centering \includegraphics[width=4cm]{figs/Clim_Hannah.png}
+\end{column}
+\end{columns} 
+
+### Predicted climate change
+
+\begin{tabular}{cc}
+  \includegraphics[width=4cm]{figs/Brachypteracias_leptosomus.jpg} & 
+  \includegraphics[width=4cm]{figs/Asuarezensis.png} \\
+  \includegraphics[width=4cm]{figs/Calumma_tsaratananensis.png} &
+  \includegraphics[width=4cm]{figs/Platypelis_alticola.png} \\
+\end{tabular}
+Andriamasimanana 2013, Vieilledent 2013, Raxworthy 2008
+
+<!-- ================================================================= -->
+<!-- PART 3: Objectives -->
+<!-- ================================================================= -->
+
+# Objectives
+
+## Expected results
+
+### Expected results
+
+**BioSceneMada**: Scénarios d'évolution de la **biodiversité** sous l'effet conjoint du **changement climatique** et de la **déforestation** à Madagascar. [<https://bioscenemada.cirad.fr>]
+
+\vspace{0.25cm}
+
+\bcols
+\bcol{0.5\textwidth}
+
+1. **Anticiper les scénarios** possibles de la biodiversité (risques / opportunités)
+2. **Construire des outils** d'aides à la décision (chiffres, outils informatiques, cartes)
+3. **Proposer des solutions** de gestion: aires protégées $+$ mécanisme REDD (accord de Paris)
+4. **Formation** Etudiants, gestionnaires, décideurs
+
+\ecol
+\bcol{0.5\textwidth}
+
+\centering \includegraphics[width=\textwidth]{figs/Scheme}
+
+\ecol
+\ecols
+
+## Deliverables
+
+### Deliverables
+
+- Databases
+- Maps
+- Methods and softwares
+- Scientific articles
+
+<!-- ================================================================= -->
+<!-- PART 4: Logistic organization -->
+<!-- ================================================================= -->
+
+# Logistic organization
+
+## Funding
+
+### Funding
+
+- Fondation pour la Recherche sur la Bodiversité (FRB)
+- Fond Français pour l'Environnement Mondial (FFEM)
+- Call "Scénarios et modélisation de la biodiversité"
+- Total: 267,000 euros, Funded: 117,000 euros for 5 years
+
+\vspace{0.25cm}
+
+\centering \includegraphics[width=0.5\textwidth]{figs/logos_FRb_FFEM.jpg}
+
+## Partners
+
+### Partners
+
+\begin{center}
+\small{Ghislain Vieilledent$^{1}$\hspace{0.5cm}Tom Allnutt$^{2}$\hspace{0.5cm}Clovis
+Grinand$^{3}$\\Miguel Pedrono$^{4}$\hspace{0.5cm}Jean-Roger Rakotoarijaona
+$^{5}$\hspace{0.5cm}Dimby Razafimpahanana$^{2}$}
+
+\vspace{0.25cm}
+
+\scriptsize{
+\begin{tabular}{l}
+$[1]$ \textbf{Cirad AMAP}, $[2]$ \textbf{WCS}, $[3]$ \textbf{ETC Terra/Nitid\ae}, $[4]$
+\textbf{Cirad ASTRE}, $[5]$ \textbf{ONE}  
+\end{tabular}
+}
+\end{center}
+
+\vspace{0.25cm}
+
+\centering \includegraphics[width=\textwidth]{figs/partners_id}
+
+\vspace{0.25cm}
+
+\centering \includegraphics[width=\textwidth]{figs/partners_logos}
+
+## Planning
+
+### Planning
+
+- **Five years** (May 2014 - October 2019)
+- **Three years** for scientific research
+- **Two years** to transmit and value the research results
+
+\centering \includegraphics[width=6cm]{figs/Timetable.png}
