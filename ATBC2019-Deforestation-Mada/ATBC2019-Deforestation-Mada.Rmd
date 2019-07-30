@@ -1,0 +1,238 @@
+---
+classoption: table, dvipsname
+colorlinks: no
+fontsize: 10pt
+link-citations: yes
+linkcolor: Black
+output:
+  beamer_presentation:
+    includes:
+      after_body: doc_suffix.tex
+      before_body: doc_prefix.tex
+      in_header: header.tex
+    slide_level: 3
+urlcolor: Maroon
+---
+
+```{r options, include=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=TRUE, cache=TRUE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+<!-- ================================================================= -->
+<!-- PART 1: Historical deforestation -->
+<!-- ================================================================= -->
+
+# Historical deforestation
+
+### Objective
+
+- To obtain recent (2000-2017) and accurate deforestation rate estimates for Madagascar.
+
+### Method
+
+- We combined:
+  - Harper 2007 natural forest cover change map in 1953-2000
+  - Hansen 2013 tree cover loss in 2000-2017
+
+\includegraphics[width=10cm]{figs/Harper2007.png}
+
+\includegraphics[width=5cm]{figs/Hansen2013.png}
+
+- We obtained: an updated natural forest cover change map from 2000 to 2017. Free of clouds. At 30 m resolution.
+
+### Historical deforestation
+
+\centering \includegraphics[width=8cm]{figs/fig_fcc.png}
+
+### Fragmentation
+
+\centering \includegraphics[width=8cm]{figs/dist.png}
+
+In 2017, about 50% of the forest is located within a distance of 100 m from a forest edge or open area.
+
+### Deforestation rates
+
+\small{\begin{tabular}[t]{lrrrr}
+\hiderowcolors
+\toprule
+Year & Forest (Kha) & Unmap (Kha) & Annual defor. (Kha/yr) & Rate (\%/yr)\\
+\midrule
+\showrowcolors
+1953 & 15,968 & 0 & - & -\\
+1973 & 14,241 & 3,317 & 86 & 0.6\\
+1990 & 10,762 & 0 & 205 & 1.6\\
+2000 & 9,879 & 0 & 88 & 0.8\\
+2005 & 9,673 & 0 & 41 & 0.4\\
+2010 & 9,320 & 0 & 71 & 0.7\\
+2015 & 8,770 & 0 & 110 & 1.2\\
+2017 & 8,446 & 0 & 162 & 1.9\\
+\bottomrule
+\end{tabular}}
+
+Increase in deforestation rates since 2005.
+
+### Publication
+
+**Vieilledent G., C. Grinand, F. A. Rakotomalala, R. Ranaivosoa, J.-R. Rakotoarijaona, T. F. Allnutt, and F. Achard.** 2018. Combining global tree cover loss data with historical national forest-cover maps to look at six decades of deforestation and forest fragmentation in Madagascar. _Biological Conservation_. 222: 189-197. [doi:10.1016/j.biocon.2018.04.008].
+
+### Maps
+
+- Interactive map at <https://forestatrisk.cirad.fr/mada/>
+- GIS files on Cirad Dataverse: <http://dx.doi.org/10.18167/DVN1/AUBRRC>
+
+\centering \includegraphics[width=8cm]{figs/forestatrisk_cirad_fr}
+
+<!-- ================================================================= -->
+<!-- PART 2: Causes -->
+<!-- ================================================================= -->
+
+# Current deforestation
+
+### Objective
+
+- To understand the proximate and underlying causes of current deforestation in Madagascar
+
+### Methods
+
+- Focus on Western Madagascar around 3 protected areas: **Menabe-Antimena**, **Kirindy-Mite**, and **Mikea**
+
+\centering \includegraphics[width=\textwidth]{figs/deforestation}
+
+- Field observations (date and causes of deforestation)
+- Surveys: local farmers, administration and environmental stakeholders
+- Bibliographic study: reports, articles, FAOSTATS, UN Comtrade
+
+### Proximate causes
+
+\centering \includegraphics[width=8cm]{figs/causes}
+
+- Slash-an-burn agriculture for maize and peanuts
+- Cash crops (small part for subsistence)
+- Fires after cyclones to open grasslands for zebu grazing
+
+### Exports
+
+\centering \includegraphics[width=8cm]{figs/exports}
+
+- Since 2011: peanut boom
+- High global demand for vegetable oil
+- Many intermediaries: buyers, resellers, export companies
+
+### Ultimate causes
+
+\centering \includegraphics[width=8cm]{figs/310_Menabe}
+
+- It's not only poverty that explains deforestation
+- Unregulated global market (no zero imported deforestation policy)
+- Weak enforcement of the environmental law
+
+### Publication
+
+**Vieilledent G., C. Grinand, M. Pedrono, T. Rabetrano, J.-R. Rakotoarijaona, B. Rakotoarivelo, F. A. Rakotomalala, L. Rakotomalala, A. Razafimpahanana and F. Achard.** It’s not only poverty: global trade and bad governance are responsible for the unceasing deforestation in western Madagascar. In prep.
+
+<!-- ================================================================= -->
+<!-- PART 3: Future -->
+<!-- ================================================================= -->
+
+# Future forest cover
+
+### Objective
+
+Deriving future forest cover maps for Madagascar (2050, 2100) under a business-as-usual scenario (100,000 ha/yr).
+
+\centering \includegraphics[width=10cm]{figs/deforestation_sambirano}
+
+
+### Modelling
+
+Data
+
+- Historical deforestation data: 2000-2010
+- Explicative variables: **landscape**, **accessibility**, **land-tenure**
+- 40,000 sample points (balanced sampling deforested/non-deforested areas)
+
+\centering \includegraphics[width=10cm]{figs/variables}
+
+### Modelling
+
+Model
+
+- $Y_{ij} \in \{0, 1\} \sim \mathcal{B}ernoulli(\theta_{ij})$
+- $\logit(\theta_{ij}) = f(\text{spatial factors}_i) + \rho_j$
+- Autocorrelated spatial random effects $\rho_j$ (10 km) to account for **unmeasured** or **unmeasurable** factors: population density, soil type, geographical barriers, law enforcement locally
+- Hierarchical Bayesian framework
+
+\centering \includegraphics[height=3cm]{figs/iCAR}\hspace{1cm}
+\centering \includegraphics[height=3cm]{figs/Bayes}
+
+### Results
+
+Variable effects
+
+\centering \includegraphics[width=\textwidth]{figs/variable_effects}
+
+### Results
+
+Spatial random effects interpolated at 1 km
+
+\centering \includegraphics[height=7cm]{figs/rho}
+
+### Results
+
+- Spatial probability of deforestation at 30 m in 2010
+- Projected forest cover change over the period 2010-2050 assuming a deforestation of 100,000 ha/yr 
+- Interactive map at <https://forestatrisk.cirad.fr/mada/>
+
+\centering \includegraphics[width=8cm]{figs/proj2050}
+
+### Results
+
+- High regional variability of the deforestation process
+- Deforestation should occur preferentially outside protected areas (on the short term)
+- Remaining forest in 2050 (~4 Mha) concentrated in areas at **high elevation**, and with **low accessibility**
+
+\centering \includegraphics[width=8cm]{figs/proj2050}
+
+### Software
+
+\centering \includegraphics[width=\textwidth]{figs/forestatrisk_pkg}
+
+- `forestatrisk` Python package: <https://github.com/ghislainv/forestatrisk>
+- Rasters processed by chuncks: high resolution (30 m, large spatial scale)
+- Fast, without memory issues
+
+<!-- ================================================================= -->
+<!-- PART 4: Perspectives -->
+<!-- ================================================================= -->
+
+# Perspectives
+
+### Impact on policy
+
+Malagasy President's communication to council of ministers on 27/02/2019 untitled ["Recouvrir Madagascar de forêt"](https://ur-forets-societes.cirad.fr/actualites/le-president-malgache-cite-une-publication-du-cirad-pour-le-lancement-d-un-plan-de-conservation-et-de-restauration-des-forets). One Planet Summit Nairobi.
+
+\centering \includegraphics[width=8cm]{figs/Rajoelina}
+
+### Restauration
+
+Urgent action is needed to
+
+1. Protect remaining natural forests and stop deforestation
+2. Restore forest ecosystems (reforestation)
+
+Reforestation:
+
+1. Tropical forests with native tree species (ecological corridors)
+2. Plantations to lower human pressure on natural forests (charcoal)
+
+\centering \includegraphics[height=3.cm]{figs/TropicalForest}\hspace{1cm}
+\centering \includegraphics[height=3cm]{figs/Eucalyptus}
