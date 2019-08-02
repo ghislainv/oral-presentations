@@ -1,3 +1,4 @@
+1. [ATBC2019-July2019-The-Fate-of-African-Forests](ATBC2019-The-Fate-of-African-Forests.pdf)
 1. [ATBC2019-July2019-Deforestation-Mada](ATBC2019-Deforestation-Mada.pdf)
 1. [useR2019-July2019](useR2019-July2019.pdf)
 1. [AG-AMAP-Jun2019](AG-AMAP-June2019.pdf)
