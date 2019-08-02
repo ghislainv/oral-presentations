@@ -1,0 +1,165 @@
+---
+classoption: table, dvipsname, compress
+output: 
+  beamer_presentation:
+    # keep_tex: true
+    # toc: true
+    slide_level: 3
+    includes:
+      in_header: header.tex
+      before_body: doc_prefix.tex
+      after_body: doc_suffix.tex
+colorlinks: no
+fontsize: 10pt
+link-citations: yes
+linkcolor: Black
+---
+
+```{r options, echo=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=FALSE, cache=FALSE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+# Introduction
+
+## Long term projections
+
+### Long term projections
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Tropical forests shelter most of the terrestrial biodiversity and carbon stocks
+- They are currently being deforested at rates close to **1%/yr**
+
+\ecol
+\bcol{0.5\textwidth}
+
+\centering \includegraphics[width=5cm]{figs/fcc13_COD}
+**2005-2015** deforestation in Democratic Republic of the Congo
+
+\ecol
+\ecols
+
+\vspace{0.5cm}
+
+\centering What happens when you project annual deforestation on the medium to long term (2050-2100)?
+
+$\rightarrow$ Long term projections
+
+## Spatial projections
+
+### Spatial projections
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Not all forests are equally threathened
+- And biodiversity and forest carbon stocks vary spatially
+
+\ecol
+\bcol{0.5\textwidth}
+
+\centering \includegraphics[width=5cm]{figs/agb_COD}
+Aboveground biomass in Democratic Republic of the Congo
+
+\ecol
+\ecols
+
+\vspace{0.5cm}
+
+\centering What are the consequences of long term deforestation for biodiversity and CO2 emissions?
+
+$\rightarrow$ Long term **spatial** projections
+
+## Objectives
+
+### Objectives
+
+- Deriving high-resolution maps of the spatial probability of deforestation
+- Projecting forest cover change until 2050 under a business-as-usual scenario
+
+# Data
+
+## Historical deforestation
+
+### Historical deforestation
+
+- Wall-to-wall map of **tropical moist forest cover** change at 30 m resolution from 1990 to 2018
+- Using the 37-years full Landsat satellite archive and Google Earth Engine
+- Time-series analysis at the pixel scale using a complex decision tree based on expert knowledge
+
+\centering \includegraphics[width=10cm]{figs/Christelle_Africa}
+
+### Historical deforestation
+
+\centering \includegraphics[width=6.5cm]{figs/Deforestation_Patterns}
+
+### Historical deforestation
+
+- **Vancutsem Ch., F. Achard , J.-F. Pekel , G. Vieilledent, S. Carboni , D. Simonetti , J. Gallego.** Long-term monitoring of the tropical moist forests dynamics reveals unprecedented deforestation rates. Submitted to _Nature Communications_.
+
+- Response variale: deforestation on 2005-2015
+
+## Explicative variables
+
+### Explicative variables
+
+- Variable types: **landscape**, **accessibility**, **protection status**
+
+```{r variables}
+tab1 <- read.table("tables/variables.txt",sep=",",header=TRUE)
+names(tab1) <- c("Product","Source","Variable derived","Unit","Resolution (m)")
+# Kable
+knitr::kable(tab1, linesep="", booktabs=TRUE) %>%
+  kable_styling(latex_options = c("striped"), font_size=7) %>%
+  column_spec(1, width = "2cm") %>%
+  column_spec(3, width = "2cm")
+```
+
+$(1)$ Vancutsem et al., $(2)$ <http://srtm.csi.cgiar.org>, $(3)$ <http://www.geofabrik.de>, $(4)$ <http://protectedplanet.net> 
+
+# Modelling
+
+## Statistical model
+
+### Statistical model
+
+- $Y_{ij} \in \{0, 1\} \sim \mathcal{B}ernoulli(\theta_{ij})$
+- $\logit(\theta_{ij}) = f(\text{spatial factors}_i) + \rho_j$
+- Autocorrelated spatial random effects $\rho_j$ (10 km) to account for **unmeasured** or **unmeasurable** factors: population density, soil type, geographical barriers, law enforcement locally
+- Hierarchical Bayesian framework
+
+\centering \includegraphics[height=3cm]{figs/iCAR}\hspace{1cm}
+\centering \includegraphics[height=3cm]{figs/Bayes}
+
+### Statistical model
+
+- One model per country
+- 40,000 sample points (balanced sampling deforested/non-deforested areas)
+- Variable selection based on expert knowledge regarding effect sign
+
+## Software
+
+### Software
+
+\centering \includegraphics[width=\textwidth]{figs/forestatrisk_pkg}
+
+- `forestatrisk` Python package: <https://github.com/ghislainv/forestatrisk>
+- Rasters processed by chuncks: high resolution (30 m, large spatial scale)
+- Fast, without memory issues
+- Parallel computation: one node per country
+
+# Results
+
+
+
+
