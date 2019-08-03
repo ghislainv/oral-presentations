@@ -1,0 +1,252 @@
+---
+classoption: table, dvipsname, compress
+output: 
+  beamer_presentation:
+    # keep_tex: true
+    # toc: true
+    slide_level: 3
+    includes:
+      in_header: header.tex
+      before_body: doc_prefix.tex
+      after_body: doc_suffix.tex
+colorlinks: no
+fontsize: 10pt
+link-citations: yes
+linkcolor: Black
+---
+
+```{r options, echo=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=FALSE, cache=FALSE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+# Introduction
+
+## Context
+
+### Long term projections
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Tropical forests shelter most of the terrestrial biodiversity and carbon stocks
+- They are currently being deforested at rates close to **1%/yr**
+
+\ecol
+\bcol{0.5\textwidth}
+
+\centering \includegraphics[width=5cm]{figs/fcc13_COD}
+**2005-2015** deforestation in Democratic Republic of the Congo
+
+\ecol
+\ecols
+
+\vspace{0.5cm}
+
+\centering What happens when you project annual deforestation on the medium or long term (2050-2100)?
+
+### Spatial projections
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Not all forests are equally threathened
+- And biodiversity and forest carbon stocks vary spatially
+
+\ecol
+\bcol{0.5\textwidth}
+
+\centering \includegraphics[width=5cm]{figs/agb_COD}
+Aboveground biomass in Democratic Republic of the Congo
+
+\ecol
+\ecols
+
+\vspace{0.5cm}
+
+\centering What are the consequences of long term deforestation for biodiversity and CO2 emissions?
+
+## Objectives
+
+### Objectives
+
+- Modelling the deforestation process spatially
+- Deriving high-resolution maps of the spatial probability of deforestation
+- Projecting forest cover change until 2050 under a business-as-usual scenario
+- At the pantropical scale
+
+\centering \includegraphics[width=8cm]{figs/Moist_Tropical_Forest}
+
+# Data
+
+## Historical deforestation
+
+### Historical deforestation
+
+- Wall-to-wall map of **tropical moist forest cover change** at 30 m resolution from 1990 to 2018
+- Using the 37-years full Landsat satellite archive and Google Earth Engine
+- Time-series analysis at the pixel scale using a complex decision tree based on expert knowledge
+
+\centering \includegraphics[width=10cm]{figs/Christelle_Africa}
+
+### Historical deforestation
+
+\centering \includegraphics[width=6.5cm]{figs/Deforestation_Patterns}
+
+### Historical deforestation
+
+- **Vancutsem Ch., F. Achard , J.-F. Pekel , G. Vieilledent, S. Carboni , D. Simonetti , J. Gallego.** Long-term monitoring of the tropical moist forests dynamics reveals unprecedented deforestation rates. Submitted to _Nature Communications_.
+
+- Hansen et al. 2013: underestimated deforestation rates in Africa (small scale mosaic deforestation)
+
+- Response variable: deforestation on 2005-2015
+
+## Explicative variables
+
+### Explicative variables
+
+- Variable types: **landscape**, **accessibility**, **protection status**
+
+```{r variables}
+tab1 <- read.table("tables/variables.txt",sep=",",header=TRUE)
+names(tab1) <- c("Product","Source","Variable derived","Unit","Resolution (m)")
+# Kable
+knitr::kable(tab1, linesep="", booktabs=TRUE) %>%
+  kable_styling(latex_options = c("striped"), font_size=7) %>%
+  column_spec(1, width = "2cm") %>%
+  column_spec(3, width = "2cm")
+```
+
+$(1)$ Vancutsem et al., $(2)$ <http://srtm.csi.cgiar.org>, $(3)$ <http://www.geofabrik.de>, $(4)$ <http://protectedplanet.net> 
+
+# Modelling
+
+## Statistical model
+
+### Statistical model
+
+- $\textcolor{blue}{Y_{ij}} \in \{0, 1\} \sim \mathcal{B}ernoulli(\theta_{ij})$
+- $\logit(\theta_{ij}) = \textcolor{blue}{X_i}\textcolor{red}{\beta} + \textcolor{red}{\rho_j}$
+
+- Autocorrelated spatial random effects $\textcolor{red}{\rho_j}$ (10 km) to account for **unmeasured** or **unmeasurable** factors: population density, soil type, geographical barriers, law enforcement locally
+- Structure spatially the **residual variability** that is not explained by the model's variables
+- Hierarchical Bayesian framework
+
+\centering \includegraphics[height=3cm]{figs/iCAR}\hspace{1cm}
+\centering \includegraphics[height=3cm]{figs/Bayes}
+
+### Statistical model
+
+- One model per country
+- 40,000 sample points (balanced sampling deforested/non-deforested areas)
+- Variable selection (statistical significance $+$ process coherence)
+
+## Software
+
+### Software
+
+\centering \includegraphics[width=\textwidth]{figs/forestatrisk_pkg}
+
+- `forestatrisk` Python package: <https://github.com/ghislainv/forestatrisk>
+- Rasters processed by chuncks: high resolution (30 m, large spatial scale)
+- Fast, without memory issues
+- Parallel computation: one node per country
+
+# Results
+
+## Parameters
+
+### Parameters
+
+```{r parameters, size="\\tiny"}
+path <- "tables/summary_hSDM_COD.txt"
+conn <- file(path, open="r")
+#writeLines(readLines(conn))
+close(conn)
+```
+
+Parameter values: $\textcolor{red}{\beta}$ and variance $\textcolor{red}{V_{\rho}}$ of the spatial random effects.
+
+\centering \includegraphics[width=\textwidth]{figs/variable_effects}
+
+- Set of parameters for each country.
+- Each effect can be easily interpreted.
+- Effects can be compared between countries (efficiency of the protected areas, effect of road infrastructures).
+
+### Spatial random effects
+
+\centering \includegraphics[width=7cm]{figs/rho_orig_COD}
+
+Then interpolated at 1km.
+
+## Spatial probability
+
+### Spatial probability of deforestation
+
+\centering \includegraphics[width=6cm]{figs/prob_COD}
+
+### Future forest cover
+
+\centering \includegraphics[width=6cm]{figs/fcc_35yr_COD}
+
+Projected forest cover change in **2015-2050** under a business-as-usual scenario.    
+BAU: historical deforestation (ha/yr) observed on **2005-2015**.
+
+### African continent
+
+\centering \includegraphics[width=10cm]{figs/prob_Africa}
+
+Spatial probability of deforestation.
+
+### African continent
+
+\centering \includegraphics[width=10cm]{figs/fcc_35yr_Africa.png}
+
+Forest cover change in **2015-2050**, BAU scenario **2005-2015**.    
+
+### African continent
+
+\centering \includegraphics[width=6cm]{figs/fcc_35yr_Africa.png}
+
+- **No more moist forests in 2050**: West-African countries except Liberia, East-African countries including Madagascar
+- **Remaining forest block**: Congo, Gabon, Equatorial-Guinea, Cameroon
+- **Highly fragmented forest**: Democratic Republic of the Congo
+- **Two blocks of forest on both sides of the Congo River**
+
+# Conclusion
+
+## Projections
+
+### Projections
+
+- **Fake** and **unrealistic** scenario?
+  - Simple BAU scenario **driven by observations** (deforestation on 2005-2015)
+  - **Optimistic scenario**: no effect of the demographic growth in Africa in the model
+
+\centering \includegraphics[width=6cm]{figs/UN-regional-pop-projections.png}
+  
+### Projections
+
+- **Projections taken seriously** by the European Commission
+- On 23 July 2019, the European Commission presented a **set of actions** to protect and restore the world's forests. [EC Communication](https://bit.ly/2JTAYRh).
+
+\centering \includegraphics[width=7cm]{figs/EU}
+  
+## Perspectives
+
+### Perspectives
+
+- Maps can be used to identify **high-priority conservation areas** (biodiversity, carbon, etc.)
+- **Additional scenario** taking into account the demographic growth
+- Extending the work to the **entire tropics**
+- **Spreading the word** to (hopefully) have impact on policies
+
+\centering \includegraphics[width=7cm]{figs/tarzan.jpg}
