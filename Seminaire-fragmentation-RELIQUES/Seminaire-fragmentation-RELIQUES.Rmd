@@ -227,18 +227,18 @@ Forest cover change in **2015-2050**, BAU scenario **2005-2015**.
 
 ### Historical forest cover change
 
-- Forest cover change 2000-2010-2019
+- Past deforestation 2000-2010-2019
 - Map: <https://forestatrisk.cirad.fr/newcal>
-- Forest cover AND annual deforestation
+- Forest cover AND deforestation
 
 \centering \includegraphics[width=8cm]{figs/forest_jrc_NCL.png}
 
-### Comparison
+### Comparison for New-Caledonia
 
 Forest cover:
 
 - FAO statistics (825,000 ha)
-- CORIFOR: Digitized map at 1/3000 from 2008 aerial photos
+- CIRAD-IAC: Digitized map at 1/3000 from 2008 aerial photos
 
 \vspace{0.5cm}
 
@@ -254,13 +254,32 @@ Deforestation:
 - Effects of mines and ultramafic soils
 - Deforestation causes: mines vs. fires
 
+\vspace{0.5cm}
+
+\centering \includegraphics[height=5cm]{figs/mines.png}
+
 ### Fragmentation
 
 - Fragmentation: past, future
 - Distance to forest edge
 - Amount of forest habitat in the neighborhood
 
+\begin{tabular}{cc}
+\includegraphics[height=5cm]{figs/fig_fcc.png} & \includegraphics[height=4cm]{figs/dist.png}
+\end{tabular}
+
+### Impact on biodiversity
+
+- Effect of deforestation and fragmentation on biodiversity
+- Support for decision makers
+
+\centering \includegraphics[height=6cm]{figs/beta-diversity.png}    
+$\beta$ diversity in Madagascar
+
 ### Forest gain
 
 - Forest regeneration
 
+\vspace{0.5cm}
+
+\includegraphics[height=5cm]{figs/regrowth.png}
