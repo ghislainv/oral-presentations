@@ -1,3 +1,4 @@
+1. [jSDM-GAMBAS-June2020](jSDM-GAMBAS-June2020.pdf)
 1. [Seminaire-Sept2019-fragmentation-RELIQUES](Seminaire-fragmentation-RELIQUES.pdf)
 1. [ATBC2019-July2019-The-Fate-of-Tropical-Forests](ATBC2019-The-Fate-of-Tropical-Forests.pdf)
 1. [ATBC2019-July2019-Deforestation-Mada](ATBC2019-Deforestation-Mada.pdf)

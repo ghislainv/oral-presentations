@@ -1,0 +1,415 @@
+---
+classoption: table, dvipsname, compress
+output: 
+  beamer_presentation:
+    # keep_tex: true
+    # toc: true
+    slide_level: 3
+    includes:
+      in_header: header.tex
+      before_body: doc_prefix.tex
+      after_body: doc_suffix.tex
+colorlinks: no
+fontsize: 10pt
+link-citations: yes
+linkcolor: Black
+urlcolor: Maroon
+---
+
+```{r options, include=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=TRUE, cache=TRUE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+# Introduction
+<!-- ================================================================= -->
+<!-- PART 1: Introduction -->
+<!-- ================================================================= -->
+
+## State of the art
+
+### Available R packages for JSDMs
+
+**Community of coexisting R/Python packages**
+
+- **boral** (Warton and Hui)
+- **HMSC** (Ovaskainen and Tikhonov)
+- **gjam** (Clark and Gelfand)
+- **BayesComm** (Golding)
+- **s-jSDM** (Hartig and Pichler)
+- \ldots
+
+**Wilkinson, D. P.; Golding, N.; Guillera-Arroita, G.; Tingley, R.; McCarthy, M. A.; Peres-Neto, P.** 2018. A comparison of joint species distribution models for presence-absence data _Methods in Ecology and Evolution_, **10**:198-211. [doi: [10.1111/2041-210x.13106](https://doi.org/10.1111/2041-210x.13106)].
+
+**Pichler, M.; Hartig F.** 2020. A new method for faster and more accurate inference of species associations from novel community data. _arXiv_ pre-print, https://arxiv.org/abs/2003.05331.
+
+### Limitations
+
+- Computational speed (boral, HMSC)
+- Model specifications (BayesComm, s-jSDM)
+	- eg. site random effects, functional traits, phylogenetic data
+- Heterogenous model performance (HMSC, boral, gjam)
+
+\centering \includegraphics[width=8cm]{figs/Norberg2019-EM.png}
+
+Norberg et al. 2019
+
+## Obectives
+
+### Obectives of the jSDM R package
+
+- Make our hands dirty to understand better the JSDM functioning
+- Optimized code for fast MCMC computations
+- User friendly: package, functions, articles, vignettes
+- **A base for testing a large variety of models**:
+  - occurrence and count data (Bernoulli/Binomial -- Poisson/Neg-Binomial)
+	- probit/logit link function for occurrences
+	- functional traits and phylogenetic data
+	- species and site random/fixed effects
+	- presence-only data
+	
+\vspace{0.25cm}
+
+- Companion for the `hSDM` R package, hierarchical **one**-species distribution models (mixed models, imperfect detection, spatial autocorrelation) <https://ecology.ghislainv.fr/hSDM/>
+
+<!-- ================================================================= -->
+<!-- PART 2: jSDM R package -->
+<!-- ================================================================= -->
+
+# The `jSDM` R package
+
+## Joint Species Distribution Models
+
+### JSDM utility
+
+\bcols
+\bcol{0.6\textwidth}
+
+- Fit species distribution models
+- Accounting for species co-occurrences
+
+\includegraphics[width=\textwidth]{figs/allfrogs1.jpg}
+
+\vspace{0.5cm}
+
+- Can be used to explain/predict species range and produce species range map
+
+\includegraphics[width=\textwidth]{figs/SDM.jpg}
+
+\ecol
+\bcol{0.4\textwidth}
+
+\includegraphics[width=\textwidth]{figs/Litoria_ewingii.jpg}     
+
+\ecol
+\ecols
+
+### Data to fit JSDM
+
+- Species presence/absence on sites
+- Environmental variables (climate, lancover) at each site
+
+\vspace{0.5cm}
+
+```{r jSDM_data, echo=FALSE}
+df <- read.csv("tabs/jSDM_tab.csv")
+colnames <- c("Sites","Sp1","Sp2","...","Sp_nsp","X1","X2","...","X_nvar")
+knitr::kable(df, col.names=colnames, booktabs=TRUE) %>%
+		kableExtra::kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE)
+```
+
+## Model specification
+
+### Statistical model
+
+$$\blue{y_{ij}}=\begin{cases}
+    0 & \text{ if species $j$ is absent on site $i$}\\
+    1 &  \text{ if species  $j$ is present on site $i$}.
+    \end{cases}$$
+    
+We assume $\blue{y_{ij}} \sim \mathcal{B}ernoulli(\theta_{ij})$, with:
+
+$$\text{probit}(\theta_{ij}) = \red{\alpha_i} + \red{\beta_{0j}} + \blue{X_i}\red{\beta_j} + \red{W_i\lambda_j}$$
+$\red{\alpha_i}$: site random effects, with $\red{\alpha_i} \sim \mathcal{N}(0,\red{V_{\alpha}})$    
+$\blue{X_i}$: known environmental variables on site $i$    
+$\red{W_i}$: latent variables for site $i$
+$\red{\beta_j, \lambda_j}$: species fixed effects
+
+Latent variables $\red{W_i}$: missing predictors $+$ main axes of covariation across taxa (see Warton et al. 2015 <doi: [10.1016/j.tree.2015.09.007](https://doi.org/10.1016/j.tree.2015.09.007)>).
+
+### Statistical model
+
+The previous latent variable model (LVM):
+
+$$\text{probit}(\theta_{ij}) = \red{\alpha_i} + \red{\beta_{0j}} + \blue{X_i}\red{\beta_j} + \red{W_i\lambda_j}$$
+
+is equivalent to a multivariate probit regression (MPR):
+
+$$\text{probit}(\theta_{ij}) = \red{\alpha_i} + \red{\beta_{0j}} + \blue{X_i}\red{\beta_j} + \red{u_{ij}}$$
+
+with $\red{u_{ij}} \sim \mathcal{N}(0, \Sigma)$ (where $\Sigma$ is the variance-covariance matrix) and with the constraint that $\Sigma = \Lambda \Lambda^{\prime}$ (where $\Lambda$ is the full matrix of factor loadings, with the $\lambda_j$ as its columns).
+
+### Complexity of the model
+
+\bcols
+\bcol{0.6\textwidth}
+
+- Multi-dimensionality: parameters $\red{\alpha_i}$ for sites and $\red{\beta_j, \lambda_j}$ for species
+- Non Gaussian process
+- Latent-variables $\red{W_i}$
+- Mixed model with site random effects $\red{\alpha_i} \sim \mathcal{N}(0,\red{V_{\alpha}})$
+
+\ecol
+\bcol{0.4\textwidth}
+
+\includegraphics[width=\textwidth]{figs/complexity.jpg} 
+
+\ecol
+\ecols
+
+### jSDM R package
+
+\includegraphics[width=\textwidth]{figs/jSDM-website.png}
+
+- <https://ecology.ghislainv.fr/jSDM>
+- Made with Rcpp* packages
+
+## Rcpp* packages
+
+### Rcpp R package
+
+- **Rcpp** is an R package to extend R with C++ code
+- Main advantage: C++ is fast, it accelerates R (see next sections)
+- Written by **Dirk EDDELBUETTEL** and **Romain FRANCOIS**
+- <http://www.rcpp.org/>
+
+### Simple Rcpp example
+
+**C++ code** (in file `Code/addition.cpp`)
+```{Rcpp Rcpp-addition, eval=FALSE}
+#include <Rcpp.h>
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+int addition(int a, int b) {
+  return a + b;
+}
+```
+
+**R code**
+```{r addition-r}
+Rcpp::sourceCpp("Code/addition.cpp")
+addition(2, 2)
+```
+
+### Rcpp advantages
+
+**Thanks to `Rcpp::sourceCpp()`**
+
+- Compile the C++ code
+- Export the function to the R session
+- Direct interchange of R objects (including S3, S4) between R and C++
+- ... (many more, see `vignette("Rcpp-package")`)
+
+**In an R package**
+
+- `Rcpp.package.skeleton()` to generate a new Rcpp package (modifying `DESCRIPTION` and `NAMESPACE`)
+- `Rcpp::compileAttributes()` scans the C++ files for `Rcpp::export` attributes and generates the code required to make the functions available in R.
+
+### GSL and RcppGSL for fast random draws
+
+\bcols
+\bcol{0.1\textwidth}
+\includegraphics[height=1.5cm]{figs/logo_GNU.png}
+\ecol
+\bcol{0.9\textwidth}
+
+**GNU Scientific Library**
+
+- Numerical library for C and C++ programmers
+- Reliable random number generator algorithms
+- Thoroughly tested and fast random number distributions
+- Linear algebra (matrices and vectors)
+- <https://www.gnu.org/software/gsl/>
+
+\vspace{0.5cm}
+
+**RcppGSL**
+
+- Interface between R and GSL
+- Using Rcpp to interface R and C
+- <http://dirk.eddelbuettel.com/code/rcpp.gsl.html>
+
+\ecol
+\ecols
+
+### GSL random number distributions
+
+- GSL v2.6 includes **38 random number distributions** (see [GNU GSL](https://www.gnu.org/software/gsl/doc/html/randist.html))
+- It's easy to implement additional random number distributions from the GSL base distributions (e.g. truncated normal distribution)
+- For comparison, R API includes "only" 24 random number distributions (see [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Distribution-functions))
+- Random draws are faster with GSL than with R (eg. `gsl_ran_gamma()` vs. `R::rgamma()`)
+
+### Armadillo and RcppArmadillo for high-performance linear algebra
+
+\bcols
+\bcol{0.1\textwidth}
+\includegraphics[height=1.5cm]{figs/logo_Armadillo.png}  
+\ecol
+\bcol{0.9\textwidth}
+
+**Armadillo**
+
+- C++ library for linear algebra and scientific computing
+- Provides high-level syntax and functionality: speed and ease of use
+- Classes for vectors, matrices and cubes
+- Matrix operations, matrix decomposition, linear model solver, etc.
+- <http://arma.sourceforge.net/>
+
+\vspace{0.5cm}
+
+**RcppArmadillo**
+
+- Interface between R and Armadillo
+- Using Rcpp to interface R and C++
+- <http://dirk.eddelbuettel.com/code/rcpp.armadillo.html>
+
+\ecol
+\ecols
+
+### GSL and Armadillo licenses
+
+- Licenses: GNU General Public License, Apache License 2.0 for Armadillo
+- Free software licenses: we can use, modify and redistribute these softwares
+
+<!-- ================================================================= -->
+<!-- PART 3: -->
+<!-- ================================================================= -->
+
+# Comparison with `boral`/`JAGS`
+
+## `boral` R package
+
+### `boral` R package
+
+- R package interfacing R with JAGS for fitting Joint Species Distribution Models
+- JAGS is Just Another Gibbs Sampler: <http://mcmc-jags.sourceforge.net/>
+- Approach used in Warton et al. 2015:    
+<doi: [10.1016/j.tree.2015.09.007](https://doi.org/10.1016/j.tree.2015.09.007)>
+- boral by Francis K.C. Hui and JAGS by Martyn Plummer
+
+## Data-sets
+
+### Data-sets
+
+```{r data-sets, echo=FALSE}
+library(dplyr)
+datasets <- read.table("tabs/data-sets.csv", header=TRUE, sep=",")
+datasets <- datasets %>%
+	dplyr::mutate(npar=nsite*(1+nlat)+1+nsp*(1+nX+nlat)-1, nobs=nsite*nsp) %>%
+	dplyr::select(dataset,nsite,nsp,nobs,nX,nlat,npar,nmcmc)
+knitr::kable(datasets, booktabs=TRUE) %>%
+		kableExtra::kable_styling(latex_options=c("HOLD_position","striped"), full_width=FALSE)
+```
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tabular}{cccc}
+\includegraphics[width=2cm]{figs/Mosquitos_.jpg} &
+\includegraphics[width=2cm]{figs/Eucalyptus_.jpg} &
+\includegraphics[width=2cm]{figs/Frogs_.jpg} &
+\includegraphics[width=2cm]{figs/Fungi_.jpg} \\
+\textbf{Mosquitos} & \textbf{Eucalyptus} & \textbf{Frogs} & \textbf{Fungi}
+\end{tabular}
+\end{center}
+
+## Results
+
+### Comparison results
+
+**Compilation time** (in minutes)
+```{r time, echo=FALSE}
+load("Code/jSDM_boral_sim.RData")
+load("Code/jSDM_boral_mosquito.RData")
+load("Code/jSDM_boral_eucalypts.RData")
+load("Code/jSDM_boral_frogs.RData")
+load("Code/boral_fungi.RData")
+load("Code/jSDM_fungi.RData")
+
+result <- data.frame(matrix(NA,2,5), row.names=c("boral","jSDM "))
+colnames(result) <- c("Simulated","Mosquitos","Eucalyptus","Frogs","Fungi")
+result[1,] <- c(T_boral_sim, T_boral_Mosquito, T_boral_Eucalypts, T_boral_Frogs, T_boral_Fungi)
+result[2,] <- c(T_jSDM_block_sim, T_jSDM_block_Mosquito, T_jSDM_block_Eucalypts, T_jSDM_block_Frogs, T_jSDM_block_Fungi)
+ratio_speed <- round(mean(as.numeric(result[1,]/result[2,])))
+min_ratio <- round(min(as.numeric(result[1,]/result[2,])))
+max_ratio <- round(max(as.numeric(result[1,]/result[2,])))
+knitr::kable(result, digits =1, booktabs=TRUE) %>%
+		kableExtra::kable_styling(latex_options=c("HOLD_position","striped"), font_size=8, full_width=FALSE)
+```
+
+jSDM is **`r min_ratio` to `r max_ratio`** times faster than boral/jags.
+
+**Root-mean-square error**    
+
+Computed for $\text{probit}(\theta_{ij})$ with the simulated data-set.
+
+```{r RMSE, echo=FALSE}
+library(knitr)
+result <- data.frame(matrix(NA,1,2),row.names=c("RMSE"))
+colnames(result) <- c("boral","jSDM")
+result$boral <- RMSE_boral_sim
+result$jSDM <- RMSE_jSDM_block_sim
+knitr::kable(result, digits=1, booktabs=TRUE) %>%
+	kableExtra::kable_styling(latex_options=c("HOLD_position","striped"), font_size=8, full_width=FALSE)
+```
+
+**Deviance**
+
+```{r deviance, echo=FALSE}
+library(knitr)
+result <- data.frame(matrix(NA,2,5),row.names=c("boral", "jSDM"))
+colnames(result) <- c("Simulated","Mosquitos","Eucalyptus","Frogs","Fungi")
+result[1,] <- c(Deviance_boral_sim, Deviance_boral_Mosquito, Deviance_boral_Eucalypts, Deviance_boral_Frogs, Deviance_boral_Fungi)
+result[2,] <- c( mean(mod_jSDM_block_sim$mcmc.Deviance),  mean(mod_jSDM_block_Mosquito$mcmc.Deviance),  mean(mod_jSDM_block_Eucalypts$mcmc.Deviance),  mean(mod_jSDM_block_Frogs$mcmc.Deviance), mean(mod_jSDM_block_Fungi$mcmc.Deviance))
+knitr::kable(result, digits=0, booktabs=TRUE) %>%
+	kableExtra::kable_styling(latex_options=c("HOLD_position","striped"), font_size=8, full_width=FALSE)
+```
+
+### Conclusion
+
+- Small data-sets **and** simple models: R, *BUGS, JAGS, Stan, INLA, MCMCglmm
+- Large data-sets **or** complex hierarchical models: R $+$ Rcpp $+$ RcppGSL $+$ RcppArmadillo
+
+\vspace{0.5cm}
+
+- With Rcpp* packages, the Gibbs sampler can typically be written in about half a day
+- Code is reusable and easily packageable
+- Tools with incomparable efficiency for statisticians
+
+# Perspectives
+
+## Additional functionalities
+
+### Additional functionalities
+
+- Count data (Poisson/Negative-Binomial)
+- Logit link function for occurrences
+- Functional traits and phylogenetic data
+- Species and site random/fixed effects
+- Presence-only data
+- Spatial autocorrelation for $\alpha_i$ and $W_i$
+
+## SDM vs. JSDM
+
+### SDM vs. JSDM
+
+See notebook

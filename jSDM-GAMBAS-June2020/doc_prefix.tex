@@ -1,0 +1,67 @@
+% Title page
+{
+  \setbeamertemplate{navigation symbols}{}
+
+  % % Title page
+  \begin{frame}[plain, noframenumbering]
+    \begin{center}
+        \small{\textbf{GAMBAS -- Tuesday, June 16th 2020 -- Zoom meeting}}
+    \end{center}
+    \vspace{-0.5cm}
+    \titlepage % Presentation first page
+    \vspace{-2.5cm}
+    \begin{center}
+      \includegraphics[width=10cm]{figs/Banniere.png}
+    \end{center}
+    \begin{center}
+
+      %{\small
+        \begin{tabular}{c}
+          Ghislain VIEILLEDENT and 
+          Jeanne CLEMENT
+        \end{tabular}
+      %}
+
+      \vspace{0.25cm}
+
+      %{\small
+        \begin{tabular}{c}
+          \textbf{Cirad}, UMR AMAP, Montpellier, FRANCE\\
+          AMAP, \textbf{Univ Montpellier}, CIRAD, CNRS, INRAE, IRD, FRANCE
+        \end{tabular}
+      %}
+
+      \vspace{0.25cm}
+
+      \begin{tabular}{C{2cm}C{2cm}C{3cm}}
+        \includegraphics[height=0.7cm]{figs/logo_Cirad.png} &
+        \includegraphics[height=1cm]{figs/logo_AMAP.png} 
+        \includegraphics[height=0.8cm]{figs/AMAP-titre-long.png} &
+        ~
+      \end{tabular}
+
+    \end{center}
+
+  \end{frame}
+}
+\setcounter{framenumber}{0}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\placelogotrue
+\begin{frame}
+  \frametitle{Plan}
+  \begin{columns}[c]
+      \begin{column}{0.5\textwidth}
+        \tableofcontents[sections=1]
+        \vspace{0.5cm}
+        \tableofcontents[sections=2]
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \tableofcontents[sections=3]
+        \vspace{0.5cm}
+        \tableofcontents[sections=4]
+      \end{column}
+  \end{columns}
+\end{frame}
+\placelogofalse
