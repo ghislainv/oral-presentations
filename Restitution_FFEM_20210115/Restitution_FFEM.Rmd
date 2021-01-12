@@ -1,0 +1,301 @@
+---
+classoption: table, dvipsname, compress
+output: 
+  beamer_presentation:
+    # keep_tex: true
+    # toc: true
+    slide_level: 3
+    includes:
+      in_header: header.tex
+      before_body: doc_prefix.tex
+      after_body: doc_suffix.tex
+colorlinks: no
+fontsize: 10pt
+link-citations: yes
+linkcolor: Black
+urlcolor: Maroon
+---
+
+```{r options, include=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=TRUE, cache=TRUE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+
+# Introduction
+
+## Contexte du projet
+
+### Madagascar: une biodiversité exceptionnelle
+
+\bcols
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=4cm]{figs/Gondwana}
+\vspace{0.25cm}
+
+- Madagascar: top 3 des pays à forte biodiversité
+- Plantes vasculaires: 12000 espèces, 85 d'endémisme
+- Arbres: 96% d'endémisme
+- Caméléons: la moitié des espèces au monde
+- Lémuriens: 110 espèces, 100% d'endémisme
+
+\ecol
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=4.5cm]{figs/natural-history}
+\ecol
+\ecols
+
+### Une biodiversité concentrée dans les forêts
+
+\bcols
+\bcol{0.5\textwidth}
+\includegraphics[width=6cm]{figs/Radeau}
+\vspace{0.25cm}
+
+- Les forêts tropicales: >50% des espèces terrestres.
+- Si les forêts malgaches disparaissent, c'est **un pan entier de la biodiversité mondiale** qui s'éteint.
+
+\ecol
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=4cm]{figs/Mada_Forest}
+\ecol
+\ecols 
+
+### Une biodiversité menacée par la déforestation
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Taux de déforestation: ~1%/an
+- 1950--2000: 10% des espèces éteintes
+
+\centering \includegraphics[width=6cm]{figs/Demography}
+
+- Démographie: >3%/an
+- Doublement tous les 25 ans
+
+\ecol
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=4.5cm]{figs/Deforestation}
+\ecol
+\ecols 
+
+### Une biodiversité menacée par les changements climatiques
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Augmentation de la température: +1.1 to +2.7°C
+- Changement de régime des précipitations
+
+\ecol
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=4cm]{figs/Clim_Hannah}
+\ecol
+\ecols 
+
+## Objectifs
+
+**BioSceneMada**: Scénarios d'évolution de la **biodiversité** sous l'effet conjoint du **changement climatique** et de la **déforestation** à Madagascar. [<https://bioscenemada.cirad.fr>]
+
+\vspace{0.25cm}
+
+\bcols
+\bcol{0.5\textwidth}
+
+1. **Anticiper les scénarios** possibles de la biodiversité (risques / opportunités)
+2. **Construire des outils** d'aides à la décision (chiffres, outils informatiques, cartes)
+3. **Proposer des solutions** de gestion: aires protégées $+$ mécanisme REDD (accord de Paris)
+4. **Formation** Etudiants, gestionnaires, décideurs
+
+\ecol
+\bcol{0.5\textwidth}
+
+\centering \includegraphics[width=\textwidth]{figs/Scheme}
+
+\ecol
+\ecols
+
+## Parties prenantes
+
+### Partenaires
+
+\begin{center}
+\small{Ghislain Vieilledent$^{1}$\hspace{0.5cm}Tom Allnutt$^{2}$\hspace{0.5cm}Clovis
+Grinand$^{3}$\\Miguel Pedrono$^{4}$\hspace{0.5cm}Jean-Roger Rakotoarijaona
+$^{5}$\hspace{0.5cm}Dimby Razafimpahanana$^{2}$}
+
+\vspace{0.25cm}
+
+\scriptsize{
+\begin{tabular}{l}
+$[1]$ \textbf{Cirad AMAP}, $[2]$ \textbf{WCS}, $[3]$ \textbf{ETC Terra/Nitid\ae}, $[4]$
+\textbf{Cirad ASTRE}, $[5]$ \textbf{ONE}  
+\end{tabular}
+}
+\end{center}
+
+\vspace{0.25cm}
+
+\centering \includegraphics[width=\textwidth]{figs/partners_id}
+
+\vspace{0.25cm}
+
+\centering \includegraphics[width=\textwidth]{figs/partners_logos}
+
+### Parties-prenantes
+
+- Madagascar National Parks (MNP)
+- Bureau National de Coordination REDD+ (BNC-REDD)
+- ONG environnementales à Madagascar: WCS, CI, WWF, Blue Ventures, Asity Madagascar
+- Ministère de l'Environnement et du Développement Durable (MEDD)
+
+## Méthodes
+
+1. Modèles spatialisé de la déforestation:
+  - Estimation du taux de déforestation historique
+  - Estimation du risque spatialisé de déforestation
+2. Modèle d'enveloppe bioclimatique pour les espèces:
+  - Inventaires: bases de données d'occurrence des espèces
+  - Estimation de la niche climatique des espèces
+3. Projection de la déforestation dans le futur et des changements de biodiversité associés aux changements climatiques via des scénarios et des simulations
+
+<!-- ================================================================= -->
+<!-- PART 2: Résultats -->
+<!-- ================================================================= -->
+
+# Résultats
+
+## Connaissances scientifiques
+
+### Articles scientifiques
+
+- 17 articles scientifiques: 7 acceptés, 4 soumis, 6 en préparation.
+- Journaux scientifiques de haut rang: _Journal of Ecology_ (IF: 5.762), _Biological Conservation_ (IF: 4.711), _Science Advances_ (IF: 13.117), _Global Change Biology_ (IF: 8.555).
+- Articles largement cités (ex. Vieilledent et al. 2018 in _Biological Conservation_, >100 citations).
+- Liste complète: <https://bioscenemada.cirad.fr/publications/>
+
+## Outils
+
+### Jeux de données
+
+- Base de données **climatiques et environnementales** à Madagascar (MadaClim).
+- Inventaires forestiers et **stocks de carbone** pour 1771 placettes réparties sur l’ensemble de Madagascar.
+- Base de données de **biodiversité** incluant plus de 300 000 points de présences pour 4969 espèces représentatives de la biodiversité à Madagascar. Cette base de données, incluant des données privées, est intégrée à la base ReBioMa gérée par le WCS Madagascar (<https://www.rebioma.org/>).
+
+### Jeux de données
+
+```{r species, results="asis", echo=FALSE}
+df.species <- read.table("tabs/species.txt", header=TRUE, sep=";")
+df.species <- df.species[,-c(1)]
+names(df.species)[1] <- " "
+vect.align <- c(rep("l",1), rep("r",3))
+knitr::kable(df.species, booktabs=TRUE, align=vect.align, linesep="") %>%
+  group_rows("Plantes", 1, 6) %>%
+  group_rows("Vertébrés", 7, 11) %>%
+  group_rows("Invertébrés", 12, 15) %>%
+  kable_styling(latex_options=c("HOLD_position", "striped"),
+                full_width=FALSE, position="center", font_size=7)
+```
+
+### Cartes
+
+- Carte de changement (1953-2017) du couvert forestier à Madagascar.
+- Carte des stocks de carbone forestiers en 2010.
+- Carte du risque de déforestation (2020).
+- Cartes du couvert forestier probable en 2050 et 2100.
+
+### Atlas
+
+- Atlas de la vulnérabilité des espèces au changement climatique.
+- Prototype d'atlas: 7 espèces de baobab à Madagascar et 55 espèces de lémuriens.
+- Lémuriens: <http://etclab.org/atlas/>.
+
+### Bibliothèques logicielles
+
+- `hSDM` and `jSDM` R packages: modélisation de la distribution des espèces.
+- `speciesatlas` R package: atlas de la vulnérabilité des espèces au changement climatique.
+- `forestatrisk` Python package: modélisation et projection de la déforestation.
+- Plusieurs répertoires GitHub, Dryad et Dataverse (incluant scripts et données) pour la reproductibilité des résultats de recherche.
+
+### Sites-web
+
+- BioSceneMada (projet): <https://bioscenemada.cirad.fr>.
+- MadaClim (climat et environnement): <https://madaclim.cirad.fr>.
+- ForestAtRisk (historique et projection de la déforestation): <https://forestatrisk.cirad.fr>.
+- contribution à ReBioMa (Réseau de la Biodiversité à Madagascar): <https://www.rebioma.org/>.
+
+## Formation
+
+### Encadrement d'étudiants
+
+1 thèse, 1 étudiante Master I, 6 étudiants Master II
+
+- Clovis GRINAND (PhD thesis)
+- Ruoyin LONG (deforestation)
+- Mario MUNIZ-TAGLIARI (SDM Baobabs)
+- Margaux CHARRA (GDM)
+- Aurélien COLAS (`speciesatlas`)
+- Jeanne CLEMENT (`jSDM`)
+- Corentin KNOPLOCH (`speciesatlas`/SDM Lemurs)
+- Vololoniaina Marie Rosine SOJANDRIMALALA (ReBioMa)
+
+\begin{center}
+\begin{tabular}{ccccc}
+\includegraphics[width=1.5cm]{figs/Students/Clovis} &
+\includegraphics[width=1.5cm]{figs/Students/Ruoyin} &
+\includegraphics[width=1.5cm]{figs/Students/Mario} &
+\includegraphics[width=1.5cm]{figs/Students/Margaux} \\
+\includegraphics[width=1.5cm]{figs/Students/Aurelien} &
+\includegraphics[width=1.5cm]{figs/Students/Jeanne} &
+\includegraphics[width=1.5cm]{figs/Students/Corentin} &
+\includegraphics[width=1.5cm]{figs/Students/Volo}
+\end{tabular}
+\end{center}
+
+### Renforcement de capacités
+
+- Trois sessions de formations sur: Modélisation de la déforestation + Modélisation de la niche écologique des espèces
+- Plus de **80** personnes formées: étudiants, chercheurs, ingénieurs, gestionnaires
+- Participation de nombreux instituts: MEDD, BNC REDD, MNP, ONG (WRI, CI, WCS, Blueventures, MBG, WWF), Université d'Antananarivo (MBEV, IOGA, ESSA), Instituts de recherche (Institut Pasteur, LRI)
+
+\vspace{0.5cm}
+
+\centering \includegraphics[width=0.45\textwidth]{figs/training1}\hspace{0.25cm}\includegraphics[width=0.45\textwidth]{figs/training2}
+
+## Autres
+
+### Communication
+
+- Communication: 8 réunions pour présenter les avancées et résultats du projet BioSceneMada (5 réunions annuelles + 3 invitations).
+- Conférences: participations à 5 conférences internationales (10 présentations au total), **ICCB-ECCB 2015**, **ATBC 2016**, **Scennet 2016**, **ISEC 2018**, **ATBC 2019** à Antananarivo.
+- Médias: plusieurs interventions dans les médias (journaux papiers/web, radio, web TV).
+- Réseaux sociaux: twitter.
+
+### Impact sur les politiques publiques
+
+Communication du président malgache M. Andry Rojoelina au conseil des ministres le 27/02/2019 intitulé ["Recouvrir Madagascar de forêt"](https://ur-forets-societes.cirad.fr/actualites/le-president-malgache-cite-une-publication-du-cirad-pour-le-lancement-d-un-plan-de-conservation-et-de-restauration-des-forets). One Planet Summit à Nairobi en 2019.
+
+\centering \includegraphics[width=4cm]{figs/Rajoelina}
+
+<!-- ================================================================= -->
+<!-- PART 3: Conclusion -->
+<!-- ================================================================= -->
+
+# Conclusion
+
+## Leçons apprises
+
+## Généralisation
+
+- Le 23 Juillet 2019, la Commission Européenne présente un ensemble d'actions visant à protéger et restorer les forêts dans le monde. [EC Communication](https://bit.ly/2JTAYRh).
+
+\centering \includegraphics[width=\textwidth]{figs/map_tropical_forest}
