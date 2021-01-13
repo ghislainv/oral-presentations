@@ -92,7 +92,7 @@ options(knitr.kable.NA="-")
 \bcols
 \bcol{0.5\textwidth}
 
-- Augmentation de la température: +1.1 to +2.7°C
+- Augmentation de la température
 - Changement de régime des précipitations
 
 \ecol
@@ -158,21 +158,21 @@ $[1]$ \textbf{Cirad AMAP}, $[2]$ \textbf{WCS}, $[3]$ \textbf{ETC Terra/Nitid\ae}
 
 ## Méthodes
 
-1. Modèles spatialisé de la déforestation:
+1. **Modèles spatialisés de la déforestation**:
   - Estimation du taux de déforestation historique
-  - Estimation du risque spatialisé de déforestation
-2. Modèle d'enveloppe bioclimatique pour les espèces:
+  - Estimation du risque spatialisé de déforestation.
+2. **Modèles d'enveloppe bioclimatique** pour les espèces:
   - Inventaires: bases de données d'occurrence des espèces
   - Estimation de la niche climatique des espèces
-3. Projection de la déforestation dans le futur et des changements de biodiversité associés aux changements climatiques via des scénarios et des simulations
+3. **Projection** de la déforestation dans le futur et des changements de biodiversité associés aux changements climatiques via des **scénarios** et des **simulations**
 
 <!-- ================================================================= -->
-<!-- PART 2: Résultats -->
+<!-- PART 2: Résultats scientifiques -->
 <!-- ================================================================= -->
 
-# Résultats
+# Résultats scientifiques
 
-## Connaissances scientifiques
+## Déforestation
 
 ### Déforestation historique
 
@@ -207,9 +207,6 @@ $[1]$ \textbf{Cirad AMAP}, $[2]$ \textbf{WCS}, $[3]$ \textbf{ETC Terra/Nitid\ae}
 \ecol
 \ecols
 
-\vspace{0.25cm}
-\centering Importance de la lutte contre la déforestation importée.
-
 ### Projection de la déforestation
 
 \bcols
@@ -218,7 +215,6 @@ $[1]$ \textbf{Cirad AMAP}, $[2]$ \textbf{WCS}, $[3]$ \textbf{ETC Terra/Nitid\ae}
 - Scénario BAU ("business-as-usual")
 - 2050: 4.3 Mha
 - **Disparition de la forêt tropicale avant 2100**
-- (Estimation: ~2085)
 - Projections spatialisées
 
 \ecol
@@ -229,12 +225,89 @@ $[1]$ \textbf{Cirad AMAP}, $[2]$ \textbf{WCS}, $[3]$ \textbf{ETC Terra/Nitid\ae}
 
 \centering <https://forestatrisk.cirad.fr/mada/>
 
-### Articles scientifiques
+## Changements climatiques
+
+### Anomalies climatiques à Madagascar
+
+\bcols
+\bcol{0.4\textwidth}
+
+- Baisse des précipitations
+- Augmentation de la température et du stress hydrique
+- Augmentation de la saisonnalité
+
+\ecol
+\bcol{0.6\textwidth}
+\centering \includegraphics[width=\textwidth]{figs/Fig1_climatic_anomalies}
+\ecol
+\ecols
+
+### Changements climatiques et forêts
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Baisse des stocks de carbone forestier: -17% (7-24%)
+- Changement de composition en espèces 
+- Sélection d'individus/espèces d'arbres de plus petite stature
+- Forêt humide de l'est largement impactée (-100 Mg C/ha)
+
+\ecol
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=\textwidth]{figs/carbonmaps}
+\ecol
+\ecols
+
+### Changements climatiques et baobabs
+
+\bcols
+\bcol{0.5\textwidth}
+
+- 7 espèces de baobab à Madagascar
+- 3 espèces menacées d'extinction
+- _A. suarezensis_: augmentation de la saisonnalité
+- Migration vers l'équateur impossible
+- Contraction de l'aire de distribution et extinction
+
+\centering 
+
+\ecol
+\bcol{0.5\textwidth}
+\includegraphics[width=0.8\textwidth]{figs/Adansonia_suarezensis}    
+\includegraphics[width=0.8\textwidth]{figs/cc-baobabs}
+\ecol
+\ecols
+
+### Changements climatiques et lémuriens
+
+\bcols
+\bcol{0.5\textwidth}
+
+- 55 espèces de lémuriens
+- Réduction des aires de distribution en 2085: climat 65%, déforestation 50%
+- Identification des zones de refuge climatique (55% en dehors du réseau d'aires protégées)
+- 75% des zones refuges menacées par la déforestation d'ici à 2085
+
+\centering 
+
+\ecol
+\bcol{0.5\textwidth}
+\includegraphics[width=\textwidth]{figs/refuge-lemurs}    
+\ecol
+\ecols
+
+## Articles scientifiques
 
 - 17 articles scientifiques: 7 acceptés, 4 soumis, 6 en préparation.
 - Journaux scientifiques de haut rang: _Journal of Ecology_ (IF: 5.762), _Biological Conservation_ (IF: 4.711), _Science Advances_ (IF: 13.117), _Global Change Biology_ (IF: 8.555).
 - Articles largement cités (ex. Vieilledent et al. 2018 in _Biological Conservation_, >100 citations).
 - Liste complète: <https://bioscenemada.cirad.fr/publications/>
+
+<!-- ================================================================= -->
+<!-- PART 3: Résultats opérationnels -->
+<!-- ================================================================= -->
+
+# Résultats opérationnels
 
 ## Outils
 
@@ -340,15 +413,45 @@ Communication du président malgache M. Andry Rojoelina au conseil des ministres
 \centering \includegraphics[width=4cm]{figs/Rajoelina}
 
 <!-- ================================================================= -->
-<!-- PART 3: Conclusion -->
+<!-- PART 4: Conclusion -->
 <!-- ================================================================= -->
 
 # Conclusion
 
-## Leçons apprises
-
 ## Généralisation
 
-- Le 23 Juillet 2019, la Commission Européenne présente un ensemble d'actions visant à protéger et restorer les forêts dans le monde. [EC Communication](https://bit.ly/2JTAYRh).
+### Deforestation
 
-\centering \includegraphics[width=\textwidth]{figs/map_tropical_forest}
+\centering Généralisation du modèle de déforestation aux tropiques.
+
+\centering \includegraphics[width=0.7\textwidth]{figs/fcc2100}
+
+\centering Changement de couvert forestier 2020-2100:    
+\textcolor{red}{rouge}: déforestation, \textcolor{vertmoyen}{vert}: forêt résiduelle.
+
+### Changements climatiques et forêt
+
+- Mortalité en masse sous l'effet du changement climatique.
+- Accélération du changement climatique (boucle de rétroaction):    
+climat $\rightarrow$ forêt $\rightarrow$ climat
+
+\centering \includegraphics[width=0.7\textwidth]{figs/mortalite_masse}
+
+### Changements climatiques et saisonnalité
+
+- Eespèces tropicales adaptées à une faible saisonnalité.
+- Forte augmentation de la saisonnalité sous les tropiques.
+- Risque potentielle d'extinction d'espèces tropicales.
+
+\centering \includegraphics[width=0.7\textwidth]{figs/world_seasonnality}
+
+## Leçons apprises
+
+### Leçons apprises
+
+- Forêts tropicales au centre des deux grandes crises environnementales actuelles: climatique et biodiversité.
+- Les résultats sur Madagascar sont alarmants et largement généralisables aux forêts tropicales.
+- **Appel à une remobilisation encore plus importante** (financements massifs, politiques publiques) pour:
+    - la diminution des émissions de CO2
+    - la lutte contre la déforestation importée
+    - **1.** la conservation des forêts existantes, **2.** la reforestation
