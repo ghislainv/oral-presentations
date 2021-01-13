@@ -42,10 +42,9 @@ options(knitr.kable.NA="-")
 \vspace{0.25cm}
 
 - Madagascar: top 3 des pays à forte biodiversité
-- Plantes vasculaires: 12000 espèces, 85 d'endémisme
-- Arbres: 96% d'endémisme
-- Caméléons: la moitié des espèces au monde
-- Lémuriens: 110 espèces, 100% d'endémisme
+- Plantes: 12000 espèces, 89% d'endémisme
+- Mammifères (dont Lémuriens): 92% d'endémisme
+- Reptiles: 95% d'endémisme (Caméléons: la moitié des espèces au monde)
 
 \ecol
 \bcol{0.5\textwidth}
@@ -111,10 +110,9 @@ options(knitr.kable.NA="-")
 \bcols
 \bcol{0.5\textwidth}
 
-1. **Anticiper les scénarios** possibles de la biodiversité (risques / opportunités)
-2. **Construire des outils** d'aides à la décision (chiffres, outils informatiques, cartes)
+1. **Anticiper les scénarios** possibles de la biodiversité
+2. **Construire des outils** d'aides à la décision pour la conservation
 3. **Proposer des solutions** de gestion: aires protégées $+$ mécanisme REDD (accord de Paris)
-4. **Formation** Etudiants, gestionnaires, décideurs
 
 \ecol
 \bcol{0.5\textwidth}
@@ -176,6 +174,61 @@ $[1]$ \textbf{Cirad AMAP}, $[2]$ \textbf{WCS}, $[3]$ \textbf{ETC Terra/Nitid\ae}
 
 ## Connaissances scientifiques
 
+### Déforestation historique
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Historique de la déforestation: 1953-2017
+- 47% de forêt perdue sur 1953-2017
+- 8.4 Mha en 2017
+- Augmentation du rythme de déforestation depuis 2005
+- Déforestation: 125,000 ha/an
+
+\ecol
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=\textwidth]{figs/fig_fcc}
+\ecol
+\ecols
+
+### Causes de la déforestation
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Agriculture sur brulis
+- Culture de rente (maïs, arachide)
+- Exportation (arachide)
+- Marché non-régulé et faible gouvernance
+
+\ecol
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=\textwidth]{figs/causes}
+\ecol
+\ecols
+
+\vspace{0.25cm}
+\centering Importance de la lutte contre la déforestation importée.
+
+### Projection de la déforestation
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Scénario BAU ("business-as-usual")
+- 2050: 4.3 Mha
+- **Disparition de la forêt tropicale avant 2100**
+- (Estimation: ~2085)
+- Projections spatialisées
+
+\ecol
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=\textwidth]{figs/forest_cover_2050}
+\ecol
+\ecols
+
+\centering <https://forestatrisk.cirad.fr/mada/>
+
 ### Articles scientifiques
 
 - 17 articles scientifiques: 7 acceptés, 4 soumis, 6 en préparation.
@@ -189,7 +242,7 @@ $[1]$ \textbf{Cirad AMAP}, $[2]$ \textbf{WCS}, $[3]$ \textbf{ETC Terra/Nitid\ae}
 
 - Base de données **climatiques et environnementales** à Madagascar (MadaClim).
 - Inventaires forestiers et **stocks de carbone** pour 1771 placettes réparties sur l’ensemble de Madagascar.
-- Base de données de **biodiversité** incluant plus de 300 000 points de présences pour 4969 espèces représentatives de la biodiversité à Madagascar. Cette base de données, incluant des données privées, est intégrée à la base ReBioMa gérée par le WCS Madagascar (<https://www.rebioma.org/>).
+- Base de données de **biodiversité**: compilation de 300 000 points de présences pour 4969 espèces représentatives de la biodiversité à Madagascar. Intégrée à la base ReBioMa gérée par le WCS Madagascar (<https://www.rebioma.org/>).
 
 ### Jeux de données
 
