@@ -103,7 +103,7 @@ options(knitr.kable.NA="-")
 
 ## Objectifs
 
-**BioSceneMada**: Scénarios d'évolution de la **biodiversité** sous l'effet conjoint du **changement climatique** et de la **déforestation** à Madagascar. [<https://bioscenemada.cirad.fr>]
+**BioSceneMada**: Scénarios d'évolution de la **biodiversité** sous l'effet conjoint du **changement climatique** et de la **déforestation** à Madagascar (<https://bioscenemada.cirad.fr>).
 
 \vspace{0.25cm}
 
@@ -158,13 +158,9 @@ $[1]$ \textbf{Cirad AMAP}, $[2]$ \textbf{WCS}, $[3]$ \textbf{ETC Terra/Nitid\ae}
 
 ## Méthodes
 
-1. **Modèles spatialisés de la déforestation**:
-  - Estimation du taux de déforestation historique
-  - Estimation du risque spatialisé de déforestation.
-2. **Modèles d'enveloppe bioclimatique** pour les espèces:
-  - Inventaires: bases de données d'occurrence des espèces
-  - Estimation de la niche climatique des espèces
-3. **Projection** de la déforestation dans le futur et des changements de biodiversité associés aux changements climatiques via des **scénarios** et des **simulations**
+1. **Modèles spatialisés de la déforestation**: déforestation = f(variables géographiques)
+2. **Modèles d'enveloppe bioclimatique** pour les espèces/écosystèmes: présence d'espèce = f(climat)
+3. **Projections** selon des scénarios de déforestation ou de changement climatique.
 
 <!-- ================================================================= -->
 <!-- PART 2: Résultats scientifiques -->
@@ -204,6 +200,19 @@ $[1]$ \textbf{Cirad AMAP}, $[2]$ \textbf{WCS}, $[3]$ \textbf{ETC Terra/Nitid\ae}
 \ecol
 \bcol{0.5\textwidth}
 \centering \includegraphics[width=\textwidth]{figs/causes}
+\ecol
+\ecols
+
+### Modèle de déforestation
+
+\bcols
+\bcol{0.5\textwidth}
+
+Déforestation = f(distance aux routes, aires protégées, distance à la lisière de la forêt, \ldots)
+
+\ecol
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=3.5cm]{figs/pred_binomial_iCAR}
 \ecol
 \ecols
 
@@ -357,13 +366,13 @@ knitr::kable(df.species, booktabs=TRUE, align=vect.align, linesep="") %>%
 - BioSceneMada (projet): <https://bioscenemada.cirad.fr>.
 - MadaClim (climat et environnement): <https://madaclim.cirad.fr>.
 - ForestAtRisk (historique et projection de la déforestation): <https://forestatrisk.cirad.fr>.
-- contribution à ReBioMa (Réseau de la Biodiversité à Madagascar): <https://www.rebioma.org/>.
+- contribution à ReBioMa (Réseau de la Biodiversité à Madagascar, WCS): <https://www.rebioma.org/>.
 
 ## Formation
 
 ### Encadrement d'étudiants
 
-1 thèse, 1 étudiante Master I, 6 étudiants Master II
+1 thèse, 6 étudiants Master II, 1 étudiante Master I
 
 - Clovis GRINAND (PhD thesis)
 - Ruoyin LONG (deforestation)
@@ -389,7 +398,7 @@ knitr::kable(df.species, booktabs=TRUE, align=vect.align, linesep="") %>%
 
 ### Renforcement de capacités
 
-- Trois sessions de formations sur: Modélisation de la déforestation + Modélisation de la niche écologique des espèces
+- Trois sessions de formations sur: **Modélisation de la déforestation** + **Modélisation de la niche écologique des espèces**
 - Plus de **80** personnes formées: étudiants, chercheurs, ingénieurs, gestionnaires
 - Participation de nombreux instituts: MEDD, BNC REDD, MNP, ONG (WRI, CI, WCS, Blueventures, MBG, WWF), Université d'Antananarivo (MBEV, IOGA, ESSA), Instituts de recherche (Institut Pasteur, LRI)
 
@@ -429,14 +438,6 @@ Communication du président malgache M. Andry Rojoelina au conseil des ministres
 \centering Changement de couvert forestier 2020-2100:    
 \textcolor{red}{rouge}: déforestation, \textcolor{vertmoyen}{vert}: forêt résiduelle.
 
-### Changements climatiques et forêt
-
-- Mortalité en masse sous l'effet du changement climatique.
-- Accélération du changement climatique (boucle de rétroaction):    
-climat $\rightarrow$ forêt $\rightarrow$ climat
-
-\centering \includegraphics[width=0.7\textwidth]{figs/mortalite_masse}
-
 ### Changements climatiques et saisonnalité
 
 - Eespèces tropicales adaptées à une faible saisonnalité.
@@ -444,6 +445,14 @@ climat $\rightarrow$ forêt $\rightarrow$ climat
 - Risque potentielle d'extinction d'espèces tropicales.
 
 \centering \includegraphics[width=0.7\textwidth]{figs/world_seasonnality}
+
+### Changements climatiques et forêt
+
+- Mortalité en masse sous l'effet du changement climatique.
+- Accélération du changement climatique (boucle de rétroaction):    
+climat $\rightarrow$ forêt $\rightarrow$ climat
+
+\centering \includegraphics[width=0.7\textwidth]{figs/mortalite_masse}
 
 ## Leçons apprises
 
