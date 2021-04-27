@@ -1,0 +1,276 @@
+---
+classoption: table, dvipsname, compress
+output: 
+  beamer_presentation:
+    # keep_tex: true
+    # toc: true
+    slide_level: 3
+    includes:
+      in_header: header.tex
+      before_body: doc_prefix.tex
+      after_body: doc_suffix.tex
+colorlinks: no
+fontsize: 10pt
+link-citations: yes
+linkcolor: Black
+urlcolor: Maroon
+---
+
+```{r options, include=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=TRUE, cache=TRUE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+
+# Introduction
+
+## Context
+
+### Tropical deforestation
+
+\centering \includegraphics[width=8cm]{figs/Vancutsem2021}
+
+**Vancutsem et al.** 2021. _Science Advances_ 7(10), eabe1603. doi: [10.1126/sciadv.abe1603](https//doi.org10.1126/sciadv.abe1603)
+
+- Tropical Moist Forest (TMF)
+- 1990--2019: Annual deforestation, degradation, regeneration
+
+### Tropical deforestation
+
+- Full Landsat archive (1982--2019), 30m pixel, time-series analysis
+- Classification tree based on expert knowledge
+- Tropical deforestation was underestimated (-33% in 2000--2012, Hansen et al. 2013)
+- Maps and data: <https://forobs.jrc.ec.europa.eu/TMF/>
+
+\vspace{0.25cm}
+\centering \includegraphics[width=\textwidth]{figs/Vancutsem2021-maps-wide}
+
+### Tropical deforestation
+
+- Precise enough to visually identify the causes of deforestation (logging, fires, agriculture)
+
+\centering \includegraphics[height=0.7\textheight]{figs/Vancutsem2021-patterns}
+
+## Objectives
+
+### Forecasting deforestation
+
+- About 7 Mha of tropical moist forest are disappearing each year (size of Ireland)
+- At this rate, will tropical forests still exist in 2100?
+- If yes, where will they be located?
+- What will be the consequences of future deforestation on biodiversity and carbon emissions?
+
+\vspace{0.5cm}
+\centering \includegraphics[width=\textwidth]{figs/Vancutsem2021-maps-2100}
+
+### Forecasting deforestation
+
+Why is it a timely question?
+
+- **Alert** decision makers
+- Carbon emissions scenarios ($\rightarrow$ IPCC)
+- Biodiversity scenarios ($\rightarrow$ IPBES)
+- Local scale: systematic conservation planning (protected area network, REDD$+$)
+- Modelling $\rightarrow$ main spatial drivers of deforestation
+
+\vspace{0.10cm}
+\begin{center}
+\centering \includegraphics[width=0.55\textwidth]{figs/ipcc.png}\newline
+IPCC scenarios
+\end{center}
+
+### Forecasting deforestation **spatially**
+
+Why is **spatial** forecasting important?
+
+Because both biodiversity and carbon stocks vary strongly in space.
+
+\includegraphics[width=0.5\textwidth]{figs/Rejou2021-Floristic}
+\includegraphics[width=0.40\textwidth]{figs/sm/AGB}
+
+
+## Approach
+
+- **i\.** Consider tropical moist forest in **92** countries (120 study-areas)
+- **ii\.** Estimate the current deforestation rate and uncertainty in each country
+- **iii\.** Model the spatial risk of deforestation from environmental factors
+- **iv\.** Forecast the deforestation assuming a business-as-usual scenario
+- **v\.** Consequences in terms of biodiversity and carbon emissions
+
+\vspace{0.5cm}
+\begin{center}
+\includegraphics[width=0.32\textwidth]{figs/sm/study_areas_America}
+\includegraphics[width=0.32\textwidth]{figs/sm/study_areas_Africa}
+\includegraphics[width=0.32\textwidth]{figs/sm/study_areas_Asia}
+\textbf{The 120 study areas in the 3 continents}
+\end{center}
+
+<!-- ============================================ -->
+<!-- Methods -->
+<!-- ============================================ -->
+
+# Methods
+
+## Models
+
+### Modelling the intensity of deforestation
+
+\bcols
+\bcol{0.5\textwidth}
+
+- 10 values of annual deforested area (ha/yr) in 2010--2020 per country
+- (Brazil: per state, India: per region)
+- Mean deforestation rate (ha/yr) in 2010--2020 per country
+- Uncertainty around the mean (95% confidence interval)
+
+\ecol
+\bcol{0.5\textwidth}
+\includegraphics[width=\textwidth]{figs/sm/fcc123}
+**Past deforestation 2000--2010--2020 in DRC**
+\ecol
+\ecols
+
+### Modelling the intensity of deforestation
+
+\centering \includegraphics[width=0.8\textwidth]{figs/d_ci}
+
+**Examples of mean deforestation rate with uncertainty**
+
+### Modelling the spatial risk of the deforestation
+
+\bcols
+\bcol{0.5\textwidth}
+
+A logistic regression model with iCAR process
+
+\begin{equation*}
+\begin{split}
+  y_i \sim \mathcal{B}ernoulli(\theta_i)\\
+  \text{logit}(\theta_i) = \alpha + X_i \beta + \rho_{j(i)}\\
+  \rho_{j(i)} \sim \mathcal{N}ormal(\sum_{j^{\prime}} \rho_{j^{\prime}} / n_j,V_{\rho} / n_j)
+\end{split}
+\end{equation*}
+
+\footnotesize (NB: We compared this model with a simple GLM and a Random Forest model using a cross-validation procedure)
+
+\ecol
+\bcol{0.5\textwidth}
+\includegraphics[width=\textwidth]{figs/sm/grid}
+**Square grid of 10km cells over DRC**
+\ecol
+\ecols
+
+
+## Spatial variables
+
+### Spatial variables
+
+- Height explanatory variables
+
+\centering \includegraphics[width=0.7\textwidth]{figs/variables-tab}
+
+### Spatial variables
+
+\centering \includegraphics[width=0.8\textwidth]{figs/sm/var.png}
+
+**Spatial explanatory variables in DRC**
+
+### Roads
+
+- OpenStreetMap (OSM)
+- "motorway", "trunk", "primary", "secondary" and "tertiary" roads
+- 3.6 million roads from OSM
+
+\centering \includegraphics[width=0.7\textwidth]{figs/sm/roads.png}
+
+### Protected areas
+
+- PA status: "Designated", "Inscribed", "Established", or "Proposed" before 1\textsuperscript{st} January 2010
+- 85,000 protected areas from WDPA
+
+\centering \includegraphics[width=0.7\textwidth]{figs/sm/pa.png}
+
+### Sampling
+
+One word on sampling:
+
+- Stratified sampling between deforested/non-deforested pixels in 2010--2020
+- Total number of points proportional to the forest cover in 2010 (from 20,000 to 100,000 points per study-area)
+- Huge data-set of 3.2 M forest pixels (~288 Kha of forest)
+
+\centering \includegraphics[width=0.7\textwidth]{figs/sm/sample.png}
+
+## Forecast
+
+### Spatial random effects
+
+\centering \includegraphics[width=0.6\textwidth]{figs/sm/rho.png}
+
+**Interpolation of spatial random effects at 1km in DRC**
+
+### Spatial probability of deforestation
+
+We use the fitted model to compute the spatial probability of deforestation.
+
+\centering \includegraphics[width=0.5\textwidth]{figs/sm/prob.png}
+
+**Relative spatial probability of deforestation in DRC for the year 2020**
+
+### Future forest cover
+
+- Total deforested area $D$ (ha) in a given period of time $Y$ (yr): $D=d \times Y$, with $d$ the annual deforested area (ha/yr).
+- Number of pixels to be deforested: $n=D/0.09$, 0.09 ha being the pixel area.
+- The $n$ pixels with the highest deforestation probabilities are considered deforested in that period of time.
+
+\centering \includegraphics[width=0.7\textwidth]{figs/sm/fcc2050_2100.png}
+
+**Projected deforestation in 2050 and 2100 in DRC**
+
+### Future carbon emissions
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Projected deforestation for years 2030, 2040, ..., 2100.
+- We combine the maps of the projected deforestation with the (2000--2010) forest carbon map by Avitabile 2016 GCB (1km resolution).
+
+\ecol
+\bcol{0.5\textwidth}
+\includegraphics[width=\textwidth]{figs/sm/AGB}
+**Aboveground biomass in DRC**
+\ecol
+\ecols
+
+<!-- ============================================ -->
+<!-- Results -->
+<!-- ============================================ -->
+
+# Results
+
+## Forest refuge areas
+
+
+
+## Effects of protected areas and roads
+
+## Carbon emissions
+
+<!-- ============================================ -->
+<!-- Discussion -->
+<!-- ============================================ -->
+
+# Discussion
+
+## Uncertainty analysis
+
+## Alternative scenarios
+
+## Perspectives

@@ -158,7 +158,8 @@ $[1]$ \textbf{Cirad AMAP}, $[2]$ \textbf{WCS}, $[3]$ \textbf{ETC Terra/Nitid\ae}
 
 ## Méthodes
 
-1. **Modèles spatialisés de la déforestation**: déforestation = f(variables géographiques)
+1. **Modèles spatialisés de la déforestation**:    
+déforestation = f(variables géographiques)
 2. **Modèles d'enveloppe bioclimatique** pour les espèces/écosystèmes: présence d'espèce = f(climat)
 3. **Projections** selon des scénarios de déforestation ou de changement climatique.
 
