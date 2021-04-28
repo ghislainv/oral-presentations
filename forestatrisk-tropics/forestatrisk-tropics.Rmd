@@ -38,7 +38,7 @@ options(knitr.kable.NA="-")
 
 \centering \includegraphics[width=8cm]{figs/Vancutsem2021}
 
-**Vancutsem et al.** 2021. _Science Advances_ 7(10), eabe1603. doi: [10.1126/sciadv.abe1603](https//doi.org10.1126/sciadv.abe1603)
+**Vancutsem et al.** 2021, _Science Advances_, doi: [10.1126/sciadv.abe1603](https//doi.org10.1126/sciadv.abe1603)
 
 - Tropical Moist Forest (TMF)
 - 1990--2019: Annual deforestation, degradation, regeneration
@@ -82,10 +82,8 @@ Why is it a timely question?
 - Modelling $\rightarrow$ main spatial drivers of deforestation
 
 \vspace{0.10cm}
-\begin{center}
-\centering \includegraphics[width=0.55\textwidth]{figs/ipcc.png}\newline
-IPCC scenarios
-\end{center}
+\centering \includegraphics[width=0.55\textwidth]{figs/ipcc.png}    
+**IPCC scenarios**
 
 ### Forecasting deforestation **spatially**
 
@@ -93,13 +91,15 @@ Why is **spatial** forecasting important?
 
 Because both biodiversity and carbon stocks vary strongly in space.
 
-\includegraphics[width=0.5\textwidth]{figs/Rejou2021-Floristic}
-\includegraphics[width=0.40\textwidth]{figs/sm/AGB}
-
+\begin{tabular}{cc}
+\includegraphics[width=0.5\textwidth]{figs/Rejou2021-Floristic} & \includegraphics[width=0.40\textwidth]{figs/sm/AGB}\\
+\textbf{RGB community map} & \textbf{AG map in DRC} \\
+(Réjou-Méchain 2021) & ~
+\end{tabular}
 
 ## Approach
 
-- **i\.** Consider tropical moist forest in **92** countries (120 study-areas)
+- **i\.** Consider tropical moist forest in **92** countries (119 study areas)
 - **ii\.** Estimate the current deforestation rate and uncertainty in each country
 - **iii\.** Model the spatial risk of deforestation from environmental factors
 - **iv\.** Forecast the deforestation assuming a business-as-usual scenario
@@ -110,7 +110,7 @@ Because both biodiversity and carbon stocks vary strongly in space.
 \includegraphics[width=0.32\textwidth]{figs/sm/study_areas_America}
 \includegraphics[width=0.32\textwidth]{figs/sm/study_areas_Africa}
 \includegraphics[width=0.32\textwidth]{figs/sm/study_areas_Asia}
-\textbf{The 120 study areas in the 3 continents}
+\textbf{The 119 study areas in the 3 continents}
 \end{center}
 
 <!-- ============================================ -->
@@ -203,7 +203,7 @@ A logistic regression model with iCAR process
 One word on sampling:
 
 - Stratified sampling between deforested/non-deforested pixels in 2010--2020
-- Total number of points proportional to the forest cover in 2010 (from 20,000 to 100,000 points per study-area)
+- Total number of points proportional to the forest cover in 2010 (from 20,000 to 100,000 points per study area)
 - Huge data-set of 3.2 M forest pixels (~288 Kha of forest)
 
 \centering \includegraphics[width=0.7\textwidth]{figs/sm/sample.png}
@@ -223,6 +223,12 @@ We use the fitted model to compute the spatial probability of deforestation.
 \centering \includegraphics[width=0.5\textwidth]{figs/sm/prob.png}
 
 **Relative spatial probability of deforestation in DRC for the year 2020**
+
+### Spatial probability of deforestation
+
+\centering \includegraphics[width=0.8\textwidth]{figs/article/prob}
+
+**Pantropical map of the spatial probability of deforestation** <https://forestatrisk.cirad.fr/maps.html>
 
 ### Future forest cover
 
@@ -249,6 +255,19 @@ We use the fitted model to compute the spatial probability of deforestation.
 \ecol
 \ecols
 
+### Software
+
+- `forestatrisk` Python package
+- Process large rasters by blocks
+- Several statistical models: iCAR, GLM, RF, etc.
+- Set of functions for sampling, modelling, forecasting, validating
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{figs/far-Python}\\
+Website: \url{https://ecology.ghislainv.fr/forestatrisk}\\
+Article: \textbf{Vieilledent} 2021, \emph{JOSS}, doi: \href{https://doi.org/10.21105/joss.02975}{10.21105/joss.02975}
+\end{center}
+
 <!-- ============================================ -->
 <!-- Results -->
 <!-- ============================================ -->
@@ -257,11 +276,82 @@ We use the fitted model to compute the spatial probability of deforestation.
 
 ## Forest refuge areas
 
+### Tropical forest cover loss
 
+\small
+- 75% of the tropical forest existing in 2000 will be lost in 2100, 2150, and 2200 in Asia, Africa, and America, respectively.
+- 20 countries, 5 states in Brazil, and 1 region in India (having > 1 Mha of forest in 2020) will lose all their tropical forest by 2100.
+- No more tropical forests in 6 biodiversity hotspots (extinction of 29,140 endemic species of plants and 4,576 species of vertebrates).
 
-## Effects of protected areas and roads
+\centering \includegraphics[width=0.8\textwidth]{figs/article/perc_loss_cont}
+
+### Pantropical map of the future forest cover
+
+\small
+Tropical forests in 2100 will be (i) highly fragmented, (ii) concentrated in remote areas (far from roads and towns), pref. in protected areas, and at high elevations
+
+\centering \includegraphics[width=0.7\textwidth]{figs/article/fcc2100}
+
+**Pantropical map of future forest cover in 2100** <https://forestatrisk.cirad.fr/maps.html>
 
 ## Carbon emissions
+
+- Future deforestation will impact forests with higher carbon stocks
+- Annual carbon emissions will increase from 0.525 Pg/yr in 2010–2020 to 0.746 Pg/yr in 2070–2080 (42% increase)
+
+\centering \includegraphics[width=0.8\textwidth]{figs/article/C_trend}
+
+**Carbon emissions from future deforestation**
+
+## Effects of PA and roads
+
+### Protected area effect
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Significant PA effect in 74 study areas out of 119 (88% of the TMF in 2010).
+- PA reduce the risk of deforestation by 40%.
+
+\ecol
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=0.65\textwidth]{figs/article/proba-PA}
+
+**Effect of PA on the deforestation risk**
+\ecol
+\ecols
+
+### Road effect
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Significant road effect in 59 study areas out of 119 (90% of the TMF in 2010).
+- At 10km from a road, the risk of deforestation decreases by 13%.
+
+\ecol
+\bcol{0.5\textwidth}
+\includegraphics[width=\textwidth]{figs/article/proba-roads}
+
+**Effects of roads and forest edge on the deforestation risk**
+\ecol
+\ecols
+
+### Forest edge effect
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Road effect must be interpreted together with forest edge effect.
+- At 1km from the forest edge, the risk of deforestation decreases by 93%.
+
+\ecol
+\bcol{0.5\textwidth}
+\includegraphics[width=\textwidth]{figs/article/proba-roads}
+
+**Effects of roads and forest edge on the deforestation risk**
+\ecol
+\ecols
 
 <!-- ============================================ -->
 <!-- Discussion -->
@@ -271,6 +361,37 @@ We use the fitted model to compute the spatial probability of deforestation.
 
 ## Uncertainty analysis
 
+### Uncertainty analysis
+
+- Despite uncertainty, results are clear and alarming.
+- "Business-as-usual" scenario $\neq$ what **will** happen in the future.
+- "Business-as-usual" scenario $=$ in the absence of any change.
+- The objective is to alert and create a momentum for change.
+- Nonetheless, rather optimistic scenario.
+
+\vspace{0.25cm}
+\centering \includegraphics[width=0.6\textwidth]{figs/madame-irma}
+
 ## Alternative scenarios
 
-## Perspectives
+### Alternative scenarios: demography and demand
+
+- Demography: in Africa, a large part of the population depends on slash-and-burn agriculture for their livelihood.
+- Increasing demand for agricultural commodities: e.g., palm oil, Corley et al. 2009
+
+\vspace{0.25cm}
+\centering \includegraphics[width=0.45\textwidth]{figs/UN-regional-pop-projections}
+\centering \includegraphics[width=0.45\textwidth]{figs/oil-palm-proj}
+
+## Other perspectives
+
+### Other perspectives
+
+- Models can be refined locally (e.g., Ivory-Coast, Madagascar, New-Caledonia) with more information on the context.
+- Very rough estimates of biodiversity loss: need for world biodiversity maps.
+- (Fragmentation study, regeneration potential, etc.)
+
+\vspace{0.25cm}
+\centering \includegraphics[width=0.6\textwidth]{figs/mines-NC}
+
+**Mining activity in New-Caledonia**
