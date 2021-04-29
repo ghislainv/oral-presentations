@@ -93,7 +93,7 @@ Because both biodiversity and carbon stocks vary strongly in space.
 
 \begin{tabular}{cc}
 \includegraphics[width=0.5\textwidth]{figs/Rejou2021-Floristic} & \includegraphics[width=0.40\textwidth]{figs/sm/AGB}\\
-\textbf{RGB community map} & \textbf{AG map in DRC} \\
+\textbf{Community map} & \textbf{AGB map in DRC} \\
 (Réjou-Méchain 2021) & ~
 \end{tabular}
 
@@ -144,7 +144,7 @@ Because both biodiversity and carbon stocks vary strongly in space.
 
 **Examples of mean deforestation rate with uncertainty**
 
-### Modelling the spatial risk of the deforestation
+### Modelling the spatial risk of deforestation
 
 \bcols
 \bcol{0.5\textwidth}
@@ -238,7 +238,7 @@ We use the fitted model to compute the spatial probability of deforestation.
 
 \centering \includegraphics[width=0.7\textwidth]{figs/sm/fcc2050_2100.png}
 
-**Projected deforestation in 2050 and 2100 in DRC**
+**Projected deforestation in 2020--2050 and 2020--2100 in DRC**
 
 ### Future carbon emissions
 
@@ -279,16 +279,22 @@ Article: \textbf{Vieilledent} 2021, \emph{JOSS}, doi: \href{https://doi.org/10.2
 ### Tropical forest cover loss
 
 \small
-- 75% of the tropical forest existing in 2000 will be lost in 2100, 2150, and 2200 in Asia, Africa, and America, respectively.
+75% of the tropical forest existing in 2000 will be lost in 2100, 2150, and 2200 in Asia, Africa, and America, respectively.
+
+\centering \includegraphics[width=0.8\textwidth]{figs/article/perc_loss_cont}
+
+### Tropical forest cover loss
+
+\small
 - 20 countries, 5 states in Brazil, and 1 region in India (having > 1 Mha of forest in 2020) will lose all their tropical forest by 2100.
 - No more tropical forests in 6 biodiversity hotspots (extinction of 29,140 endemic species of plants and 4,576 species of vertebrates).
 
-\centering \includegraphics[width=0.8\textwidth]{figs/article/perc_loss_cont}
+\centering \includegraphics[width=0.8\textwidth]{figs/defor-tab}
 
 ### Pantropical map of the future forest cover
 
 \small
-Tropical forests in 2100 will be (i) highly fragmented, (ii) concentrated in remote areas (far from roads and towns), pref. in protected areas, and at high elevations
+Tropical forests in 2100 will be (i) highly fragmented, (ii) concentrated in remote areas (far from roads and towns), pref. in protected areas, and at high elevations.
 
 \centering \includegraphics[width=0.7\textwidth]{figs/article/fcc2100}
 
