@@ -1,0 +1,180 @@
+---
+classoption: table, dvipsname, compress
+output: 
+  beamer_presentation:
+    # keep_tex: true
+    # toc: true
+    slide_level: 3
+    includes:
+      in_header: header.tex
+      before_body: doc_prefix.tex
+      after_body: doc_suffix.tex
+colorlinks: no
+fontsize: 10pt
+link-citations: yes
+linkcolor: Black
+urlcolor: Maroon
+---
+
+```{r options, include=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=TRUE, cache=TRUE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+
+# Introduction
+
+### Isotherms
+
+Species should move towards the poles and upslope to track shifting isotherms as climate warms:
+
+- Temperature is an easy to measure climatic variable (Fahrenheit, 1724).
+- Temperature is a strong determinant of species biology and distribution.
+- Concept of isotherm (Alexander von Humboldt / 1769--1859).
+
+\centering \includegraphics[width=0.4\textwidth]{figs/isothermes-latitude.jpg}
+\includegraphics[width=0.4\textwidth]{figs/isothermes-elevation.jpg}
+
+### Temperature and CO$_2$
+
+- Temperature is strongly correlated with CO$_2$ concentration in the atmosphere.
+
+\centering \includegraphics[width=0.5\textwidth]{figs/temp_CO2.jpg}
+
+### Scientific question
+
+- Species should move poleward and upslope: is it always true?
+- Case of the seven baobab species of Madagascar
+
+### Baobabs of Madagascar
+
+- Seven species out of the height baobab species existing on Earth.
+- Six are **endemic** to Madagascar.
+- Emblematic species (Baobabs' Alley), representative of the biodiversity of Madagascar.
+- High endemism (>85%) in almost all taxonomic groups.
+
+\centering \includegraphics[width=0.3\textwidth]{figs/A_grandidieri.jpg}
+\includegraphics[width=0.3\textwidth]{figs/A_suarezensis.jpg}
+\includegraphics[width=0.3\textwidth]{figs/A_perrieri.jpg}
+
+<!-- ============================================ -->
+<!-- Methods -->
+<!-- ============================================ -->
+
+# Methods
+
+### Species distribution models
+
+- Species distribution models.
+- 1\. Species climatic niche, 2\. Current distribution, 3\. Future distribution (2055, 2085).
+- **Ensemble modelling**: four statistical algorithms (GLM, GAM, RF, MaxEnt).
+- **Ensemble forecasting**: three Global Circulation Models (NorESM1-M, GISS-E2-R, HadGEM2-ES).
+- **Two dispersal scenarios**: full dispersal (possible dispersal outside current range), zero dispersal (no dispersal outside current range).
+- Presence: the majority of the models predicts a presence. Uncertainty: number of models predicting a presence.
+
+### Occurrence data
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Large occurrence data-base.
+- Since 2000, field inventories and photo-interpretation of satellite images.
+
+\ecol
+\bcol{0.5\textwidth}
+
+\centering \includegraphics[width=0.7\textwidth]{figs/data_points.png}
+
+\ecol
+\ecols
+
+
+### Climatic data
+
+- Four climatic variables: mean annual temperature (tmean, °C), annual precipitation (precip, mm/yr), temperature seasonality (tseas, °C sd x 1000), climatic water deficit (cwd, mm/yr).
+- Two climatic scenarios: RCP 8.5 and RCP 4.5.
+- WorldClim data.
+
+### Ecological interpretation of SDMs
+
+General use of SDMs in the studies on climate change:
+
+- Correlative models used to derive maps of species range.
+- Species vulnerability to climatic change (range contraction or expansion).
+- Not much ecological interpretation of the results.
+
+We wanted to push the interpretation further:
+
+- Climatic anomalies in space in the future.
+- Variable importance in determining species niche.
+- Climate change in current species range.
+- Species range shift in latitude and elevation.
+- Relationship between temperature and latitude/elevation in Madagascar.
+
+<!-- ============================================ -->
+<!-- Results -->
+<!-- ============================================ -->
+
+# Results
+
+### Range contraction
+
+\centering \includegraphics[height=0.8\textheight]{figs/sdm.png}
+
+### Range contraction
+
+- Four species will experience a strong range contraction (>70%) under RCP 8.5 in 2085.
+- Out of these four species, three are threatened by a change in temperature seasonality.
+
+\centering \includegraphics[width=0.6\textwidth]{figs/sdm_A_suarezensis.png}
+
+### Climatic anomalies
+
+\centering \includegraphics[width=0.6\textwidth]{figs/anomalies.png}
+
+### Variable importance
+
+\centering \includegraphics[width=\textwidth]{figs/var_imp.png}
+
+### Climate change in current species range
+
+\centering \includegraphics[width=\textwidth]{figs/niche-shift.png}
+
+### Species range shift in latitude and elevation
+
+\centering \includegraphics[width=0.6\textwidth]{figs/latitude-elevation.png}
+
+### Relationship between temperature and latitude/elevation
+
+\centering \includegraphics[width=0.6\textwidth]{figs/temp-elevation-latitude.png}
+
+<!-- ============================================ -->
+<!-- Discussion -->
+<!-- ============================================ -->
+
+# Discussion
+
+### Species range shift
+
+- Some species might move equatorward to track change in temperature seasonality.
+- Range shift direction depends on several things: species climatic niche (variable importance), climatic anomalies in space in the future.
+- It is not contradictory to move both equatorward and upslope.
+
+### Generalization to the tropics
+
+- General increase of temperature seasonality in the tropics.
+- Tropical species usually adapted to low seasonality (cf. tree growth, phenology).
+
+\centering \includegraphics[width=0.6\textwidth]{figs/tseas_tropics.png}
+
+### Perspectives
+
+- What does it mean an increase in seasonality under climate change? (much warmer rainy season or colder dry season?)
