@@ -1,0 +1,209 @@
+---
+classoption: table, dvipsname, compress
+output: 
+  beamer_presentation:
+    # keep_tex: true
+    # toc: true
+    slide_level: 3
+    includes:
+      in_header: header.tex
+      before_body: doc_prefix.tex
+      after_body: doc_suffix.tex
+colorlinks: no
+fontsize: 10pt
+link-citations: yes
+linkcolor: Black
+urlcolor: Maroon
+---
+
+
+```{r options, include=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=TRUE, cache=TRUE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+
+# Introduction
+
+## JSDMs
+
+### Joint Species Distribution Models (JSDMs)
+
+**Species Distribution Model (SDM), for one single species.**
+
+- $y_i \sim Bernoulli(\theta_i)$, $y_i \in \{0,1\}$
+- $i$: site
+- $p(\theta_i) = X_i \beta$
+- $X$: environmental variables
+- $\beta$: species effects
+  
+**JSDM $=$ SDM for community of species.**
+
+- $p(\theta_{ij}) = \alpha_i + X_i \beta_j + \Sigma_{ij}$
+- $i$: site, $j$: species
+- Site effect $\alpha_i$: mean site suitability
+- Variance-covariance matrix $\Sigma_{ij}$: species co-occurrences
+
+### Joint Species Distribution Models
+
+JSDMs provide a convenient statistical framework to test **trait-environment** interactions.
+
+$\beta_j$ can be expressed as a function of functional traits
+
+- $p(\theta_{ij}) = \alpha_i + X_i \beta_j + \Sigma_{ij}$
+- $p(\beta_j) = N(T_j \gamma, V_{\beta})$
+
+JSDMs can help narrow the gap between **correlative** and **mechanistic** species distribution models.
+
+`jSDM` R package (first chapter of Jeanne's PhD thesis), https://ecology.ghislainv.fr/jSDM/
+
+## METRADICA's objectives
+
+### Objectives of METRADICA (Task 3)
+
+Using JSDMs:
+
+- Test **trait-environmment** interactions for determining tree species distribution in French Guiana.
+- Assess species vulnerability to climate change (through contraction of species range).
+- Interpret species vulnerability to climate change in terms of functional traits.
+- Derive maps of $\alpha$ and $\beta$ diversity for French Guiana.
+- Identify refuge area for biodiversity under climate change (stable tree communities).
+
+<!-- ============================================ -->
+<!-- Methods -->
+<!-- ============================================ -->
+
+# Material and methods
+
+## Datasets
+
+### Datasets
+
+\bcols
+\bcol{0.5\textwidth}
+
+Three types of data-sets:
+
+- Species occurrences on sites
+- Species trait database
+- Environmental database
+
+\ecol
+\bcol{0.5\textwidth}
+\centering \includegraphics[width=5cm]{figs/four-corner-model}
+\ecol
+\ecols
+
+### Occurrences
+
+```{r inventories, include=FALSE}
+## Libraries
+library(readr)
+## Guyafor
+f <- "/home/ghislain/Documents/Research_current/PROJECTS/METRADICA/Dataverse/Inventaires/202110_DonneesModeleMetradicaTout+Diam.csv"
+df <- read_delim(f, delim=";")
+nplots_1 <- length(unique(paste0(df$Project, df$idPlot)))
+## Guyadiv
+f <- "/home/ghislain/Documents/Research_current/PROJECTS/METRADICA/Dataverse/Inventaires/20211203_GuyaDiv.tab"
+df <- read_tsv(f)
+nplots_2 <- length(unique(paste0(df$Forest, df$idPlot)))
+## Total
+nplots <- nplots_1 + nplots_2
+```
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Forest plot inventories coming from several networks combined together
+- Networks: Guyafor, Gentry, Habitat, Guyadiv
+- Presence-absence data and abundances
+- `r nplots` forest plots
+- About 1700 tree species, most of which are rare
+
+\ecol
+\bcol{0.5\textwidth}
+\includegraphics[width=\textwidth]{figs/inventories}
+\ecol
+\ecols
+
+### Traits
+
+- Large "soft" trait (WD, LSA, tree max height, etc.) databases from previous CEBA projects.
+- Five additional mechanistic traits from Metradica project:
+  - leaf water potential at which cells lose turgor (Ptlp), minimum leaf conductance (gmin), leaf saturated water content (LSWC), vein density (VLA), stomatal density (SD).
+  - 24 species, 672 trees, three sites with both hills and valleys spread on a precipitation gradient.
+
+### Environment
+
+- Topographic data (SRTM and LiDAR)
+- Soil data
+- Distance to human infrastructures (roads, villages)
+- Climatic data (Chelsa) in the present and the future
+- https://guyaclim.cirad.fr
+
+## Study scales
+
+### Scales: biogeography and micro-environment
+
+**Local scale: microtopography $\times$ traits**
+
+- Scale $=$ ~10km, resolution $=$ ~5m
+- Explicative model: E $\times$ T
+- Using MNT at 5m: hills (_"terra firme"_) and valleys
+
+**Country scale (French Guiana)**
+
+- Scale $=$ FG, resolution $=$ ~1km
+- Explicative and predictive model
+- Two models
+  * Without traits
+    - Predictive model
+    - Present: distribution and co-occurrences of species
+    - Future: range contraction in the future: (i) species vulnerability to climate change, (ii) change in species composition
+  * With traits
+    - Explicative model: E $\times$ T
+    - Explaining species location (biogeography)
+
+<!-- ============================================ -->
+<!-- Perspectives -->
+<!-- ============================================ -->
+
+# Perspectives
+
+## Model comparison
+
+### Model comparison with forest dynamics models
+
+**TROLL model**
+
+- Tropical forest dynamics model
+- Growth, mortality, recruitment through carbon allocation
+- Species parameters are derived from traits
+- Calibrated on some forests of French Guiana
+
+**Model comparison**
+
+- Species excluded from the community with TROLL under climate change.
+- Do the same species experience a severe range contraction with JSDMs?
+
+## Applications
+
+### Applications
+
+- Anticipating climate change effects on tropical forest in French Guiana
+  - Massive tree mortality events and forest conversion to savannas?
+  - Change in species composition?
+- Identification of refuge areas for conservation $\Rightarrow$ systematic conservation planning.
+
+
+<!-- ============================================ -->
+<!-- EOF
+<!-- ============================================ -->

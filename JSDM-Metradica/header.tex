@@ -26,7 +26,7 @@
 %% Natbib is a popular style for formatting references.
 %\usepackage{natbib} %doesn't work with beamer
 
-\title[METRADICA]{Metradica Task 3: advances and perspectives}
+\title[JSDM-Metradica]{Assessing tree species vulnerability to climate change in French Guiana using joint species distribution models}
 %\subtitle{} 
 
 \date{}
@@ -58,30 +58,28 @@
 
 % Logo
 \newif\ifplacelogo % create a new conditional
-\logo{\ifplacelogo\includegraphics[width=0.4\textwidth]{figs/partners_logos}\fi} % replace with your own command
+\logo{\ifplacelogo\includegraphics[width=0.5\textwidth]{figs/partners_logos}\fi} % replace with your own command
 
-\AtBeginSection[]{}
-
-% %Call table of contents at the beginning of each section
-% \AtBeginSection[]{
-% \placelogotrue
-%   \begin{frame}
-%     \frametitle{Plan}
-%     \begin{columns}[c]
-%       \begin{column}{0.5\textwidth}
-%         \tableofcontents[sections=1,currentsection]
-%         \vspace{0.5cm}
-%         \tableofcontents[sections=2,currentsection]
-%       \end{column}
-%       \begin{column}{0.5\textwidth}
-%         \tableofcontents[sections=3,currentsection]
-%         \vspace{0.5cm}
-%         \tableofcontents[sections=4,currentsection]
-%       \end{column}
-%     \end{columns}
-%   \end{frame}
-% \placelogofalse
-% }
+%Call table of contents at the beginning of each section
+\AtBeginSection[]{
+\placelogotrue
+  \begin{frame}
+    \frametitle{Plan}
+    \begin{columns}[c]
+      \begin{column}{0.5\textwidth}
+        \tableofcontents[sections=1,currentsection]
+        \vspace{0.5cm}
+        \tableofcontents[sections=2,currentsection]
+      \end{column}
+      \begin{column}{0.5\textwidth}
+        \tableofcontents[sections=3,currentsection]
+        \vspace{0.5cm}
+        \tableofcontents[sections=4,currentsection]
+      \end{column}
+    \end{columns}
+  \end{frame}
+\placelogofalse
+}
 
 \AtBeginSubsection[]{}
 
