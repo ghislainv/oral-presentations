@@ -1,0 +1,192 @@
+---
+classoption: table, dvipsname, compress
+output: 
+  beamer_presentation:
+    # keep_tex: true
+    # toc: true
+    slide_level: 3
+    includes:
+      in_header: header.tex
+      before_body: doc_prefix.tex
+      after_body: doc_suffix.tex
+colorlinks: no
+fontsize: 10pt
+link-citations: yes
+linkcolor: Black
+urlcolor: Maroon
+---
+
+
+```{r options, include=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=TRUE, cache=TRUE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+# Les chiffres de la déforestation tropicale
+
+## Déforestation tropicale
+
+### Forêts tropicales et crises contemporaines
+
+Les forêts tropicales sont au centre de deux crises contemporaines majeures:
+
+- L'effondrement de la biodiversité.
+- Le changement climatique.
+
+\centering \includegraphics[height=2.5cm]{figs/tropical-forest-tree}
+\centering \includegraphics[height=2.5cm]{figs/Vancutsem2021-TMF}
+
+### Forêts tropicales et biodiversité
+
+- Forêts = Écosystèmes en trois dimensions, micro-habitats à chaque étage.
+- Forêts tropicales: abondance de ressources, peu de contraintes physiques = forte biodiversité. 
+- Forêts tropicales: +50% de la biodiversité terrestre (alors qu'elles ne couvrent que 12% des terres).
+  
+  \bcols
+  \bcol{0.5\textwidth}
+  Gibson et al. 2011 _Nature_, Primary forests are irreplaceable for sustaining tropical biodiversity.
+  \ecol
+  \bcol{0.5\textwidth}
+  \centering \includegraphics[width=4cm]{figs/Gibson2011-Nature}
+  \ecol
+  \ecols
+  
+### Forêts tropicales et cycle du carbone
+
+\bcols
+\bcol{0.5\textwidth}
+
+- Puits de carbone: ~20% (en baisse) des émissions de CO2 sont absorbées par la forêt.
+- Déforestation tropicale: ~12% des émissions de CO2.
+- Rôle majeur des forêts dans la lutte contre les changements climatiques.
+
+\ecol
+\bcol{0.5\textwidth}
+
+\centering \includegraphics[width=6cm]{figs/IPCC2022}
+
+IPCC 2022
+
+\ecol
+\ecols
+   	
+### Déforestation tropicale
+	
+\bcols
+\bcol{0.5\textwidth}	
+
+- 10 Mha/an (1/5 de la France).
+- Forêts tropicales humides: entre 5.5 et 7.7 Mha/an (20 terrains de foot/min).
+- Projections dans le futur: https://forestatrisk.cirad.fr
+
+\ecol
+\bcol{0.5\textwidth}
+
+\centering \includegraphics[width=4cm]{figs/borneo}
+	
+\ecol
+\ecols
+	
+	
+### Causes de la déforestation: agriculture
+
+\centering \includegraphics[width=6cm]{figs/causes-deforestation}
+
+Forêts tropicales au coeur d'un troisième enjeux:  
+alimenter 10 milliards de personnes en 2050.
+
+## Huile de palme et déforestation
+
+- Part des plantations d'huile de palme dans la déforestation en Indonésie:
+  + Austin et al. 2019, _ERL_: 2001--2016, 23%.
+  + Bessou C. _AFD report_: ~15%.
+  + Gaveau et al. 2022 _PLoS One_: 2001--2019, 32% (64% industriels, 36% petits producteurs).
+- Répartition forêt tropicale / plantations de palmiers à huile en Asie du Sud-Est: [Lang et al.](https://nlang.users.earthengine.app/view/canopy-height-and-carbon-stock-southeast-asia-2020)
+  
+\centering \includegraphics[width=6cm]{figs/Lang-HCS}
+
+**Lang et al. 2021** _arXiv_
+
+## Huile de palme et déforestation
+
+- **Le développement des plantations d'huile de palme est encore aujourd'hui LA première cause de déforestation en Indonésie.**
+- Autres causes de déforestation (Austin et al. 2019, _ERL_):
+  + Conversion en prairie (20%)
+  + Agriculture de petite échelle (15%)
+  + Production de bois, pate à papier notamment (14%)
+  + Routes +  mines (6%)
+  
+\centering \includegraphics[width=5cm]{figs/Huile_de_palme}  
+
+# Une équation à deux paramètres
+
+## Prospective sur la demande en huile végétale
+
+- Forte augmentation de la production dans le passé (Meijaard et al. 2019 _FFGC_)
+- Projection de la demande future: $\times$ 2 entre 2005 et 2050 (Corley 2009 _ESP_).
+
+\includegraphics[width=5cm]{figs/Meijaard2019-Frontiers}\hspace{0.5cm}
+\includegraphics[width=5cm]{figs/Corley2009-oil-palm-demand}
+
+## Prospective sur la demande en huile végétale
+
+\includegraphics[width=\textwidth]{figs/PO_Map_2015}
+
+## Augmenter l'offre
+
+- A surface constante, **augmentation des rendements**: sélection
+  variétale, bonnes pratiques, etc.
+  + Asie: 2-3 T/ha dans les petites exploitations, on pourrait monter
+	à 4-5.
+  + Afrique: 1-2 T/ha, perte de production sur pied.
+- **Augmentation des surfaces**: e.g. terres dégradées,
+  land-sharing/land-sparing
+- A-t-on une grande marge de manoeuvre ?
+  + Proximité des tipping-points des écosystèmes naturels.
+  + Nature needs Half initiative
+  + Equilibre entre SAU et milieux naturels ?
+	
+\centering \includegraphics[width=7cm]{figs/production-huile-de-palme}	
+
+## Diminuer la demande
+
+### Diminuer la demande en Europe
+
+- Biodiesel, produits transformés, cosmétique.
+- Utilisation de l'huile de palme:
+  + En France (02/2021): 75% en biodiesel (agrocarburant)
+  + En Europe: 50%
+
+- Législation:
+ + France (depuis 02/2021): huile de palme retirée de la liste des agrocarburants. Mise en place de la SNDI: Stratégie Nationale de Lutte contre la Déforestation Importée.
+ + Europe: le parlement européen exprime sa volonté de mettre un terme à l'utilisation d'huile de palme dans les carburants. France suivie par Belgique et Allemagne.
+
+### Diminuer la demande dans les autres pays (Asie)
+
+- Leviers d'action ?
+- Besoin en huile végétale ?
+
+\centering \includegraphics[width=5cm]{figs/consommation-huile-de-palme}
+
+### Diminuer la demande dans les autres pays (Asie)
+
+\centering \includegraphics[width=7cm]{figs/UN-regional-pop-projections}
+
+# Développement économique des pays producteurs
+
+- Comment veiller au développement économique des pays producteurs si l'on diminue la demande.
+  + **Augmentation des prix** de l'huile de palme: meilleur revenu pour moins de production.
+  + Attention à l'effet rebond (lien entre déforestation et prix de l'huile, Gaveau et al. 2022 _PLoS One_).
+  + Alternative de développement: secteur primaire $\rightarrow$ secteur tertiaire.
+	
+<!-- ============================================ -->
+<!-- EOF
+<!-- ============================================ -->

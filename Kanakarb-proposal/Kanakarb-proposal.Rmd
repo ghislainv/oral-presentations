@@ -1,0 +1,126 @@
+---
+classoption: table, dvipsname, compress
+output: 
+  beamer_presentation:
+    # keep_tex: true
+    # toc: true
+    slide_level: 3
+    includes:
+      in_header: header.tex
+      before_body: doc_prefix.tex
+      after_body: doc_suffix.tex
+colorlinks: no
+fontsize: 10pt
+link-citations: yes
+linkcolor: Black
+urlcolor: Maroon
+---
+
+
+```{r options, include=FALSE}
+library(knitr)
+library(kableExtra)
+opts_chunk$set(echo=TRUE, cache=TRUE,
+               #results="hide", 
+               warning=FALSE,
+               message=FALSE, highlight=TRUE,
+               fig.show="hide", size="small",
+               fig.align="center",
+               tidy=FALSE)
+options(knitr.kable.NA="-")
+```
+
+
+# Introduction
+
+## Contexte
+
+### Contexte
+
+**Carte de carbone**
+
+Outil important pour:
+
+  - Connaissance des forêts
+  - Aménagement du territoire et conservation des forêts (REDD+)
+
+**Particularité des forêts calédonienne**
+
+- Substrat ultramafique
+- Arbres de petite stature (H $\sim$ 15m)
+- Très forte densité (1200 tiges à l'hectare)
+
+**En NC**
+
+- Carte globale ne prenant pas en compte les spécificité de la NC
+- Pas de carte haute résolution
+
+## Objectives
+
+### Objectives
+
+- Elaboration d'une carte de carbone forestier en Nouvelle-Calédonie
+- A haute résolution ($\leq$ 30m)
+- S'appuyant sur des données de terrain
+
+<!-- ============================================ -->
+<!-- Methods -->
+<!-- ============================================ -->
+
+# Matériel et méthode
+
+## Données d'inventaires
+
+### Données d'inventaires
+
+- 212 placettes 20 x 20 m
+- 21 placettes 100 x 100 m
+- 255 placettes circulaires, 10 m de rayon
+- 21 autre placettes de taille variable
+
+Arbres $\geq$ 10cm de DBH identifié à l'espèce.
+
+### Réseau NC-PIPPN
+
+New Caledonian Plant Inventory and Permanent Plots Network
+
+\centering \includegraphics[width=0.8\textwidth]{figs/ncpippn-plots}
+
+## Extrapolation spatiale
+
+### Extrapolation spatiale
+
+Extrapolation spatiale des données d'inventaire en deux temps:
+
+- LiDAR: relation $C_i = \alpha L_i^{\beta}$ entre les stocks de carbone ($C_i$) et les indices de
+hauteur de la canopée dérivés du LiDAR ($L_i$) pour un site $i$
+  - 100 bandes LiDAR de 500 m x 4 km
+  - 50 jours de vol (2 bandes par jour)
+- Sentinel 2: $C_i = f(S_i)$, f étant estimé par un réseau de neurones convolutifs
+  - 4 bandes à 10 m de résolution
+  - Emprise de 65 x 65 pixels pour le réseau de neurones
+
+# A traiter
+
+## Questions techniques
+
+### Questions techniques
+
+- Localisation précise des placettes (surtout 20 x 20 m)
+- Taille des placettes pour l'estimation de la relation au LiDAR ?
+- Besoin de nouvelles placettes de 1 ha ?
+- Découpage de grosses parcelles (1 ha) en plus petite ?
+- Stockage des données LiDAR
+- \ldots
+
+## Financement
+
+### Financement
+
+- Identification des bailleurs potentiels
+- Démarches auprès des bailleurs
+- \ldots
+
+<!-- ============================================ -->
+<!-- EOF
+<!-- ============================================ -->
