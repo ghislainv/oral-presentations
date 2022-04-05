@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.3.17)  5 APR 2022 13:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.3.17)  5 APR 2022 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1207,13 +1207,13 @@ Package pdftex.def Info: figs/partners_logos.png  used on input line 272.
                    \relax 
 l.292 \end{frame}
                  
-<figs/tropical-forest-tree.jpg, id=159, 313.17pt x 162.6075pt>
+<figs/tropical-forest-tree.jpg, id=157, 313.17pt x 162.6075pt>
 File: figs/tropical-forest-tree.jpg Graphic file (type jpg)
 <use figs/tropical-forest-tree.jpg>
 Package pdftex.def Info: figs/tropical-forest-tree.jpg  used on input line 292.
 
 (pdftex.def)             Requested size: 136.9972pt x 71.13188pt.
-<figs/Vancutsem2021-TMF.png, id=160, 447.17062pt x 187.45032pt>
+<figs/Vancutsem2021-TMF.png, id=158, 447.17062pt x 187.45032pt>
 File: figs/Vancutsem2021-TMF.png Graphic file (type png)
 <use figs/Vancutsem2021-TMF.png>
 Package pdftex.def Info: figs/Vancutsem2021-TMF.png  used on input line 292.
@@ -1231,7 +1231,7 @@ ion-tropicale}) has been already used, duplicate ignored
 l.292 \end{frame}
                   <./figs/tropical-forest-tree.jpg> <./figs/Vancutsem2021-TMF.p
 ng>]
-<figs/Gibson2011-Nature.png, id=191, 552.0625pt x 485.815pt>
+<figs/Gibson2011-Nature.png, id=189, 552.0625pt x 485.815pt>
 File: figs/Gibson2011-Nature.png Graphic file (type png)
 <use figs/Gibson2011-Nature.png>
 Package pdftex.def Info: figs/Gibson2011-Nature.png  used on input line 315.
@@ -1243,7 +1243,7 @@ Package pdftex.def Info: figs/Barre_couleur.png  used on input line 315.
 [5
 
  <./figs/Gibson2011-Nature.png>]
-<figs/IPCC2022.png, id=219, 986.68625pt x 1143.27126pt>
+<figs/IPCC2022.png, id=217, 986.68625pt x 1143.27126pt>
 File: figs/IPCC2022.png Graphic file (type png)
 <use figs/IPCC2022.png>
 Package pdftex.def Info: figs/IPCC2022.png  used on input line 343.
@@ -1260,7 +1260,7 @@ Package pdftex.def Info: figs/Barre_couleur.png  used on input line 343.
 [6
 
  <./figs/IPCC2022.png>]
-<figs/borneo.jpg, id=247, 626.34pt x 978.65625pt>
+<figs/borneo.jpg, id=245, 626.34pt x 978.65625pt>
 File: figs/borneo.jpg Graphic file (type jpg)
 <use figs/borneo.jpg>
 Package pdftex.def Info: figs/borneo.jpg  used on input line 368.
@@ -1272,7 +1272,7 @@ Package pdftex.def Info: figs/Barre_couleur.png  used on input line 368.
 [7
 
  <./figs/borneo.jpg>]
-<figs/causes-deforestation.jpg, id=275, 963.6pt x 800.9925pt>
+<figs/causes-deforestation.jpg, id=273, 963.6pt x 800.9925pt>
 File: figs/causes-deforestation.jpg Graphic file (type jpg)
 <use figs/causes-deforestation.jpg>
 Package pdftex.def Info: figs/causes-deforestation.jpg  used on input line 376.
@@ -1285,17 +1285,17 @@ Package pdftex.def Info: figs/Barre_couleur.png  used on input line 376.
 [8
 
  <./figs/causes-deforestation.jpg>]
-<figs/Lang-HCS.png, id=306, 2409.0pt x 1606.0pt>
+<figs/Lang-HCS.png, id=304, 2409.0pt x 1606.0pt>
 File: figs/Lang-HCS.png Graphic file (type png)
 <use figs/Lang-HCS.png>
-Package pdftex.def Info: figs/Lang-HCS.png  used on input line 409.
+Package pdftex.def Info: figs/Lang-HCS.png  used on input line 410.
 (pdftex.def)             Requested size: 170.71652pt x 113.80379pt.
 File: figs/Barre_couleur.png Graphic file (type png)
 <use figs/Barre_couleur.png>
-Package pdftex.def Info: figs/Barre_couleur.png  used on input line 409.
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 410.
 (pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
 
-Overfull \vbox (20.16774pt too high) detected at line 409
+Overfull \vbox (20.16774pt too high) detected at line 410
  []
 
 [9
@@ -1304,35 +1304,29 @@ pdfTeX warning (ext4): destination with the same identifier (name{huile-de-palm
 e-et-duxe9forestation}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.409 \end{frame}
+l.410 \end{frame}
                   <./figs/Lang-HCS.png>]
-<figs/Huile_de_palme.png, id=336, 1565.85pt x 1277.77374pt>
+<figs/Huile_de_palme.png, id=335, 1565.85pt x 1277.77374pt>
 File: figs/Huile_de_palme.png Graphic file (type png)
 <use figs/Huile_de_palme.png>
-Package pdftex.def Info: figs/Huile_de_palme.png  used on input line 438.
+Package pdftex.def Info: figs/Huile_de_palme.png  used on input line 436.
 (pdftex.def)             Requested size: 142.26378pt x 116.08652pt.
 File: figs/Barre_couleur.png Graphic file (type png)
 <use figs/Barre_couleur.png>
-Package pdftex.def Info: figs/Barre_couleur.png  used on input line 438.
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 436.
 (pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
 [10
 
-pdfTeX warning (ext4): destination with the same identifier (name{huile-de-palm
-e-et-duxe9forestation-1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.438 \end{frame}
-                  <./figs/Huile_de_palme.png>] (./controverse-foret-tropicale-p
-almier-a-huile.toc) (./controverse-foret-tropicale-palmier-a-huile.toc) (./cont
-roverse-foret-tropicale-palmier-a-huile.toc) (./controverse-foret-tropicale-pal
-mier-a-huile.toc)
+ <./figs/Huile_de_palme.png>] (./controverse-foret-tropicale-palmier-a-huile.to
+c) (./controverse-foret-tropicale-palmier-a-huile.toc) (./controverse-foret-tro
+picale-palmier-a-huile.toc) (./controverse-foret-tropicale-palmier-a-huile.toc)
 File: figs/Barre_couleur.png Graphic file (type png)
 <use figs/Barre_couleur.png>
-Package pdftex.def Info: figs/Barre_couleur.png  used on input line 442.
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 440.
 (pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
 File: figs/partners_logos.png Graphic file (type png)
 <use figs/partners_logos.png>
-Package pdftex.def Info: figs/partners_logos.png  used on input line 442.
+Package pdftex.def Info: figs/partners_logos.png  used on input line 440.
 (pdftex.def)             Requested size: 122.91406pt x 21.41797pt.
 [11
 
@@ -1340,23 +1334,23 @@ Package pdftex.def Info: figs/partners_logos.png  used on input line 442.
 ion-uxe0-deux-paramuxe8tres}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.461 \end{frame}
+l.459 \end{frame}
                  
-<figs/Meijaard2019-Frontiers.jpg, id=406, 511.9125pt x 431.6125pt>
+<figs/Meijaard2019-Frontiers.jpg, id=403, 511.9125pt x 431.6125pt>
 File: figs/Meijaard2019-Frontiers.jpg Graphic file (type jpg)
 <use figs/Meijaard2019-Frontiers.jpg>
-Package pdftex.def Info: figs/Meijaard2019-Frontiers.jpg  used on input line 46
-1.
+Package pdftex.def Info: figs/Meijaard2019-Frontiers.jpg  used on input line 45
+9.
 (pdftex.def)             Requested size: 142.26378pt x 119.94841pt.
-<figs/Corley2009-oil-palm-demand.png, id=407, 810.02625pt x 713.66624pt>
+<figs/Corley2009-oil-palm-demand.png, id=404, 810.02625pt x 713.66624pt>
 File: figs/Corley2009-oil-palm-demand.png Graphic file (type png)
 <use figs/Corley2009-oil-palm-demand.png>
 Package pdftex.def Info: figs/Corley2009-oil-palm-demand.png  used on input lin
-e 461.
+e 459.
 (pdftex.def)             Requested size: 142.26378pt x 125.33994pt.
 File: figs/Barre_couleur.png Graphic file (type png)
 <use figs/Barre_couleur.png>
-Package pdftex.def Info: figs/Barre_couleur.png  used on input line 461.
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 459.
 (pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
 [12
 
@@ -1365,17 +1359,17 @@ ur-la-demande-en-huile-vuxe9guxe9tale}) has been already used, duplicate ignore
 d
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.461 \end{frame}
+l.459 \end{frame}
                   <./figs/Meijaard2019-Frontiers.jpg> <./figs/Corley2009-oil-pa
 lm-demand.png>]
-<figs/PO_Map_2015.png, id=436, 1329.96875pt x 503.8825pt>
+<figs/PO_Map_2015.png, id=433, 1329.96875pt x 503.8825pt>
 File: figs/PO_Map_2015.png Graphic file (type png)
 <use figs/PO_Map_2015.png>
-Package pdftex.def Info: figs/PO_Map_2015.png  used on input line 469.
+Package pdftex.def Info: figs/PO_Map_2015.png  used on input line 467.
 (pdftex.def)             Requested size: 307.28987pt x 116.42105pt.
 File: figs/Barre_couleur.png Graphic file (type png)
 <use figs/Barre_couleur.png>
-Package pdftex.def Info: figs/Barre_couleur.png  used on input line 469.
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 467.
 (pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
 [13
 
@@ -1384,20 +1378,20 @@ ur-la-demande-en-huile-vuxe9guxe9tale-1}) has been already used, duplicate igno
 red
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.469 \end{frame}
+l.467 \end{frame}
                   <./figs/PO_MAP_2015.png>]
-<figs/production-huile-de-palme.png, id=466, 1072.75781pt x 470.50781pt>
+<figs/production-huile-de-palme.png, id=463, 1072.75781pt x 470.50781pt>
 File: figs/production-huile-de-palme.png Graphic file (type png)
 <use figs/production-huile-de-palme.png>
 Package pdftex.def Info: figs/production-huile-de-palme.png  used on input line
- 507.
+ 505.
 (pdftex.def)             Requested size: 199.16928pt x 87.35129pt.
 File: figs/Barre_couleur.png Graphic file (type png)
 <use figs/Barre_couleur.png>
-Package pdftex.def Info: figs/Barre_couleur.png  used on input line 507.
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 505.
 (pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
 
-Overfull \vbox (7.57639pt too high) detected at line 507
+Overfull \vbox (7.57639pt too high) detected at line 505
  []
 
 [14
@@ -1406,11 +1400,11 @@ pdfTeX warning (ext4): destination with the same identifier (name{augmenter-lof
 fre}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.507 \end{frame}
+l.505 \end{frame}
                   <./figs/production-huile-de-palme.png>]
 File: figs/Barre_couleur.png Graphic file (type png)
 <use figs/Barre_couleur.png>
-Package pdftex.def Info: figs/Barre_couleur.png  used on input line 539.
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 537.
 (pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
 [15
 
@@ -1418,30 +1412,30 @@ pdfTeX warning (ext4): destination with the same identifier (name{diminuer-la-d
 emande}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.539 \end{frame}
+l.537 \end{frame}
                  ]
-<figs/consommation-huile-de-palme.png, id=524, 615.29875pt x 421.575pt>
+<figs/consommation-huile-de-palme.png, id=521, 615.29875pt x 421.575pt>
 File: figs/consommation-huile-de-palme.png Graphic file (type png)
 <use figs/consommation-huile-de-palme.png>
 Package pdftex.def Info: figs/consommation-huile-de-palme.png  used on input li
-ne 552.
+ne 550.
 (pdftex.def)             Requested size: 142.26378pt x 97.46838pt.
 File: figs/Barre_couleur.png Graphic file (type png)
 <use figs/Barre_couleur.png>
-Package pdftex.def Info: figs/Barre_couleur.png  used on input line 552.
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 550.
 (pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
 [16
 
  <./figs/consommation-huile-de-palme.png>]
-<figs/UN-regional-pop-projections.png, id=551, 831.105pt x 602.25pt>
+<figs/UN-regional-pop-projections.png, id=548, 831.105pt x 602.25pt>
 File: figs/UN-regional-pop-projections.png Graphic file (type png)
 <use figs/UN-regional-pop-projections.png>
 Package pdftex.def Info: figs/UN-regional-pop-projections.png  used on input li
-ne 557.
+ne 555.
 (pdftex.def)             Requested size: 199.16928pt x 144.3224pt.
 File: figs/Barre_couleur.png Graphic file (type png)
 <use figs/Barre_couleur.png>
-Package pdftex.def Info: figs/Barre_couleur.png  used on input line 557.
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 555.
 (pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
 [17
 
@@ -1451,11 +1445,11 @@ rse-foret-tropicale-palmier-a-huile.toc) (./controverse-foret-tropicale-palmier
 -a-huile.toc)
 File: figs/Barre_couleur.png Graphic file (type png)
 <use figs/Barre_couleur.png>
-Package pdftex.def Info: figs/Barre_couleur.png  used on input line 561.
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 559.
 (pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
 File: figs/partners_logos.png Graphic file (type png)
 <use figs/partners_logos.png>
-Package pdftex.def Info: figs/partners_logos.png  used on input line 561.
+Package pdftex.def Info: figs/partners_logos.png  used on input line 559.
 (pdftex.def)             Requested size: 122.91406pt x 21.41797pt.
 [18
 
@@ -1464,23 +1458,23 @@ ment-uxe9conomique-des-pays-producteurs}) has been already used, duplicate igno
 red
 <to be read again> 
                    \relax 
-l.583 \end{frame}
+l.581 \end{frame}
                  
 File: figs/Barre_couleur.png Graphic file (type png)
 <use figs/Barre_couleur.png>
-Package pdftex.def Info: figs/Barre_couleur.png  used on input line 583.
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 581.
 (pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
 [19
 
 ]
 File: figs/partners_logos.png Graphic file (type png)
 <use figs/partners_logos.png>
-Package pdftex.def Info: figs/partners_logos.png  used on input line 604.
+Package pdftex.def Info: figs/partners_logos.png  used on input line 602.
 (pdftex.def)             Requested size: 153.64493pt x 26.7728pt.
-<figs/Canopy-NC.jpg, id=649, 218.2554pt x 144.54pt>
+<figs/Canopy-NC.jpg, id=645, 218.2554pt x 144.54pt>
 File: figs/Canopy-NC.jpg Graphic file (type jpg)
 <use figs/Canopy-NC.jpg>
-Package pdftex.def Info: figs/Canopy-NC.jpg  used on input line 604.
+Package pdftex.def Info: figs/Canopy-NC.jpg  used on input line 602.
 (pdftex.def)             Requested size: 412.47488pt x 273.14662pt.
 [20
 
@@ -1496,10 +1490,10 @@ Package pdftex.def Info: figs/Canopy-NC.jpg  used on input line 604.
 
 (./controverse-foret-tropicale-palmier-a-huile.aux) ) 
 Here is how much of TeX's memory you used:
- 27955 strings out of 480145
- 542930 string characters out of 5893300
+ 27951 strings out of 480145
+ 542891 string characters out of 5893300
  853507 words of memory out of 5000000
- 45104 multiletter control sequences out of 15000+600000
+ 45100 multiletter control sequences out of 15000+600000
  538162 words of font info for 115 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  128i,19n,122p,1040b,1141s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1513,10 +1507,10 @@ ts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso9.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsy9.pfb>
 Output written on controverse-foret-tropicale-palmier-a-huile.pdf (20 pages, 93
-90917 bytes).
+90680 bytes).
 PDF statistics:
- 746 PDF objects out of 1000 (max. 8388607)
- 641 compressed objects within 7 object streams
+ 739 PDF objects out of 1000 (max. 8388607)
+ 634 compressed objects within 7 object streams
  69 named destinations out of 1000 (max. 500000)
- 43251 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 43243 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -105,6 +105,8 @@ alimenter 10 milliards de personnes en 2050.
 
 ## Huile de palme et déforestation
 
+### Huile de palme et déforestation
+
 - Part des plantations d'huile de palme dans la déforestation en Indonésie:
   + Austin et al. 2019, _ERL_: 2001--2016, 23%.
   + Bessou C. _AFD report_: ~15%.
@@ -115,7 +117,7 @@ alimenter 10 milliards de personnes en 2050.
 
 **Lang et al. 2021** _arXiv_
 
-## Huile de palme et déforestation
+### Huile de palme et déforestation
 
 - **Le développement des plantations d'huile de palme est encore aujourd'hui LA première cause de déforestation en Indonésie.**
 - Autres causes de déforestation (Austin et al. 2019, _ERL_):
