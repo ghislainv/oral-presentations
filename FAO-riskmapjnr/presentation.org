@@ -1,0 +1,57 @@
+#+TITLE: =riskmapjnr= Python package for mapping the deforestation risk using JNR's methodology
+#+AUTHOR: Ghislain Vieilledent
+#+DATE: 19/07/2002
+#+OPTIONS: author:nil date:nil title:nil H:2 toc:nil num:t
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+# Load the beamer minor mode
+#+SETUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation,dvipsnames]
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME: [subsection=false]miniframes
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
+
+#+BEAMER_HEADER: \title[riskmapjnr]{\texttt{riskmapjnr} Python package for mapping the deforestation risk using JNR's methodology}
+
+#+SETUPFILE: "header.org"
+
+#+INCLUDE: "doc_prefix.tex" export latex
+
+* This is the first structural section
+
+** Frame 1
+*** Thanks to Eric Fraga                                           :B_block:
+    :PROPERTIES:
+    :BEAMER_COL: 0.48
+    :BEAMER_ENV: block
+    :END:
+    for the first viable Beamer setup in Org
+*** Thanks to everyone else                                        :B_block:
+    :PROPERTIES:
+    :BEAMER_COL: 0.48
+    :BEAMER_ACT: <2->
+    :BEAMER_ENV: block
+    :END:
+    for contributing to the discussion
+**** This will be formatted as a beamer note                       :B_note:
+     :PROPERTIES:
+     :BEAMER_env: note
+     :END:
+** Frame 2 (where we will not use columns)
+*** Request
+    Please test this stuff!
+
+* Last slide                                                         :ignore:
+    
+#+INCLUDE: "doc_suffix.tex" export latex
+
+* Local variables                                                  :noexport:
+
+Local Variables: 
+org-src-preserve-indentation: t
+org-edit-src-content: 0
+org-export-with-smart-quotes: t
+End:
+
+# End Of File

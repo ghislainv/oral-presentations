@@ -1,0 +1,190 @@
+% Created 2022-07-19 mar. 15:48
+% Intended LaTeX compiler: pdflatex
+\documentclass[presentation,dvipsnames]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usetheme{default}
+\useinnertheme{rounded}
+\useoutertheme[subsection=false]{miniframes}
+\date{}
+\title{\texttt{riskmapjnr} Python package for mapping the deforestation risk using JNR's methodology}
+\title[riskmapjnr]{\texttt{riskmapjnr} Python package for mapping the deforestation risk using JNR's methodology}
+\usepackage{pgf}
+\usepackage{color}
+\usepackage[english,french]{babel}
+\definecolor{vertmoyen}{RGB}{51,110,23} % vert moyen
+\definecolor{blueFRB}{HTML}{31859c}
+\usecolortheme[named=blueFRB]{structure}
+\usepackage{tabularx} % varier la largeur du tableau
+\usepackage{layout}
+\setlength{\LTleft}{-5cm plus 1 fill}
+\setlength{\LTright}{-5cm plus 1 fill}
+\usepackage{booktabs}
+\usepackage{arydshln} %% dashlines for tabular
+\newcommand{\logit}{\text{logit}}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\R}{\textnormal{\sffamily\bfseries R}}
+\newcommand{\pkg}[1]{{\fontseries{b}\selectfont #1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{frametitle}{%
+\usebeamerfont{frametitle}\insertframetitle%
+\vphantom{g} % To avoid fluctuations per frame
+\par
+\centering \includegraphics[width=\textwidth]{figs/Barre_couleur}
+}
+
+% Logo
+\newif\ifplacelogo % create a new conditional
+\logo{\ifplacelogo\includegraphics[width=0.3\textwidth]{figs/partners_logos}\fi}
+
+%Call table of contents at the beginning of each section
+\AtBeginSection[]{
+\placelogotrue
+\begin{frame}
+\frametitle{Plan}
+\begin{columns}[c]
+\begin{column}{0.5\textwidth}
+\tableofcontents[sections=1,currentsection]
+\vspace{0.5cm}
+\tableofcontents[sections=2,currentsection]
+\end{column}
+\begin{column}{0.5\textwidth}
+\tableofcontents[sections=3,currentsection]
+\vspace{0.5cm}
+\tableofcontents[sections=4,currentsection]
+\end{column}
+\end{columns}
+\end{frame}
+\placelogofalse
+}
+
+\AtBeginSubsection[]{}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=Black,
+filecolor=Maroon,
+citecolor=Blue,
+urlcolor=Maroon}
+\urlstyle{same} % disable monospaced font for URLs
+
+\hypersetup{
+ pdfauthor={Ghislain Vieilledent},
+ pdftitle={\texttt{riskmapjnr} Python package for mapping the deforestation risk using JNR's methodology},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.5.3)}, 
+ pdflang={English}}
+\begin{document}
+
+% Title page
+{
+  \setbeamertemplate{navigation symbols}{}
+  \begin{frame}[plain, noframenumbering]
+  \begin{center}
+  \small{\textbf{FAO -- IMPRESS project -- July, 2022}}
+  \end{center}
+  \vspace{-0.5cm}
+  \titlepage % Presentation first page
+  \vspace{-3cm}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figs/Barre_couleur}
+    
+    \vspace{0.25cm}
+    
+    \includegraphics[width=10cm]{figs/Banniere}
+    
+    \small{Ghislain VIEILLEDENT}
+      
+    \vspace{0.25cm}
+    
+    {\scriptsize
+      \begin{tabular}{l}
+        \textbf{Cirad} UMR AMAP
+      \end{tabular}
+    }
+    
+    \includegraphics[width=0.45\textwidth]{figs/partners_logos}
+    
+  \end{center}
+  \end{frame}
+}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\placelogotrue
+\begin{frame}
+  \frametitle{Plan}
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \tableofcontents[sections=1]
+      \vspace{0.5cm}
+      \tableofcontents[sections=2]
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \tableofcontents[sections=3]
+        \vspace{0.5cm}
+        \tableofcontents[sections=4]
+    \end{column}
+  \end{columns}
+\end{frame}
+\placelogofalse
+
+\section{This is the first structural section}
+\label{sec:org29eb8d2}
+
+\begin{frame}[label={sec:org39dbc75}]{Frame 1}
+\begin{columns}
+\begin{column}{0.48\columnwidth}
+\begin{block}{Thanks to Eric Fraga}
+for the first viable Beamer setup in Org
+\end{block}
+\end{column}
+\begin{column}{0.48\columnwidth}
+\begin{block}<2->{Thanks to everyone else}
+for contributing to the discussion
+\note{This will be formatted as a beamer note
+}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+\begin{frame}[label={sec:orgfca380c}]{Frame 2 (where we will not use columns)}
+\begin{block}{Request}
+Please test this stuff!
+\end{block}
+\end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{
+  % Use background image
+  \usebackgroundtemplate{%
+    \includegraphics[keepaspectratio=true, height=\paperheight]{figs/Canopy-NC}
+  }
+  \setbeamertemplate{navigation symbols}{}
+  % Remove shadow from block
+  \setbeamertemplate{blocks}[rounded][shadow=false]
+  \begin{frame}[plain]
+  	\vspace*{\stretch{100}} 
+    \begin{block}{}
+      \begin{center}
+        \ldots~Thank you for attention~\ldots \\
+        \url{https://ecology.ghislainv.fr/presentations} \\
+        \includegraphics[width=0.45\textwidth]{figs/partners_logos}
+      \end{center}
+    \end{block}
+  \end{frame}
+}
+\end{document}
