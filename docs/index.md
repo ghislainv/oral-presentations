@@ -1,3 +1,4 @@
+1. [FAO-riskmapjnr-July2022](riskmapjnr_Vieilledent_Cirad.pdf)
 1. [Controverse-Déforestation-Palmier-à-Huile-Avr2022](controverse-foret-tropicale-palmier-a-huile.pdf)
 1. [JSDM-Metradica](JSDM-Metradica.pdf)
 1. [Baobabs-Seasonality-Mada](Baobabs-Seasonality-Mada.pdf)

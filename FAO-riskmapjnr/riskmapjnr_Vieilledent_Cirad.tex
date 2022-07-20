@@ -1,4 +1,4 @@
-% Created 2022-07-20 mer. 19:11
+% Created 2022-07-20 mer. 21:17
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,table,dvipsnames,compress]{beamer}
 \usepackage[utf8]{inputenc}
@@ -144,12 +144,12 @@ urlcolor=Maroon}
 \placelogofalse
 
 \section{Introduction}
-\label{sec:orge358cc7}
+\label{sec:org0a7659f}
 
 \subsection{Context}
-\label{sec:org00a04ae}
+\label{sec:org856e0ab}
 
-\begin{frame}[label={sec:org863b6f2}]{Context}
+\begin{frame}[label={sec:org5c2df49}]{Context}
 \begin{itemize}
 \item Paris Agreement on climate change
 \item REDD+: Reducing Emissions from Deforestation and forest Degradation
@@ -163,9 +163,9 @@ urlcolor=Maroon}
 \end{frame}
 
 \subsection{Objectives}
-\label{sec:orga0b551b}
+\label{sec:orga3502c6}
 
-\begin{frame}[label={sec:orgc2cd170}]{Objectives}
+\begin{frame}[label={sec:orgdae1938}]{Objectives}
 \begin{block}{Allocate the deforestation spatially}
 \begin{itemize}
 \item Given a deforestation intensity (ha/yr) in a jurisdiction, how to allocate deforestation spatially? \alert{\(\Rightarrow\) Map of the deforestation risk}.
@@ -188,12 +188,12 @@ urlcolor=Maroon}
 \end{frame}
 
 \section{Functionalities}
-\label{sec:orgd0d0d84}
+\label{sec:orge55928d}
 
 \subsection{Python package}
-\label{sec:org3193f07}
+\label{sec:org5a1757e}
 
-\begin{frame}[label={sec:org439cea8},fragile]{Python package and website}
+\begin{frame}[label={sec:org496d94d},fragile]{Python package and website}
  \begin{itemize}
 \item Python package: \texttt{riskmapjnr}
 \item Website: \url{https://ecology.ghislainv.fr/riskmapjnr}
@@ -208,7 +208,7 @@ urlcolor=Maroon}
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:orgac4f7f1},fragile]{Code efficiency}
+\begin{frame}[label={sec:org72947a0},fragile]{Code efficiency}
  \begin{block}{Fast computations}
 Python scientific libraries used:
 \begin{itemize}
@@ -233,9 +233,9 @@ Python scientific libraries used:
 \end{frame}
 
 \subsection{Functions}
-\label{sec:org297bd4e}
+\label{sec:org52bc4ec}
 
-\begin{frame}[label={sec:orgd5d2b9f},fragile]{Main functions}
+\begin{frame}[label={sec:org2363939},fragile]{Main functions}
  The \texttt{riskmapjnr} package includes functions to:
 
 \begin{enumerate}
@@ -250,7 +250,7 @@ Python scientific libraries used:
 \end{enumerate}
 \end{frame}
 
-\begin{frame}[label={sec:orgdd703f7},fragile]{Distance to forest edge threshold}
+\begin{frame}[label={sec:orgbfc836f},fragile]{Distance to forest edge threshold}
  \begin{itemize}
 \item \texttt{rmj.dist\_edge\_threshold()}: Compute the distance to the forest edge after which the risk of deforestation becomes negligible.
 \item Here, >99\% of deforestation occurs within a distance \(\le\)180m.
@@ -260,11 +260,11 @@ Python scientific libraries used:
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{figs/perc_dist.png}
-\caption{\label{fig:orgbb2e15d}Cumulative deforestation as a function of the distance to forest edge.}
+\caption{\label{fig:orgf9f8f80}Cumulative deforestation as a function of the distance to forest edge.}
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:orge607d24},fragile]{Local deforestation rate}
+\begin{frame}[label={sec:org32c66c6},fragile]{Local deforestation rate}
  \begin{itemize}
 \item \texttt{rmj.local\_defor\_rate()}: Compute a local risk of deforestation at the pixel level using a moving window made of several pixels.
 \item Different window sizes can be chosen.
@@ -274,11 +274,11 @@ Python scientific libraries used:
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{figs/moving_window.png}
-\caption{\label{fig:orgde756e4}Moving window.}
+\caption{\label{fig:orge557364}Moving window.}
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:org3220b62},fragile]{Categorize the deforestation risk}
+\begin{frame}[label={sec:org741fa91},fragile]{Categorize the deforestation risk}
  \begin{itemize}
 \item \texttt{rmj.defor\_cat()}: Convert local deforestation rate into categories of deforestation risk.
 \item The JNR methodology suggests to use \uline{31 categories of risk} from ``0'' to ``30'' (including the ``0'' category).
@@ -293,11 +293,11 @@ Python scientific libraries used:
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.4\textwidth]{figs/categories.png}
-\caption{\label{fig:orge93bc49}Categories of deforestation risk.}
+\caption{\label{fig:orgd34ebc0}Categories of deforestation risk.}
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:org84beabf},fragile]{Validate the map}
+\begin{frame}[label={sec:org0dea292},fragile]{Validate the map}
  \begin{itemize}
 \item \texttt{rmj.validation()}: Validate the map of deforestation risk on a validation period.
 \item Square grid of at least 1000 spatial cells covering the jurisdiction.
@@ -309,11 +309,11 @@ Python scientific libraries used:
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{figs/pred_obs_ws5_ei.png}
-\caption{\label{fig:orgca5fddd}Predictions vs. observations.}
+\caption{\label{fig:org252304e}Predictions vs. observations.}
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:org95a7c49},fragile]{Derive maps in parallel}
+\begin{frame}[label={sec:org996d16a},fragile]{Derive maps in parallel}
  \begin{itemize}
 \item \texttt{rmj.makemap()}: Derive maps with different window sizes and slicing algorithms and choose the best map.
 \item Maps are produced on separate computer cores in parallel.
@@ -321,12 +321,12 @@ Python scientific libraries used:
 \end{frame}
 
 \section{Case-studies}
-\label{sec:org0af6bea}
+\label{sec:orgd0b9608}
 
 \subsection{Jurisdictions}
-\label{sec:orgf9fe58e}
+\label{sec:orgc59e8b9}
 
-\begin{frame}[label={sec:org8a7c0da}]{Jurisdictions}
+\begin{frame}[label={sec:org40df261}]{Jurisdictions}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{itemize}
@@ -341,22 +341,22 @@ Python scientific libraries used:
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figs/riskmap_ws5_ei.png}
-\caption{\label{fig:org67a4319}Map of the deforestation risk for Guadeloupe.}
+\caption{\label{fig:org921de52}Map of the deforestation risk for Guadeloupe.}
 \end{figure}
 \end{column}
 \end{columns}
 \end{frame}
 
 \subsection{Kenya}
-\label{sec:orgecc5524}
+\label{sec:orgeb53768}
 
-\begin{frame}[label={sec:org5374fbc}]{Kenya}
+\begin{frame}[label={sec:org083ad31}]{Kenya}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{itemize}
 \item Forest cover change map: 2010--2014--2018.
 \item Distance to forest edge threshold: 780 m.
-\item Computation time:
+\item Computation time: \(\sim\)20 min for 8 window sizes and 2 slicing algorithms on a personal computer using 6 cores.
 \end{itemize}
 \end{column}
 
@@ -370,7 +370,7 @@ Python scientific libraries used:
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org37df27d}]{Kenya}
+\begin{frame}[label={sec:orgff0d72b}]{Kenya}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{figs/perc_dist_kenya.png}
@@ -378,7 +378,7 @@ Python scientific libraries used:
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:orgda91c14}]{Kenya}
+\begin{frame}[label={sec:orgaac6436}]{Kenya}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{figs/pred_obs_kenya.png}
@@ -386,7 +386,7 @@ Python scientific libraries used:
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:org86232ad}]{Kenya}
+\begin{frame}[label={sec:orgdb50a26}]{Kenya}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.6\textwidth]{figs/riskmap_kenya.png}
@@ -395,12 +395,12 @@ Python scientific libraries used:
 \end{frame}
 
 \section{Perspectives}
-\label{sec:org0679fed}
+\label{sec:org4f93844}
 
 \subsection{Comments}
-\label{sec:orge22544d}
+\label{sec:org223b2fb}
 
-\begin{frame}[label={sec:org029531f}]{Additional tests}
+\begin{frame}[label={sec:orgc887f58}]{Additional tests}
 \begin{itemize}
 \item \alert{!! First results}
 \item Code might include some errors
@@ -409,7 +409,7 @@ Python scientific libraries used:
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgd8ddc1c}]{Issues}
+\begin{frame}[label={sec:org54ca8f7}]{Issues}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{itemize}
@@ -418,7 +418,6 @@ Python scientific libraries used:
 \item ei: ``equal interval''\\
 ea: ``equal area''.
 \item The ``natural breaks'' algorithm is not yet implemented.
-\item Weak relationship between predictions and observations (high wRMSE).
 \end{itemize}
 \end{column}
 
@@ -426,13 +425,31 @@ ea: ``equal area''.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figs/map_comp.png}
-\caption{\label{fig:org2f4984a}Prediction error as a function of window size.}
+\caption{\label{fig:org3ea48de}Prediction error as a function of window size.}
 \end{figure}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgbe9f803},fragile]{Discussions with partners}
+\begin{frame}[label={sec:org775fcfe}]{Issues}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{itemize}
+\item Weak relationship between predictions and observations (high wRMSE).
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figs/pred_obs_kenya.png}
+\caption{\label{fig:org81afec7}Predictions vs. observations for Kenya.}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org44f56a4},fragile]{Discussions with partners}
  \begin{itemize}
 \item Cirad, FAO, IMPRESS, Verra and CBI.
 \item To improve the methodology itself.
@@ -442,9 +459,9 @@ ea: ``equal area''.
 \end{frame}
 
 \subsection{Alternative approach}
-\label{sec:org4464db7}
+\label{sec:org1227862}
 
-\begin{frame}[label={sec:org705899c},fragile]{Alternative approach}
+\begin{frame}[label={sec:org27500ae},fragile]{Alternative approach}
  \begin{itemize}
 \item Comparison with the \texttt{forestatrisk} approach
 \item Statistical model estimating the deforestation risk \(\theta\)

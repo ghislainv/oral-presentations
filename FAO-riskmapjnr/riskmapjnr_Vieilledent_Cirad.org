@@ -203,7 +203,7 @@ The =riskmapjnr= package includes functions to:
 
 - Forest cover change map: 2010--2014--2018.
 - Distance to forest edge threshold: 780 m.
-- Computation time:
+- Computation time: \sim20 min for 8 window sizes and 2 slicing algorithms on a personal computer using 6 cores.
 
 **** Figure                                                        :BMCOL:
 :PROPERTIES:
@@ -254,16 +254,32 @@ The =riskmapjnr= package includes functions to:
 - ei: "equal interval"\\
   ea: "equal area".
 - The "natural breaks" algorithm is not yet implemented.
+  
+**** Fig                                                           :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+NAME: error-kenya
+#+ATTR_LATEX: :width \textwidth
+#+CAPTION: Prediction error as a function of window size.
+[[file:figs/map_comp.png]]
+
+*** Issues
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
 - Weak relationship between predictions and observations (high wRMSE).
   
 **** Fig                                                           :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.5
 :END:
-#+NAME: riskmap-kenya
+#+NAME: pred-obs-kenya
 #+ATTR_LATEX: :width \textwidth
-#+CAPTION: Prediction error as a function of window size.
-[[file:figs/map_comp.png]]
+#+CAPTION: Predictions vs. observations for Kenya.
+[[file:figs/pred_obs_kenya.png]]
 
 *** Discussions with partners
 
@@ -285,7 +301,7 @@ The =riskmapjnr= package includes functions to:
 #+BEGIN_CENTER
 https://ecology.ghislainv.fr/forestatrisk/
 #+END_CENTER
-  
+
 * Last slide                                                         :ignore:
     
 #+INCLUDE: "doc_suffix.tex" export latex
