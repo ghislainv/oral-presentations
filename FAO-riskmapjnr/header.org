@@ -1,3 +1,4 @@
+#+BEAMER_HEADER: \usepackage{lmodern}
 #+BEAMER_HEADER: \usepackage{pgf}
 #+BEAMER_HEADER: \usepackage{color}
 #+BEAMER_HEADER: \usepackage[english,french]{babel}
@@ -23,10 +24,11 @@
 #+BEAMER_HEADER:     \par
 #+BEAMER_HEADER:     \centering \includegraphics[width=\textwidth]{figs/Barre_couleur}
 #+BEAMER_HEADER: }
+#+BEAMER_HEADER: \beamertemplatenavigationsymbolsempty
 #+BEAMER_HEADER: 
 #+BEAMER_HEADER: % Logo
 #+BEAMER_HEADER: \newif\ifplacelogo % create a new conditional
-#+BEAMER_HEADER: \logo{\ifplacelogo\includegraphics[width=0.3\textwidth]{figs/partners_logos}\fi}
+#+BEAMER_HEADER: \logo{\ifplacelogo\includegraphics[width=0.5\textwidth]{figs/partners_logos}\fi}
 #+BEAMER_HEADER: 
 #+BEAMER_HEADER: %Call table of contents at the beginning of each section
 #+BEAMER_HEADER: \AtBeginSection[]{
@@ -57,5 +59,7 @@
 #+BEAMER_HEADER:   filecolor=Maroon,
 #+BEAMER_HEADER:   citecolor=Blue,
 #+BEAMER_HEADER:   urlcolor=Maroon}
-#+BEAMER_HEADER: \urlstyle{same} % disable monospaced font for URLs
+#+BEAMER_HEADER: 
+#+BEAMER_HEADER: % Disable monospaced font for URLs
+#+BEAMER_HEADER: \urlstyle{same}
 #+BEAMER_HEADER:
