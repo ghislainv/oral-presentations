@@ -1,0 +1,301 @@
+#+TITLE: =riskmapjnr= Python package for mapping the deforestation risk using JNR's methodology
+#+AUTHOR: Ghislain Vieilledent
+#+DATE: 19/07/2002
+#+OPTIONS: author:nil date:nil title:nil H:3 toc:nil num:t
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+SETUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt,table,dvipsnames,compress]
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME: [subsection=false]miniframes
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
+#+BEAMER_HEADER: \title[riskmapjnr]{\texttt{riskmapjnr} Python package for mapping the deforestation risk using JNR's methodology}
+
+#+SETUPFILE: "header.org"
+
+* Title page                                                         :ignore:
+
+#+INCLUDE: "doc_prefix.tex" export latex
+
+* Introduction
+
+** Context
+
+*** Context                                                        
+
+- Paris Agreement on climate change
+- REDD+: Reducing Emissions from Deforestation and forest Degradation
+- IMPRESS (Improving Measurement for Payments to Reduce Emissions and Strengthen Sinks) FAO -- UK-PACT project
+- VCS Jurisdictional and Nested REDD+ (JNR): certification of jurisdictional REDD+ programs and nested projects
+
+#+ATTR_LATEX: :width 0.5\textwidth
+[[file:figs/Canopy-NC.jpg]]
+
+** Objectives
+
+*** Objectives
+
+**** Allocate the deforestation spatially                        :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+
+- Given a deforestation intensity (ha/yr) in a jurisdiction, how to allocate deforestation spatially? *\Rightarrow Map of the deforestation risk*.
+- [[https://verra.org/wp-content/uploads/2021/04/DRAFT_JNR_Risk_Mapping_Tool_15APR2021.pdf][JNR risk mapping methodology]], by Verra and CBI (Carbon Decision International).
+- Simple methodology: use only an historical forest cover change map.
+
+**** Informatic tool to derive the risk map                      :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+
+- Develop a tool (Python package) to derive this map.
+- Following JNR methodology.
+- Port that tool to Sepal (FAO side).
+
+#+ATTR_LATEX: :width 0.5\textwidth
+[[file:figs/jnr.png]]
+
+* Functionalities
+
+** Python package
+
+*** Python package and website
+
+- Python package: =riskmapjnr=
+- Website: https://ecology.ghislainv.fr/riskmapjnr
+- GitHub repository with open source code: https://github.com/ghislainv/riskmapjnr
+- Tutorials: see /Get Started/ and /Articles/ sections on the website
+
+#+ATTR_LATEX: :width 0.25\textwidth
+#+CAPTION: =riskmapjnr= logo
+[[file:figs/logo-riskmapjnr.png]]
+
+*** Code efficiency
+
+**** Fast computations                                           :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+
+Python scientific libraries used:
+- =gdal= for fast processing of georeferenced data.
+- =NumPy=, =SciPy=, and =Pandas= for fast matrix and vector operations.
+
+**** Handling large rasters                                      :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+ 
+- Large rasters are divided into blocks of data for in-memory processing.
+- Analysis on large geographical extents (e.g. country scale) and high spatial resolutions (eg. 30 m).
+
+**** Repeated tasks can be parallelized
+
+- Several (25 \times 3 = 75) maps need to be produced and compared.
+- Function to produce maps on separate computer cores in parallel.
+
+** Functions
+
+*** Main functions
+
+The =riskmapjnr= package includes functions to:
+
+    1. Estimate the distance to forest edge beyond which the deforestation risk is negligible:
+       =dist_edge_threshold()=.
+    2. Compute local deforestation rates using a moving window whose size can vary:
+       =local_defor_rate()=.
+    3. Transform local deforestation rates into categories of deforestation risks using several slicing algorithms:
+       =set_defor_cat_zero()= and =defor_cat()=
+    4. Validate maps of deforestation risk and select the map with the higher accuracy:
+       =defrate_per_cat()= and =validation()=.
+      
+*** Distance to forest edge threshold
+
+- =rmj.dist_edge_threshold()=: Compute the distance to the forest edge after which the risk of deforestation becomes negligible.
+- Here, >99% of deforestation occurs within a distance \leq180m.
+- Forest pixels with a distance >180m will be in Category 0 (zero risk of deforestation).
+  
+#+NAME: perc_dist
+#+ATTR_LATEX: :width 0.5\textwidth
+#+CAPTION: Cumulative deforestation as a function of the distance to forest edge.
+[[file:figs/perc_dist.png]]
+
+*** Local deforestation rate
+
+- =rmj.local_defor_rate()=: Compute a local risk of deforestation at the pixel level using a moving window made of several pixels.
+- Different window sizes can be chosen.
+- The JNR methodology recommends the use of 25 different window sizes.
+
+#+NAME: moving_window
+#+ATTR_LATEX: :width 0.8\textwidth
+#+CAPTION: Moving window.
+[[file:figs/moving_window.png]]
+
+*** Categorize the deforestation risk
+
+- =rmj.defor_cat()=: Convert local deforestation rate into categories of deforestation risk.
+- The JNR methodology suggests to use _31 categories of risk_ from "0" to "30" (including the "0" category).
+- The JNR methodology recommends the use of _three slicing algorithms_: "equal area", "equal interval", and "natural breaks".
+  - "equal area": each class covers approximately the same area
+  - "equal interval": bins of the same range size
+  - "natural breaks": data are normalized before applying the "equal interval" algorithm.
+
+#+NAME: categories
+#+ATTR_LATEX: :width 0.4\textwidth
+#+CAPTION: Categories of deforestation risk.
+[[file:figs/categories.png]]
+
+*** Validate the map
+
+- =rmj.validation()=: Validate the map of deforestation risk on a validation period.
+- Square grid of at least 1000 spatial cells covering the jurisdiction.
+- Predicted deforestation using deforestation rates for risk categories.
+- Comparison of predictions and observations for each spatial cells
+- Accuracy index: weighted Root Mean Squared Error (wRMSE)
+
+#+NAME: validation
+#+ATTR_LATEX: :width 0.5\textwidth
+#+CAPTION: Predictions vs. observations.
+[[file:figs/pred_obs_ws5_ei.png]]
+
+*** Derive maps in parallel
+
+- =rmj.makemap()=: Derive maps with different window sizes and slicing algorithms and choose the best map.
+- Maps are produced on separate computer cores in parallel.
+
+* Case-studies
+
+** Jurisdictions
+
+*** Jurisdictions
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+- Guadeloupe (/Get Started/ tutorial)
+- Madagascar tropical moist forests
+- Kenya (IMPRESS project)
+- more to come...
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+NAME: riskmap-GLP
+#+ATTR_LATEX: :width \textwidth
+#+CAPTION: Map of the deforestation risk for Guadeloupe.
+[[file:figs/riskmap_ws5_ei.png]]
+
+** Kenya
+
+*** Kenya
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+- Forest cover change map: 2010--2014--2018.
+- Distance to forest edge threshold: 780 m.
+- Computation time:
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+ATTR_LATEX: :width 0.9\textwidth
+#+CAPTION: Forest cover change (2010--2014--2018) for Kenya.
+[[file:figs/fcc123_kenya.png]]
+
+*** Kenya
+
+#+ATTR_LATEX: :width 0.6\textwidth
+#+CAPTION: Cumulative deforestation as a function of the distance to forest edge for Kenya.
+[[file:figs/perc_dist_kenya.png]]
+
+*** Kenya
+
+#+ATTR_LATEX: :width 0.6\textwidth
+#+CAPTION: Predictions vs. observations for Kenya.
+[[file:figs/pred_obs_kenya.png]]
+
+*** Kenya
+
+#+ATTR_LATEX: :width 0.6\textwidth
+#+CAPTION: Map of the deforestation risk for Kenya.
+[[file:figs/riskmap_kenya.png]]
+
+* Perspectives
+
+** Comments
+
+*** Additional tests
+
+- *!! First results*
+- Code might include some errors
+- Functions still need to be thoroughly tested
+- Results must be consolidated
+
+*** Issues
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+- The best window size is always the smallest.
+- No differences between slicing algorithms (ei or ea).
+- ei: "equal interval"\\
+  ea: "equal area".
+- The "natural breaks" algorithm is not yet implemented.
+- Weak relationship between predictions and observations (high wRMSE).
+  
+**** Fig                                                           :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+NAME: riskmap-kenya
+#+ATTR_LATEX: :width \textwidth
+#+CAPTION: Prediction error as a function of window size.
+[[file:figs/map_comp.png]]
+
+*** Discussions with partners
+
+- Cirad, FAO, IMPRESS, Verra and CBI.
+- To improve the methodology itself.
+- To test the =riskmapjnr= package and have feedbacks.
+- To increase computational speed on Sepal (use of GPU).
+
+** Alternative approach
+
+*** Alternative approach
+
+- Comparison with the =forestatrisk= approach
+- Statistical model estimating the deforestation risk \theta
+- \theta = function(environmental variables + location)
+- Variables: distance to forest edge, roads, towns, protected areas
+  
+#+LATEX: \vspace{0.5cm}
+#+BEGIN_CENTER
+https://ecology.ghislainv.fr/forestatrisk/
+#+END_CENTER
+  
+* Last slide                                                         :ignore:
+    
+#+INCLUDE: "doc_suffix.tex" export latex
+
+* Local variables                                                  :noexport:
+
+Local Variables: 
+org-src-preserve-indentation: t
+org-edit-src-content: 0
+org-export-with-smart-quotes: t
+End:
+
+# End Of File

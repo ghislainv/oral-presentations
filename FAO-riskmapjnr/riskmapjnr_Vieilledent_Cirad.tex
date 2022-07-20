@@ -1,4 +1,4 @@
-% Created 2022-07-20 mer. 15:57
+% Created 2022-07-20 mer. 19:11
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,table,dvipsnames,compress]{beamer}
 \usepackage[utf8]{inputenc}
@@ -144,12 +144,12 @@ urlcolor=Maroon}
 \placelogofalse
 
 \section{Introduction}
-\label{sec:orged914c1}
+\label{sec:orge358cc7}
 
 \subsection{Context}
-\label{sec:orge7f824b}
+\label{sec:org00a04ae}
 
-\begin{frame}[label={sec:orge78355b}]{Context}
+\begin{frame}[label={sec:org863b6f2}]{Context}
 \begin{itemize}
 \item Paris Agreement on climate change
 \item REDD+: Reducing Emissions from Deforestation and forest Degradation
@@ -163,28 +163,37 @@ urlcolor=Maroon}
 \end{frame}
 
 \subsection{Objectives}
-\label{sec:org5a4da93}
+\label{sec:orga0b551b}
 
-\begin{frame}[label={sec:org79745ff}]{Objectives}
+\begin{frame}[label={sec:orgc2cd170}]{Objectives}
+\begin{block}{Allocate the deforestation spatially}
 \begin{itemize}
-\item Given a deforestation intensity (ha/yr), how to allocate deforestation \alert{spatially}? \(\Rightarrow\) Map of deforestation risk
-\item Develop a tool to derive a map of the deforestation risk
-\item Following JNR methodology
-\item Using only an historical forest cover change map on a recent period
+\item Given a deforestation intensity (ha/yr) in a jurisdiction, how to allocate deforestation spatially? \alert{\(\Rightarrow\) Map of the deforestation risk}.
+\item \href{https://verra.org/wp-content/uploads/2021/04/DRAFT\_JNR\_Risk\_Mapping\_Tool\_15APR2021.pdf}{JNR risk mapping methodology}, by Verra and CBI (Carbon Decision International).
+\item Simple methodology: use only an historical forest cover change map.
+\end{itemize}
+\end{block}
+
+\begin{block}{Informatic tool to derive the risk map}
+\begin{itemize}
+\item Develop a tool (Python package) to derive this map.
+\item Following JNR methodology.
+\item Port that tool to Sepal (FAO side).
 \end{itemize}
 
 \begin{center}
 \includegraphics[width=0.5\textwidth]{figs/jnr.png}
 \end{center}
+\end{block}
 \end{frame}
 
 \section{Functionalities}
-\label{sec:orge5ec792}
+\label{sec:orgd0d0d84}
 
 \subsection{Python package}
-\label{sec:orgb128efa}
+\label{sec:org3193f07}
 
-\begin{frame}[label={sec:orgb67c257},fragile]{Python package and website}
+\begin{frame}[label={sec:org439cea8},fragile]{Python package and website}
  \begin{itemize}
 \item Python package: \texttt{riskmapjnr}
 \item Website: \url{https://ecology.ghislainv.fr/riskmapjnr}
@@ -199,10 +208,49 @@ urlcolor=Maroon}
 \end{figure}
 \end{frame}
 
-\subsection{Functions}
-\label{sec:org6a1ac31}
+\begin{frame}[label={sec:orgac4f7f1},fragile]{Code efficiency}
+ \begin{block}{Fast computations}
+Python scientific libraries used:
+\begin{itemize}
+\item \texttt{gdal} for fast processing of georeferenced data.
+\item \texttt{NumPy}, \texttt{SciPy}, and \texttt{Pandas} for fast matrix and vector operations.
+\end{itemize}
+\end{block}
 
-\begin{frame}[label={sec:org8002631},fragile]{Distance to forest edge threshold}
+\begin{block}{Handling large rasters}
+\begin{itemize}
+\item Large rasters are divided into blocks of data for in-memory processing.
+\item Analysis on large geographical extents (e.g. country scale) and high spatial resolutions (eg. 30 m).
+\end{itemize}
+\end{block}
+
+\begin{block}{Repeated tasks can be parallelized}
+\begin{itemize}
+\item Several (25 \texttimes{} 3 = 75) maps need to be produced and compared.
+\item Function to produce maps on separate computer cores in parallel.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\subsection{Functions}
+\label{sec:org297bd4e}
+
+\begin{frame}[label={sec:orgd5d2b9f},fragile]{Main functions}
+ The \texttt{riskmapjnr} package includes functions to:
+
+\begin{enumerate}
+\item Estimate the distance to forest edge beyond which the deforestation risk is negligible:
+\texttt{dist\_edge\_threshold()}.
+\item Compute local deforestation rates using a moving window whose size can vary:
+\texttt{local\_defor\_rate()}.
+\item Transform local deforestation rates into categories of deforestation risks using several slicing algorithms:
+\texttt{set\_defor\_cat\_zero()} and \texttt{defor\_cat()}
+\item Validate maps of deforestation risk and select the map with the higher accuracy:
+\texttt{defrate\_per\_cat()} and \texttt{validation()}.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[label={sec:orgdd703f7},fragile]{Distance to forest edge threshold}
  \begin{itemize}
 \item \texttt{rmj.dist\_edge\_threshold()}: Compute the distance to the forest edge after which the risk of deforestation becomes negligible.
 \item Here, >99\% of deforestation occurs within a distance \(\le\)180m.
@@ -212,11 +260,11 @@ urlcolor=Maroon}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{figs/perc_dist.png}
-\caption{\label{fig:org265194b}Cumulative deforestation as function of the distance to forest edge}
+\caption{\label{fig:orgbb2e15d}Cumulative deforestation as a function of the distance to forest edge.}
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:org262743c},fragile]{Local deforestation rate}
+\begin{frame}[label={sec:orge607d24},fragile]{Local deforestation rate}
  \begin{itemize}
 \item \texttt{rmj.local\_defor\_rate()}: Compute a local risk of deforestation at the pixel level using a moving window made of several pixels.
 \item Different window sizes can be chosen.
@@ -226,11 +274,11 @@ urlcolor=Maroon}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{figs/moving_window.png}
-\caption{\label{fig:orgdd64615}Moving window}
+\caption{\label{fig:orgde756e4}Moving window.}
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:orgeceef08},fragile]{Categorize the deforestation risk}
+\begin{frame}[label={sec:org3220b62},fragile]{Categorize the deforestation risk}
  \begin{itemize}
 \item \texttt{rmj.defor\_cat()}: Convert local deforestation rate into categories of deforestation risk.
 \item The JNR methodology suggests to use \uline{31 categories of risk} from ``0'' to ``30'' (including the ``0'' category).
@@ -245,60 +293,132 @@ urlcolor=Maroon}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.4\textwidth]{figs/categories.png}
-\caption{\label{fig:org719065e}Categories of deforestation risk}
-\end{figure}  
+\caption{\label{fig:orge93bc49}Categories of deforestation risk.}
+\end{figure}
+\end{frame}
+
+\begin{frame}[label={sec:org84beabf},fragile]{Validate the map}
+ \begin{itemize}
+\item \texttt{rmj.validation()}: Validate the map of deforestation risk on a validation period.
+\item Square grid of at least 1000 spatial cells covering the jurisdiction.
+\item Predicted deforestation using deforestation rates for risk categories.
+\item Comparison of predictions and observations for each spatial cells
+\item Accuracy index: weighted Root Mean Squared Error (wRMSE)
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/pred_obs_ws5_ei.png}
+\caption{\label{fig:orgca5fddd}Predictions vs. observations.}
+\end{figure}
+\end{frame}
+
+\begin{frame}[label={sec:org95a7c49},fragile]{Derive maps in parallel}
+ \begin{itemize}
+\item \texttt{rmj.makemap()}: Derive maps with different window sizes and slicing algorithms and choose the best map.
+\item Maps are produced on separate computer cores in parallel.
+\end{itemize}
 \end{frame}
 
 \section{Case-studies}
-\label{sec:orgaf20642}
+\label{sec:org0af6bea}
 
-\subsection{Countries}
-\label{sec:org68b9723}
+\subsection{Jurisdictions}
+\label{sec:orgf9fe58e}
 
-\begin{frame}[label={sec:org969b8de}]{Countries}
+\begin{frame}[label={sec:org8a7c0da}]{Jurisdictions}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{itemize}
 \item Guadeloupe (\emph{Get Started} tutorial)
+\item Madagascar tropical moist forests
 \item Kenya (IMPRESS project)
-\item Madagascar
+\item more to come\ldots{}
 \end{itemize}
 \end{column}
 
 \begin{column}{0.5\columnwidth}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{figs/riskmap_kenya.png}
-\caption{\label{fig:orgf55086c}Map of deforestation risk for Kenya}
+\includegraphics[width=\textwidth]{figs/riskmap_ws5_ei.png}
+\caption{\label{fig:org67a4319}Map of the deforestation risk for Guadeloupe.}
 \end{figure}
 \end{column}
 \end{columns}
 \end{frame}
 
+\subsection{Kenya}
+\label{sec:orgecc5524}
+
+\begin{frame}[label={sec:org5374fbc}]{Kenya}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{itemize}
+\item Forest cover change map: 2010--2014--2018.
+\item Distance to forest edge threshold: 780 m.
+\item Computation time:
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{figs/fcc123_kenya.png}
+\caption{Forest cover change (2010--2014--2018) for Kenya.}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org37df27d}]{Kenya}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{figs/perc_dist_kenya.png}
+\caption{Cumulative deforestation as a function of the distance to forest edge for Kenya.}
+\end{figure}
+\end{frame}
+
+\begin{frame}[label={sec:orgda91c14}]{Kenya}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{figs/pred_obs_kenya.png}
+\caption{Predictions vs. observations for Kenya.}
+\end{figure}
+\end{frame}
+
+\begin{frame}[label={sec:org86232ad}]{Kenya}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{figs/riskmap_kenya.png}
+\caption{Map of the deforestation risk for Kenya.}
+\end{figure}
+\end{frame}
 
 \section{Perspectives}
-\label{sec:org50d43e1}
+\label{sec:org0679fed}
 
 \subsection{Comments}
-\label{sec:org27f0b31}
+\label{sec:orge22544d}
 
-\begin{frame}[label={sec:org770e38d}]{Additional tests}
+\begin{frame}[label={sec:org029531f}]{Additional tests}
 \begin{itemize}
-\item \alert{!!} First results
+\item \alert{!! First results}
 \item Code might include some errors
 \item Functions still need to be thoroughly tested
 \item Results must be consolidated
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org86e3aea}]{Issues}
+\begin{frame}[label={sec:orgd8ddc1c}]{Issues}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{itemize}
-\item The best window size is always the smallest
-\item No differences between slicing algorithms (ei or ea)
+\item The best window size is always the smallest.
+\item No differences between slicing algorithms (ei or ea).
 \item ei: ``equal interval''\\
-ea: ``equal area''
+ea: ``equal area''.
+\item The ``natural breaks'' algorithm is not yet implemented.
+\item Weak relationship between predictions and observations (high wRMSE).
 \end{itemize}
 \end{column}
 
@@ -306,22 +426,36 @@ ea: ``equal area''
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figs/map_comp.png}
-\caption{\label{fig:org8ae83e2}Prediction error as a function of window size}
+\caption{\label{fig:org2f4984a}Prediction error as a function of window size.}
 \end{figure}
 \end{column}
 \end{columns}
 \end{frame}
 
-\subsection{Alternative approach}
-\label{sec:org7b5317d}
-
-\begin{frame}[label={sec:org407cecd},fragile]{Comparison with the \texttt{forestatrisk} approach}
+\begin{frame}[label={sec:orgbe9f803},fragile]{Discussions with partners}
  \begin{itemize}
-\item Alternative approach to compute the deforestation risk
+\item Cirad, FAO, IMPRESS, Verra and CBI.
+\item To improve the methodology itself.
+\item To test the \texttt{riskmapjnr} package and have feedbacks.
+\item To increase computational speed on Sepal (use of GPU).
+\end{itemize}
+\end{frame}
+
+\subsection{Alternative approach}
+\label{sec:org4464db7}
+
+\begin{frame}[label={sec:org705899c},fragile]{Alternative approach}
+ \begin{itemize}
+\item Comparison with the \texttt{forestatrisk} approach
 \item Statistical model estimating the deforestation risk \(\theta\)
 \item \(\theta\) = function(environmental variables + location)
 \item Variables: distance to forest edge, roads, towns, protected areas
 \end{itemize}
+
+\vspace{0.5cm}
+\begin{center}
+\url{https://ecology.ghislainv.fr/forestatrisk/}
+\end{center}
 \end{frame}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
