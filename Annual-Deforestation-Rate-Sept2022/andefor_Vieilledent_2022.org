@@ -180,7 +180,7 @@ file:figs/clarku.png
 - Difficult to interpret.
 - Overestimation of the mean annual deforestation rate.
 
-#+ATTR_LATEX: :width 0.7\textwidth
+#+ATTR_LATEX: :width 0.6\textwidth
 [[file:figs/D-perc-relationship.png]]
 
 *** Problems with Clark U. formula
@@ -200,7 +200,7 @@ file:figs/clarku.png
 
 - Overestimation of the mean annual deforestation rate.
 
-#+ATTR_LATEX: :width 0.7\textwidth
+#+ATTR_LATEX: :width 0.6\textwidth
 [[file:figs/D-T-relationship.png]]
 
 ** Puyravaud formula
