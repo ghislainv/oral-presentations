@@ -1,4 +1,4 @@
-% Created 2022-09-16 ven. 16:16
+% Created 2022-09-16 ven. 16:27
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,table,dvipsnames,compress]{beamer}
 \usepackage[utf8]{inputenc}
@@ -144,12 +144,12 @@ urlcolor=Maroon}
 \placelogofalse
 
 \section{Introduction}
-\label{sec:orgb4c6303}
+\label{sec:org18165b7}
 
 \subsection{Context}
-\label{sec:org55c81ef}
+\label{sec:org6d56366}
 
-\begin{frame}[label={sec:org367d2e1}]{Observations of deforestation}
+\begin{frame}[label={sec:org0c03390}]{Observations of deforestation}
 \begin{itemize}
 \item Historical deforestation maps are often derived from the analysis of satellite images (eg. Landsat).
 \item Deforestation is a rare event (< 1\%/yr) and is very variable from one year to another.
@@ -163,7 +163,7 @@ urlcolor=Maroon}
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:orgb5e0994}]{Annual deforestation rate}
+\begin{frame}[label={sec:orgf91b3f4}]{Annual deforestation rate}
 \begin{itemize}
 \item To be able to compare deforestation intensity between regions (eg. countries) and time periods of different lengths (eg. 5 or 10 years), we need to compute a \alert{\alert{mean annual deforestation rate}} \(d\) in \%/yr (also denoted \%.yr\(^{-1}\)).
 \item Several formulas have been proposed to compute \(d\) from the observed deforestation rate \(d'\) on a given period of time \(T\).
@@ -172,9 +172,9 @@ urlcolor=Maroon}
 \end{frame}
 
 \subsection{Objectives}
-\label{sec:orgf827fb6}
+\label{sec:orgccff547}
 
-\begin{frame}[label={sec:org3915a96}]{Objectives}
+\begin{frame}[label={sec:orgce403f6}]{Objectives}
 \begin{itemize}
 \item Compare the different formulas used to compute the \alert{\alert{mean annual deforestation rate}} \(d\) in \%/yr.
 \item Propose an appropriate formula for the JNR risk mapping tool.
@@ -182,12 +182,12 @@ urlcolor=Maroon}
 \end{frame}
 
 \section{Formulas}
-\label{sec:orgcabe509}
+\label{sec:org18477ee}
 
 \subsection{Notations}
-\label{sec:org70b2c76}
+\label{sec:org9d871dd}
 
-\begin{frame}[label={sec:org450a6e4}]{Notations}
+\begin{frame}[label={sec:org7f3b821}]{Notations}
 \begin{block}{Areas and time}
 \begin{itemize}
 \item \(A_t\): forest area (in ha or km\(^2\)) at time \(t\) with \(t=0,\ldots,T\).
@@ -209,9 +209,9 @@ e.g. \(d=(A_0-A_1)/A_0\), in \%/yr.
 \end{frame}
 
 \subsection{Formulas}
-\label{sec:org2aa6abd}
+\label{sec:org78cfd2b}
 
-\begin{frame}[label={sec:org0c09095}]{Formulas}
+\begin{frame}[label={sec:org457ce12}]{Formulas}
 How to compute \(d\) from \(A_0\), \(A_T\) and \(T\) (or from \(d'\) and \(T\) as \(d' = (A_0-A_T)/A_0\))?
 
 \begin{block}{Proposed formulas}
@@ -229,12 +229,12 @@ How to compute \(d\) from \(A_0\), \(A_T\) and \(T\) (or from \(d'\) and \(T\) a
 \end{frame}
 
 \section{Formula comparison}
-\label{sec:org1ae6ef4}
+\label{sec:org2810e74}
 
 \subsection{FAO formula}
-\label{sec:orgc295dbc}
+\label{sec:org681db88}
 
-\begin{frame}[label={sec:org4ae5568}]{FAO formula}
+\begin{frame}[label={sec:orgaaab85b}]{FAO formula}
 \centering \alert{\alert{\(r = (A_T/A_0)^{(1/T)}-1\)}}
 \vspace{0.5cm}
 
@@ -248,9 +248,9 @@ How to compute \(d\) from \(A_0\), \(A_T\) and \(T\) (or from \(d'\) and \(T\) a
 \end{frame}
 
 \subsection{Cirad formula}
-\label{sec:orgccb075a}
+\label{sec:orgb38bc0a}
 
-\begin{frame}[label={sec:org9a7a8e3},fragile]{Cirad formula}
+\begin{frame}[label={sec:orgc0386a6},fragile]{Cirad formula}
  \centering \alert{\alert{\(d = 1 - (1 - d')^{1/T}\)}}, with \(d' = (A_0-A_T)/A_0\) \\
 \(d = 1 - (1 - (A_0-A_T)/A_0)^{1/T} = 1 - (A_T/A_0)^{1/T}\)
 \vspace{0.5cm}
@@ -265,9 +265,9 @@ How to compute \(d\) from \(A_0\), \(A_T\) and \(T\) (or from \(d'\) and \(T\) a
 \end{frame}
 
 \subsection{Clark U. formula}
-\label{sec:orga8241e4}
+\label{sec:orgad53acc}
 
-\begin{frame}[label={sec:orgde71943}]{Clark U. formula}
+\begin{frame}[label={sec:orgceac932}]{Clark U. formula}
 \centering \alert{\alert{\(\delta = (A_0/A_T)^{(1/T)}-1\)}}
 \vspace{0.25cm}
 
@@ -287,7 +287,7 @@ How to compute \(d\) from \(A_0\), \(A_T\) and \(T\) (or from \(d'\) and \(T\) a
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgba525dd}]{Problems with Clark U. formula}
+\begin{frame}[label={sec:org42ad2e7}]{Problems with Clark U. formula}
 \centering \alert{\alert{\(\delta = (A_0/A_T)^{(1/T)}-1\)}}
 \vspace{0.25cm}
 
@@ -303,7 +303,7 @@ How to compute \(d\) from \(A_0\), \(A_T\) and \(T\) (or from \(d'\) and \(T\) a
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org558f892}]{Problems with Clark U. formula}
+\begin{frame}[label={sec:orgfb791a8}]{Problems with Clark U. formula}
 \centering \alert{\alert{\(\delta = (A_0/A_T)^{(1/T)}-1\)}}
 \vspace{0.25cm}
 
@@ -317,9 +317,9 @@ How to compute \(d\) from \(A_0\), \(A_T\) and \(T\) (or from \(d'\) and \(T\) a
 \end{frame}
 
 \subsection{Puyravaud formula}
-\label{sec:orgb93642b}
+\label{sec:org53f823a}
 
-\begin{frame}[label={sec:org06c39d0}]{Puyravaud formula}
+\begin{frame}[label={sec:org8d0c138}]{Puyravaud formula}
 \centering \alert{\alert{\(\rho = (1/T) \ln(A_T/A_0)\)}}
 \vspace{0.25cm}
 
@@ -346,12 +346,12 @@ How to compute \(d\) from \(A_0\), \(A_T\) and \(T\) (or from \(d'\) and \(T\) a
 \end{frame}
 
 \section{Conclusion}
-\label{sec:orgf3a85e5}
+\label{sec:orgfa4e305}
 
 \subsection{Recommendation}
-\label{sec:org3b3e10a}
+\label{sec:org6d4ca5e}
 
-\begin{frame}[label={sec:org82a0c1c}]{Recommendation}
+\begin{frame}[label={sec:org2e344ac}]{Recommendation}
 We recommend the use of the following formula to estimate the \alert{\alert{mean annual deforestation rate}}:\\
 \vspace{0.25cm}
 
@@ -359,9 +359,9 @@ We recommend the use of the following formula to estimate the \alert{\alert{mean
 \end{frame}
 
 \subsection{Demonstration of the formula}
-\label{sec:orgb888852}
+\label{sec:orgcb1e0bc}
 
-\begin{frame}[label={sec:org314c2f9}]{Demonstration}
+\begin{frame}[label={sec:orgec868dd}]{Demonstration}
 We demonstrate that \alert{\alert{\(d = 1 - (1 - d')^{1/T}\)}}: \\
 \vspace{0.25cm}
 
