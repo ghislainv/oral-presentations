@@ -1,0 +1,289 @@
+#+TITLE: Computing the annual deforestation rate
+#+AUTHOR: Ghislain Vieilledent
+#+DATE: 19/07/2002
+#+OPTIONS: author:nil date:nil title:nil H:3 toc:nil num:t
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+STARTUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt,table,dvipsnames,compress]
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME: [subsection=false]miniframes
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
+#+BEAMER_HEADER: \title[Annual deforestation rate]{Computing the annual deforestation rate}
+
+#+SETUPFILE: "header.org"
+
+* Title page                                                         :ignore:
+
+#+INCLUDE: "doc_prefix.tex" export latex
+
+* Introduction
+
+** Context
+
+*** Observations of deforestation                                               
+
+- Historical deforestation maps are often derived from the analysis of satellite images (eg. Landsat).
+- Deforestation is a rare event (< 1%/yr) and is very variable from one year to another.
+- Deforestation is often observed and estimated for a period of time $T$ of several years (eg. 5 or 10 years).
+
+#+CAPTION: Deforestation 2000--2010--2020 in Guadeloupe.
+#+ATTR_LATEX: :width 0.35\textwidth
+file:figs/fcc123_zoom.png
+
+*** Annual deforestation rate
+
+- To be able to compare deforestation intensity between regions (eg. countries) and time periods of different lengths (eg. 5 or 10 years), we need to compute a **mean annual deforestation rate** $d$ in %/yr (also denoted %.yr$^{-1}$).
+- Several formulas have been proposed to compute $d$ from the observed deforestation rate $d'$ on a given period of time $T$.
+- $d' = (A_0-A_T)/A_0$, with $A_0$: initial forest cover at time $t=0$, and $A_T$: forest cover at time $t=T$ with $T > 1$.
+
+** Objectives
+
+*** Objectives
+
+- Compare the different formulas used to compute the **mean annual deforestation rate** $d$ in %/yr.
+- Propose an appropriate formula for the JNR risk mapping tool.
+
+* Formulas
+
+** Notations
+
+*** Notations
+
+**** Areas and time
+
+- $A_t$: forest area (in ha or km$^2$) at time $t$ with $t=0,\ldots,T$.
+- $A_0 > A_1 > A_2 > \ldots > A_T$.
+- $T$: time-interval (in yr), $T > 1$.
+  
+**** Deforestation **rates**
+
+- $d'$: observed deforestation rate for period of time $T$. \\
+  $d' = (A_0-A_T)/A_0$, in %.
+- $d$: **mean annual deforestation rate** over the period of time $T$. \\
+  e.g. $d=(A_0-A_1)/A_0$, in %/yr.
+- $d$ must be constant over the period of time $T$. \\
+  $d=(A_0-A_1)/A_0=(A_1-A_2)/A_1=\ldots_{}$.
+  
+** Formulas
+
+*** Formulas
+
+How to compute $d$ from $A_0$, $A_T$ and $T$ (or from $d'$ and $T$ as $d' = (A_0-A_T)/A_0$)?
+
+**** Proposed formulas
+
+- FAO formula \\
+  $r = (A_T/A_0)^{(1/T)}-1$
+- Clark U. formula (inverted ratio) \\
+  $\delta = (A_0/A_T)^{(1/T)}-1$ \\
+- Puyravaud formula \\
+  $\rho = (1/T) \ln(A_T/A_0)$
+- Cirad formula (after correction)\\
+  $d = 1 - (1 - d')^{1/T}$
+
+* Formula comparison
+
+** FAO formula
+
+*** FAO formula
+
+**** Formula                                             :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+\centering **$r = (A_T/A_0)^{(1/T)}-1$**
+\vspace{0.5cm}
+
+**** Text                                                :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+- Following FAO definition, $r$ is a mean **annual rate of change**, not a mean annual rate of **deforestation**.
+- This rate is zero if $A_T = A_0$ (no change), positive if $A_T > A_0$ (increase in forest cover), and negative if $A_T <= A_0$ (deforestation). This equation is perfectly OK when correctly interpreted.
+- In the Verra document about JNR mapping risk methodology, there is a misinterpretation of $r$ described as the deforestation or forest degradation rate (see p. 8 of the document).
+- To obtain a deforestation rate (which is assumed positive), we need the opposite:\\
+  $d = 1 - (A_T/A_0)^{1/T}$
+
+** Cirad formula
+
+*** Cirad formula
+
+**** Formula                                             :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+\centering **$d = 1 - (1 - d')^{1/T}$**, with $d' = (A_0-A_T)/A_0$ \\
+$d = 1 - (1 - (A_0-A_T)/A_0)^{1/T} = 1 - (A_T/A_0)^{1/T}$
+\vspace{0.5cm}
+
+**** Text                                                :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+- This formula is just the **opposite** of the FAO rate cited by Verra:\\
+  $d = 1 - r$, with $r = (A_T/A_0)^{(1/T)}-1$.
+- Can be easily demonstrated mathematically.
+- Note that $d = 1 - (1 - d')^{1/T} \Leftrightarrow d' = 1 - (1 - d)^{T}$
+- This explains the error in the =riskmapjnr= Python package (there was a confusion between $d$ and $d'$, now corrected).
+  
+** Clark U. formula
+
+*** Clark U. formula
+
+**** Formula                                             :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\centering **$\delta = (A_0/A_T)^{(1/T)}-1$**
+\vspace{0.25cm}
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+- Inverse ratio $A_0/A_T$ in place of $A_T/A_0$.
+- Seems to provide reasonable estimates.
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+file:figs/clarku.png
+
+*** Problems with Clark U. formula
+
+
+**** Formula                                             :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\centering **$\delta = (A_0/A_T)^{(1/T)}-1$**
+\vspace{0.25cm}
+
+**** Text                                                :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+- Not defined when $A_T=0$
+- $A_T=0$ is frequent (small window size or $T$ is large).
+- Difficult to interpret.
+- Overestimation of the mean annual deforestation rate.
+
+#+ATTR_LATEX: :width 0.7\textwidth
+[[file:figs/D-perc-relationship.png]]
+
+*** Problems with Clark U. formula
+
+**** Formula                                             :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\centering **$\delta = (A_0/A_T)^{(1/T)}-1$**
+\vspace{0.25cm}
+
+**** Text                                                :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+- Overestimation of the mean annual deforestation rate.
+
+#+ATTR_LATEX: :width 0.7\textwidth
+[[file:figs/D-T-relationship.png]]
+
+** Puyravaud formula
+
+*** Puyravaud formula
+
+**** Formula                                             :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\centering **$\rho = (1/T) \ln(A_T/A_0)$**
+\vspace{0.25cm}
+
+**** Text                                                :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+- Derived from the instantaneous rate of change.
+- Not defined when $A_T=0$.
+- Again, $A_T=0$ is frequent (small window size or $T$ is large).
+- Overestimation of the mean annual deforestation rate.
+
+**** ColA                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[file:figs/D-perc-relationship.png]]
+
+**** ColB                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+ATTR_LATEX: :width \textwidth
+[[file:figs/D-T-relationship.png]]
+
+* Conclusion
+
+** Recommendation
+
+*** Recommendation
+
+We recommend the use of the following formula to estimate the **mean annual deforestation rate**:\\
+\vspace{0.25cm}
+
+\centering **$d = 1 - (1 - d')^{1/T}$** equivalent to **$d = 1 - (A_T/A_0)^{1/T}$**
+
+** Demonstration of the formula
+
+*** Demonstration
+
+We demonstrate that **$d = 1 - (1 - d')^{1/T}$**: \\
+\vspace{0.25cm}
+
+We have: $A_0 > A_1 > A_2 > \ldots > A_T$ \\
+Then, $A_1 = A_0 - d \times A_0 = A_0 (1-d)$ \\
+$A_2 = A_1 - d \times A_1 = A_1 (1-d) = A_0 (1-d) (1-d) = A_0 (1-d)^2$ \\
+$\ldots$ \\
+$A_T = A_0 (1-d)^T$ \Leftrightarrow A_T/A_0=(1-d)^T **(1)** \\
+\vspace{0.25cm}
+
+By definition, d'=(A_0-A_T)/A_0 **(2)** \\
+\vspace{0.25cm}
+
+**(1)** and **(2)** \Rightarrow $d' = 1 - (1-d)^T$ **(3)** \\
+$(1-d)^T = 1-d'$ \\
+$1-d = (1-d')^{1/T}$ \\
+**$d = 1 - (1 - d')^{1/T}$ (4)**
+
+* Last slide                                                         :ignore:
+    
+#+INCLUDE: "doc_suffix.tex" export latex
+
+* Local variables                                                  :noexport:
+
+Local Variables: 
+org-src-preserve-indentation: t
+org-edit-src-content: 0
+org-export-with-smart-quotes: t
+End:
+
+# End Of File
