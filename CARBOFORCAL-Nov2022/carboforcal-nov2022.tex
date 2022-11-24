@@ -1,0 +1,429 @@
+% Created 2022-11-24 jeu. 17:54
+% Intended LaTeX compiler: pdflatex
+\documentclass[10pt,table,dvipsnames,compress]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usetheme{default}
+\useinnertheme{rounded}
+\useoutertheme[subsection=false]{miniframes}
+\date{}
+\title{Cartes de carbone forestier pour le suivi et la conservation des forêts en Nouvelle-Calédonie}
+\title[CARBOFORCAL]{Cartes de carbone forestier pour le suivi et la conservation des forêts en Nouvelle-Calédonie}
+\usepackage{lmodern}
+\usepackage{pgf}
+\usepackage{color}
+\usepackage[english,french]{babel}
+\definecolor{vertmoyen}{RGB}{51,110,23} % vert moyen
+\definecolor{blueFRB}{HTML}{31859c}
+\usecolortheme[named=blueFRB]{structure}
+\usepackage{tabularx} % varier la largeur du tableau
+\usepackage{layout}
+\setlength{\LTleft}{-5cm plus 1 fill}
+\setlength{\LTright}{-5cm plus 1 fill}
+\usepackage{booktabs}
+\usepackage{arydshln} %% dashlines for tabular
+\newcommand{\logit}{\text{logit}}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\R}{\textnormal{\sffamily\bfseries R}}
+\newcommand{\pkg}[1]{{\fontseries{b}\selectfont #1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{frametitle}{%
+\usebeamerfont{frametitle}\insertframetitle%
+\vphantom{g} % To avoid fluctuations per frame
+\par
+\centering \includegraphics[width=\textwidth]{figs/Barre_couleur}
+}
+\beamertemplatenavigationsymbolsempty
+
+% Logo
+\newif\ifplacelogo % create a new conditional
+\logo{\ifplacelogo\includegraphics[width=0.4\textwidth]{figs/partners_logos}\fi}
+
+%Call table of contents at the beginning of each section
+\AtBeginSection[]{
+\placelogotrue
+\begin{frame}
+\frametitle{Plan}
+\begin{columns}[c]
+\begin{column}{0.5\textwidth}
+\tableofcontents[sections=1,currentsection]
+\vspace{0.5cm}
+\tableofcontents[sections=2,currentsection]
+\end{column}
+\begin{column}{0.5\textwidth}
+\tableofcontents[sections=3,currentsection]
+\vspace{0.5cm}
+\tableofcontents[sections=4,currentsection]
+\end{column}
+\end{columns}
+\end{frame}
+\placelogofalse
+}
+
+\AtBeginSubsection[]{}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=Black,
+filecolor=Maroon,
+citecolor=Blue,
+urlcolor=Maroon}
+
+% Disable monospaced font for URLs
+\urlstyle{same}
+
+\hypersetup{
+ pdfauthor={Ghislain Vieilledent},
+ pdftitle={Cartes de carbone forestier pour le suivi et la conservation des forêts en Nouvelle-Calédonie},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.5.3)}, 
+ pdflang={English}}
+\begin{document}
+
+
+% Title page
+{
+  \setbeamertemplate{navigation symbols}{}
+  \begin{frame}[plain, noframenumbering]
+  \begin{center}
+  \small{\textbf{CARBOFORCAL -- Nouméa -- Vendredi 25 Novembre 2022}}
+  \end{center}
+  \vspace{-0.5cm}
+  \titlepage % Presentation first page
+  \vspace{-3cm}
+  \begin{center}
+    \includegraphics[width=\textwidth]{figs/Barre_couleur}
+    
+    \vspace{0.25cm}
+    
+    \includegraphics[width=10cm]{figs/Banniere}
+    
+    \small{Ghislain VIEILLEDENT$^{1, 2}$\hspace{0.25cm}Thomas IBANEZ$^{1, 2}$\hspace{0.25cm}CARBOFORCAL$^{2}$}
+      
+    \vspace{0.25cm}
+    
+    {\scriptsize
+      \begin{tabular}{l}
+        $[1]$ \textbf{Cirad} UMR AMAP, $[2]$ \textbf{CARBOFORCAL} UMR AMAP, Oeil, IAC
+      \end{tabular}
+    }
+
+    \vspace{0.25cm}
+    
+    \includegraphics[width=0.5\textwidth]{figs/partners_logos}
+    
+  \end{center}
+  \end{frame}
+}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\placelogotrue
+\begin{frame}
+  \frametitle{Plan}
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \tableofcontents[sections=1]
+      \vspace{0.5cm}
+      \tableofcontents[sections=2]
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \tableofcontents[sections=3]
+        \vspace{0.5cm}
+        \tableofcontents[sections=4]
+    \end{column}
+  \end{columns}
+\end{frame}
+\placelogofalse
+
+\section{Introduction}
+\label{sec:orgbac7b38}
+
+\subsection{Contexte}
+\label{sec:orgfefc841}
+
+\begin{frame}[label={sec:org7bfa81a}]{Changements climatiques dans le Pacifique}
+\begin{itemize}
+\item Changement climatique lié aux émissions de GES dans l'atmosphère.
+\item Les communauté du Pacifique seront les premières impactées (montée des eaux).
+\item Impact sur la biodiversité (Pouteau et al.: 52-84\% des espèces d'arbres perdront > 50\% de leur habitat)
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figs/Dutheil2021_cc.jpg}
+\caption{Prévisions de changement de précipitations en NC. Dutheil et al. 2021.}
+\end{figure}
+\end{frame}
+
+\begin{frame}[label={sec:orgd5b5b80}]{Déforestation en Nouvelle-Calédonie}
+\begin{itemize}
+\item Déforestation et dégradation des forêts: 10--20\% des émissions de GES dans l'atmospère
+\item Couvert forestier: 7745 km\textsuperscript{2} en 2020 (\(\sim\) 46 \% du territoire).
+\item Inclus: forêt humide, sèche, mangroves, plantations, maquis arbustif (cf. définition FAO: H > 5 m, > 10\% de couvert arborée).
+\item Déforestation: 31 km\textsuperscript{2}/an sur la période 2010-2020.
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figs/deforestation-NC.jpg}
+\caption{Déforestation 2000--2010--2020 en Nouvelle-Calédonie. \url{https://forestatrisk.cirad.fr/newcal}}
+\end{figure}
+\end{frame}
+
+\begin{frame}[label={sec:org0a20960}]{Stock et émissions de carbone}
+\begin{columns}
+\begin{column}{0.6\columnwidth}
+\begin{itemize}
+\item Pas d'estimation précise des émissions de carbone (et CO\textsubscript{2}) associées à la déforestation.
+\item Manque d'information sur:
+\begin{itemize}
+\item Les stocks de carbone forestier à l'échelle de la Nouvelle-Calédonie.
+\item La variation de ces stocks dans l'espace (structure et composition forestière variables).
+\end{itemize}
+\item Estimation ponctuelle (inventaires) des stocks de carbone en Nouvelle-Calédonie (150 t/ha \textpm{}42, Blanchard et al. 2016).
+\item Cartes globales des stocks de carbone mais n'incluant pas de données de terrain en Nouvelle-Calédonie.
+\end{itemize}
+\end{column}
+
+\begin{column}{0.4\columnwidth}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{figs/Cstock_Mada.jpg}
+\caption{Carte des stocks de carbone forestier à Madagascar}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Objectifs}
+\label{sec:orgd5c91f2}
+
+\begin{frame}[label={sec:org4adc310}]{Objectifs}
+\begin{itemize}
+\item Elaboration de cartes de carbone forestier.
+\item A haute résolution (\(\leq\) 100 m).
+\item Avec suivi périodique dans le temps (annuel ou pluriannuel).
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{figs/Baccini2017_Cchange.jpg}
+\caption{Carte de changement des stocks de carbone (2004--2014). Baccini et al. 2017.}
+\end{figure}
+\end{frame}
+
+\subsection{Intérêts}
+\label{sec:orgf5f5751}
+
+\begin{frame}[label={sec:orga299f4d}]{Intérêts des cartes de carbone forestier}
+\begin{enumerate}
+\item \alert{SCIENCE} \\
+Rôle des forêts tropicales de Nouvelle-Calédonie dans le cycle du carbone.
+\item \alert{TERRITOIRE} \\
+Suivi de l'évolution du couvert forestier.
+\item \alert{ECONOMIE} \\
+Participation au mécanisme REDD+ et financement de projets de conservation des forêts.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[label={sec:orge912763}]{Intérêts pour la SCIENCE}
+Rôle des forêts tropicales de NC dans le cycle du carbone:
+
+\begin{itemize}
+\item Effets des facteurs environnementaux sur le stockage du carbone.
+\item Estimation précise des stocks de carbone forestier en Nouvelle-Calédonie.
+\item Estimation des émissions liées à la déforestation en Nouvelle-Calédonie.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{figs/carbon_cycle.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:orgfa80b66}]{Intérêts pour le TERRITOIRE}
+\begin{itemize}
+\item Suivi direct du changement de couvert forestier via un indice de carbone:
+\begin{itemize}
+\item Déforestation: perte totale de C.
+\item Dégradation: diminution des stocks de C, mortalité des arbres, perturbations.
+\item Séquestration: augmentation des stocks de C, croissance/recrutement des arbres + reforestation.
+\end{itemize}
+\item Identification des zones de hotspot de déforestation et des zones de conservation prioritaires.
+\item Suivi de la biodiversité et des services écosystémiques (disponibilité en eau, lutte contre l'érosion) associés à la forêt.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:orgf18a307}]{Intérêts ECONOMIQUES}
+\begin{itemize}
+\item Participation au mécanisme REDD+: Reducing Emissions from Deforestation and forest Degradation.
+\item Les tonnes de CO\textsubscript{2} non-émises (évitées) peuvent \alert{potentiellement} être créditées.
+\item Estimation à 6 \texteuro{}/t de CO\textsubscript{2} pour les projets forestiers sur le marché volontaire (en hausse constante).
+\item Nouvelle-Calédonie, 3100 ha/an x 150 t/ha x 44/12 x 6 \texteuro{}/t = 10 M\texteuro{}/an.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{figs/REDD.jpg}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:org0e1055a}]{Intérêts ECONOMIQUES}
+\begin{itemize}
+\item \alert{Pourrait} permettre d'attirer les investisseurs pour la conservation des forêts en Nouvelle-Calédonie.
+\item Compensation des émissions des activités humaines (mines et agriculture).
+\item Participation supplémentaire et affichage de la Nouvelle-Calédonie à la lutte contre les émissions de CO\textsubscript{2} et le changement climatique.
+\end{itemize}
+
+\begin{center}
+\includegraphics[height=0.3\textheight]{figs/mines.jpg}
+\includegraphics[height=0.3\textheight]{figs/agriculture.jpg}
+\end{center}
+\end{frame}
+
+
+\section{Méthode}
+\label{sec:org3675ebd}
+
+\subsection{Données de terrain}
+\label{sec:orgbb12497}
+
+\begin{frame}[label={sec:orgcfdaa1f}]{Données de terrain}
+\begin{center}
+\includegraphics[width=0.6\textwidth]{figs/ncpippn-plots.png}
+\end{center}
+\end{frame}
+
+\subsection{Survol drone LiDAR}
+\label{sec:orgc9ef24d}
+
+\begin{frame}[label={sec:org330fd7c}]{Survol drone LiDAR}
+Relation entre le carbone estimé sur le terrain et les métriques de hauteur de canopée dérivée du LiDAR
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{figs/lidar-drone.jpg}
+\includegraphics[width=0.4\textwidth]{figs/map-lidar.png}
+\end{center}
+\end{frame}
+
+\subsection{Cartographie via images Sentinel-2}
+\label{sec:org33f8373}
+
+\begin{frame}[label={sec:org11a03be}]{Cartographie via images Sentinel-2}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/newcal-S2.png}
+\caption{Mosaïque d'images Sentinel-2 couvrant la Nouvelle-Calédonie (2020).}
+\end{figure}
+\end{frame}
+
+\subsection{Trois échelles}
+\label{sec:org1d7cba3}
+
+\section{Montage de projet}
+\label{sec:orga7e03ee}
+
+\subsection{Institutions partenaires}
+\label{sec:orge9436d5}
+
+\begin{frame}[label={sec:orge9df2b0}]{Institution partenaires}
+\begin{itemize}
+\item UMR AMAP:
+\begin{itemize}
+\item coordinateurs: Ghislain Vieilledent et Thomas Ibanez.
+\item participants: équipe d'une dizaine de personnes, spécialités: \\
+botanique, LiDAR, télédétection, modélisation statistique, cartographie.
+\item localisation: Nouméa et Montpellier.
+\end{itemize}
+\item Oeil:
+\begin{itemize}
+\item participants: Fabien Albouy et Adrien Bertaud.
+\item spécialités: étude environnementales, géomatique, communication.
+\end{itemize}
+\item IAC:
+\begin{itemize}
+\item participante: Audrey Léopold.
+\item spécialités: services écosystémiques, foresterie et biogéochimie.
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{figs/partners_logos.png}
+\end{center}
+\end{frame}
+
+\subsection{Calendrier}
+\label{sec:orgfb28043}
+
+\begin{frame}[label={sec:org2acca48}]{Calendrier}
+\begin{itemize}
+\item Projet de 3 ans.
+\item 4 workpackages: Inventaires, LiDAR, Cartographie, Coordination.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{tabs/diagramme-gantt.png}
+\end{center}
+\end{frame}
+
+\subsection{Financement}
+\label{sec:org8193605}
+
+\begin{frame}[label={sec:org9ddd122}]{Budget}
+\begin{itemize}
+\item Budget total: \textasciitilde{}525,000 euros
+\item Frais de personnel (15 personnes, 53 mois ETP): 375,000 euros.
+\item Frais de fonctionnement (matériels, missions): 150,000 euros.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{tabs/budget_Projet.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:orgc99c5fe}]{Financement}
+\begin{itemize}
+\item Financement propre: 200,000 euros (> 50\% des frais de personnel).
+\item Recherche de financement: 325,000 euros.
+\item Co-financements envisageables.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{tabs/budget_Projet.png}
+\end{center}
+\end{frame}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{
+  % Use background image
+  \usebackgroundtemplate{%
+    \includegraphics[keepaspectratio=true, height=\paperheight]{figs/Canopy-NC}
+  }
+  \setbeamertemplate{navigation symbols}{}
+  % Remove shadow from block
+  \setbeamertemplate{blocks}[rounded][shadow=false]
+  \begin{frame}[plain]
+  	\vspace*{\stretch{100}} 
+    \begin{block}{}
+      \begin{center}
+        \ldots~Merci pour votre attention~\ldots \\
+        \url{https://ecology.ghislainv.fr/presentations} \\
+        \includegraphics[width=0.45\textwidth]{figs/partners_logos}
+      \end{center}
+    \end{block}
+  \end{frame}
+}
+\end{document}

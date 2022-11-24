@@ -1,0 +1,241 @@
+#+TITLE: Cartes de carbone forestier pour le suivi et la conservation des forêts en Nouvelle-Calédonie
+#+AUTHOR: Ghislain Vieilledent
+#+DATE: 19/07/2002
+#+OPTIONS: author:nil date:nil title:nil H:3 toc:nil num:t
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+STARTUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt,table,dvipsnames,compress]
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME: [subsection=false]miniframes
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
+#+BEAMER_HEADER: \title[CARBOFORCAL]{Cartes de carbone forestier pour le suivi et la conservation des forêts en Nouvelle-Calédonie}
+
+#+SETUPFILE: "header.org"
+
+* Title page                                                         :ignore:
+
+#+INCLUDE: "doc_prefix.tex" export latex
+
+* Introduction
+
+** Contexte
+
+*** Changements climatiques dans le Pacifique
+
+- Changement climatique lié aux émissions de GES dans l'atmosphère.
+- Les communauté du Pacifique seront les premières impactées (montée des eaux).
+- Impact sur la biodiversité (Pouteau et al.: 52-84% des espèces d'arbres perdront > 50% de leur habitat)
+
+#+CAPTION: Prévisions de changement de précipitations en NC. Dutheil et al. 2021.
+#+ATTR_LATEX: :width \textwidth
+[[file:figs/Dutheil2021_cc.jpg]]
+
+*** Déforestation en Nouvelle-Calédonie                                             
+
+- Déforestation et dégradation des forêts: 10--20% des émissions de GES dans l'atmospère
+- Couvert forestier: 7745 km^2 en 2020 (\sim 46 % du territoire).
+- Inclus: forêt humide, sèche, mangroves, plantations, maquis arbustif (cf. définition FAO: H > 5 m, > 10% de couvert arborée).
+- Déforestation: 31 km^2/an sur la période 2010-2020.
+
+#+CAPTION: Déforestation 2000--2010--2020 en Nouvelle-Calédonie. https://forestatrisk.cirad.fr/newcal
+#+ATTR_LATEX: :width 0.8\textwidth
+[[file:figs/deforestation-NC.jpg]]
+
+*** Stock et émissions de carbone
+
+**** Absence de données précises en NC                             :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.6
+:END:
+
+- Pas d'estimation précise des émissions de carbone (et CO_2) associées à la déforestation.
+- Manque d'information sur:
+  - Les stocks de carbone forestier à l'échelle de la Nouvelle-Calédonie.
+  - La variation de ces stocks dans l'espace (structure et composition forestière variables).
+- Estimation ponctuelle (inventaires) des stocks de carbone en Nouvelle-Calédonie (150 t/ha \pm42, Blanchard et al. 2016).
+- Cartes globales des stocks de carbone mais n'incluant pas de données de terrain en Nouvelle-Calédonie.
+   
+**** Carte des stocks de C à Madagascar                            :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.4
+:END:
+
+#+CAPTION: Carte des stocks de carbone forestier à Madagascar
+#+ATTR_LATEX: :width 0.85\textwidth
+[[file:figs/Cstock_Mada.jpg]]
+
+** Objectifs
+
+*** Objectifs
+
+- Elaboration de cartes de carbone forestier.
+- A haute résolution ($\leq$ 100 m).
+- Avec suivi périodique dans le temps (annuel ou pluriannuel).
+
+#+CAPTION: Carte de changement des stocks de carbone (2004--2014). Baccini et al. 2017.
+#+ATTR_LATEX: :width 0.7\textwidth
+[[file:figs/Baccini2017_Cchange.jpg]]
+
+** Intérêts
+
+*** Intérêts des cartes de carbone forestier
+
+1. *SCIENCE* \\
+   Rôle des forêts tropicales de Nouvelle-Calédonie dans le cycle du carbone.
+2. *TERRITOIRE* \\
+   Suivi de l'évolution du couvert forestier.
+3. *ECONOMIE* \\
+   Participation au mécanisme REDD+ et financement de projets de conservation des forêts.
+
+*** Intérêts pour la SCIENCE
+
+Rôle des forêts tropicales de NC dans le cycle du carbone:
+
+- Effets des facteurs environnementaux sur le stockage du carbone.
+- Estimation précise des stocks de carbone forestier en Nouvelle-Calédonie.
+- Estimation des émissions liées à la déforestation en Nouvelle-Calédonie.
+
+#+ATTR_LATEX: :width 0.6\textwidth  
+[[file:figs/carbon_cycle.png]]
+
+*** Intérêts pour le TERRITOIRE
+
+- Suivi direct du changement de couvert forestier via un indice de carbone:
+  - Déforestation: perte totale de C.
+  - Dégradation: diminution des stocks de C, mortalité des arbres, perturbations.
+  - Séquestration: augmentation des stocks de C, croissance/recrutement des arbres + reforestation.
+- Identification des zones de hotspot de déforestation et des zones de conservation prioritaires.
+- Suivi de la biodiversité et des services écosystémiques (disponibilité en eau, lutte contre l'érosion) associés à la forêt.
+
+*** Intérêts ECONOMIQUES
+
+#+begin_src R :results output :session *R* :exports none
+S <- (3100 * 150 * 44/12 * 6) / 1e6
+S
+#+end_src
+
+#+RESULTS:
+: [1] 10.23
+
+- Participation au mécanisme REDD+: Reducing Emissions from Deforestation and forest Degradation.
+- Les tonnes de CO_2 non-émises (évitées) peuvent *potentiellement* être créditées.
+- Estimation à 6 \euro/t de CO_2 pour les projets forestiers sur le marché volontaire (en hausse constante).
+- Nouvelle-Calédonie, 3100 ha/an x 150 t/ha x 44/12 x 6 \euro/t = 10 M\euro/an.
+
+#+ATTR_LATEX: :width 0.4\textwidth
+[[file:figs/REDD.jpg]]
+
+*** Intérêts ECONOMIQUES
+
+- *Pourrait* permettre d'attirer les investisseurs pour la conservation des forêts en Nouvelle-Calédonie.
+- Compensation des émissions des activités humaines (mines et agriculture).
+- Participation supplémentaire et affichage de la Nouvelle-Calédonie à la lutte contre les émissions de CO_2 et le changement climatique.
+
+#+BEGIN_center
+#+ATTR_LATEX: :height 0.3\textheight :center
+[[file:figs/mines.jpg]]
+#+ATTR_LATEX: :height 0.3\textheight :center
+[[file:figs/agriculture.jpg]]
+#+END_center
+
+
+* Méthode
+
+** Données de terrain
+
+*** Données de terrain
+
+#+ATTR_LATEX: :width 0.8\textwidth
+[[file:figs/ncpippn-plots.png]]
+
+** Survol drone LiDAR
+
+*** Survol drone LiDAR
+
+Relation entre le carbone estimé sur le terrain et les métriques de hauteur de canopée dérivée du LiDAR
+
+#+BEGIN_center
+#+ATTR_LATEX: :width 0.3\textwidth :center
+[[file:figs/lidar-drone.jpg]]
+#+ATTR_LATEX: :width 0.4\textwidth :center
+[[file:figs/map-lidar.png]]
+#+END_center
+
+** Cartographie via images Sentinel-2
+
+*** Cartographie via images Sentinel-2
+
+#+CAPTION: Mosaïque d'images Sentinel-2 couvrant la Nouvelle-Calédonie (2020).
+#+ATTR_LATEX: :width 0.5\textwidth
+[[file:figs/newcal-S2.png]]
+
+** Trois échelles
+
+* Montage de projet
+
+** Institutions partenaires
+
+*** Institution partenaires
+
+- UMR AMAP:
+  - coordinateurs: Ghislain Vieilledent et Thomas Ibanez.
+  - participants: équipe d'une dizaine de personnes, spécialités: \\
+    botanique, LiDAR, télédétection, modélisation statistique, cartographie.
+  - localisation: Nouméa et Montpellier.
+- Oeil:
+  - participants: Fabien Albouy et Adrien Bertaud.
+  - spécialités: étude environnementales, géomatique, communication.
+- IAC:
+  - participante: Audrey Léopold.
+  - spécialités: services écosystémiques, foresterie et biogéochimie.
+
+#+ATTR_LATEX: :width 0.4\textwidth
+[[file:figs/partners_logos.png]]
+
+** Calendrier
+
+*** Calendrier
+
+- Projet de 3 ans.
+- 4 workpackages: Inventaires, LiDAR, Cartographie, Coordination.
+
+#+ATTR_LATEX: :width 0.9\textwidth
+[[file:tabs/diagramme-gantt.png]]
+
+** Financement
+
+*** Budget
+
+- Budget total: ~525,000 euros
+- Frais de personnel (15 personnes, 53 mois ETP): 375,000 euros.
+- Frais de fonctionnement (matériels, missions): 150,000 euros.
+
+#+ATTR_LATEX: :width 0.7\textwidth
+[[file:tabs/budget_Projet.png]]
+
+*** Financement
+
+- Financement propre: 200,000 euros (> 50% des frais de personnel).
+- Recherche de financement: 325,000 euros.
+- Co-financements envisageables.
+
+#+ATTR_LATEX: :width 0.7\textwidth
+[[file:tabs/budget_Projet.png]]
+
+
+* Last slide                                                         :ignore:
+    
+#+INCLUDE: "doc_suffix.tex" export latex
+
+* Local variables                                                  :noexport:
+
+Local Variables: 
+org-src-preserve-indentation: t
+org-edit-src-content: 0
+org-export-with-smart-quotes: t
+End:
+
+# End Of File
