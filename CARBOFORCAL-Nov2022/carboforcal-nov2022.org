@@ -26,21 +26,21 @@
 *** Changements climatiques dans le Pacifique
 
 - Changement climatique lié aux émissions de GES dans l'atmosphère.
-- Les communauté du Pacifique seront les premières impactées (montée des eaux).
-- Impact sur la biodiversité (Pouteau et al.: 52-84% des espèces d'arbres perdront > 50% de leur habitat)
+- Les communautés du Pacifique seront les premières impactées (montée des eaux).
+- Impact sur la biodiversité (Pouteau et al. 2016: 52-84% des espèces d'arbres perdront > 50% de leur habitat)
 
-#+CAPTION: Prévisions de changement de précipitations en NC. Dutheil et al. 2021.
+#+CAPTION: Prévisions de changement de précipitations en Nouvelle Calédonie. Dutheil et al. 2021.
 #+ATTR_LATEX: :width \textwidth
 [[file:figs/Dutheil2021_cc.jpg]]
 
 *** Déforestation en Nouvelle-Calédonie                                             
 
-- Déforestation et dégradation des forêts: 10--20% des émissions de GES dans l'atmospère
-- Couvert forestier: 7745 km^2 en 2020 (\sim 46 % du territoire).
-- Inclus: forêt humide, sèche, mangroves, plantations, maquis arbustif (cf. définition FAO: H > 5 m, > 10% de couvert arborée).
+- Déforestation et dégradation des forêts: 10--20% des émissions de GES dans l'atmospère.
+- Couvert forestier en NC: 7745 km^2 en 2020 (\sim 46 % du territoire).
+- Inclus: forêt humide, sèche, mangroves, plantations, maquis arbustif (cf. définition FAO: H > 5 m, > 10% de couvert arboré, 0.5 ha).
 - Déforestation: 31 km^2/an sur la période 2010-2020.
 
-#+CAPTION: Déforestation 2000--2010--2020 en Nouvelle-Calédonie. https://forestatrisk.cirad.fr/newcal
+#+CAPTION: Déforestation 2000--2010--2020 en Nouvelle-Calédonie. Vieilledent et al. 2022. https://forestatrisk.cirad.fr/newcal
 #+ATTR_LATEX: :width 0.8\textwidth
 [[file:figs/deforestation-NC.jpg]]
 
@@ -51,19 +51,18 @@
 :BEAMER_col: 0.6
 :END:
 
-- Pas d'estimation précise des émissions de carbone (et CO_2) associées à la déforestation.
-- Manque d'information sur:
+- Pas d'estimations précises des émissions de carbone (et CO_2) associées à la déforestation.
+- Manque d'informations sur:
   - Les stocks de carbone forestier à l'échelle de la Nouvelle-Calédonie.
   - La variation de ces stocks dans l'espace (structure et composition forestière variables).
-- Estimation ponctuelle (inventaires) des stocks de carbone en Nouvelle-Calédonie (150 t/ha \pm42, Blanchard et al. 2016).
-- Cartes globales des stocks de carbone mais n'incluant pas de données de terrain en Nouvelle-Calédonie.
+- Estimations ponctuelles (inventaires) des stocks de carbone en Nouvelle-Calédonie (150 t/ha \pm42, Blanchard et al. 2016).
    
 **** Carte des stocks de C à Madagascar                            :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.4
 :END:
 
-#+CAPTION: Carte des stocks de carbone forestier à Madagascar
+#+CAPTION: Carte des stocks de carbone forestier à Madagascar (2010). Vieilledent et al. 2016.
 #+ATTR_LATEX: :width 0.85\textwidth
 [[file:figs/Cstock_Mada.jpg]]
 
@@ -71,7 +70,7 @@
 
 *** Objectifs
 
-- Elaboration de cartes de carbone forestier.
+- Élaborer des cartes de carbone forestier.
 - A haute résolution ($\leq$ 100 m).
 - Avec suivi périodique dans le temps (annuel ou pluriannuel).
 
@@ -84,7 +83,7 @@
 *** Intérêts des cartes de carbone forestier
 
 1. *SCIENCE* \\
-   Rôle des forêts tropicales de Nouvelle-Calédonie dans le cycle du carbone.
+   Rôle des forêts tropicales en Nouvelle-Calédonie dans le cycle du carbone.
 2. *TERRITOIRE* \\
    Suivi de l'évolution du couvert forestier.
 3. *ECONOMIE* \\
@@ -92,23 +91,31 @@
 
 *** Intérêts pour la SCIENCE
 
-Rôle des forêts tropicales de NC dans le cycle du carbone:
+Rôle des forêts tropicales en Nouvelle-Calédonie dans le cycle du carbone:
 
-- Effets des facteurs environnementaux sur le stockage du carbone.
-- Estimation précise des stocks de carbone forestier en Nouvelle-Calédonie.
-- Estimation des émissions liées à la déforestation en Nouvelle-Calédonie.
+- Estimation des stocks de carbone forestier en NC et de leur variation dans l'espace.
+- Estimation des émissions liées à la déforestation en NC.
+
+#+LATEX: \vspace{0.25cm}
 
 #+ATTR_LATEX: :width 0.6\textwidth  
 [[file:figs/carbon_cycle.png]]
 
 *** Intérêts pour le TERRITOIRE
 
-- Suivi direct du changement de couvert forestier via un indice de carbone:
-  - Déforestation: perte totale de C.
-  - Dégradation: diminution des stocks de C, mortalité des arbres, perturbations.
-  - Séquestration: augmentation des stocks de C, croissance/recrutement des arbres + reforestation.
-- Identification des zones de hotspot de déforestation et des zones de conservation prioritaires.
-- Suivi de la biodiversité et des services écosystémiques (disponibilité en eau, lutte contre l'érosion) associés à la forêt.
+- Suivi direct du changement de couvert forestier via les stocks de carbone:\\
+  Déforestation, Dégradation/Séquestration, Reforestation.
+- Identification des hotspots de déforestation et des zones prioritaires pour la conservation.
+- Suivi de la biodiversité et des services écosystémiques (disponibilité en eau) associés à la couverture forestière.
+
+#+LATEX: \vspace{0.25cm}
+  
+  #+BEGIN_center
+#+ATTR_LATEX: :height 0.3\textheight :center
+[[file:figs/Cagou-WWF.jpg]]
+#+ATTR_LATEX: :height 0.3\textheight :center
+[[file:figs/Chutes_de_la_madeleine.JPG]]
+#+END_center
 
 *** Intérêts ECONOMIQUES
 
@@ -131,8 +138,10 @@ S
 *** Intérêts ECONOMIQUES
 
 - *Pourrait* permettre d'attirer les investisseurs pour la conservation des forêts en Nouvelle-Calédonie.
-- Compensation des émissions des activités humaines (mines et agriculture).
-- Participation supplémentaire et affichage de la Nouvelle-Calédonie à la lutte contre les émissions de CO_2 et le changement climatique.
+- Compensation des émissions liées aux activités économiques (mines et agriculture).
+- Implication accrue de la Nouvelle-Calédonie dans la lutte contre les émissions de CO_2 et le changement climatique.
+
+#+LATEX: \vspace{0.25cm}
 
 #+BEGIN_center
 #+ATTR_LATEX: :height 0.3\textheight :center
@@ -148,14 +157,23 @@ S
 
 *** Données de terrain
 
-#+ATTR_LATEX: :width 0.8\textwidth
+- Réseau de parcelles NC-PIPPN:\\
+  New Caledonian Plant Inventory and Permanent Plots Network.
+- > 500 parcelles dont 21 de 1ha, 70,000 arbres inventoriés.
+- Estimations ponctuelles des stocks de carbone (en tC/ha).
+- A compléter par d'autres parcelles, certaines permanentes.
+
+#+ATTR_LATEX: :width 0.7\textwidth
 [[file:figs/ncpippn-plots.png]]
 
 ** Survol drone LiDAR
 
 *** Survol drone LiDAR
 
-Relation entre le carbone estimé sur le terrain et les métriques de hauteur de canopée dérivée du LiDAR
+- Survol des parcelles de terrain avec un drone équipé d'un LiDAR.
+- Estimation d'une relation entre stock de carbone mesuré sur le terrain (C_i) et hauteur de canopée issue du LiDAR (L_i): $C_i = \alpha L_i^{\beta}$.
+- Obtention des stocks de carbone sous les bandes LiDAR.
+- Multiplication du nombre d'observations terrain.
 
 #+BEGIN_center
 #+ATTR_LATEX: :width 0.3\textwidth :center
@@ -168,11 +186,19 @@ Relation entre le carbone estimé sur le terrain et les métriques de hauteur de
 
 *** Cartographie via images Sentinel-2
 
+- Utilisation des images Sentinel-2 pour l'extrapolation des stocks à l'ensemble du territoire.
+- Calibration d'un modèle $C_i=f(S_i)$ où S_i représente l'information spectrale issue des images Sentinel-2 pour le pixel $i$.
+- Mise à jour périodique des prédictions grace aux acquisitions régulières des images Sentinel-2.
+
 #+CAPTION: Mosaïque d'images Sentinel-2 couvrant la Nouvelle-Calédonie (2020).
 #+ATTR_LATEX: :width 0.5\textwidth
 [[file:figs/newcal-S2.png]]
 
-** Trois échelles
+*** Emboîtement des données
+
+#+CAPTION: Emboîtement des différentes données.
+#+ATTR_LATEX: :width 0.7\textwidth
+[[file:figs/data-sources.png]]
 
 * Montage de projet
 
@@ -184,7 +210,7 @@ Relation entre le carbone estimé sur le terrain et les métriques de hauteur de
   - coordinateurs: Ghislain Vieilledent et Thomas Ibanez.
   - participants: équipe d'une dizaine de personnes, spécialités: \\
     botanique, LiDAR, télédétection, modélisation statistique, cartographie.
-  - localisation: Nouméa et Montpellier.
+  - localisation: Nouvelle-Calédonie et Montpellier.
 - Oeil:
   - participants: Fabien Albouy et Adrien Bertaud.
   - spécialités: étude environnementales, géomatique, communication.
@@ -192,7 +218,7 @@ Relation entre le carbone estimé sur le terrain et les métriques de hauteur de
   - participante: Audrey Léopold.
   - spécialités: services écosystémiques, foresterie et biogéochimie.
 
-#+ATTR_LATEX: :width 0.4\textwidth
+#+ATTR_LATEX: :width 0.5\textwidth
 [[file:figs/partners_logos.png]]
 
 ** Calendrier
@@ -209,7 +235,7 @@ Relation entre le carbone estimé sur le terrain et les métriques de hauteur de
 
 *** Budget
 
-- Budget total: ~525,000 euros
+- Budget total estimé: ~525,000 euros
 - Frais de personnel (15 personnes, 53 mois ETP): 375,000 euros.
 - Frais de fonctionnement (matériels, missions): 150,000 euros.
 

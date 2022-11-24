@@ -1,3 +1,4 @@
+1. [CARBOFORCAL-Nov2022](carboforcal_nov2022.pdf)
 1. [Annual-Deforestation-Rate-Sept2022](andefor_Vieilledent_2022.pdf)
 1. [FAO-riskmapjnr-July2022](riskmapjnr_Vieilledent_Cirad.pdf)
 1. [Controverse-Déforestation-Palmier-à-Huile-Avr2022](controverse-foret-tropicale-palmier-a-huile.pdf)
