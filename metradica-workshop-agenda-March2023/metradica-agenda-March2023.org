@@ -1,0 +1,206 @@
+#+TITLE: Agenda of the METRADICA workshop March 2023
+#+AUTHOR: Ghislain Vieilledent
+#+DATE: @@latex:\today@@
+#+OPTIONS: author:nil date:nil title:nil H:3 toc:nil num:t ^:{}
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+SETUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt,table,dvipsnames,compress]
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME: [subsection=false]miniframes
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
+#+BEAMER_HEADER: \title[Metradica]{Agenda of the METRADICA workshop\\6-10 March 2023, Montpellier}
+
+#+SETUPFILE: "header.org"
+
+* Title page                                                         :ignore:
+
+#+INCLUDE: "doc_prefix.tex" export latex
+
+* Introduction
+
+** Context
+
+*** Context                                                        
+
+- *METRADICA*: Using mechanistic traits to assess tropical forest vulnerability to climate change in French Guiana.
+- 3 years: 01/2020 -- 12/2023.
+- 200,000 euros funded by Labex CEBA.
+- Two PhD (Marion and Jeanne) and one post-doc (Salman).
+- (PhD of Daniela).
+
+*** Work during the first two years of the project
+
+- Groups have been working separately on the first 3 Tasks of the project: \newline *1.* Data, *2.* Trait x Env, *3.* jSDM, (*4.* Model comp).
+- Field work: 3 missions for the PhD of Marion, 1 mission for the post-doc of Salman.
+- Online meetings (~ 1/year).
+- We haven't had the chance to meet together yet.
+
+** Objectives
+
+*** Objectives
+
+- Meet in person all together.
+- Present the advances of the different groups.
+- Help students and post-docs advancing their work.
+- Identify tasks that can be done together during this week.
+- Discuss the perspectives and deliverables for each Task.
+
+** Participants
+
+*** Participants
+
+**** In person                                             :B_block:BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+
+- Marion Boisseaux
+- Jeanne Clément
+- Géraldine Derroire
+- Claire Fortunel
+- Vincent Freycon
+- Salman Khan
+- Daniela Krebber
+- Isabelle Maréchaux
+- Heidy Schimann
+- Clément Stahl
+- Ghislain Vieilledent
+
+**** Remotely                                              :B_block:BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+
+- Sabrina Coste
+- Bruno Ferry
+- Gaëlle Jaouen
+
+* Organization
+
+** Dates and place
+
+*** Dates and place
+
+- From 06 to 10 Mars 2023 at AMAP, Montpellier.
+- Morning: 09h00 à 12h30.
+- Afternoon: 14h00 à 17h30.
+- Friday afternoon will be free.
+- We have booked rooms 201 of building PS2 and room 44 of building PS1 (+ office) for work in groups.
+
+** Meals
+
+*** Meals
+
+- Lunch at the Cirad cafeteria (12 euros for external people).
+- Reimbursement of mission expenses.
+- Wednesday evening: diner in the city center of Montpellier \newline \rightarrow booking.
+
+** Taxis for Tuesday
+
+*** Taxis for Tuesday
+
+- Strike on Tuesday 07/03, no public transport.
+- Taxis (Jeanne, Ghislain, Daniela).
+- Meeting at Place Albert 1er (tram station line 1) at 08h30 \newline \rightarrow booking.
+
+** Zoom and GoogleDrive
+
+*** Zoom and GoogleDrive
+
+- Zoom: https://umontpellier-fr.zoom.us/j/3624626507.
+- METRADICA GoogleDrive.
+
+** Contacts for organization
+
+*** Contacts for organization
+
+- Ghislain Vieilledent, [[mailto:ghislain.vieilledent@cirad.fr][ghislain.vieilledent@cirad.fr]] \newline tel: 06.24.62.65.07, PS1 bureau 32.
+- Marie-Laure De Guillen, [[mailto:marie-laure.de_guillen@cirad.fr][marie-laure.de_guillen@cirad.fr]] \newline tel: 04.67.61.57.65, PS2 bureau 308.
+
+* Agenda
+
+** Monday and Tuesday
+
+*** Monday
+
+**** Morning                                                     :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- Agenda of the workshop, objectives (Ghislain).
+- Briefly presenting METRADICA and the 4 Tasks (Clément).
+- Budget presentation (Clément and Ghislain).
+
+**** Afternoon                                                   :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- First results of Marion's PhD, Task 2 (45 min + 45 min of discussion).
+- Break (~30 min).
+- First results of Salman's post-doc, Task 1 on soils (45 min + 45 min of discussion).
+
+*** Tuesday
+
+**** Morning                                                     :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- First results of Jeanne's PhD (30 min + 30 min discussion).
+- Presenting the =gecevar= R package for getting climatic and environnemental variables (30 min).
+- Tutorial on the use of =gecevar= and =jSDM= (1h30).
+  		 
+**** Afternoon                                                   :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- Presenting the data-sets (inventories, traits, environnement).
+- Discussing the possibility of a data paper on traits.
+- Organising working groups for the week.
+- Setting objectives for the week (e.g. writing sections of articles, tables, figures, data analysis, map making, data-set building, etc.).
+
+** Wednesday and Thursday
+
+*** Wednesday and Thursday
+
+**** Morning                                                     :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- Working by group.   			 
+**** Afternoon                                                   :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- Working by group.
+- Summary of working group advances.
+  
+** Friday
+
+*** Friday
+
+**** Morning                                                     :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- Working by group.
+- List of planned articles with title, persons involved, and deadlines.
+- Discussion on perspectives, new projects, or link with current projects (ALT, ANR, FEDER, PEPR Forest, CEBA3).
+
+* Last slide                                                         :ignore:
+    
+#+INCLUDE: "doc_suffix.tex" export latex
+
+* Local variables                                                  :noexport:
+
+Local Variables: 
+org-src-preserve-indentation: t
+org-edit-src-content: 0
+org-export-with-smart-quotes: t
+End:
+
+# End Of File
