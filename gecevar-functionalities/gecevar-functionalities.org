@@ -30,12 +30,16 @@
 - (NB: Here, environmental variable = any environmental variable which is not climatic). 
 - Study of the link between environment/climate and: species occurrence, species demography, individual traits, community characteristic (e.g. diversity, productivity, biomass, community weighted mean), etc.
 
-*** Technically challenging steps
+#+attr_latex: :width 0.6\textwidth
+[[file:figs/isothermes-elevation.jpg]]
 
-- Several technical geoprocessing steps: crop to an extent, resample on a given grid (extent and resolution), combine data in one raster.
-- Some variables are missing and must be computed (number of dry months or average from climatic models).
-- Intensive computations if region is large and resolution is high (raster might not fit in memory).
-- Imply the use of technical geoprocessing software: R packages (terra, star, sf), gdal, GRASS GIS, Google Earth Engine.
+*** Data online
+
+- Many global climatic and environmental data are available online.
+- Climate: WorldClim, Chelsa.
+- Elevation: SRTM, protected areas: WDPA, population: WorldPop, soil: SoilGrids, forest cover: Global Forest Change or Tropical Moist Forests, etc.
+- Data are usually available at various resolution (SRTM: 90m), (WorlClim, Chelsa: \geq 30 arc sec). 
+- Building a data-set from all these source that can be used in ecological studies is challenging.
 
 *** Time consuming and repetitive tasks
 
@@ -43,25 +47,84 @@
 :PROPERTIES:
 :BEAMER_env: block
 :END:
-- Many environmental variables (topography, soil, climate, land cover, disturbances, etc.).
+- Many environmental variables (topography, soil, climate, etc.).
 - Environment and climatic data are spread in different databases.
 - Long computations if region is large and resolution is high.
-- Downloading full rasters at global scale before cropping can take a lot of time.
-
-**** Repetitive                                                  :B_block:
+- Downloading rasters at global scale can take a lot of time.
+**** Repetitive                                            :B_block:BMCOL:
 :PROPERTIES:
 :BEAMER_env: block
+:BEAMER_col: 0.7
 :END: 
 - We usually repeat this work for every region we are working on.
 - For future climate data: repetition for each global climate model, scenario (SSP), and period (eg. 2055, 2085).
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+#+attr_latex: :width \textwidth
+[[file:figs/sisyph.jpg]]
+
+*** Technically challenging steps
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+
+- Several technical geoprocessing steps: crop to an extent, resample on a given grid (extent and resolution), combine data in one raster.
+- Some variables are missing and must be computed (number of dry months or average from climatic models).
+- Intensive computations if region is large and resolution is high (raster might not fit in memory).
+- Imply the use of technical geoprocessing software: R packages (terra, star, sf), gdal, GRASS GIS, Google Earth Engine.
+
+**** Image                                                         :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+
+#+attr_latex: :width \textwidth
+[[file:figs/raster_stack.png]]
+
+** Existing software
+
+*** Existing software
+
+**** Many different software                                     :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+
+- Climate: =geodata= (WorldClim 2.1), =climate= (weather station), =raster= (WordlClim 1.4), =climateR=  
+- WDPA: =geodata=, =wdpar=, =worldpa=
+- SRTM: =geodata=, =elevatr=
+- OSM: =geodata=, =osmextract=
+
+**** Inconvenients                                               :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+
+- Specific data only or specific region only.
+- Full download of global maps or tiles (time consuming).
+- No post-processing of downloaded data (resampling on a grid, raster stack).
+- Missing variables.
 
 ** Objectives
 
 *** Objectives
+
 - Provide an R package to ease the creation of a dataset with environmental and climatic variables for any particular region.
 - With easy-to-use and well documented functions.
 - Using efficient code and tools to fasten the creation of the dataset.
-- \rightarrow Aims of the =gecevar= R package we will be presenting.
+- \rightarrow Aims of the =gecevar= R package that will be presented.
+
+#+latex: \vspace{0.25cm}
+#+begin_center
+#+attr_latex: :height 0.2\textwidth :center
+[[file:figs/target.png]]
+#+attr_latex: :height 0.2\textwidth :center
+[[file:figs/box.png]]
+#+end_center
 
 * =gecevar= R package
 
@@ -100,7 +163,10 @@ By default, the user has to provide only one of the following:
 
 *** Environmental variables
 
-**** Sources
+**** Sources                                                     :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
 Various sources: SRTM, SoilGrids, Tropical Moist Forests, OpenStreetMap, WDPA. 
 
 **** Topography                                                  :B_block:
@@ -109,31 +175,57 @@ Various sources: SRTM, SoilGrids, Tropical Moist Forests, OpenStreetMap, WDPA.
 :END:
 Elevation, Aspect, Slope, Roughness.
 
-**** Other environmental variables
+**** Other environmental variables                               :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
 Solar irradiance, Soil, Forest cover, Distances to forest, sea, road, town, water, Protected areas.
 
 *** Current climatic variables
 
-**** Source
+**** Source                                                      :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
 Chelsa ([[https://chelsa-climate.org)][chelsa-climate.org]])
 
-**** Bioclimatic variables
+**** Bioclimatic variables                                       :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
 - The monthly min, max and mean temperature and monthly precipitation (48 variables).
 - The 19 commonly used bioclimatic variables (11 from temperature and 8 from precipitation).
 
-**** Other climatic variables
+**** Other climatic variables                                    :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
 - Cloud area fraction, PET, Climatic water deficit (CWD), Number of dry months (NDM).
 - For PET and derived variables (CWD, NDM): Penman-Monteith or Thornthwaite equation.
 
 *** Future climate
 
-**** Source
+**** Source                                                :B_block:BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.55
+:BEAMER_env: block
+:END:
 - Chelsa ([[https://chelsa-climate.org)][chelsa-climate.org]])
 - GCMs: GFDL-ESM4, IPSL-CM6A-LR, MPI-ESM1-2-HR, MRI-ESM2-0, UKESM1-0-LL.
 - SSPs: Shared Socio-economic Pathways (126, 370, 585).
 - Periods: 2041--2070, 2071--2100.
 
-**** Future climate
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45
+:END:
+#+attr_latex: :width \textwidth
+[[file:figs/SSPs.jpg]]
+
+**** Future climate                                              :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
 - Most of the climatic variables for each GCM, SSP, and period of time.
 - Exception: no Penman-Monteith PET and derived variables.
 - Averages from the 5 GCMs (ensemble model).
@@ -146,6 +238,16 @@ Chelsa ([[https://chelsa-climate.org)][chelsa-climate.org]])
 - GRASS GIS software for solar irradiance, (TWI).
 - =osmextract= R package for extracting OSM data.
 - =terra=, =stars= and =sf= R packages for manipulating spatial objects.
+
+#+latex: \vspace{0.25cm}
+#+begin_center
+#+attr_latex: :height 0.2\textwidth :center
+[[file:figs/logo_gdal.png]]
+#+attr_latex: :height 0.2\textwidth :center
+[[file:figs/logo_grass.png]]
+#+attr_latex: :height 0.2\textwidth :center
+[[file:figs/R_logo.png]]
+#+end_center
 
 *** Cloud optimized GeoTIFFs (COGs)
 

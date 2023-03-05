@@ -1,4 +1,4 @@
-% Created 2023-03-05 dim. 11:45
+% Created 2023-03-05 dim. 19:09
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,table,dvipsnames,compress]{beamer}
 \usepackage[utf8]{inputenc}
@@ -145,66 +145,127 @@ urlcolor=Maroon}
 \placelogofalse
 
 \section{Introduction}
-\label{sec:org0eb0830}
+\label{sec:org870b61b}
 
 \subsection{Context}
-\label{sec:org7e22b93}
+\label{sec:org2fbd48b}
 
-\begin{frame}[label={sec:org92109d8}]{Context}
+\begin{frame}[label={sec:org6179119}]{Context}
 \begin{itemize}
 \item Ecology is the study of the relationships among living organisms and their physical environment.
 \item Use of spatial environmental and climatic layers is inevitable in ecology.
 \item (NB: Here, environmental variable = any environmental variable which is not climatic).
 \item Study of the link between environment/climate and: species occurrence, species demography, individual traits, community characteristic (e.g. diversity, productivity, biomass, community weighted mean), etc.
 \end{itemize}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{figs/isothermes-elevation.jpg}
+\end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgb93b7c3}]{Technically challenging steps}
+\begin{frame}[label={sec:orgdc932c6}]{Data online}
 \begin{itemize}
-\item Several technical geoprocessing steps: crop to an extent, resample on a given grid (extent and resolution), combine data in one raster.
-\item Some variables are missing and must be computed (number of dry months or average from climatic models).
-\item Intensive computations if region is large and resolution is high (raster might not fit in memory).
-\item Imply the use of technical geoprocessing software: R packages (terra, star, sf), gdal, GRASS GIS, Google Earth Engine.
+\item Many global climatic and environmental data are available online.
+\item Climate: WorldClim, Chelsa.
+\item Elevation: SRTM, protected areas: WDPA, population: WorldPop, soil: SoilGrids, forest cover: Global Forest Change or Tropical Moist Forests, etc.
+\item Data are usually available at various resolution (SRTM: 90m), (WorlClim, Chelsa: \(\ge\) 30 arc sec).
+\item Building a data-set from all these source that can be used in ecological studies is challenging.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org391470f}]{Time consuming and repetitive tasks}
+\begin{frame}[label={sec:orgdeb6c21}]{Time consuming and repetitive tasks}
 \begin{block}{Time consuming}
 \begin{itemize}
-\item Many environmental variables (topography, soil, climate, land cover, disturbances, etc.).
+\item Many environmental variables (topography, soil, climate, etc.).
 \item Environment and climatic data are spread in different databases.
 \item Long computations if region is large and resolution is high.
-\item Downloading full rasters at global scale before cropping can take a lot of time.
+\item Downloading rasters at global scale can take a lot of time.
 \end{itemize}
 \end{block}
-
+\begin{columns}
+\begin{column}{0.7\columnwidth}
 \begin{block}{Repetitive}
 \begin{itemize}
 \item We usually repeat this work for every region we are working on.
 \item For future climate data: repetition for each global climate model, scenario (SSP), and period (eg. 2055, 2085).
 \end{itemize}
 \end{block}
+\end{column}
+\begin{column}{0.3\columnwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{figs/sisyph.jpg}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org2f63c03}]{Technically challenging steps}
+\begin{columns}
+\begin{column}{0.7\columnwidth}
+\begin{itemize}
+\item Several technical geoprocessing steps: crop to an extent, resample on a given grid (extent and resolution), combine data in one raster.
+\item Some variables are missing and must be computed (number of dry months or average from climatic models).
+\item Intensive computations if region is large and resolution is high (raster might not fit in memory).
+\item Imply the use of technical geoprocessing software: R packages (terra, star, sf), gdal, GRASS GIS, Google Earth Engine.
+\end{itemize}
+\end{column}
+
+\begin{column}{0.3\columnwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{figs/raster_stack.png}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Existing software}
+\label{sec:org1319f94}
+
+\begin{frame}[label={sec:orgff96910},fragile]{Existing software}
+ \begin{block}{Many different software}
+\begin{itemize}
+\item Climate: \texttt{geodata} (WorldClim 2.1), \texttt{climate} (weather station), \texttt{raster} (WordlClim 1.4), \texttt{climateR}
+\item WDPA: \texttt{geodata}, \texttt{wdpar}, \texttt{worldpa}
+\item SRTM: \texttt{geodata}, \texttt{elevatr}
+\item OSM: \texttt{geodata}, \texttt{osmextract}
+\end{itemize}
+\end{block}
+
+\begin{block}{Inconvenients}
+\begin{itemize}
+\item Specific data only or specific region only.
+\item Full download of global maps or tiles (time consuming).
+\item No post-processing of downloaded data (resampling on a grid, raster stack).
+\item Missing variables.
+\end{itemize}
+\end{block}
 \end{frame}
 
 \subsection{Objectives}
-\label{sec:orgf4c877d}
+\label{sec:orgff6ac47}
 
-\begin{frame}[label={sec:org278d8c0},fragile]{Objectives}
+\begin{frame}[label={sec:org5c49b24},fragile]{Objectives}
  \begin{itemize}
 \item Provide an R package to ease the creation of a dataset with environmental and climatic variables for any particular region.
 \item With easy-to-use and well documented functions.
 \item Using efficient code and tools to fasten the creation of the dataset.
-\item \(\rightarrow\) Aims of the \texttt{gecevar} R package we will be presenting.
+\item \(\rightarrow\) Aims of the \texttt{gecevar} R package that will be presented.
 \end{itemize}
+
+\vspace{0.25cm}
+\begin{center}
+\includegraphics[height=0.2\textwidth]{figs/target.png}
+\includegraphics[height=0.2\textwidth]{figs/box.png}
+\end{center}
 \end{frame}
 
 \section{\texttt{gecevar} R package}
-\label{sec:orga88ec49}
+\label{sec:orga76eea0}
 
 \subsection{Name and website}
-\label{sec:orgb40b0ad}
+\label{sec:org0ae5215}
 
-\begin{frame}[label={sec:orgeaef01e},fragile]{Name and website}
+\begin{frame}[label={sec:org9f0043f},fragile]{Name and website}
  \begin{itemize}
 \item \texttt{gecevar}: GEt Climatic and Environmental VARiables.
 \item Website: \url{https://ecology.ghislainv.fr/gecevar}
@@ -216,9 +277,9 @@ urlcolor=Maroon}
 \end{frame}
 
 \subsection{Functionalities}
-\label{sec:org6fc9dc9}
+\label{sec:org47d0187}
 
-\begin{frame}[label={sec:org66afcc2},fragile]{Functionalities}
+\begin{frame}[label={sec:orgcd543c9},fragile]{Functionalities}
  \begin{block}{Functions}
 \begin{itemize}
 \item \texttt{get\_env\_variables}: Raster file with 13 environmental variables.
@@ -238,9 +299,9 @@ By default, the user has to provide only one of the following:
 \end{frame}
 
 \subsection{Variables}
-\label{sec:org4c9e00b}
+\label{sec:orgda41b98}
 
-\begin{frame}[label={sec:org0795aa4}]{Environmental variables}
+\begin{frame}[label={sec:org978a89b}]{Environmental variables}
 \begin{block}{Sources}
 Various sources: SRTM, SoilGrids, Tropical Moist Forests, OpenStreetMap, WDPA. 
 \end{block}
@@ -254,7 +315,7 @@ Solar irradiance, Soil, Forest cover, Distances to forest, sea, road, town, wate
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org991350b}]{Current climatic variables}
+\begin{frame}[label={sec:orgcb82468}]{Current climatic variables}
 \begin{block}{Source}
 Chelsa (\href{https://chelsa-climate.org)}{chelsa-climate.org})
 \end{block}
@@ -274,7 +335,9 @@ Chelsa (\href{https://chelsa-climate.org)}{chelsa-climate.org})
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgc5ba901}]{Future climate}
+\begin{frame}[label={sec:org3bcafcc}]{Future climate}
+\begin{columns}
+\begin{column}{0.55\columnwidth}
 \begin{block}{Source}
 \begin{itemize}
 \item Chelsa (\href{https://chelsa-climate.org)}{chelsa-climate.org})
@@ -283,6 +346,14 @@ Chelsa (\href{https://chelsa-climate.org)}{chelsa-climate.org})
 \item Periods: 2041--2070, 2071--2100.
 \end{itemize}
 \end{block}
+\end{column}
+
+\begin{column}{0.45\columnwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{figs/SSPs.jpg}
+\end{center}
+\end{column}
+\end{columns}
 
 \begin{block}{Future climate}
 \begin{itemize}
@@ -294,18 +365,25 @@ Chelsa (\href{https://chelsa-climate.org)}{chelsa-climate.org})
 \end{frame}
 
 \subsection{Specificities}
-\label{sec:org7434ef9}
+\label{sec:orgb7ddb34}
 
-\begin{frame}[label={sec:org9dfe15d},fragile]{Software used}
+\begin{frame}[label={sec:org9eb62f4},fragile]{Software used}
  \begin{itemize}
 \item Heavy use of GDAL (\texttt{gdalwarp}, \texttt{gdalbuilvrt}, \texttt{gdal\_translate}, \texttt{gdaldem}, \texttt{gdal\_proximity}).
 \item GRASS GIS software for solar irradiance, (TWI).
 \item \texttt{osmextract} R package for extracting OSM data.
 \item \texttt{terra}, \texttt{stars} and \texttt{sf} R packages for manipulating spatial objects.
 \end{itemize}
+
+\vspace{0.25cm}
+\begin{center}
+\includegraphics[height=0.2\textwidth]{figs/logo_gdal.png}
+\includegraphics[height=0.2\textwidth]{figs/logo_grass.png}
+\includegraphics[height=0.2\textwidth]{figs/R_logo.png}
+\end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgb3d86cf},fragile]{Cloud optimized GeoTIFFs (COGs)}
+\begin{frame}[label={sec:orgbd6eb91},fragile]{Cloud optimized GeoTIFFs (COGs)}
  \begin{block}{COGs}
 \begin{itemize}
 \item Download of large global rasters available online can be very long.
@@ -327,14 +405,14 @@ Chelsa (\href{https://chelsa-climate.org)}{chelsa-climate.org})
 
 
 \section{Case-studies}
-\label{sec:org065495f}
+\label{sec:org4c880da}
 
 \subsection{Examples of computation time}
-\label{sec:orgf4543f9}
+\label{sec:org22e24ea}
 
-\begin{frame}[label={sec:org4d97673}]{Examples of computation time}
+\begin{frame}[label={sec:org68f0818}]{Examples of computation time}
 \begin{table}[htbp]
-\caption{\label{tab:org1bbd18c}Area size}
+\caption{\label{tab:org7b13e96}Area size}
 \centering
 \small
 \begin{tabular}{lrr}
@@ -349,7 +427,7 @@ French Guiana & 444 x 445 & 197,580\\[0pt]
 \end{table}
 
 \begin{table}[htbp]
-\caption{\label{tab:org8b8fedd}Computation time for 1km resolution}
+\caption{\label{tab:orgffa332a}Computation time for 1km resolution}
 \centering
 \small
 \begin{tabular}{lrrrr}
@@ -365,9 +443,9 @@ French Guiana & 3min & 6min & 2min & 25min\\[0pt]
 \end{frame}
 
 \subsection{French Guiana}
-\label{sec:org83e66b6}
+\label{sec:org5817eea}
 
-\begin{frame}[label={sec:org6863a7f}]{French Guiana}
+\begin{frame}[label={sec:org2398694}]{French Guiana}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/gecevar-guyane.png}
 \end{center}
