@@ -61,8 +61,19 @@
 - Provide an R package to ease the creation of a dataset with environmental and climatic variables for any particular region.
 - With easy-to-use and well documented functions.
 - Using efficient code and tools to fasten the creation of the dataset.
+- \rightarrow Aims of the =gecevar= R package we will be presenting.
 
 * =gecevar= R package
+
+** Name and website
+
+*** Name and website
+
+- =gecevar=: GEt Climatic and Environmental VARiables.
+- Website: https://ecology.ghislainv.fr/gecevar
+
+#+attr_latex: :width \textwidth
+[[file:figs/gecevar-website.png]]
 
 ** Functionalities
 
@@ -73,7 +84,7 @@
 :BEAMER_env: block
 :END:
 - =get_env_variables=: Raster file with 13 environmental variables.
-- =get_chelsa_current=: Raster file with 107 variables from Chelsa describing current climate (1980--2010).
+- =get_chelsa_current=: Raster file with 107 variables from Chelsa describing current climate (1981--2010).
 - =get_chelsa_future=: Raster file with 81 variables from Chelsa describing future climate (for each GCM, SSP, and period).
   
 **** Input                                                       :B_block:
@@ -131,7 +142,31 @@ Chelsa ([[https://chelsa-climate.org)][chelsa-climate.org]])
 
 *** Software used
 
+- Heavy use of GDAL (=gdalwarp=, =gdalbuilvrt=, =gdal_translate=, =gdaldem=, =gdal_proximity=).
+- GRASS GIS software for solar irradiance, (TWI).
+- =osmextract= R package for extracting OSM data.
+- =terra=, =stars= and =sf= R packages for manipulating spatial objects.
+
 *** Cloud optimized GeoTIFFs (COGs)
+
+**** COGs                                                        :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- Download of large global rasters available online can be very long.
+- Here we make use of COGs: Cloud Optimized GeoTIFFs.
+- A Cloud Optimized GeoTIFF (COG) is a regular GeoTIFF file, aimed at being hosted on a HTTP file server, with an internal organization that enables more efficient workflows on the cloud
+- Download of a sample of the global raster. 
+- Use of the =gdal_translate= function in GDAL which allows using the =/vsicurl= virtual file system as input.
+
+**** Some ressources on COGs                                     :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- https://www.cogeo.org/
+- https://trac.osgeo.org/gdal/wiki/CloudOptimizedGeoTIFF
+- https://forestatrisk.cirad.fr/notebooks/cog.html
+
 
 * Case-studies
 
@@ -141,7 +176,7 @@ Chelsa ([[https://chelsa-climate.org)][chelsa-climate.org]])
 
 #+name: area-size
 #+caption: Area size
-#+attr_latex: :font \small
+#+attr_latex: :font \small :align lrr :booktabs t
 | Area          | raster size  | nb. of cells    |
 |---------------+--------------+-----------------|
 | Madagascar    | 1673 x 875   |       1,463,875 |
@@ -150,7 +185,7 @@ Chelsa ([[https://chelsa-climate.org)][chelsa-climate.org]])
 
 #+name: computation-time
 #+caption: Computation time for 1km resolution
-#+attr_latex: :font \small
+#+attr_latex: :font \small :align lrrrr :booktabs t
 | Area          | env   | clim current | merge files | clim future |
 |---------------+-------+--------------+-------------+-------------|
 | Madagascar    | 13min | 25min        | 6min        | 1h15min     |
@@ -160,6 +195,9 @@ Chelsa ([[https://chelsa-climate.org)][chelsa-climate.org]])
 ** French Guiana
 
 *** French Guiana 
+
+#+attr-latex: :width \textwidth
+[[file:figs/gecevar-guyane.png]]
 
 * Last slide                                                         :ignore:
     

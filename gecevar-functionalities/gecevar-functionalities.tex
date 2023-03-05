@@ -1,4 +1,4 @@
-% Created 2023-03-04 sam. 20:01
+% Created 2023-03-05 dim. 11:45
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,table,dvipsnames,compress]{beamer}
 \usepackage[utf8]{inputenc}
@@ -55,7 +55,7 @@
 \AtBeginSection[]{
 \placelogotrue
 \begin{frame}
-\frametitle{Plan}
+\frametitle{Outline}
 \begin{columns}[c]
 \begin{column}{0.5\textwidth}
 \tableofcontents[sections=1,currentsection]
@@ -110,7 +110,7 @@ urlcolor=Maroon}
     \vspace{0.5cm}
     \includegraphics[width=10cm]{figs/Banniere}\\
     \vspace{0.3cm}
-    \small{Jeanne CLEMENT$^{1}$\hspace{0.25cm}Ghislain VIEILLEDENT$^{1}$}\\
+    \small{Jeanne CLEMENT$^{1}$\hspace{0.25cm}Pierre GUILLAUMONT$^{1}$\hspace{0.25cm}Ghislain VIEILLEDENT$^{1}$}\\
     \vspace{0.15cm}
     {\scriptsize
       \begin{tabular}{l}
@@ -128,7 +128,7 @@ urlcolor=Maroon}
 
 \placelogotrue
 \begin{frame}
-  \frametitle{Plan}
+  \frametitle{Outline}
   \begin{columns}[c]
     \begin{column}{0.5\textwidth}
       \tableofcontents[sections=1]
@@ -145,12 +145,12 @@ urlcolor=Maroon}
 \placelogofalse
 
 \section{Introduction}
-\label{sec:orgda4b978}
+\label{sec:org0eb0830}
 
 \subsection{Context}
-\label{sec:org2bb18b9}
+\label{sec:org7e22b93}
 
-\begin{frame}[label={sec:org4fc8ea7}]{Context}
+\begin{frame}[label={sec:org92109d8}]{Context}
 \begin{itemize}
 \item Ecology is the study of the relationships among living organisms and their physical environment.
 \item Use of spatial environmental and climatic layers is inevitable in ecology.
@@ -159,7 +159,7 @@ urlcolor=Maroon}
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgb213867}]{Technically challenging steps}
+\begin{frame}[label={sec:orgb93b7c3}]{Technically challenging steps}
 \begin{itemize}
 \item Several technical geoprocessing steps: crop to an extent, resample on a given grid (extent and resolution), combine data in one raster.
 \item Some variables are missing and must be computed (number of dry months or average from climatic models).
@@ -168,7 +168,7 @@ urlcolor=Maroon}
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org3c98f51}]{Time consuming and repetitive tasks}
+\begin{frame}[label={sec:org391470f}]{Time consuming and repetitive tasks}
 \begin{block}{Time consuming}
 \begin{itemize}
 \item Many environmental variables (topography, soil, climate, land cover, disturbances, etc.).
@@ -187,27 +187,42 @@ urlcolor=Maroon}
 \end{frame}
 
 \subsection{Objectives}
-\label{sec:org21f5792}
+\label{sec:orgf4c877d}
 
-\begin{frame}[label={sec:org955860c}]{Objectives}
-\begin{itemize}
+\begin{frame}[label={sec:org278d8c0},fragile]{Objectives}
+ \begin{itemize}
 \item Provide an R package to ease the creation of a dataset with environmental and climatic variables for any particular region.
 \item With easy-to-use and well documented functions.
 \item Using efficient code and tools to fasten the creation of the dataset.
+\item \(\rightarrow\) Aims of the \texttt{gecevar} R package we will be presenting.
 \end{itemize}
 \end{frame}
 
 \section{\texttt{gecevar} R package}
-\label{sec:org12cea20}
+\label{sec:orga88ec49}
+
+\subsection{Name and website}
+\label{sec:orgb40b0ad}
+
+\begin{frame}[label={sec:orgeaef01e},fragile]{Name and website}
+ \begin{itemize}
+\item \texttt{gecevar}: GEt Climatic and Environmental VARiables.
+\item Website: \url{https://ecology.ghislainv.fr/gecevar}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=\textwidth]{figs/gecevar-website.png}
+\end{center}
+\end{frame}
 
 \subsection{Functionalities}
-\label{sec:orgc7790f8}
+\label{sec:org6fc9dc9}
 
-\begin{frame}[label={sec:orgc522286},fragile]{Functionalities}
+\begin{frame}[label={sec:org66afcc2},fragile]{Functionalities}
  \begin{block}{Functions}
 \begin{itemize}
 \item \texttt{get\_env\_variables}: Raster file with 13 environmental variables.
-\item \texttt{get\_chelsa\_current}: Raster file with 107 variables from Chelsa describing current climate (1980--2010).
+\item \texttt{get\_chelsa\_current}: Raster file with 107 variables from Chelsa describing current climate (1981--2010).
 \item \texttt{get\_chelsa\_future}: Raster file with 81 variables from Chelsa describing future climate (for each GCM, SSP, and period).
 \end{itemize}
 \end{block}
@@ -223,9 +238,9 @@ By default, the user has to provide only one of the following:
 \end{frame}
 
 \subsection{Variables}
-\label{sec:org21bac8f}
+\label{sec:org4c9e00b}
 
-\begin{frame}[label={sec:orgeef76fc}]{Environmental variables}
+\begin{frame}[label={sec:org0795aa4}]{Environmental variables}
 \begin{block}{Sources}
 Various sources: SRTM, SoilGrids, Tropical Moist Forests, OpenStreetMap, WDPA. 
 \end{block}
@@ -239,7 +254,7 @@ Solar irradiance, Soil, Forest cover, Distances to forest, sea, road, town, wate
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org24570ac}]{Current climatic variables}
+\begin{frame}[label={sec:org991350b}]{Current climatic variables}
 \begin{block}{Source}
 Chelsa (\href{https://chelsa-climate.org)}{chelsa-climate.org})
 \end{block}
@@ -259,7 +274,7 @@ Chelsa (\href{https://chelsa-climate.org)}{chelsa-climate.org})
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org76bed84}]{Future climate}
+\begin{frame}[label={sec:orgc5ba901}]{Future climate}
 \begin{block}{Source}
 \begin{itemize}
 \item Chelsa (\href{https://chelsa-climate.org)}{chelsa-climate.org})
@@ -279,52 +294,83 @@ Chelsa (\href{https://chelsa-climate.org)}{chelsa-climate.org})
 \end{frame}
 
 \subsection{Specificities}
-\label{sec:org76a3fd7}
+\label{sec:org7434ef9}
 
-\begin{frame}[label={sec:org5237fe0}]{Software used}
+\begin{frame}[label={sec:org9dfe15d},fragile]{Software used}
+ \begin{itemize}
+\item Heavy use of GDAL (\texttt{gdalwarp}, \texttt{gdalbuilvrt}, \texttt{gdal\_translate}, \texttt{gdaldem}, \texttt{gdal\_proximity}).
+\item GRASS GIS software for solar irradiance, (TWI).
+\item \texttt{osmextract} R package for extracting OSM data.
+\item \texttt{terra}, \texttt{stars} and \texttt{sf} R packages for manipulating spatial objects.
+\end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org8386f74}]{Cloud optimized GeoTIFFs (COGs)}
+\begin{frame}[label={sec:orgb3d86cf},fragile]{Cloud optimized GeoTIFFs (COGs)}
+ \begin{block}{COGs}
+\begin{itemize}
+\item Download of large global rasters available online can be very long.
+\item Here we make use of COGs: Cloud Optimized GeoTIFFs.
+\item A Cloud Optimized GeoTIFF (COG) is a regular GeoTIFF file, aimed at being hosted on a HTTP file server, with an internal organization that enables more efficient workflows on the cloud
+\item Download of a sample of the global raster.
+\item Use of the \texttt{gdal\_translate} function in GDAL which allows using the \texttt{/vsicurl} virtual file system as input.
+\end{itemize}
+\end{block}
+
+\begin{block}{Some ressources on COGs}
+\begin{itemize}
+\item \url{https://www.cogeo.org/}
+\item \url{https://trac.osgeo.org/gdal/wiki/CloudOptimizedGeoTIFF}
+\item \url{https://forestatrisk.cirad.fr/notebooks/cog.html}
+\end{itemize}
+\end{block}
 \end{frame}
+
 
 \section{Case-studies}
-\label{sec:org85a1fc3}
+\label{sec:org065495f}
 
 \subsection{Examples of computation time}
-\label{sec:org38b475f}
+\label{sec:orgf4543f9}
 
-\begin{frame}[label={sec:orge2f96ec}]{Examples of computation time}
+\begin{frame}[label={sec:org4d97673}]{Examples of computation time}
 \begin{table}[htbp]
-\caption{\label{tab:org8290e49}Area size}
+\caption{\label{tab:org1bbd18c}Area size}
 \centering
 \small
-\begin{tabular}{lll}
+\begin{tabular}{lrr}
+\toprule
 Area & raster size & nb. of cells\\[0pt]
-\hline
+\midrule
 Madagascar & 1673 x 875 & 1,463,875\\[0pt]
 New Caledonia & 689 x 1921 & 1,323,569\\[0pt]
 French Guiana & 444 x 445 & 197,580\\[0pt]
+\bottomrule
 \end{tabular}
 \end{table}
 
 \begin{table}[htbp]
-\caption{\label{tab:orgce68637}Computation time for 1km resolution}
+\caption{\label{tab:org8b8fedd}Computation time for 1km resolution}
 \centering
 \small
-\begin{tabular}{lllll}
+\begin{tabular}{lrrrr}
+\toprule
 Area & env & clim current & merge files & clim future\\[0pt]
-\hline
+\midrule
 Madagascar & 13min & 25min & 6min & 1h15min\\[0pt]
 New Caledonia & 5min & 9min & 8min & 47min\\[0pt]
 French Guiana & 3min & 6min & 2min & 25min\\[0pt]
+\bottomrule
 \end{tabular}
 \end{table}
 \end{frame}
 
 \subsection{French Guiana}
-\label{sec:org8a1229e}
+\label{sec:org83e66b6}
 
-\begin{frame}[label={sec:orgcdd2624}]{French Guiana}
+\begin{frame}[label={sec:org6863a7f}]{French Guiana}
+\begin{center}
+\includegraphics[width=.9\linewidth]{figs/gecevar-guyane.png}
+\end{center}
 \end{frame}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
