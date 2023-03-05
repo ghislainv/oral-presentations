@@ -1,3 +1,5 @@
+1. [gecevar-functionalities-March2023](gecevar-functionalities-march2023.pdf))
+1. [METRADICA-workshop-March2023](metradica-agenda-march2023.pdf)
 1. [CARBOFORCAL-Nov2022](carboforcal_nov2022.pdf)
 1. [Annual-Deforestation-Rate-Sept2022](andefor_Vieilledent_2022.pdf)
 1. [FAO-riskmapjnr-July2022](riskmapjnr_Vieilledent_Cirad.pdf)
