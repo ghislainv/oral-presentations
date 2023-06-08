@@ -1,3 +1,4 @@
+1. [forestatrisk-EFI-COCOBOD-June2023](forestatrisk-EFI-COCOBOD-June2023.pdf)
 1. [gecevar-functionalities-March2023](gecevar-functionalities-march2023.pdf)
 1. [METRADICA-workshop-March2023](metradica-agenda-march2023.pdf)
 1. [CARBOFORCAL-Nov2022](carboforcal_nov2022.pdf)
