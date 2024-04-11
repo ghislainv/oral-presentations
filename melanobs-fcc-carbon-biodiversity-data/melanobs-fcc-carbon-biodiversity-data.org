@@ -1,0 +1,142 @@
+#+TITLE: MELANOBS: forest cover change, carbon, and biodiversity data in Melanesia
+#+AUTHOR: Ghislain Vieilledent
+#+DATE: @@latex:\today@@
+#+OPTIONS: author:nil date:nil title:nil H:3 toc:nil num:t ^:{}
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+SETUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt,table,dvipsnames,compress]
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME: [subsection=false]miniframes
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
+#+BEAMER_HEADER: \title[MELANOBS]{MELANOBS: forest cover change, carbon, and biodiversity data in Melanesia}
+
+# This is used to avoid bold text to be translated as \alert{text}
+# https://tex.stackexchange.com/questions/637386/org-mode-export-bold-text-to-beamer
+#+BIND: org-export-filter-bold-functions (org-beamer-bold-as-textbf)
+#+BEGIN_SRC emacs-lisp :exports results :results none
+  (defun org-beamer-bold-as-textbf (s backend info)
+    (replace-regexp-in-string "\\\\alert" "\\\\textbf" s))
+#+END_SRC
+
+#+SETUPFILE: "header.org"
+
+* Title page                                                         :ignore:
+
+#+INCLUDE: "doc_prefix.tex" export latex
+
+* Introduction
+  :PROPERTIES:
+  :CUSTOM_ID: introduction
+  :END:
+  
+** Context
+   :PROPERTIES:
+   :CUSTOM_ID: context
+   :END:
+
+*** Context
+
+MELANOBS: Melanesian forest observatory.
+
+* Forest cover change data
+
+** FAO FRA estimates
+
+*** FAO FRA estimates, forest cover
+
+*Forest cover estimates (in Kha).*
+
+| Source          | FRA 2015 | prim. forest | GFC30 2020 | TMF 2020 |
+|-----------------+----------+--------------+------------+----------|
+| PNG             |    36024 |        27200 |      39000 |    39304 |
+| Salomon Islands |     2527 |         1738 |       2350 |     2739 |
+| Vanuatu         |      442 |          205 |        986 |     1152 |
+| Fiji            |     1107 |            0 |       1050 |       NA |
+| New Caledonia   |      839 |          338 |       1150 |      855 |
+
+- Forest Ressources Assessment (FRA) from the Food and Agriculture Organization (FAO).
+- Estimates are reported by countries to FAO.
+- Not frequently updated.
+- There is no map of forest cover change provided by FAO.
+
+*** FAO FRA estimates, gross deforestation
+
+*Mean annual deforestation (in ha).*
+
+| Source          |        FRA |      GFC30 |        TMF |
+|                 | 2015--2020 | 2010--2020 | 2010--2020 |
+|-----------------+------------+------------+------------|
+| PNG             |         34 |     104678 |      48691 |
+| Salomon Islands |            |      13460 |       1751 |
+| Vanuatu         |            |        939 |        564 |
+| Fiji            |            |       2663 |         NA |
+| New Caledonia   |            |       1328 |       2425 |
+
+- Rather good estimates of forest cover but poor estimates of deforestation/regrowth.
+- Differentiate forest types: forest, primary forest, plantations
+
+** Global datasets
+
+*** Global Forest Change (GFC)
+
+#+attr_latex: :width 8cm
+[[file:figs/fcc/gfc.png]]
+
+- [[https://glad.earthengine.app/view/global-forest-change][Global Forest Change]] (Hansen et al. 2013, Univ. of Maryland).
+- Used by [[https://www.globalforestwatch.org/][Global Forest Watch]] (GFW): platform about the world forests. GFW releases the [[https://research.wri.org/gfr/global-forest-review][Global Forest Review]].
+- It is in fact a tree cover change product. User must define a tree cover threshold to define the forest (e.g. 30%).
+- Derive from Landsat images from 2000. One mosaic per year.
+- Largely overestimate forest cover if low tree cover threshold (e.g. 30%).
+- Underestimate small-scale deforestation (shifting agriculture, logging).
+
+*** Tropical Moist Forests (TMF)
+
+#+attr_latex: :width 8cm
+[[file:figs/fcc/Vancutsem2021.png]]
+
+- [[https://forobs.jrc.ec.europa.eu/TMF][Tropical Moist Forests]] (Vancutsem et al. 2021, from Joint Research Center).
+- Only consider evergreen tropical forests (tropical moist forests, mangroves, evergreen dry tropical forests). Cannot be used to monitor deciduous dry forests.
+- Derive from Landsat images from 1990. Time-series at the pixel scale.
+- Fiji is not entirely available (beyond the 180th meridian).
+- Overestimate forest cover in some areas (e.g. Vanuatu, Mare island in New Caledonia).
+
+** National data
+
+*** National data
+
+- There is room to improve forest cover change map at the national scale.
+  
+- MELANOBS objectives:
+  - State of the forest cover change data available at the national scale.
+  - Derive up to date forest cover change maps for participating countries.   
+
+*** In New-Caledonia
+
+#+attr_latex: :width 8cm
+[[file:figs/fcc/fcc_nc.png]]
+
+- Coarse vegetation maps from IRD (Jaffre, Morat).
+- Forest cover change map for 2000-2010-2020 derived from TMF.
+- Forest cover map for year ~2020 derived from photo-interpretation of aerial images.
+
+#+begin_src org :results none :exports none
+Some notes on vegeation maps for NC:
+
+https://www.mobot.org/mobot/research/newcaledonia/vege.html
+Morat 1981
+Jaffre
+#+end_src
+
+
+* Carbon stock data
+
+* Biodiversity data
+
+* Last slide                                                         :ignore:
+    
+#+INCLUDE: "doc_suffix.tex" export latex
+
+# End Of File
