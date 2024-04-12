@@ -1,13 +1,7 @@
-Name,Scale,Resolution,NC_cover,NC_data,Reference,doi,link,epoch,Method,Forest_mask,Open_Access,GEE
-CCI Biomass,global,100 m,yes,no,Santoro 2019,https://doi.org/10.5285/BEDC59F37C9545C981A839EB552E4084,https://climate.esa.int/en/projects/biomass/,"2017, 2018, 2020","ALOS2, PALSAR 2, Sentinel 1",no,yes,no
-GlobBiomass,global,100 m,yes,no,Santoro 2021,https://doi.org/10.5194/essd-13-3927-2021,https://globbiomass.org/products/global-mapping/,2010,"ALOS, PALSAR, ENVISAT, ASAR",no,yes,no
-NASA JPL,global,100 m,yes,no,NA,NA,https://ceos.org/gst/jpl-biomass.html,2020,"Landsat-8, ALOS PALSAR, SRTM DEM, ICESAT-1, ALS, field inventory",no,no,no
-Saatchi,pantropical,1 km,no,no,Saatchi 2011,https://doi.org/10.1073/pnas.1019576108,NA,2000,"GLAS, MODIS, QSCAT, SRTM, forest plots",no,no,no
-WHRC-Baccini,pantropical,500 m,no,no,Baccini 2012,https://doi.org/10.1038/nclimate1354,https://developers.google.com/earth-engine/datasets/catalog/WHRC_biomass_tropical,2007-2008,"GLAS, MODIS, SRTM, field inventory",no,yes,yes
-Zarin,pantropical,30 m,no,no,Zarin 2016,https://doi.org/10.1111/gcb.13153,https://code.earthengine.google.com/11b2fe70fd7019cd70fafa375bb3a525,2000,"GLAS, Landsat, SRTM, field inventory","GLAS data, tree cover",yes,yes
-WHRC-Zarin,global,30 m,yes,no,WHRC unpublished,NA,https://www.globalforestwatch.org/map,2000,"GLAS, Landsat, SRTM, field inventory","GLAS data, tree cover",no,no
-WRI,global,30 m,yes,no,Harris 2021,https://doi.org/10.1038/s41558-020-00976-6,http://data.globalforestwatch.org/,2000,combination of Zarin and others,no,no,no
-Avitabile,pantropical,1 km,no,no,Avitabile 2016,https://doi.org/10.1111/gcb.13139,http://lucid.wur.nl/datasets/high-carbon-ecosystems,2008,fusion of Saatchi and Baccini,no,yes,no
-NASA ORNL,global,300 m,yes,no,Spawn 2020,https://doi.org/10.1038/s41597-020-0444-4,https://doi.org/10.3334/ORNLDAAC/1763 ,2010,combination of maps and biomass values per land cover type,no,yes,yes
-UNEP-WCMC,global,300 m,yes,no,Soto-Navarro 2020,https://doi.org/10.1098/rstb.2019.0128,https://doi.org/10.34892/rh7v-hg80 ,2010,combination of maps and biomass values per land cover type,no,yes,yes
-GEOCARBON,global,1 km,yes,no,"Avitabile 2016, Santoro 2015",NA,http://lucid.wur.nl/datasets/high-carbon-ecosystems,2008,combination of Avitabile and Santoro,GLC2000 forests,yes,no
+Name	Resolution	Reference	epoch	Method
+CCI Biomass	100 m	Santoro 2019	2017, 2018, 2020	ALOS2, PALSAR 2, Sentinel 1
+Saatchi	1 km	Saatchi 2011	2000	GLAS, MODIS, QSCAT, SRTM
+WHRC-Baccini	500 m	Baccini 2012	2007-2008	GLAS, MODIS, SRTM
+GFW-Baccini	30 m	Baccini 2017	2000	GLAS, Landsat, SRTM
+Avitabile	1 km	Avitabile 2016	2008	fusion of Saatchi and Baccini
+GEDI	1 km	Dubayah 2023	2019-2023	LiDAR GEDI 2, ALS

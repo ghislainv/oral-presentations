@@ -28,18 +28,25 @@
 #+INCLUDE: "doc_prefix.tex" export latex
 
 * Introduction
-  :PROPERTIES:
-  :CUSTOM_ID: introduction
-  :END:
   
 ** Context
-   :PROPERTIES:
-   :CUSTOM_ID: context
-   :END:
 
 *** Context
 
-MELANOBS: Melanesian forest observatory.
+#+attr_latex: :width 8cm
+[[file:figs/forest_cover_jrc_2020.png]]
+
+- Tropical forests: 50% of terrestrial biodiversity.
+- Tropical deforestation: 15% of anthropogenic carbon emissions.
+- Mapping forest cover, carbon stocks and biodiversity is essential for conservation planning.
+  
+*** Objectives 
+
+#+attr_latex: :width 8cm
+[[file:figs/carte_melanobs.jpg]]
+
+- MELANOBS: building a Melanesian forest observatory.
+- Which data on forest cover, carbon stock and biodiversity is available for Melanesian countries?
 
 * Forest cover change data
 
@@ -69,7 +76,7 @@ MELANOBS: Melanesian forest observatory.
 | Source          |        FRA |      GFC30 |        TMF |
 |                 | 2015--2020 | 2010--2020 | 2010--2020 |
 |-----------------+------------+------------+------------|
-| PNG             |         34 |     104678 |      48691 |
+| PNG             |      34000 |     104678 |      48691 |
 | Salomon Islands |            |      13460 |       1751 |
 | Vanuatu         |            |        939 |        564 |
 | Fiji            |            |       2663 |         NA |
@@ -88,7 +95,7 @@ MELANOBS: Melanesian forest observatory.
 - [[https://glad.earthengine.app/view/global-forest-change][Global Forest Change]] (Hansen et al. 2013, Univ. of Maryland).
 - Used by [[https://www.globalforestwatch.org/][Global Forest Watch]] (GFW): platform about the world forests. GFW releases the [[https://research.wri.org/gfr/global-forest-review][Global Forest Review]].
 - It is in fact a tree cover change product. User must define a tree cover threshold to define the forest (e.g. 30%).
-- Derive from Landsat images from 2000. One mosaic per year.
+- Derive from Landsat images from 2000. 30m resolution. One mosaic per year.
 - Largely overestimate forest cover if low tree cover threshold (e.g. 30%).
 - Underestimate small-scale deforestation (shifting agriculture, logging).
 
@@ -99,7 +106,7 @@ MELANOBS: Melanesian forest observatory.
 
 - [[https://forobs.jrc.ec.europa.eu/TMF][Tropical Moist Forests]] (Vancutsem et al. 2021, from Joint Research Center).
 - Only consider evergreen tropical forests (tropical moist forests, mangroves, evergreen dry tropical forests). Cannot be used to monitor deciduous dry forests.
-- Derive from Landsat images from 1990. Time-series at the pixel scale.
+- Derive from Landsat images from 1990. 30m resolution. Time-series at the pixel scale.
 - Fiji is not entirely available (beyond the 180th meridian).
 - Overestimate forest cover in some areas (e.g. Vanuatu, Mare island in New Caledonia).
 
@@ -115,12 +122,12 @@ MELANOBS: Melanesian forest observatory.
 
 *** In New-Caledonia
 
-#+attr_latex: :width 8cm
+#+attr_latex: :width 9cm
 [[file:figs/fcc/fcc_nc.png]]
 
 - Coarse vegetation maps from IRD (Jaffre, Morat).
 - Forest cover change map for 2000-2010-2020 derived from TMF.
-- Forest cover map for year ~2020 derived from photo-interpretation of aerial images.
+- Natural forest cover map for year ~2020 derived from photo-interpretation of aerial images.
 
 #+begin_src org :results none :exports none
 Some notes on vegeation maps for NC:
@@ -130,8 +137,65 @@ Morat 1981
 Jaffre
 #+end_src
 
-
 * Carbon stock data
+ 
+** Global data-sets
+
+*** Global data-sets
+
+#+attr_latex: :font \footnotesize
+| Name         | Resolution | Reference      | Epoch | Method                        |
+|--------------+------------+----------------+-------+-------------------------------|
+| Saatchi      | 1 km       | Saatchi 2011   |  2000 | GLAS, MODIS, QSCAT, SRTM      |
+| WHRC-Baccini | 500 m      | Baccini 2012   |  2008 | GLAS, MODIS, SRTM             |
+| Avitabile    | 1 km       | Avitabile 2016 |  2008 | fusion of Saatchi and Baccini |
+| GFW-Baccini  | 30 m       | Baccini 2017   |  2000 | GLAS, Landsat, SRTM           |
+| CCI Biomass  | 100 m      | Santoro 2019   |  2020 | ALOS2, PALSAR 2, Sentinel 1   |
+| GEDI         | 1 km       | Dubayah 2023   |  2020 | LiDAR GEDI 2, ALS             |
+| more...      |            |                |       |                               |
+
+- Usually^{\star} a three step approach: field data, LiDAR, satellite images (optical or radar).
+- \star somewhat different for the GEDI product.  
+  
+*** Disadvantages of global products
+
+#+attr_latex: :width 10cm
+#+caption: *Field plots used in Saatchi et al. 2011*
+[[file:figs/carbon/data-saatchi.png]]
+
+- Some countries might be absent from the final map (eg. New Caledonia for Saatchi, WHRC-Baccini and Avitabile).
+- Global models might not be accurate for countries with no field data for calibration.
+- High discrepancies between maps.
+- Resolutions might be coarse: >= 500 m.
+  
+*** GEDI derived AGB map
+
+**** Left column                                                   :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 6cm
+[[file:figs/carbon/AGB_GEDI.png]]
+
+**** Right column                                                  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 6cm
+[[file:figs/carbon/training-data-GEDI.png]]
+
+****                                                             :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- No extrapolation using satellite images and SRTM.
+- GEDI footprints are aggregated within 1 km grid cells.
+- Low resolution: 1 km, location uncertainty of about 25 m.
+- Same problem as for other data-sets: no field data from Melanesia for calibration.
+
+** National data-sets
+
+*** National data-sets
 
 * Biodiversity data
 

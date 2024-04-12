@@ -2,8 +2,7 @@
 *.html
 
 # pdf
-/*/*.pdf
-!docs/*.pdf
+pdfs
 
 # History files
 .Rhistory
