@@ -1,4 +1,4 @@
-% Created 2024-04-12 Fri 16:55
+% Created 2024-04-13 Sat 17:40
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,table,dvipsnames,compress]{beamer}
 \usepackage[utf8]{inputenc}
@@ -48,7 +48,7 @@
 
 % Logo
 \newif\ifplacelogo % create a new conditional
-\logo{\ifplacelogo\includegraphics[width=0.6\textwidth]{figs/partners_logos}\fi}
+\logo{\ifplacelogo\includegraphics[width=0.5\textwidth]{figs/partners_logos}\fi}
 
 %Call table of contents at the beginning of each section
 \AtBeginSection[]{
@@ -133,7 +133,7 @@ urlcolor=Maroon}
       \end{tabular}
     }
     
-    \includegraphics[width=0.8\textwidth]{figs/partners_logos}
+    \includegraphics[width=0.7\textwidth]{figs/partners_logos}
     
   \end{center}
   \end{frame}
@@ -160,12 +160,12 @@ urlcolor=Maroon}
 \placelogofalse
 
 \section{Introduction}
-\label{sec:org69353f7}
+\label{sec:orgdf13dee}
 
 \subsection{Context}
-\label{sec:org52c8df6}
+\label{sec:org6f81d8d}
 
-\begin{frame}[label={sec:orga7999bc}]{Context}
+\begin{frame}[label={sec:orga3d45b1}]{Context}
 \begin{center}
 \includegraphics[width=8cm]{figs/forest_cover_jrc_2020.png}
 \end{center}
@@ -177,7 +177,10 @@ urlcolor=Maroon}
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orge9de18c}]{Objectives}
+\subsection{Objectives}
+\label{sec:orga89ace8}
+
+\begin{frame}[label={sec:orgabc040a}]{Objectives}
 \begin{center}
 \includegraphics[width=8cm]{figs/carte_melanobs.jpg}
 \end{center}
@@ -189,20 +192,21 @@ urlcolor=Maroon}
 \end{frame}
 
 \section{Forest cover change data}
-\label{sec:org0d5eb83}
+\label{sec:org0b43bc5}
 
 \subsection{FAO FRA estimates}
-\label{sec:org380aac1}
+\label{sec:org477b14d}
 
-\begin{frame}[label={sec:org56e2a78}]{FAO FRA estimates, forest cover}
+\begin{frame}[label={sec:org1d7887e}]{FAO FRA estimates, forest cover}
 \textbf{Forest cover estimates (in Kha).}
 
 \begin{center}
+\footnotesize
 \begin{tabular}{lrrrr}
-Source & FRA 2015 & prim. forest & GFC30 2020 & TMF 2020\\[0pt]
+Country & FRA 2015 & prim. forest & GFC30 2020 & TMF 2020\\[0pt]
 \hline
 PNG & 36024 & 27200 & 39000 & 39304\\[0pt]
-Salomon Islands & 2527 & 1738 & 2350 & 2739\\[0pt]
+Solomon Islands & 2527 & 1738 & 2350 & 2739\\[0pt]
 Vanuatu & 442 & 205 & 986 & 1152\\[0pt]
 Fiji & 1107 & 0 & 1050 & NA\\[0pt]
 New Caledonia & 839 & 338 & 1150 & 855\\[0pt]
@@ -212,37 +216,85 @@ New Caledonia & 839 & 338 & 1150 & 855\\[0pt]
 \begin{itemize}
 \item Forest Ressources Assessment (FRA) from the Food and Agriculture Organization (FAO).
 \item Estimates are reported by countries to FAO.
+\item Differentiate forest types: forest, primary forest, plantations
 \item Not frequently updated.
-\item There is no map of forest cover change provided by FAO.
+\item Information is not spatialized.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org0e2700e}]{FAO FRA estimates, gross deforestation}
+\begin{frame}[label={sec:org811940b}]{FAO FRA estimates, forest cover}
+\textbf{Forest cover estimates (in \% of land area).}
+
+\begin{center}
+\footnotesize
+\begin{tabular}{lrlll}
+Country & Area (km2) & FRA 2015 & GFC30 2020 & TMF 2020\\[0pt]
+\hline
+PNG & 462840 & 78\% & 84\% & 85\%\\[0pt]
+Solomon Islands & 28896 & 87\% & 81\% & 95\%\\[0pt]
+Vanuatu & 12189 & 36\% & 81\% & 95\%\\[0pt]
+Fiji & 18272 & 61\% & 57\% & NA\\[0pt]
+New Caledonia & 18575 & 45\% & 62\% & 46\%\\[0pt]
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item Forest Ressources Assessment (FRA) from the Food and Agriculture Organization (FAO).
+\item Estimates are reported by countries to FAO.
+\item Differentiate forest types: forest, primary forest, plantations.
+\item Not frequently updated.
+\item Information is not spatialized.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:orgef1cd32}]{FAO FRA estimates, deforestation}
 \textbf{Mean annual deforestation (in ha).}
 
 \begin{center}
+\footnotesize
 \begin{tabular}{lrrr}
-Source & FRA & GFC30 & TMF\\[0pt]
+Country & FRA & GFC30 & TMF\\[0pt]
  & 2015--2020 & 2010--2020 & 2010--2020\\[0pt]
 \hline
 PNG & 34000 & 104678 & 48691\\[0pt]
-Salomon Islands &  & 13460 & 1751\\[0pt]
+Solomon Islands &  & 13460 & 1751\\[0pt]
 Vanuatu &  & 939 & 564\\[0pt]
-Fiji &  & 2663 & NA\\[0pt]
+Fiji &  & 2663 & \\[0pt]
 New Caledonia &  & 1328 & 2425\\[0pt]
 \end{tabular}
 \end{center}
 
 \begin{itemize}
 \item Rather good estimates of forest cover but poor estimates of deforestation/regrowth.
-\item Differentiate forest types: forest, primary forest, plantations
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:orge5b8c23}]{FAO FRA estimates, deforestation}
+\textbf{Mean annual deforestation (in \%/yr).}
+
+\begin{center}
+\footnotesize
+\begin{tabular}{lrrr}
+Country & FRA & GFC30 & TMF\\[0pt]
+ & 2015--2020 & 2010--2020 & 2010--2020\\[0pt]
+\hline
+PNG & 0.09 & 0.27 & 0.12\\[0pt]
+Solomon Islands &  & 0.57 & 0.06\\[0pt]
+Vanuatu &  & 0.1 & 0.05\\[0pt]
+Fiji &  & 0.25 & \\[0pt]
+New Caledonia &  & 0.12 & 0.28\\[0pt]
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+\item Rather good estimates of forest cover but poor estimates of deforestation/regrowth.
 \end{itemize}
 \end{frame}
 
 \subsection{Global datasets}
-\label{sec:org20d92bf}
+\label{sec:org05433a7}
 
-\begin{frame}[label={sec:org4e46164}]{Global Forest Change (GFC)}
+\begin{frame}[label={sec:orgf65d91f}]{Global Forest Change (GFC)}
 \begin{center}
 \includegraphics[width=8cm]{figs/fcc/gfc.png}
 \end{center}
@@ -257,7 +309,7 @@ New Caledonia &  & 1328 & 2425\\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org5042f65}]{Tropical Moist Forests (TMF)}
+\begin{frame}[label={sec:org045507c}]{Tropical Moist Forests (TMF)}
 \begin{center}
 \includegraphics[width=8cm]{figs/fcc/Vancutsem2021.png}
 \end{center}
@@ -272,21 +324,21 @@ New Caledonia &  & 1328 & 2425\\[0pt]
 \end{frame}
 
 \subsection{National data}
-\label{sec:org4156c30}
+\label{sec:org379803a}
 
-\begin{frame}[label={sec:org5f7b575}]{National data}
+\begin{frame}[label={sec:org9f2051a}]{National data}
 \begin{itemize}
-\item There is room to improve forest cover change map at the national scale.
+\item There is room to improve forest cover change maps at the national scale.
 
 \item MELANOBS objectives:
 \begin{itemize}
-\item State of the forest cover change data available at the national scale.
+\item Which forest cover change data is available at the national scale?
 \item Derive up to date forest cover change maps for participating countries.
 \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgc285709}]{In New-Caledonia}
+\begin{frame}[label={sec:orgb5e283c}]{In New-Caledonia}
 \begin{center}
 \includegraphics[width=9cm]{figs/fcc/fcc_nc.png}
 \end{center}
@@ -299,12 +351,12 @@ New Caledonia &  & 1328 & 2425\\[0pt]
 \end{frame}
 
 \section{Carbon stock data}
-\label{sec:orgfad5893}
+\label{sec:org4f33481}
 
 \subsection{Global data-sets}
-\label{sec:org6ed78b0}
+\label{sec:org35dc17f}
 
-\begin{frame}[label={sec:orgf9562a2}]{Global data-sets}
+\begin{frame}[label={sec:orgbd0c798}]{Global data-sets}
 \begin{center}
 \footnotesize
 \begin{tabular}{lllrl}
@@ -326,7 +378,7 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgc5dcf74}]{Disadvantages of global products}
+\begin{frame}[label={sec:orgd0105ca}]{Disadvantages of global products}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=10cm]{figs/carbon/data-saatchi.png}
@@ -334,14 +386,14 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{figure}
 
 \begin{itemize}
-\item Some countries might be absent from the final map (eg. New Caledonia for Saatchi, WHRC-Baccini and Avitabile).
+\item Some countries might be absent from the final map (eg. New Caledonia for Saatchi, WHRC-Baccini and Avitabile's maps).
 \item Global models might not be accurate for countries with no field data for calibration.
 \item High discrepancies between maps.
 \item Resolutions might be coarse: >= 500 m.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org9edc783}]{GEDI derived AGB map}
+\begin{frame}[label={sec:org6f673d4}]{GEDI derived AGB map}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -367,13 +419,37 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{frame}
 
 \subsection{National data-sets}
-\label{sec:org733fb7a}
+\label{sec:orgde5d9c2}
 
-\begin{frame}[label={sec:orgc57e625}]{National data-sets}
+\begin{frame}[label={sec:org2ad9c63}]{National data-sets}
+\begin{itemize}
+\item There is room to improve forest carbon stock maps at the national scale.
+
+\item MELANOBS objectives:
+\begin{itemize}
+\item Which forest carbon data is available at the national scale?
+\item Derive up to date forest carbon stock maps for participating countries.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:orga5543c2}]{In New-Caledonia}
+\begin{center}
+\includegraphics[width=7cm]{figs/carbon/ncpippn-plots.png}
+\end{center}
+
+\begin{itemize}
+\item No existing national forest carbon stock map.
+\item NC-PIPPN forest inventory network + MELANOBS network of 1ha permanent forest plots.
+\item LiDAR data.
+\item Good cover by GEDI.
+\end{itemize}
 \end{frame}
 
 \section{Biodiversity data}
-\label{sec:orgef5f1e1}
+\label{sec:org4a48a91}
+
+
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

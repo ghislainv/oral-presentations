@@ -39,7 +39,9 @@
 - Tropical forests: 50% of terrestrial biodiversity.
 - Tropical deforestation: 15% of anthropogenic carbon emissions.
 - Mapping forest cover, carbon stocks and biodiversity is essential for conservation planning.
-  
+
+** Objectives
+
 *** Objectives 
 
 #+attr_latex: :width 8cm
@@ -56,34 +58,71 @@
 
 *Forest cover estimates (in Kha).*
 
-| Source          | FRA 2015 | prim. forest | GFC30 2020 | TMF 2020 |
+#+attr_latex: :font \footnotesize
+| Country         | FRA 2015 | prim. forest | GFC30 2020 | TMF 2020 |
 |-----------------+----------+--------------+------------+----------|
 | PNG             |    36024 |        27200 |      39000 |    39304 |
-| Salomon Islands |     2527 |         1738 |       2350 |     2739 |
+| Solomon Islands |     2527 |         1738 |       2350 |     2739 |
 | Vanuatu         |      442 |          205 |        986 |     1152 |
 | Fiji            |     1107 |            0 |       1050 |       NA |
 | New Caledonia   |      839 |          338 |       1150 |      855 |
 
 - Forest Ressources Assessment (FRA) from the Food and Agriculture Organization (FAO).
 - Estimates are reported by countries to FAO.
+- Differentiate forest types: forest, primary forest, plantations
 - Not frequently updated.
-- There is no map of forest cover change provided by FAO.
+- Information is not spatialized.
 
-*** FAO FRA estimates, gross deforestation
+*** FAO FRA estimates, forest cover
+
+*Forest cover estimates (in % of land area).*
+
+#+attr_latex: :font \footnotesize
+| Country         | Area (km2) | FRA 2015 | GFC30 2020 | TMF 2020 |
+|-----------------+------------+----------+------------+----------|
+| PNG             |     462840 |      78% |        84% |      85% |
+| Solomon Islands |      28896 |      87% |        81% |      95% |
+| Vanuatu         |      12189 |      36% |        81% |      95% |
+| Fiji            |      18272 |      61% |        57% |       NA |
+| New Caledonia   |      18575 |      45% |        62% |      46% |
+
+- Forest Ressources Assessment (FRA) from the Food and Agriculture Organization (FAO).
+- Estimates are reported by countries to FAO.
+- Differentiate forest types: forest, primary forest, plantations.
+- Not frequently updated.
+- Information is not spatialized.
+
+*** FAO FRA estimates, deforestation
 
 *Mean annual deforestation (in ha).*
 
-| Source          |        FRA |      GFC30 |        TMF |
+#+attr_latex: :font \footnotesize
+| Country         |        FRA |      GFC30 |        TMF |
 |                 | 2015--2020 | 2010--2020 | 2010--2020 |
 |-----------------+------------+------------+------------|
 | PNG             |      34000 |     104678 |      48691 |
-| Salomon Islands |            |      13460 |       1751 |
+| Solomon Islands |            |      13460 |       1751 |
 | Vanuatu         |            |        939 |        564 |
-| Fiji            |            |       2663 |         NA |
+| Fiji            |            |       2663 |            |
 | New Caledonia   |            |       1328 |       2425 |
 
 - Rather good estimates of forest cover but poor estimates of deforestation/regrowth.
-- Differentiate forest types: forest, primary forest, plantations
+
+*** FAO FRA estimates, deforestation
+
+*Mean annual deforestation (in %/yr).*
+
+#+attr_latex: :font \footnotesize
+| Country         |        FRA |      GFC30 |        TMF |
+|                 | 2015--2020 | 2010--2020 | 2010--2020 |
+|-----------------+------------+------------+------------|
+| PNG             |       0.09 |       0.27 |       0.12 |
+| Solomon Islands |            |       0.57 |       0.06 |
+| Vanuatu         |            |        0.1 |       0.05 |
+| Fiji            |            |       0.25 |            |
+| New Caledonia   |            |       0.12 |       0.28 |
+
+- Rather good estimates of forest cover but poor estimates of deforestation/regrowth.
 
 ** Global datasets
 
@@ -114,10 +153,10 @@
 
 *** National data
 
-- There is room to improve forest cover change map at the national scale.
+- There is room to improve forest cover change maps at the national scale.
   
 - MELANOBS objectives:
-  - State of the forest cover change data available at the national scale.
+  - Which forest cover change data is available at the national scale?
   - Derive up to date forest cover change maps for participating countries.   
 
 *** In New-Caledonia
@@ -130,7 +169,7 @@
 - Natural forest cover map for year ~2020 derived from photo-interpretation of aerial images.
 
 #+begin_src org :results none :exports none
-Some notes on vegeation maps for NC:
+Some notes on vegetation maps for NC:
 
 https://www.mobot.org/mobot/research/newcaledonia/vege.html
 Morat 1981
@@ -163,7 +202,7 @@ Jaffre
 #+caption: *Field plots used in Saatchi et al. 2011*
 [[file:figs/carbon/data-saatchi.png]]
 
-- Some countries might be absent from the final map (eg. New Caledonia for Saatchi, WHRC-Baccini and Avitabile).
+- Some countries might be absent from the final map (eg. New Caledonia for Saatchi, WHRC-Baccini and Avitabile's maps).
 - Global models might not be accurate for countries with no field data for calibration.
 - High discrepancies between maps.
 - Resolutions might be coarse: >= 500 m.
@@ -197,7 +236,50 @@ Jaffre
 
 *** National data-sets
 
+- There is room to improve forest carbon stock maps at the national scale.
+  
+- MELANOBS objectives:
+  - Which forest carbon data is available at the national scale?
+  - Derive up to date forest carbon stock maps for participating countries.
+
+*** In New-Caledonia
+
+#+attr_latex: :width 7cm
+[[file:figs/carbon/ncpippn-plots.png]]
+
+- No existing national forest carbon stock map.
+- NC-PIPPN forest inventory network + MELANOBS network of 1ha permanent forest plots.
+- LiDAR data.
+- Good cover by GEDI.
+  
 * Biodiversity data
+
+** Global maps of biodiversity
+
+*** Global maps of biodiversity
+
+- We only consider here tree biodiversity.
+- I am not aware of existing global maps of tree diversity.
+- Keil, P., & Chase, J. M. (2019). Global patterns and drivers of tree diversity integrated across a continuum of spatial grains. Nature Ecology & Evolution. doi:10.1038/s41559-019-0799-0
+- Dauby et al. 2016 PhytoKeys. SDMs for tree species in Africa.
+- Guo et al. 2022 PNAS: SDM for 46,752 tree species from GBIF, BIEN, DRYFLOR, RAINBIO, ALA.
+
+** Global biodiversity data-sets
+
+*** Global biodiversity data-sets
+
+- GBIF: Global Biodiversity Information Facility.
+- International research networks: 
+
+** National data-sets
+
+*** National data-sets
+
+*** Tree biodiversity data in New-Caledonia
+
+- NOU herbarium data.
+- NC-PIPPN forest plot network with floristic data.
+- Endemia (Red List Authority) data.
 
 * Last slide                                                         :ignore:
     

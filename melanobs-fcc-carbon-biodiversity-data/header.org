@@ -28,7 +28,7 @@
 #+BEAMER_HEADER: 
 #+BEAMER_HEADER: % Logo
 #+BEAMER_HEADER: \newif\ifplacelogo % create a new conditional
-#+BEAMER_HEADER: \logo{\ifplacelogo\includegraphics[width=0.6\textwidth]{figs/partners_logos}\fi}
+#+BEAMER_HEADER: \logo{\ifplacelogo\includegraphics[width=0.5\textwidth]{figs/partners_logos}\fi}
 #+BEAMER_HEADER: 
 #+BEAMER_HEADER: %Call table of contents at the beginning of each section
 #+BEAMER_HEADER: \AtBeginSection[]{
