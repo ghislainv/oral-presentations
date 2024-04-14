@@ -33,9 +33,22 @@
 
 *** Context
 
+**** Fig 1                                                         :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
 #+attr_latex: :width 8cm
-[[file:figs/forest_cover_jrc_2020.png]]
+[[file:figs/rain_forests_map.png]]
 
+**** Fig 2                                                         :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+#+attr_latex: :width 3cm
+[[file:figs/tropical_forest_biodiv.png]]
+
+
+**** 
 - Tropical forests: 50% of terrestrial biodiversity.
 - Tropical deforestation: 15% of anthropogenic carbon emissions.
 - Mapping forest cover, carbon stocks and biodiversity is essential for conservation planning.
@@ -47,44 +60,24 @@
 #+attr_latex: :width 8cm
 [[file:figs/carte_melanobs.jpg]]
 
-- MELANOBS: building a Melanesian forest observatory.
+- MELANOBS project: building a Melanesian forest observatory.
 - Which data on forest cover, carbon stock and biodiversity are available for Melanesian countries?
 
-* Forest cover change maps
+* Forest cover maps
 
 ** FAO FRA estimates
 
 *** FAO FRA estimates, forest cover
 
-*Forest cover estimates (in Kha).*
-
 #+attr_latex: :font \footnotesize
-| Country         | FRA 2015 | prim. forest | GFC30 2020 | TMF 2020 |
-|-----------------+----------+--------------+------------+----------|
-| PNG             |    36024 |        27200 |      39000 |    39304 |
-| Solomon Islands |     2527 |         1738 |       2350 |     2739 |
-| Vanuatu         |      442 |          205 |        986 |     1152 |
-| Fiji            |     1107 |            0 |       1050 |       NA |
-| New Caledonia   |      839 |          338 |       1150 |      855 |
-
-- Forest Ressources Assessment (FRA) from the Food and Agriculture Organization (FAO).
-- Estimates are reported by countries to FAO.
-- Differentiate forest types: forest, primary forest, plantations
-- Not frequently updated.
-- Information is not spatialized.
-
-*** FAO FRA estimates, forest cover
-
-*Forest cover estimates (in % of land area).*
-
-#+attr_latex: :font \footnotesize
-| Country         | Area (km2) | FRA 2015 | GFC30 2020 | TMF 2020 |
-|-----------------+------------+----------+------------+----------|
-| PNG             |     462840 |      78% |        84% |      85% |
-| Solomon Islands |      28896 |      87% |        81% |      95% |
-| Vanuatu         |      12189 |      36% |        81% |      95% |
-| Fiji            |      18272 |      61% |        57% |       NA |
-| New Caledonia   |      18575 |      45% |        62% |      46% |
+#+caption: *Forest cover estimates (in % of land area).*
+| Country         | Area (km2) | FRA 2015 |
+|-----------------+------------+----------|
+| PNG             |     462840 |      78% |
+| Solomon Islands |      28896 |      87% |
+| Vanuatu         |      12189 |      36% |
+| Fiji            |      18272 |      61% |
+| New Caledonia   |      18575 |      45% |
 
 - Forest Ressources Assessment (FRA) from the Food and Agriculture Organization (FAO).
 - Estimates are reported by countries to FAO.
@@ -94,33 +87,16 @@
 
 *** FAO FRA estimates, deforestation
 
-*Mean annual deforestation (in ha).*
-
 #+attr_latex: :font \footnotesize
-| Country         |        FRA |      GFC30 |        TMF |
-|                 | 2015--2020 | 2010--2020 | 2010--2020 |
-|-----------------+------------+------------+------------|
-| PNG             |      34000 |     104678 |      48691 |
-| Solomon Islands |            |      13460 |       1751 |
-| Vanuatu         |            |        939 |        564 |
-| Fiji            |            |       2663 |            |
-| New Caledonia   |            |       1328 |       2425 |
-
-- Rather good estimates of forest cover but poor estimates of deforestation/regrowth.
-
-*** FAO FRA estimates, deforestation
-
-*Mean annual deforestation (in %/yr).*
-
-#+attr_latex: :font \footnotesize
-| Country         |        FRA |      GFC30 |        TMF |
-|                 | 2015--2020 | 2010--2020 | 2010--2020 |
-|-----------------+------------+------------+------------|
-| PNG             |       0.09 |       0.27 |       0.12 |
-| Solomon Islands |            |       0.57 |       0.06 |
-| Vanuatu         |            |        0.1 |       0.05 |
-| Fiji            |            |       0.25 |            |
-| New Caledonia   |            |       0.12 |       0.28 |
+#+caption: *Mean annual deforestation (in ha).*
+| Country         |        FRA |
+|                 | 2015--2020 |
+|-----------------+------------|
+| PNG             |      34000 |
+| Solomon Islands |            |
+| Vanuatu         |            |
+| Fiji            |            |
+| New Caledonia   |            |
 
 - Rather good estimates of forest cover but poor estimates of deforestation/regrowth.
 
@@ -135,8 +111,32 @@
 - Used by [[https://www.globalforestwatch.org/][Global Forest Watch]] (GFW): platform about the world forests. GFW releases the [[https://research.wri.org/gfr/global-forest-review][Global Forest Review]].
 - It is in fact a tree cover change product. User must define a tree cover threshold to define the forest (e.g. 30%).
 - Derive from Landsat images from 2000. 30m resolution. One mosaic per year.
-- Largely overestimate forest cover if low tree cover threshold (e.g. 30%).
-- Underestimate small-scale deforestation (shifting agriculture, logging).
+
+*** Global Forest Change (GFC)
+
+#+attr_latex: :font \footnotesize
+#+caption: *Forest cover estimates (in % of land area).*
+| Country         | Area (km2) | FRA 2015 | GFC30 2020 |
+|-----------------+------------+----------+------------|
+| PNG             |     462840 |      78% |        84% |
+| Solomon Islands |      28896 |      87% |        81% |
+| Vanuatu         |      12189 |      36% |        81% |
+| Fiji            |      18272 |      61% |        57% |
+| New Caledonia   |      18575 |      45% |        62% |
+
+#+attr_latex: :font \footnotesize
+#+caption: *Mean annual deforestation (in ha).*
+| Country         |        FRA |      GFC30 |
+|                 | 2015--2020 | 2010--2020 |
+|-----------------+------------+------------|
+| PNG             |      34000 |     104678 |
+| Solomon Islands |            |      13460 |
+| Vanuatu         |            |        939 |
+| Fiji            |            |       2663 |
+| New Caledonia   |            |       1328 |
+
+- Overestimate forest cover if low tree cover threshold (e.g. 30%).
+- Underestimate small-scale deforestation (e.g. logging).
 
 *** Tropical Moist Forests (TMF)
 
@@ -146,8 +146,32 @@
 - [[https://forobs.jrc.ec.europa.eu/TMF][Tropical Moist Forests]] (Vancutsem et al. 2021, from Joint Research Center).
 - Only consider evergreen tropical forests (tropical moist forests, mangroves, evergreen dry tropical forests). Cannot be used to monitor deciduous dry forests.
 - Derive from Landsat images from 1990. 30m resolution. Time-series at the pixel scale.
+
+*** Tropical Moist Forests (TMF)
+
+#+attr_latex: :font \footnotesize
+#+caption: *Forest cover estimates (in % of land area).*
+| Country         | Area (km2) | FRA 2015 | GFC30 2020 | TMF 2020 |
+|-----------------+------------+----------+------------+----------|
+| PNG             |     462840 |      78% |        84% |      85% |
+| Solomon Islands |      28896 |      87% |        81% |      95% |
+| Vanuatu         |      12189 |      36% |        81% |      95% |
+| Fiji            |      18272 |      61% |        57% |       NA |
+| New Caledonia   |      18575 |      45% |        62% |      46% |
+
+#+attr_latex: :font \footnotesize
+#+caption: *Mean annual deforestation (in ha).*
+| Country         |        FRA |      GFC30 |        TMF |
+|                 | 2015--2020 | 2010--2020 | 2010--2020 |
+|-----------------+------------+------------+------------|
+| PNG             |      34000 |     104678 |      48691 |
+| Solomon Islands |            |      13460 |       1751 |
+| Vanuatu         |            |        939 |        564 |
+| Fiji            |            |       2663 |            |
+| New Caledonia   |            |       1328 |       2425 |
+
 - Fiji is not entirely available (beyond the 180th meridian).
-- Overestimate forest cover in some areas (e.g. Vanuatu, Mare island in New Caledonia).
+- Overestimate forest cover in some areas (e.g. Vanuatu).
 
 ** National data
 
@@ -190,11 +214,12 @@ Jaffre
 | Avitabile    | 1 km       | Avitabile 2016 |  2008 | fusion of Saatchi and Baccini |
 | GFW-Baccini  | 30 m       | Baccini 2017   |  2000 | GLAS, Landsat, SRTM           |
 | CCI Biomass  | 100 m      | Santoro 2019   |  2020 | ALOS2, PALSAR 2, Sentinel 1   |
-| GEDI         | 1 km       | Dubayah 2023   |  2020 | LiDAR GEDI 2, ALS             |
+| GEDI\star        | 1 km       | Dubayah 2023   |  2020 | LiDAR GEDI 2, ALS             |
 | more...      |            |                |       |                               |
 
-- Usually^{\star} a three step approach: field data, LiDAR, satellite images (optical or radar).
-- \star somewhat different for the GEDI product.  
+- Usually a three step approach: field data, LiDAR, satellite images.
+- Satellites images (optical or radar) are used for extrapolation.
+- \star different approach for GEDI products (see below).  
   
 *** Disadvantages of global products
 
@@ -223,10 +248,7 @@ Jaffre
 #+attr_latex: :width 6cm
 [[file:figs/carbon/training-data-GEDI.png]]
 
-****                                                             :B_block:
-:PROPERTIES:
-:BEAMER_env: block
-:END:
+****                                                            
 - No extrapolation using satellite images and SRTM.
 - GEDI footprints are aggregated within 1 km grid cells.
 - Low resolution: 1 km, location uncertainty of about 25 m.
@@ -290,6 +312,8 @@ Jaffre
 #+attr_latex: :width 5cm
 [[file:figs/biodiv/Keil2019-figure-2.png]]
 
+**** 
+
 *Keil & Chase.* (2019). Global patterns and drivers of tree diversity integrated across a continuum of spatial grains. /Nature Ecology & Evolution/.
 
 *** Continental biodiversity maps
@@ -326,6 +350,13 @@ Jaffre
   - Derive first tree community maps for participating countries.
 
 *** Tree data in New-Caledonia
+
+#+BEGIN_CENTER
+#+attr_latex: :width 2cm :center
+[[file:figs/biodiv/NOU-herbarium-logo.jpg]]
+#+attr_latex: :width 2cm :center
+[[file:figs/biodiv/logo_endemia.png]]
+#+END_CENTER
 
 - NOU herbarium data.
 - NC-PIPPN forest plot network with floristic data.
