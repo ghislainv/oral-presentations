@@ -40,11 +40,13 @@
 #+BEAMER_HEADER:         \tableofcontents[sections=1,currentsection]
 #+BEAMER_HEADER:         \vspace{0.5cm}
 #+BEAMER_HEADER:         \tableofcontents[sections=2,currentsection]
+#+BEAMER_HEADER:         \vspace{0.5cm}
+#+BEAMER_HEADER:         \tableofcontents[sections=3,currentsection]
 #+BEAMER_HEADER:       \end{column}
 #+BEAMER_HEADER:       \begin{column}{0.5\textwidth}
-#+BEAMER_HEADER:         \tableofcontents[sections=3,currentsection]
-#+BEAMER_HEADER:         \vspace{0.5cm}
 #+BEAMER_HEADER:         \tableofcontents[sections=4,currentsection]
+#+BEAMER_HEADER:         \vspace{0.5cm}
+#+BEAMER_HEADER:         \tableofcontents[sections=5,currentsection]
 #+BEAMER_HEADER:       \end{column}
 #+BEAMER_HEADER:     \end{columns}
 #+BEAMER_HEADER:   \end{frame}

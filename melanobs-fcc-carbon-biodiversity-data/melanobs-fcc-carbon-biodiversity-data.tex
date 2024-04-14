@@ -1,4 +1,4 @@
-% Created 2024-04-13 Sat 17:40
+% Created 2024-04-14 Sun 19:04
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,table,dvipsnames,compress]{beamer}
 \usepackage[utf8]{inputenc}
@@ -60,11 +60,13 @@
 \tableofcontents[sections=1,currentsection]
 \vspace{0.5cm}
 \tableofcontents[sections=2,currentsection]
+\vspace{0.5cm}
+\tableofcontents[sections=3,currentsection]
 \end{column}
 \begin{column}{0.5\textwidth}
-\tableofcontents[sections=3,currentsection]
-\vspace{0.5cm}
 \tableofcontents[sections=4,currentsection]
+\vspace{0.5cm}
+\tableofcontents[sections=5,currentsection]
 \end{column}
 \end{columns}
 \end{frame}
@@ -133,7 +135,7 @@ urlcolor=Maroon}
       \end{tabular}
     }
     
-    \includegraphics[width=0.7\textwidth]{figs/partners_logos}
+    \includegraphics[width=0.6\textwidth]{figs/partners_logos}
     
   \end{center}
   \end{frame}
@@ -149,23 +151,25 @@ urlcolor=Maroon}
       \tableofcontents[sections=1]
       \vspace{0.5cm}
       \tableofcontents[sections=2]
+      \vspace{0.5cm}
+      \tableofcontents[sections=3]
     \end{column}
     \begin{column}{0.5\textwidth}
-        \tableofcontents[sections=3]
-        \vspace{0.5cm}
         \tableofcontents[sections=4]
+        \vspace{0.5cm}
+        \tableofcontents[sections=5]
     \end{column}
   \end{columns}
 \end{frame}
 \placelogofalse
 
 \section{Introduction}
-\label{sec:orgdf13dee}
+\label{sec:org623e54e}
 
 \subsection{Context}
-\label{sec:org6f81d8d}
+\label{sec:orgf754b91}
 
-\begin{frame}[label={sec:orga3d45b1}]{Context}
+\begin{frame}[label={sec:org1754275}]{Context}
 \begin{center}
 \includegraphics[width=8cm]{figs/forest_cover_jrc_2020.png}
 \end{center}
@@ -178,26 +182,26 @@ urlcolor=Maroon}
 \end{frame}
 
 \subsection{Objectives}
-\label{sec:orga89ace8}
+\label{sec:org6327cca}
 
-\begin{frame}[label={sec:orgabc040a}]{Objectives}
+\begin{frame}[label={sec:orgd56687c}]{Objectives}
 \begin{center}
 \includegraphics[width=8cm]{figs/carte_melanobs.jpg}
 \end{center}
 
 \begin{itemize}
 \item MELANOBS: building a Melanesian forest observatory.
-\item Which data on forest cover, carbon stock and biodiversity is available for Melanesian countries?
+\item Which data on forest cover, carbon stock and biodiversity are available for Melanesian countries?
 \end{itemize}
 \end{frame}
 
-\section{Forest cover change data}
-\label{sec:org0b43bc5}
+\section{Forest cover change maps}
+\label{sec:orgfe3340d}
 
 \subsection{FAO FRA estimates}
-\label{sec:org477b14d}
+\label{sec:org0189183}
 
-\begin{frame}[label={sec:org1d7887e}]{FAO FRA estimates, forest cover}
+\begin{frame}[label={sec:orgb02b39d}]{FAO FRA estimates, forest cover}
 \textbf{Forest cover estimates (in Kha).}
 
 \begin{center}
@@ -222,7 +226,7 @@ New Caledonia & 839 & 338 & 1150 & 855\\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org811940b}]{FAO FRA estimates, forest cover}
+\begin{frame}[label={sec:org0a93774}]{FAO FRA estimates, forest cover}
 \textbf{Forest cover estimates (in \% of land area).}
 
 \begin{center}
@@ -247,7 +251,7 @@ New Caledonia & 18575 & 45\% & 62\% & 46\%\\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgef1cd32}]{FAO FRA estimates, deforestation}
+\begin{frame}[label={sec:org5e040cc}]{FAO FRA estimates, deforestation}
 \textbf{Mean annual deforestation (in ha).}
 
 \begin{center}
@@ -269,7 +273,7 @@ New Caledonia &  & 1328 & 2425\\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orge5b8c23}]{FAO FRA estimates, deforestation}
+\begin{frame}[label={sec:org952a15d}]{FAO FRA estimates, deforestation}
 \textbf{Mean annual deforestation (in \%/yr).}
 
 \begin{center}
@@ -291,10 +295,10 @@ New Caledonia &  & 0.12 & 0.28\\[0pt]
 \end{itemize}
 \end{frame}
 
-\subsection{Global datasets}
-\label{sec:org05433a7}
+\subsection{Global maps}
+\label{sec:orga51ffc0}
 
-\begin{frame}[label={sec:orgf65d91f}]{Global Forest Change (GFC)}
+\begin{frame}[label={sec:orge595ab1}]{Global Forest Change (GFC)}
 \begin{center}
 \includegraphics[width=8cm]{figs/fcc/gfc.png}
 \end{center}
@@ -309,7 +313,7 @@ New Caledonia &  & 0.12 & 0.28\\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org045507c}]{Tropical Moist Forests (TMF)}
+\begin{frame}[label={sec:org2d4c8f6}]{Tropical Moist Forests (TMF)}
 \begin{center}
 \includegraphics[width=8cm]{figs/fcc/Vancutsem2021.png}
 \end{center}
@@ -324,9 +328,9 @@ New Caledonia &  & 0.12 & 0.28\\[0pt]
 \end{frame}
 
 \subsection{National data}
-\label{sec:org379803a}
+\label{sec:org6fd29ef}
 
-\begin{frame}[label={sec:org9f2051a}]{National data}
+\begin{frame}[label={sec:org53ea6db}]{National data}
 \begin{itemize}
 \item There is room to improve forest cover change maps at the national scale.
 
@@ -338,7 +342,7 @@ New Caledonia &  & 0.12 & 0.28\\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgb5e283c}]{In New-Caledonia}
+\begin{frame}[label={sec:org31706ad}]{In New-Caledonia}
 \begin{center}
 \includegraphics[width=9cm]{figs/fcc/fcc_nc.png}
 \end{center}
@@ -350,13 +354,13 @@ New Caledonia &  & 0.12 & 0.28\\[0pt]
 \end{itemize}
 \end{frame}
 
-\section{Carbon stock data}
-\label{sec:org4f33481}
+\section{Carbon maps}
+\label{sec:org53e981f}
 
-\subsection{Global data-sets}
-\label{sec:org35dc17f}
+\subsection{Global maps}
+\label{sec:org130e9a4}
 
-\begin{frame}[label={sec:orgbd0c798}]{Global data-sets}
+\begin{frame}[label={sec:org7e299fc}]{Global maps}
 \begin{center}
 \footnotesize
 \begin{tabular}{lllrl}
@@ -378,7 +382,7 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgd0105ca}]{Disadvantages of global products}
+\begin{frame}[label={sec:orge89f697}]{Disadvantages of global products}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=10cm]{figs/carbon/data-saatchi.png}
@@ -393,7 +397,7 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org6f673d4}]{GEDI derived AGB map}
+\begin{frame}[label={sec:orga816545}]{GEDI derived AGB map}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -418,10 +422,10 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{block}
 \end{frame}
 
-\subsection{National data-sets}
-\label{sec:orgde5d9c2}
+\subsection{National maps}
+\label{sec:org516d8e1}
 
-\begin{frame}[label={sec:org2ad9c63}]{National data-sets}
+\begin{frame}[label={sec:org05ee776}]{National maps}
 \begin{itemize}
 \item There is room to improve forest carbon stock maps at the national scale.
 
@@ -433,7 +437,7 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orga5543c2}]{In New-Caledonia}
+\begin{frame}[label={sec:org28ab2ad}]{In New-Caledonia}
 \begin{center}
 \includegraphics[width=7cm]{figs/carbon/ncpippn-plots.png}
 \end{center}
@@ -446,10 +450,144 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\section{Biodiversity data}
-\label{sec:org4a48a91}
+\section{Biodiversity maps}
+\label{sec:org2ee4f9a}
 
+\subsection{Global biodiversity maps}
+\label{sec:orge843bc6}
 
+\begin{frame}[label={sec:orge0d3016}]{Global biodiversity maps}
+\begin{center}
+\includegraphics[width=5cm]{figs/aerial-bci.jpg}
+\end{center}
+
+\begin{itemize}
+\item As a first approximation of biodiversity in forests, we can focus on tree diversity.
+\item One objective would be to obtain tree community maps (\(\beta\) diversity).
+\item More detailed forest typology than dichotomic dry/moist forests or low-elevation/high-elevation forests.
+\item Global maps often represent species richness (\(\alpha\)-diversity). A few examples below.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:orga56e64c}]{Global biodiversity maps}
+\begin{center}
+\includegraphics[width=10cm]{figs/biodiv/Guo2022-title.png}
+\end{center}
+
+\begin{itemize}
+\item SDM for 46,752 tree species from GBIF, BIEN, DRYFLOR, RAINBIO, and ALA datasets.
+\item They considered taxonomic, phylogenetic, and functional diversity but disregarded \(\beta\)-diversity.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:orga91c7e6}]{Global biodiversity maps}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[width=6cm]{figs/biodiv/Keil2019-figure.png}
+\end{center}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[width=5cm]{figs/biodiv/Keil2019-figure-2.png}
+\end{center}
+
+\textbf{Keil \& Chase.} (2019). Global patterns and drivers of tree diversity integrated across a continuum of spatial grains. \emph{Nature Ecology \& Evolution}.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:orgba98062}]{Continental biodiversity maps}
+\begin{center}
+\includegraphics[width=8cm]{figs/biodiv/Rejou-Mechain2021.png}
+\end{center}
+
+\textbf{Réjou-Méchain et al.} (2021). Unveiling African rainforest composition and vulnerability to global change. \emph{Nature}.
+\end{frame}
+
+\begin{frame}[label={sec:org483f2fe}]{Continental biodiversity maps}
+\begin{center}
+\includegraphics[width=6cm]{figs/biodiv/terSteege2003-figure.png}
+\end{center}
+
+\textbf{ter Steege et al.} (2003). A spatial model of tree \(\alpha\)-diversity and tree density for the Amazon. \emph{Biodiversity and Conservation}.
+\end{frame}
+
+\subsection{Global biodiversity data-sets}
+\label{sec:org1a5ab45}
+
+\begin{frame}[label={sec:org7aa7aa3}]{Global or continental tree data-sets}
+\begin{itemize}
+\item GBIF: Global Biodiversity Information Facility.
+\item BIEN: Botanical Information and Ecology Network.
+\item DRYFLOR: Latin American Seasonally Dry Tropical Forest Floristic Network.
+\item RAINBIO: mega-database of tropical African vascular plants distributions.
+\end{itemize}
+\end{frame}
+
+\subsection{National data-sets}
+\label{sec:orgb396399}
+
+\begin{frame}[label={sec:org11888a5}]{National data-sets}
+\begin{itemize}
+\item No global or continental tree community maps that could be used at national scales.
+\item But there are global datasets (GBIF, BIEN) that could be used at national scales.
+\item MELANOBS objectives:
+\begin{itemize}
+\item Which tree diversity data is available for each country?
+\item Derive first tree community maps for participating countries.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:org1e923e1}]{Tree data in New-Caledonia}
+\begin{itemize}
+\item NOU herbarium data.
+\item NC-PIPPN forest plot network with floristic data.
+\item Endemia (Red List Authority) data.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:orgf9561b6}]{Mapping tree communities in New Caledonia}
+\begin{center}
+\includegraphics[width=6cm]{figs/biodiv/jSDM-NC.png}
+\end{center}
+
+\begin{itemize}
+\item Use of joint species distribution models for 878 species and 554 sites.
+\item JSDMs: account for species co-occurrence.
+\item Predicting species probability of presence for each 1km pixel.
+\item Clustering species to obtain tree communities.
+\end{itemize}
+\end{frame}
+
+\section{Conclusion}
+\label{sec:org3b8bc61}
+
+\subsection{Summary}
+\label{sec:orgffba79e}
+
+\begin{frame}[label={sec:orge9e2e03}]{Summary}
+\begin{itemize}
+\item Melanesia is often absent from global forest cover change, carbon, or biodiversity maps.
+\item For carbon and biodiversity, global maps are not derived using data from Melanesia (or only a few). They do not have a high accuracy if used at the national scale.
+\item \textbf{Objectives}: deriving accurate maps of forest cover change, carbon stocks, and tree communities based on field data from each participating country.
+\end{itemize}
+\end{frame}
+
+\subsection{Perspectives}
+\label{sec:org3bdc486}
+
+\begin{frame}[label={sec:org8b1a252}]{Perspectives}
+Several perspectives for forest monitoring and conservation planning:
+\begin{itemize}
+\item How current deforestation impact carbon emissions and biodiversity loss?
+\item Identifying areas of high conservation values with regards to carbon and biodiversity.
+\item Anticipating impact on carbon and biodiversity of various deforestation scenarios.
+\item Carbon and biodiversity credits associated with avoided deforestation.
+\end{itemize}
+\end{frame}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -466,8 +604,8 @@ more\ldots{} &  &  &  & \\[0pt]
     \begin{block}{}
       \begin{center}
         \ldots~Thank you for attention~\ldots \\
-        \url{https://ecology.ghislainv.fr/presentations.html} \\
-        \includegraphics[width=0.8\textwidth]{figs/partners_logos}
+        \url{https://ecology.ghislainv.fr/presentations} \\
+        \includegraphics[width=0.6\textwidth]{figs/partners_logos}
       \end{center}
     \end{block}
   \end{frame}

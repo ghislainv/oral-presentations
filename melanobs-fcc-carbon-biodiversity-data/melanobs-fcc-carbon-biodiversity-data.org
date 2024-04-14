@@ -48,9 +48,9 @@
 [[file:figs/carte_melanobs.jpg]]
 
 - MELANOBS: building a Melanesian forest observatory.
-- Which data on forest cover, carbon stock and biodiversity is available for Melanesian countries?
+- Which data on forest cover, carbon stock and biodiversity are available for Melanesian countries?
 
-* Forest cover change data
+* Forest cover change maps
 
 ** FAO FRA estimates
 
@@ -124,7 +124,7 @@
 
 - Rather good estimates of forest cover but poor estimates of deforestation/regrowth.
 
-** Global datasets
+** Global maps
 
 *** Global Forest Change (GFC)
 
@@ -176,11 +176,11 @@ Morat 1981
 Jaffre
 #+end_src
 
-* Carbon stock data
+* Carbon maps
  
-** Global data-sets
+** Global maps
 
-*** Global data-sets
+*** Global maps
 
 #+attr_latex: :font \footnotesize
 | Name         | Resolution | Reference      | Epoch | Method                        |
@@ -232,9 +232,9 @@ Jaffre
 - Low resolution: 1 km, location uncertainty of about 25 m.
 - Same problem as for other data-sets: no field data from Melanesia for calibration.
 
-** National data-sets
+** National maps
 
-*** National data-sets
+*** National maps
 
 - There is room to improve forest carbon stock maps at the national scale.
   
@@ -252,35 +252,115 @@ Jaffre
 - LiDAR data.
 - Good cover by GEDI.
   
-* Biodiversity data
+* Biodiversity maps
 
-** Global maps of biodiversity
+** Global biodiversity maps
 
-*** Global maps of biodiversity
+*** Global biodiversity maps
 
-- We only consider here tree biodiversity.
-- I am not aware of existing global maps of tree diversity.
-- Keil, P., & Chase, J. M. (2019). Global patterns and drivers of tree diversity integrated across a continuum of spatial grains. Nature Ecology & Evolution. doi:10.1038/s41559-019-0799-0
-- Dauby et al. 2016 PhytoKeys. SDMs for tree species in Africa.
-- Guo et al. 2022 PNAS: SDM for 46,752 tree species from GBIF, BIEN, DRYFLOR, RAINBIO, ALA.
+#+attr_latex: :width 5cm
+[[file:figs/aerial-bci.jpg]]
+
+- As a first approximation of biodiversity in forests, we can focus on tree diversity.
+- One objective would be to obtain tree community maps (\beta diversity).
+- More detailed forest typology than dichotomic dry/moist forests or low-elevation/high-elevation forests.
+- Global maps often represent species richness (\alpha-diversity). A few examples below.
+
+*** Global biodiversity maps
+
+#+attr_latex: :width 10cm
+[[file:figs/biodiv/Guo2022-title.png]]
+
+- SDM for 46,752 tree species from GBIF, BIEN, DRYFLOR, RAINBIO, and ALA datasets.
+- They considered taxonomic, phylogenetic, and functional diversity but disregarded \beta-diversity.
+
+*** Global biodiversity maps
+
+**** Left fig                                                      :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 6cm
+[[file:figs/biodiv/Keil2019-figure.png]]
+
+**** Right fig                                                     :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 5cm
+[[file:figs/biodiv/Keil2019-figure-2.png]]
+
+*Keil & Chase.* (2019). Global patterns and drivers of tree diversity integrated across a continuum of spatial grains. /Nature Ecology & Evolution/.
+
+*** Continental biodiversity maps
+
+#+attr_latex: :width 8cm
+[[file:figs/biodiv/Rejou-Mechain2021.png]]
+
+*Réjou-Méchain et al.* (2021). Unveiling African rainforest composition and vulnerability to global change. /Nature/.
+
+*** Continental biodiversity maps
+
+#+attr_latex: :width 6cm
+[[file:figs/biodiv/terSteege2003-figure.png]]
+
+*ter Steege et al.* (2003). A spatial model of tree \alpha-diversity and tree density for the Amazon. /Biodiversity and Conservation/.
 
 ** Global biodiversity data-sets
 
-*** Global biodiversity data-sets
+*** Global or continental tree data-sets
 
 - GBIF: Global Biodiversity Information Facility.
-- International research networks: 
+- BIEN: Botanical Information and Ecology Network.
+- DRYFLOR: Latin American Seasonally Dry Tropical Forest Floristic Network.
+- RAINBIO: mega-database of tropical African vascular plants distributions.
 
 ** National data-sets
 
 *** National data-sets
 
-*** Tree biodiversity data in New-Caledonia
+- No global or continental tree community maps that could be used at national scales.
+- But there are global datasets (GBIF, BIEN) that could be used at national scales.
+- MELANOBS objectives:
+  - Which tree diversity data is available for each country?
+  - Derive first tree community maps for participating countries.
+
+*** Tree data in New-Caledonia
 
 - NOU herbarium data.
 - NC-PIPPN forest plot network with floristic data.
 - Endemia (Red List Authority) data.
 
+*** Mapping tree communities in New Caledonia
+
+#+attr_latex: :width 6cm
+[[file:figs/biodiv/jSDM-NC.png]]
+
+- Use of joint species distribution models for 878 species and 554 sites.
+- JSDMs: account for species co-occurrence.
+- Predicting species probability of presence for each 1km pixel.
+- Clustering species to obtain tree communities.
+
+* Conclusion
+
+** Summary
+
+*** Summary
+
+- Melanesia is often absent from global forest cover change, carbon, or biodiversity maps.
+- For carbon and biodiversity, global maps are not derived using data from Melanesia (or only a few). They do not have a high accuracy if used at the national scale.
+- *Objectives*: deriving accurate maps of forest cover change, carbon stocks, and tree communities based on field data from each participating country.
+
+** Perspectives
+
+*** Perspectives
+
+Several perspectives for forest monitoring and conservation planning:
+  - How current deforestation impact carbon emissions and biodiversity loss?
+  - Identifying areas of high conservation values with regards to carbon and biodiversity.
+  - Anticipating impact on carbon and biodiversity of various deforestation scenarios.
+  - Carbon and biodiversity credits associated with avoided deforestation.
+  
 * Last slide                                                         :ignore:
     
 #+INCLUDE: "doc_suffix.tex" export latex
