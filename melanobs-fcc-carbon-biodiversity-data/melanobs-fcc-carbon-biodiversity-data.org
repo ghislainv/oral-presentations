@@ -5,7 +5,7 @@
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
 
-#+SETUP: beamer
+#+STARTUP: beamer
 #+LATEX_CLASS: beamer
 #+LATEX_CLASS_OPTIONS: [10pt,table,dvipsnames,compress]
 #+BEAMER_INNER_THEME: rounded
@@ -48,10 +48,14 @@
 [[file:figs/tropical_forest_biodiv.png]]
 
 
-**** 
-- Tropical forests: 50% of terrestrial biodiversity.
-- Tropical deforestation: 15% of anthropogenic carbon emissions.
-- Mapping forest cover, carbon stocks and biodiversity is essential for conservation planning.
+**** Text                                                :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+- Tropical forests: ~50% of terrestrial biodiversity.
+- Tropical deforestation: ~15% of anthropogenic carbon emissions.
+- Carbon and biodiversity vary strongly spatially.
+- Mapping forest cover, carbon and biodiversity is essential for conservation planning.
 
 ** Objectives
 
@@ -156,7 +160,7 @@
 | PNG             |     462840 |      78% |        84% |      85% |
 | Solomon Islands |      28896 |      87% |        81% |      95% |
 | Vanuatu         |      12189 |      36% |        81% |      95% |
-| Fiji            |      18272 |      61% |        57% |       NA |
+| Fiji            |      18272 |      61% |        57% |       -- |
 | New Caledonia   |      18575 |      45% |        62% |      46% |
 
 #+attr_latex: :font \footnotesize
@@ -167,7 +171,7 @@
 | PNG             |      34000 |     104678 |      48691 |
 | Solomon Islands |            |      13460 |       1751 |
 | Vanuatu         |            |        939 |        564 |
-| Fiji            |            |       2663 |            |
+| Fiji            |            |       2663 |         -- |
 | New Caledonia   |            |       1328 |       2425 |
 
 - Fiji is not entirely available (beyond the 180th meridian).
@@ -248,7 +252,10 @@ Jaffre
 #+attr_latex: :width 6cm
 [[file:figs/carbon/training-data-GEDI.png]]
 
-****                                                            
+**** Text                                                :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
 - No extrapolation using satellite images and SRTM.
 - GEDI footprints are aggregated within 1 km grid cells.
 - Low resolution: 1 km, location uncertainty of about 25 m.
@@ -312,7 +319,10 @@ Jaffre
 #+attr_latex: :width 5cm
 [[file:figs/biodiv/Keil2019-figure-2.png]]
 
-**** 
+**** Article                                             :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
 
 *Keil & Chase.* (2019). Global patterns and drivers of tree diversity integrated across a continuum of spatial grains. /Nature Ecology & Evolution/.
 
@@ -387,10 +397,13 @@ Jaffre
 *** Perspectives
 
 Several perspectives for forest monitoring and conservation planning:
-  - How current deforestation impact carbon emissions and biodiversity loss?
+  - How current deforestation impacts carbon emissions and biodiversity loss?
   - Identifying areas of high conservation values with regards to carbon and biodiversity.
-  - Anticipating impact on carbon and biodiversity of various deforestation scenarios.
-  - Carbon and biodiversity credits associated with avoided deforestation.
+  - Anticipating the impacts of various deforestation scenarios on carbon and biodiversity.
+  - Potential access to carbon and biodiversity credits associated with avoided deforestation.
+
+#+latex: \vspace{0.20cm}
+One example of application of forest cover change and carbon maps: the ForestAtRisk project, https://forestatrisk.cirad.fr
   
 * Last slide                                                         :ignore:
     

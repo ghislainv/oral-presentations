@@ -1,0 +1,593 @@
+#+TITLE: Spatial forecasting of forest cover change in the humid tropics over the 21st century
+#+AUTHOR: Ghislain Vieilledent
+#+DATE: @@latex:\today@@
+#+OPTIONS: author:nil date:nil title:nil H:3 toc:nil num:t ^:{}
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+STARTUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt,table,dvipsnames,compress]
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME: [subsection=false]miniframes
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
+#+BEAMER_HEADER: \title[forestatrisk]{--ForestAtRisk--\\Spatial forecasting of forest cover change in the humid tropics over the 21st century}
+
+# This is used to avoid bold text to be translated as \alert{text}
+# https://tex.stackexchange.com/questions/637386/org-mode-export-bold-text-to-beamer
+#+BIND: org-export-filter-bold-functions (org-beamer-bold-as-textbf)
+#+BEGIN_SRC emacs-lisp :exports results :results none
+  (defun org-beamer-bold-as-textbf (s backend info)
+    (replace-regexp-in-string "\\\\alert" "\\\\textbf" s))
+#+END_SRC
+
+#+SETUPFILE: "header.org"
+
+* Title page                                                         :ignore:
+
+#+INCLUDE: "doc_prefix.tex" export latex
+
+* Introduction
+  :PROPERTIES:
+  :CUSTOM_ID: introduction
+  :END:
+  
+** Context
+   :PROPERTIES:
+   :CUSTOM_ID: context
+   :END:
+   
+*** Tropical deforestation
+    :PROPERTIES:
+    :CUSTOM_ID: tropical-deforestation
+    :END:
+
+\centering \includegraphics[width=8cm]{figs/Vancutsem2021}
+
+*Vancutsem et al.* 2021, /Science Advances/, doi:[[file:https//doi.org10.1126/sciadv.abe1603][10.1126/sciadv.abe1603]]
+
+- Tropical Moist Forest (TMF)
+- 1990--2019: Annual deforestation, degradation, regeneration
+
+*** Tropical deforestation
+    :PROPERTIES:
+    :CUSTOM_ID: tropical-deforestation-1
+    :END:
+    
+- Full Landsat archive (1982--2019), 30m pixel, time-series analysis
+- Classification tree based on expert knowledge
+- Tropical deforestation was underestimated (-33% in 2000--2012, Hansen
+  et al. 2013)
+- Maps and data: [[https://forobs.jrc.ec.europa.eu/TMF/]]
+
+\vspace{0.25cm}
+\centering \includegraphics[width=\textwidth]{figs/Vancutsem2021-maps-wide}
+
+*** Tropical deforestation
+    :PROPERTIES:
+    :CUSTOM_ID: tropical-deforestation-2
+    :END:
+    
+- Precise enough to visually identify the causes of deforestation
+  (logging, fires, agriculture)
+
+\centering \includegraphics[height=0.7\textheight]{figs/Vancutsem2021-patterns}
+
+** Objectives
+   :PROPERTIES:
+   :CUSTOM_ID: objectives
+   :END:
+   
+*** Forecasting deforestation
+    :PROPERTIES:
+    :CUSTOM_ID: forecasting-deforestation
+    :END:
+    
+- About 7 Mha of tropical moist forest are disappearing each year (size
+  of Ireland)
+- At this rate, will tropical forests still exist in 2100?
+- If yes, where will they be located?
+- What will be the consequences of future deforestation on biodiversity
+  and carbon emissions?
+
+\vspace{0.5cm}
+\centering \includegraphics[width=\textwidth]{figs/Vancutsem2021-maps-2100}
+
+*** Forecasting deforestation
+    :PROPERTIES:
+    :CUSTOM_ID: forecasting-deforestation-1
+    :END:
+    
+Why is it a timely question?
+
+- *Alert* decision makers
+- Carbon emissions scenarios (\(\rightarrow\) IPCC)
+- Biodiversity scenarios (\(\rightarrow\) IPBES)
+- Local scale: systematic conservation planning (protected area network,
+  REDD\(+\))
+- Modelling \(\rightarrow\) main spatial drivers of deforestation
+
+\vspace{0.10cm}
+\centering \includegraphics[width=0.55\textwidth]{figs/ipcc.png}\\
+*IPCC scenarios*
+
+*** Forecasting deforestation *spatially*
+    :PROPERTIES:
+    :CUSTOM_ID: forecasting-deforestation-spatially
+    :END:
+    
+Why is *spatial* forecasting important?
+
+Because both biodiversity and carbon stocks vary strongly in space.
+
+\vspace{0.25cm}
+
+\begin{tabular}{cc}
+\includegraphics[width=0.5\textwidth]{figs/Rejou2021-Floristic} & \includegraphics[width=0.40\textwidth]{figs/sm/AGB}\\
+\textbf{Community map} & \textbf{AGB map in DRC} \\
+(Réjou-Méchain 2021) & ~
+\end{tabular}
+
+** Approach
+:PROPERTIES:
+:CUSTOM_ID: approach
+:END:
+
+*** Approach
+:PROPERTIES:
+:CUSTOM_ID: approach-1
+:END:
+  
+- *i.* Consider tropical moist forest in *92* countries (119 study areas)
+- *ii.* Estimate the current deforestation rate and uncertainty in each country
+- *iii.* Model the spatial risk of deforestation from environmental factors
+- *iv.* Forecast the deforestation assuming a business-as-usual scenario
+- *v.* Consequences in terms of biodiversity and carbon emissions
+
+\vspace{0.5cm}
+\begin{center}
+\includegraphics[width=0.32\textwidth]{figs/sm/study_areas_America}
+\includegraphics[width=0.32\textwidth]{figs/sm/study_areas_Africa}
+\includegraphics[width=0.32\textwidth]{figs/sm/study_areas_Asia}
+\textbf{The 119 study areas in the 3 continents}
+\end{center}
+
+* Methods
+  :PROPERTIES:
+  :CUSTOM_ID: methods
+  :END:
+  
+** Models
+   :PROPERTIES:
+   :CUSTOM_ID: models
+   :END:
+   
+*** Modelling the intensity of deforestation
+    :PROPERTIES:
+    :CUSTOM_ID: modelling-the-intensity-of-deforestation
+    :END:
+    
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+- 10 values of annual deforested area (ha/yr) in 2010--2020 per country
+- (Brazil: per state, India: per region)
+- Mean deforestation rate (ha/yr) in 2010--2020 per country
+- Uncertainty around the mean (95% confidence interval)
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+\includegraphics[width=\textwidth]{figs/sm/fcc123}
+
+*Past deforestation 2000--2010--2020 in DRC*
+
+*** Modelling the intensity of deforestation
+    :PROPERTIES:
+    :CUSTOM_ID: modelling-the-intensity-of-deforestation-1
+    :END:
+    
+\centering \includegraphics[width=0.8\textwidth]{figs/d_ci}
+
+*Examples of mean deforestation rate with uncertainty*
+
+*** Modelling the spatial risk of deforestation
+    :PROPERTIES:
+    :CUSTOM_ID: modelling-the-spatial-risk-of-deforestation
+    :END:
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+    
+A logistic regression model with iCAR process
+
+\begin{equation*}
+\begin{split}
+  y_i \sim \mathcal{B}ernoulli(\theta_i)\\
+  \text{logit}(\theta_i) = \alpha + X_i \beta + \rho_{j(i)}\\
+  \rho_{j(i)} \sim \mathcal{N}ormal(\sum_{j^{\prime}} \rho_{j^{\prime}} / n_j,V_{\rho} / n_j)
+\end{split}
+\end{equation*}
+
+\footnotesize (NB: We compared this model with a simple GLM and a Random
+Forest model using a cross-validation procedure)
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+\includegraphics[width=\textwidth]{figs/sm/grid}
+
+*Square grid of 10km cells over DRC*
+
+** Spatial variables
+   :PROPERTIES:
+   :CUSTOM_ID: spatial-variables
+   :END:
+   
+*** Spatial variables
+    :PROPERTIES:
+    :CUSTOM_ID: spatial-variables-1
+    :END:
+    
+- Height explanatory variables
+
+\centering \includegraphics[width=0.7\textwidth]{figs/variables-tab}
+
+*** Spatial variables
+    :PROPERTIES:
+    :CUSTOM_ID: spatial-variables-2
+    :END:
+    
+\centering \includegraphics[width=0.8\textwidth]{figs/sm/var.png}
+
+*Spatial explanatory variables in DRC*
+
+*** Roads
+    :PROPERTIES:
+    :CUSTOM_ID: roads
+    :END:
+    
+- OpenStreetMap (OSM)
+- "motorway", "trunk", "primary", "secondary" and "tertiary" roads
+- 3.6 million roads from OSM
+
+\centering \includegraphics[width=0.7\textwidth]{figs/sm/roads.png}
+
+*** Protected areas
+    :PROPERTIES:
+    :CUSTOM_ID: protected-areas
+    :END:
+    
+- PA status: "Designated", "Inscribed", "Established", or "Proposed"
+  before 1\textsuperscript{st} January 2010
+- 85,000 protected areas from WDPA
+
+\centering \includegraphics[width=0.7\textwidth]{figs/sm/pa.png}
+
+*** Sampling
+    :PROPERTIES:
+    :CUSTOM_ID: sampling
+    :END:
+    
+One word on sampling:
+
+- Stratified sampling between deforested/non-deforested pixels in
+  2010--2020
+- Total number of points proportional to the forest cover in 2010 (from
+  20,000 to 100,000 points per study area)
+- Huge data-set of 3.2 M forest pixels (~288 Kha of forest)
+
+\centering \includegraphics[width=0.7\textwidth]{figs/sm/sample.png}
+
+** Forecast
+   :PROPERTIES:
+   :CUSTOM_ID: forecast
+   :END:
+   
+*** Spatial random effects
+    :PROPERTIES:
+    :CUSTOM_ID: spatial-random-effects
+    :END:
+    
+\centering \includegraphics[width=0.6\textwidth]{figs/sm/rho.png}
+
+*Interpolation of spatial random effects at 1km in DRC*
+
+*** Spatial probability of deforestation
+    :PROPERTIES:
+    :CUSTOM_ID: spatial-probability-of-deforestation
+    :END:
+    
+We use the fitted model to compute the spatial probability of
+deforestation.
+
+\centering \includegraphics[width=0.5\textwidth]{figs/sm/prob.png}
+
+*Relative spatial probability of deforestation in DRC for the year 2020*
+
+*** Spatial probability of deforestation
+    :PROPERTIES:
+    :CUSTOM_ID: spatial-probability-of-deforestation-1
+    :END:
+    
+\centering \includegraphics[width=0.8\textwidth]{figs/article/prob}
+
+*Pantropical map of the spatial probability of deforestation*
+
+[[https://forestatrisk.cirad.fr/maps.html]]
+
+*** Future forest cover
+    :PROPERTIES:
+    :CUSTOM_ID: future-forest-cover
+    :END:
+    
+- Total deforested area \(D\) (ha) in a given period of time \(Y\) (yr):
+  \(D=d \times Y\), with \(d\) the annual deforested area (ha/yr).
+- Number of pixels to be deforested: \(n=D/0.09\), 0.09 ha being the
+  pixel area.
+- The \(n\) pixels with the highest deforestation probabilities are
+  considered deforested in that period of time.
+
+\centering \includegraphics[width=0.7\textwidth]{figs/sm/fcc2050_2100.png}
+
+*Projected deforestation in 2020--2050 and 2020--2100 in DRC*
+
+*** Future carbon emissions
+    :PROPERTIES:
+    :CUSTOM_ID: future-carbon-emissions
+    :END:
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+- Projected deforestation for years 2030, 2040, ..., 2100.
+- We combine the maps of the projected deforestation with the
+  (2000--2010) forest carbon map by Avitabile 2016 GCB (1km resolution).
+  
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+\includegraphics[width=\textwidth]{figs/sm/AGB}
+
+*Aboveground biomass in DRC*
+
+*** Software
+    :PROPERTIES:
+    :CUSTOM_ID: software
+    :END:
+    
+- =forestatrisk= Python package
+- Process large rasters by blocks
+- Several statistical models: iCAR, GLM, RF, etc.
+- Set of functions for sampling, modelling, forecasting, validating
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{figs/far-Python}\\
+Website: \url{https://ecology.ghislainv.fr/forestatrisk}\\
+Article: \textbf{Vieilledent} 2021, \emph{JOSS}, doi: \href{https://doi.org/10.21105/joss.02975}{10.21105/joss.02975}
+\end{center}
+
+* Results
+  :PROPERTIES:
+  :CUSTOM_ID: results
+  :END:
+  
+** Forest refuge areas
+   :PROPERTIES:
+   :CUSTOM_ID: forest-refuge-areas
+   :END:
+   
+*** Tropical forest cover loss
+    :PROPERTIES:
+    :CUSTOM_ID: tropical-forest-cover-loss
+    :END:
+
+\small
+75% of the tropical forest existing in 2000 will be lost in 2120, 2160,
+and 2220 in Asia, Africa, and America, respectively (average uncertainty of \pm45 years).
+
+\centering \includegraphics[width=0.8\textwidth]{figs/article/perc_loss_cont}
+
+*** Tropical forest cover loss
+    :PROPERTIES:
+    :CUSTOM_ID: tropical-forest-cover-loss-1
+    :END:
+
+\small
+- 20 countries, 5 states in Brazil, and 1 region in India (having > 1
+  Mha of forest in 2020) will lose all their tropical forest by 2100.
+- No more tropical forests in 6 biodiversity hotspots (extinction of
+  29,140 endemic species of plants and 4,576 species of vertebrates).
+
+\centering \includegraphics[width=0.8\textwidth]{figs/defor-tab}
+
+*** Pantropical map of the future forest cover
+    :PROPERTIES:
+    :CUSTOM_ID: pantropical-map-of-the-future-forest-cover
+    :END:
+
+\small
+Tropical forests in 2100 will be (i) highly fragmented, (ii)
+concentrated in remote areas (far from roads and towns), pref. in
+protected areas, and at high elevations.
+
+\centering \includegraphics[width=0.7\textwidth]{figs/article/fcc2100}
+
+*Pantropical map of future forest cover in 2100*
+
+[[https://forestatrisk.cirad.fr/maps.html]]
+
+** Carbon emissions
+   :PROPERTIES:
+   :CUSTOM_ID: carbon-emissions
+   :END:
+
+*** Carbon emissions
+:PROPERTIES:
+:CUSTOM_ID: carbon-emissions-1
+:END:
+
+- Future deforestation will impact forests with higher carbon stocks
+- Annual carbon emissions will increase from 0.525 Pg/yr in 2010--2020
+  to 0.746 Pg/yr in 2070--2080 (42% increase)
+
+\centering \includegraphics[width=0.8\textwidth]{figs/article/C_trend}
+
+*Carbon emissions from future deforestation*
+
+** Effects of PA and roads
+   :PROPERTIES:
+   :CUSTOM_ID: effects-of-pa-and-roads
+   :END:
+   
+*** Protected area effect
+    :PROPERTIES:
+    :CUSTOM_ID: protected-area-effect
+    :END:
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+- Significant PA effect in 74 study areas out of 119 (88% of the TMF in
+  2010).
+- PA reduce the risk of deforestation by 40%.
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+\centering \includegraphics[width=0.65\textwidth]{figs/article/proba-PA}
+
+*Effect of PA on the deforestation risk*
+
+*** Road effect
+    :PROPERTIES:
+    :CUSTOM_ID: road-effect
+    :END:
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+- Significant road effect in 59 study areas out of 119 (90% of the TMF
+  in 2010).
+- At 10km from a road, the risk of deforestation decreases by 13%.
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+\includegraphics[width=\textwidth]{figs/article/proba-roads}
+
+*Effects of roads and forest edge on the deforestation risk*
+
+*** Forest edge effect
+    :PROPERTIES:
+    :CUSTOM_ID: forest-edge-effect
+    :END:
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+- Road effect must be interpreted together with forest edge effect.
+- At 1km from the forest edge, the risk of deforestation decreases by
+  93%.
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+\includegraphics[width=\textwidth]{figs/article/proba-roads}
+
+*Effects of roads and forest edge on the deforestation risk*
+
+* Discussion
+  :PROPERTIES:
+  :CUSTOM_ID: discussion
+  :END:
+  
+** Uncertainty analysis
+   :PROPERTIES:
+   :CUSTOM_ID: uncertainty-analysis
+   :END:
+   
+*** Uncertainty analysis
+    :PROPERTIES:
+    :CUSTOM_ID: uncertainty-analysis-1
+    :END:
+    
+- Despite uncertainty, results are clear and alarming.
+- "Business-as-usual" scenario \(\neq\) what *will* happen in the
+  future.
+- "Business-as-usual" scenario \(=\) in the absence of any change.
+- The objective is to alert and create a momentum for change.
+- Nonetheless, rather optimistic scenario.
+
+\vspace{0.25cm}
+\centering \includegraphics[width=0.6\textwidth]{figs/madame-irma}
+
+** Alternative scenarios
+   :PROPERTIES:
+   :CUSTOM_ID: alternative-scenarios
+   :END:
+   
+*** Alternative scenarios: demography and demand
+    :PROPERTIES:
+    :CUSTOM_ID: alternative-scenarios-demography-and-demand
+    :END:
+    
+- Demography: in Africa, a large part of the population depends on
+  slash-and-burn agriculture for their livelihood.
+- Increasing demand for agricultural commodities: e.g., palm oil, Corley
+  et al. 2009
+
+\vspace{0.25cm}
+\centering \includegraphics[width=0.45\textwidth]{figs/UN-regional-pop-projections}
+\centering \includegraphics[width=0.45\textwidth]{figs/oil-palm-proj}
+
+** Other perspectives
+   :PROPERTIES:
+   :CUSTOM_ID: other-perspectives
+   :END:
+   
+*** Other perspectives
+    :PROPERTIES:
+    :CUSTOM_ID: other-perspectives-1
+    :END:
+    
+- Models can be refined locally (e.g., Ivory-Coast, Madagascar,
+  New-Caledonia) with more information on the context.
+- Very rough estimates of biodiversity loss: need for world biodiversity
+  maps.
+- (Fragmentation study, regeneration potential, etc.)
+
+\vspace{0.25cm}
+\centering \includegraphics[width=0.6\textwidth]{figs/mines-NC}
+
+*Mining activity in New-Caledonia*
+
+* Last slide                                                         :ignore:
+    
+#+INCLUDE: "doc_suffix.tex" export latex
+
+# End Of File

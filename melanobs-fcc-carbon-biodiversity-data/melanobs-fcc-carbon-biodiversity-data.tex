@@ -1,4 +1,4 @@
-% Created 2024-04-15 Mon 08:40
+% Created 2024-04-15 Mon 17:45
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,table,dvipsnames,compress]{beamer}
 \usepackage[utf8]{inputenc}
@@ -164,12 +164,12 @@ urlcolor=Maroon}
 \placelogofalse
 
 \section{Introduction}
-\label{sec:org54c70f7}
+\label{sec:orgeddd5fb}
 
 \subsection{Context}
-\label{sec:org0429c6f}
+\label{sec:orga9952bc}
 
-\begin{frame}[label={sec:org7dbb06c}]{Context}
+\begin{frame}[label={sec:org93a3074}]{Context}
 \begin{columns}
 \begin{column}{0.7\columnwidth}
 \begin{center}
@@ -185,19 +185,18 @@ urlcolor=Maroon}
 \end{columns}
 
 
-\begin{block}{}
 \begin{itemize}
-\item Tropical forests: 50\% of terrestrial biodiversity.
-\item Tropical deforestation: 15\% of anthropogenic carbon emissions.
-\item Mapping forest cover, carbon stocks and biodiversity is essential for conservation planning.
+\item Tropical forests: \textasciitilde{}50\% of terrestrial biodiversity.
+\item Tropical deforestation: \textasciitilde{}15\% of anthropogenic carbon emissions.
+\item Carbon and biodiversity vary strongly spatially.
+\item Mapping forest cover, carbon and biodiversity is essential for conservation planning.
 \end{itemize}
-\end{block}
 \end{frame}
 
 \subsection{Objectives}
-\label{sec:org2a6db27}
+\label{sec:org177caed}
 
-\begin{frame}[label={sec:org28535b5}]{Objectives}
+\begin{frame}[label={sec:org2fd352f}]{Objectives}
 \begin{center}
 \includegraphics[width=8cm]{figs/carte_melanobs.jpg}
 \end{center}
@@ -209,12 +208,12 @@ urlcolor=Maroon}
 \end{frame}
 
 \section{Forest cover maps}
-\label{sec:org39dd3c2}
+\label{sec:org538b747}
 
 \subsection{FAO FRA estimates}
-\label{sec:orga6bbd6d}
+\label{sec:orgb031799}
 
-\begin{frame}[label={sec:org8723861}]{FAO FRA estimates, forest cover}
+\begin{frame}[label={sec:org306eb15}]{FAO FRA estimates, forest cover}
 \begin{table}[htbp]
 \caption{\textbf{Forest cover estimates (in \% of land area).}}
 \centering
@@ -239,7 +238,7 @@ New Caledonia & 18575 & 45\%\\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgf7a2177}]{FAO FRA estimates, deforestation}
+\begin{frame}[label={sec:orged9ac7a}]{FAO FRA estimates, deforestation}
 \begin{table}[htbp]
 \caption{\textbf{Mean annual deforestation (in ha).}}
 \centering
@@ -262,9 +261,9 @@ New Caledonia & \\[0pt]
 \end{frame}
 
 \subsection{Global maps}
-\label{sec:orgfa24c16}
+\label{sec:org55750df}
 
-\begin{frame}[label={sec:org696133c}]{Global Forest Change (GFC)}
+\begin{frame}[label={sec:org8341444}]{Global Forest Change (GFC)}
 \begin{center}
 \includegraphics[width=8cm]{figs/fcc/gfc.png}
 \end{center}
@@ -277,7 +276,7 @@ New Caledonia & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orge517c13}]{Global Forest Change (GFC)}
+\begin{frame}[label={sec:org8dcd8c8}]{Global Forest Change (GFC)}
 \begin{table}[htbp]
 \caption{\textbf{Forest cover estimates (in \% of land area).}}
 \centering
@@ -315,7 +314,7 @@ New Caledonia &  & 1328\\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orga63ded8}]{Tropical Moist Forests (TMF)}
+\begin{frame}[label={sec:org9260174}]{Tropical Moist Forests (TMF)}
 \begin{center}
 \includegraphics[width=8cm]{figs/fcc/Vancutsem2021.png}
 \end{center}
@@ -327,7 +326,7 @@ New Caledonia &  & 1328\\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org7f1694d}]{Tropical Moist Forests (TMF)}
+\begin{frame}[label={sec:orgebfa21a}]{Tropical Moist Forests (TMF)}
 \begin{table}[htbp]
 \caption{\textbf{Forest cover estimates (in \% of land area).}}
 \centering
@@ -338,7 +337,7 @@ Country & Area (km2) & FRA 2015 & GFC30 2020 & TMF 2020\\[0pt]
 PNG & 462840 & 78\% & 84\% & 85\%\\[0pt]
 Solomon Islands & 28896 & 87\% & 81\% & 95\%\\[0pt]
 Vanuatu & 12189 & 36\% & 81\% & 95\%\\[0pt]
-Fiji & 18272 & 61\% & 57\% & NA\\[0pt]
+Fiji & 18272 & 61\% & 57\% & --\\[0pt]
 New Caledonia & 18575 & 45\% & 62\% & 46\%\\[0pt]
 \end{tabular}
 \end{table}
@@ -354,7 +353,7 @@ Country & FRA & GFC30 & TMF\\[0pt]
 PNG & 34000 & 104678 & 48691\\[0pt]
 Solomon Islands &  & 13460 & 1751\\[0pt]
 Vanuatu &  & 939 & 564\\[0pt]
-Fiji &  & 2663 & \\[0pt]
+Fiji &  & 2663 & --\\[0pt]
 New Caledonia &  & 1328 & 2425\\[0pt]
 \end{tabular}
 \end{table}
@@ -366,9 +365,9 @@ New Caledonia &  & 1328 & 2425\\[0pt]
 \end{frame}
 
 \subsection{National data}
-\label{sec:orgb50da5c}
+\label{sec:orgea36834}
 
-\begin{frame}[label={sec:orgf6f1989}]{National data}
+\begin{frame}[label={sec:org56b6179}]{National data}
 \begin{itemize}
 \item There is room to improve forest cover change maps at the national scale.
 
@@ -380,7 +379,7 @@ New Caledonia &  & 1328 & 2425\\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgee3ce1b}]{In New-Caledonia}
+\begin{frame}[label={sec:orga346cb1}]{In New-Caledonia}
 \begin{center}
 \includegraphics[width=9cm]{figs/fcc/fcc_nc.png}
 \end{center}
@@ -393,12 +392,12 @@ New Caledonia &  & 1328 & 2425\\[0pt]
 \end{frame}
 
 \section{Carbon maps}
-\label{sec:org9356111}
+\label{sec:org0ff883c}
 
 \subsection{Global maps}
-\label{sec:orga972b40}
+\label{sec:orga7bf732}
 
-\begin{frame}[label={sec:org8d54487}]{Global maps}
+\begin{frame}[label={sec:org352a738}]{Global maps}
 \begin{center}
 \footnotesize
 \begin{tabular}{lllrl}
@@ -421,7 +420,7 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org7bc659c}]{Disadvantages of global products}
+\begin{frame}[label={sec:orgb75372b}]{Disadvantages of global products}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=10cm]{figs/carbon/data-saatchi.png}
@@ -436,7 +435,7 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org75a8e62}]{GEDI derived AGB map}
+\begin{frame}[label={sec:org6d3a4f6}]{GEDI derived AGB map}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -451,20 +450,18 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{column}
 \end{columns}
 
-\begin{block}{}
 \begin{itemize}
 \item No extrapolation using satellite images and SRTM.
 \item GEDI footprints are aggregated within 1 km grid cells.
 \item Low resolution: 1 km, location uncertainty of about 25 m.
 \item Same problem as for other data-sets: no field data from Melanesia for calibration.
 \end{itemize}
-\end{block}
 \end{frame}
 
 \subsection{National maps}
-\label{sec:orgaf07a8b}
+\label{sec:orge95e32e}
 
-\begin{frame}[label={sec:orgd6a6565}]{National maps}
+\begin{frame}[label={sec:org96bf9af}]{National maps}
 \begin{itemize}
 \item There is room to improve forest carbon stock maps at the national scale.
 
@@ -476,7 +473,7 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgf1c2f93}]{In New-Caledonia}
+\begin{frame}[label={sec:orgcd9e9ac}]{In New-Caledonia}
 \begin{center}
 \includegraphics[width=7cm]{figs/carbon/ncpippn-plots.png}
 \end{center}
@@ -490,12 +487,12 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{frame}
 
 \section{Biodiversity maps}
-\label{sec:orgf176610}
+\label{sec:org4d7a266}
 
 \subsection{Global biodiversity maps}
-\label{sec:orgcc8601b}
+\label{sec:org2ed4122}
 
-\begin{frame}[label={sec:orge618afe}]{Global biodiversity maps}
+\begin{frame}[label={sec:org172d60e}]{Global biodiversity maps}
 \begin{center}
 \includegraphics[width=5cm]{figs/aerial-bci.jpg}
 \end{center}
@@ -508,7 +505,7 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org7192784}]{Global biodiversity maps}
+\begin{frame}[label={sec:orgb7e9e5b}]{Global biodiversity maps}
 \begin{center}
 \includegraphics[width=10cm]{figs/biodiv/Guo2022-title.png}
 \end{center}
@@ -519,7 +516,7 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgeb064af}]{Global biodiversity maps}
+\begin{frame}[label={sec:org940add2}]{Global biodiversity maps}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{center}
@@ -534,12 +531,10 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{column}
 \end{columns}
 
-\begin{block}{}
 \textbf{Keil \& Chase.} (2019). Global patterns and drivers of tree diversity integrated across a continuum of spatial grains. \emph{Nature Ecology \& Evolution}.
-\end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgcba7b4f}]{Continental biodiversity maps}
+\begin{frame}[label={sec:orgb8a18f1}]{Continental biodiversity maps}
 \begin{center}
 \includegraphics[width=8cm]{figs/biodiv/Rejou-Mechain2021.png}
 \end{center}
@@ -547,7 +542,7 @@ more\ldots{} &  &  &  & \\[0pt]
 \textbf{Réjou-Méchain et al.} (2021). Unveiling African rainforest composition and vulnerability to global change. \emph{Nature}.
 \end{frame}
 
-\begin{frame}[label={sec:org4d48af3}]{Continental biodiversity maps}
+\begin{frame}[label={sec:orgadd4c17}]{Continental biodiversity maps}
 \begin{center}
 \includegraphics[width=6cm]{figs/biodiv/terSteege2003-figure.png}
 \end{center}
@@ -556,9 +551,9 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{frame}
 
 \subsection{Global biodiversity data-sets}
-\label{sec:orga73a230}
+\label{sec:orgce343be}
 
-\begin{frame}[label={sec:orga4cdf14}]{Global or continental tree data-sets}
+\begin{frame}[label={sec:orgfb7f1e7}]{Global or continental tree data-sets}
 \begin{itemize}
 \item GBIF: Global Biodiversity Information Facility.
 \item BIEN: Botanical Information and Ecology Network.
@@ -568,9 +563,9 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{frame}
 
 \subsection{National data-sets}
-\label{sec:org723afd8}
+\label{sec:org3ce1ad2}
 
-\begin{frame}[label={sec:org74bd819}]{National data-sets}
+\begin{frame}[label={sec:orge10f99a}]{National data-sets}
 \begin{itemize}
 \item No global or continental tree community maps that could be used at national scales.
 \item But there are global datasets (GBIF, BIEN) that could be used at national scales.
@@ -582,7 +577,7 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org55d0923}]{Tree data in New-Caledonia}
+\begin{frame}[label={sec:orgae55c6b}]{Tree data in New-Caledonia}
 \begin{center}
 \includegraphics[width=2cm]{figs/biodiv/NOU-herbarium-logo.jpg}
 \includegraphics[width=2cm]{figs/biodiv/logo_endemia.png}
@@ -595,7 +590,7 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orge4a9b7b}]{Mapping tree communities in New Caledonia}
+\begin{frame}[label={sec:org8d1dfe4}]{Mapping tree communities in New Caledonia}
 \begin{center}
 \includegraphics[width=6cm]{figs/biodiv/jSDM-NC.png}
 \end{center}
@@ -609,12 +604,12 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{frame}
 
 \section{Conclusion}
-\label{sec:org3d1eb05}
+\label{sec:orge46859f}
 
 \subsection{Summary}
-\label{sec:org0e68c96}
+\label{sec:org2bf7bd6}
 
-\begin{frame}[label={sec:org6a04999}]{Summary}
+\begin{frame}[label={sec:org01e8b29}]{Summary}
 \begin{itemize}
 \item Melanesia is often absent from global forest cover change, carbon, or biodiversity maps.
 \item For carbon and biodiversity, global maps are not derived using data from Melanesia (or only a few). They do not have a high accuracy if used at the national scale.
@@ -623,16 +618,19 @@ more\ldots{} &  &  &  & \\[0pt]
 \end{frame}
 
 \subsection{Perspectives}
-\label{sec:orgeac5412}
+\label{sec:org8cb981b}
 
-\begin{frame}[label={sec:org8a0ef17}]{Perspectives}
+\begin{frame}[label={sec:org13464de}]{Perspectives}
 Several perspectives for forest monitoring and conservation planning:
 \begin{itemize}
-\item How current deforestation impact carbon emissions and biodiversity loss?
+\item How current deforestation impacts carbon emissions and biodiversity loss?
 \item Identifying areas of high conservation values with regards to carbon and biodiversity.
-\item Anticipating impact on carbon and biodiversity of various deforestation scenarios.
-\item Carbon and biodiversity credits associated with avoided deforestation.
+\item Anticipating the impacts of various deforestation scenarios on carbon and biodiversity.
+\item Potential access to carbon and biodiversity credits associated with avoided deforestation.
 \end{itemize}
+
+\vspace{0.20cm}
+One example of application of forest cover change and carbon maps: the ForestAtRisk project, \url{https://forestatrisk.cirad.fr}
 \end{frame}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
