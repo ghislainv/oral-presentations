@@ -1,0 +1,194 @@
+#+TITLE: Riskmaps for carbon credit certification
+#+AUTHOR: Ghislain Vieilledent
+#+DATE: @@latex:\today@@
+#+OPTIONS: author:nil date:nil title:nil H:3 toc:nil num:t ^:{}
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+STARTUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt,table,dvipsnames,compress]
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME: [subsection=false]miniframes
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
+#+BEAMER_HEADER: \title[riskmaps]{Riskmaps for carbon credit certification}
+#+BEAMER_HEADER: \definecolor{darkgreen}{RGB}{34,139,34} % vert moyen
+
+# This is used to avoid bold text to be translated as \alert{text}
+# https://tex.stackexchange.com/questions/637386/org-mode-export-bold-text-to-beamer
+#+BIND: org-export-filter-bold-functions (org-beamer-bold-as-textbf)
+#+BEGIN_SRC emacs-lisp :exports results :results none
+  (defun org-beamer-bold-as-textbf (s backend info)
+    (replace-regexp-in-string "\\\\alert" "\\\\textbf" s))
+#+END_SRC
+
+#+SETUPFILE: "header.org"
+
+* Title page                                                         :ignore:
+
+#+INCLUDE: "doc_prefix.tex" export latex
+
+* Introduction
+
+** Improving certification methodologies
+
+*** Several criticisms
+
+Several criticisms were addressed to previous REDD+ methodologies for carbon credit certification accusing them to oversell credits.
+
+- *Non-additionnality*: Emissions reductions would have happened anyway. Inflated project-level baselines. Jurisdictional reference levels are reasonably good predictors of future trends. 
+- *Leakage*: The larger the area covered by a REDD+ initiative, the lower the leakage risk.
+- *Reversal*: Jurisdictions are less likely than projects to have their forest carbon stocks decimated by a disturbance event.
+
+Frances Seymour (WRI): [[https://www.wri.org/insights/insider-4-reasons-why-jurisdictional-approach-redd-crediting-superior-project-based][4 Reasons Why a Jurisdictional Approach for REDD+ Crediting Is Superior to a Project-Based Approach]].
+
+*** New jurisdictional approach
+
+**** Deforestation intensity                                     :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+  - Baseline activity data or Forest Reference Emission Level at the jurisdictional level
+  - Amount of deforestation.
+  - Deforestation "quantity" or "intensity".
+    
+**** Spatial deforestation risk                                  :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+  - Map of the deforestation risk at the jurisdictional level.
+  - Spatial relative probability of deforestation.
+  - Deforestation "location".
+
+** Allocating deforestation to projects
+
+*** Risk map at the jurisdictional level
+
+**** Objectives                                            :B_block:BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+
+- Identifying hot-spots/cold-spots of deforestation.
+- Classifying forest pixels by risk of being deforested.
+- One unique model for the whole jurisdiction (no methodological discrepancies between projects).
+- Use this map to allocate deforestation (estimated for the jurisdiction) per project.
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+caption: Map of the deforestation risk for Perou.\newline \textcolor{darkgreen}{Green}: low, \textcolor{red}{Red}/\textbf{Black}: high.
+#+attr_latex: :width 4cm
+[[file:figs/prob_PER.png]]
+
+*** Allocating deforestation to projects
+
+- Jurisdictional risk map: a map with class of deforestation risk.
+- Obtaining a deforestation density map:\newline Class of defor. risk [1, 2, ..., $I$] $\rightarrow$ Defor. density (ha/yr/pixel).
+- Can be used to allocate deforestation per project.
+
+#+caption: Allocating deforestation to projects within the jurisdiction.
+#+attr_latex: :width 8cm
+[[file:figs/get_started/allocation.png]]
+
+* Verra's tool VT0007 for risk maps
+
+** VT0007 methodology
+
+*** VT0007 methodology
+
+- Developed by Clark University (J. R. Eastman and R. G. Pontius Jr.) for Verra.
+- *Aim*: Obtaining the best risk map possible at the jurisdictional level.
+
+**** Basic steps                                                 :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+  
+1. Use a reasonably good reference model to map the deforestation risk.
+2. Let the user propose alternative maps from alternative models.
+3. Validation step: check that alternative models are better than the benchmark model.
+4. Use the best alternative map to allocate deforestation.
+
+*** Modelling periods 
+
+#+attr_latex: :width 9cm
+[[file:figs/get_started/periods.png]]
+
+- Three dates: t1, t2, t3.
+- Four periods: calibration, validation, historical, (baseline validity period).
+- Why different periods: model predictions must be compared with *independent data* (validation period).
+- To forecast after t3, we want to use as much data as possible (historical period).
+
+** Benchmark model
+
+*** Benchmark model
+
+*** Deforestation density
+
+** Alternative models and validation
+
+*** Alternative models
+
+*** Validation procedure
+
+** Verra/UClark software
+
+*** Verra/UClark software
+
+https://github.com/ClarkCGA/UDef-ARP/tree/v2.09
+
+- User must provide fcc, distance to forest edge raster, subjurisdictional borders.
+- Benchmark model.
+- Validation.
+
+*** Limitations
+
+- Not tool to help prepare the data.
+- No tool to develop the alternative model.
+- Windows only.
+- Require a computer with high RAM for large jurisdiction: all raster inputs are stored in RAM during processing. Therefore, large jurisdictions will require substantial RAM allocations (e.g., 64Gb).
+- Several remarks:
+
+** Links                                                          :noexport:
+
+Post 1 https://www.linkedin.com/posts/fron-terra_forest-carbon-climatechange-activity-7179166090042732544-YnAK?utm_source=share&utm_medium=member_desktop
+
+Post 2
+https://www.linkedin.com/posts/fron-terra_forest-carbon-climatechange-activity-7179721587267371008-PRXr?utm_source=share&utm_medium=member_desktop
+
+Post 3 https://www.linkedin.com/posts/fron-terra_carbon-climatechange-verra-activity-7180971577746862080-rolc?utm_source=share&utm_medium=member_desktop
+
+* Software for modelling deforestation
+
+** Existing software
+
+*** Existing software
+- Dinamica EGO, CLUE, TerraSet (Clark U.).
+
+** Limitations
+
+*** Limitations
+- All are not open source (transparency).
+- Difficulty to reproduce the results (transparency, reproducibility).
+- Large rasters on large jurisdiction ?
+- No scripting: not well adapted to repeat computation.
+
+* Conclusion
+
+** A not so simple methodology
+
+*** A not so simple methodology
+
+** Need for an integrative tool: deforisk QGIS plugin
+
+*** Need for an integrative tool: the deforisk QGIS plugin
+
+* Last slide                                                         :ignore:
+    
+#+INCLUDE: "doc_suffix.tex" export latex
+
+# End Of File
