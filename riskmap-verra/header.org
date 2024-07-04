@@ -34,7 +34,7 @@
 #+BEAMER_HEADER: \AtBeginSection[]{
 #+BEAMER_HEADER: \placelogotrue
 #+BEAMER_HEADER:   \begin{frame}
-#+BEAMER_HEADER:     \frametitle{Plan}
+#+BEAMER_HEADER:     \frametitle{Outline}
 #+BEAMER_HEADER:     \begin{columns}[c]
 #+BEAMER_HEADER:       \begin{column}{0.5\textwidth}
 #+BEAMER_HEADER:         \tableofcontents[sections=1,currentsection]
