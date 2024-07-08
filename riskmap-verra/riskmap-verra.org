@@ -1,4 +1,4 @@
-#+TITLE: Risk maps for carbon credit certification
+#+TITLE: Jurisdictional risk maps for allocating deforestation
 #+AUTHOR: Ghislain Vieilledent
 #+DATE: @@latex:\today@@
 #+OPTIONS: author:nil date:nil title:nil H:3 toc:nil num:t ^:{}
@@ -11,8 +11,17 @@
 #+BEAMER_INNER_THEME: rounded
 #+BEAMER_OUTER_THEME: [subsection=false]miniframes
 #+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
-#+BEAMER_HEADER: \title[riskmaps]{Risk maps for carbon credit certification}
+#+BEAMER_HEADER: \title[riskmaps]{Jurisdictional risk maps for allocating deforestation}
 #+BEAMER_HEADER: \definecolor{darkgreen}{RGB}{34,139,34} % vert moyen
+#+BEAMER_HEADER: \usepackage{float}
+
+# This is for trnaslation with po4a
+#+latex: % po4a: environment frame
+#+latex: % po4a: environment column
+#+latex: % po4a: environment columns
+#+latex: % po4a: environment block {_}
+#+latex: % po4a: command -textcolor {}{_}
+#+latex: % po4a: command textbf {_}
 
 # This is used to avoid bold text to be translated as \alert{text}
 # https://tex.stackexchange.com/questions/637386/org-mode-export-bold-text-to-beamer
@@ -32,7 +41,7 @@
 
 ** Improving certification methodologies
 
-*** Several criticisms
+*** Several criticisms to project-based approach
 
 Several criticisms were addressed to previous REDD+ methodologies for carbon credit certification accusing them to oversell credits.
 
@@ -288,43 +297,88 @@ Deforestation density can be used to allocate deforestation to projects within a
 *** Limitations
 
 - No tool to help prepare the data.
-- No tool to help develop the alternative models.
+- No tool to help develop the *alternative models*.
 - Windows only (at the moment).
-- Require a computer with high RAM for large jurisdiction: all rasters are stored in RAM during processing. Therefore, large jurisdictions will require substantial RAM allocations (e.g., 64Gb).
-- Use of Float data for risk maps with deforestation density (ha/pixel/yr): large space on disk.
-- Documentation in English only, no translations available.
+- Require a computer with high RAM for large jurisdiction: all rasters are stored in RAM during processing. Therefore, large jurisdictions will *require substantial RAM allocations* (e.g., 64Gb).
+- Use of Float data for risk maps with deforestation density (ha/pixel/yr): *large space on disk*.
+- Documentation in English only, *no translations available*.
 - Recent tool, some feedbacks from users (e.g. Fronterra): [[https://www.linkedin.com/posts/fron-terra_forest-carbon-climatechange-activity-7179166090042732544-YnAK?utm_source=share&utm_medium=member_desktop][Post 1]], [[https://www.linkedin.com/posts/fron-terra_forest-carbon-climatechange-activity-7179721587267371008-PRXr?utm_source=share&utm_medium=member_desktop][Post 2]], [[https://www.linkedin.com/posts/fron-terra_carbon-climatechange-verra-activity-7180971577746862080-rolc?utm_source=share&utm_medium=member_desktop][Post 3]].
 
 ** Existing software for alternative models
 
 *** Existing software for alternative models
 
-- Dinamica EGO:
-- Land Change Modeler (Clark Labs):
-- CLUE-S:
-- Note, in the documentation for UDef-ARP: Clark Labs plans to offer a utility to facilitate the creation of vulnerability maps for
-  alternative models in the near future.
+- [[https://csr.ufmg.br/dinamica/][Dinamica EGO]]: Universidade Federal de Minas Gerais, Brazil.
+- [[https://clarklabs.org/terrset/land-change-modeler/][Land Change Modeler]]: Clark Labs, Clark University, Worcester, USA.
+- [[https://www.environmentalgeography.nl/site/data-models/data/clue-model/][CLUE]]: Institute for Environmental Studies, Vrije Universiteit, Amsterdam, Netherlands .
+
+#+latex: \vspace{0.25cm}
+  
+*Great programs* with many applications. Many scientific studies, published in a large number of scientific articles, have used these programs.
 
 ** Limitations
 
 *** Limitations
 
-- All are not open source (transparency).
-- Difficulty to reproduce the results (transparency, reproducibility).
-- Large rasters on large jurisdiction ?
-- No scripting: not well adapted to repeat computation.
+- Not all are open source (e.g. Dinamica EGO and LCM): *transparency*.
+- Not all are free (e.g. LCM): but discount for student and developing countries.
+- Not all allow scripting (e.g. LCM, CLUE): *reproducibility*.
+- Might not work with high resolution (<= 30 m) rasters on large jurisdictions (country scale).
+- Limited number of statistical models for modelling land use change: limited accuracy and over-fitting.
 
-*Vieilledent G.* 2021. ~forestatrisk~: a Python package for modelling and forecasting deforestation in the tropics. /Journal of Open Source Software/. *6* (59): 2975. doi: [[https://doi.org/10.21105/joss.02975][10.21105/joss.02975]].
+#+latex: \vspace{0.25cm}
+
+See *Vieilledent et al.* 2021, /JOSS/, doi: [[https://doi.org/10.21105/joss.02975][10.21105/joss.02975]] for more details.
+
+*** Limitations
+
+- Verra's methodology includes *several steps* (calibration, validation, forecast), which must be *repeated* (model, period).
+- It must be possible to follow Verra's methodology with one of these programs (given some requirements, such as high RAM computer).
+- But it would require a lot of work for the user to adapt the use of the program to Verra's methodology (e.g. validation step with coarse grid).
+
+- *Note*: in the documentation for UDef-ARP, Clark Labs indicates plans to offer a utility to facilitate the creation of vulnerability maps for alternative models in the near future.
 
 * Conclusion
 
 ** A not so simple methodology
 
+*** Summary
+
+- We need a *map of the deforestation risk* at the *jurisdictional level*.
+- Deforestation risk: *deforestation density* in ha/pixel/yr.
+- This map should be better than the map derived from the benchmark model.
+- The best map will be used to *allocate deforestation* to projects within the jurisdiction.
+
 *** A not so simple methodology
+
+- Risk map must be obtained following Verra/Clark Labs methodology.
+- The methodology was developed with simplicity in mind.
+- But modelling deforestation is inherently complicated and model comparison and validation require a minimal number of steps.
+- This makes hard to develop an alternative model better than the benchmark model using existing tools.
 
 ** Need for an integrative tool: deforisk QGIS plugin
 
 *** Need for an integrative tool: the deforisk QGIS plugin
+
+- A utility to facilitate the creation of risk maps for alternative models is needed.
+- Specificities:
+  - *Integrative*: all the steps of Verra's methodology (benchmark model, alternative models, validation, allocation).
+  - *Accuracy*: high accuracy for forecasting deforestation.
+  - *Easy to use*: simple interface with documentation.
+  - *Transparent and reproducible*: using open-source software (important for carbon/biodiversity credit certification).
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.8
+:END:
+- Cirad and FAO have worked at developing the ~deforisk~ QGIS plugin to meet these objectives: https://ecology.ghislainv.fr/deforisk-qgis-plugin
+
+**** Image                                                         :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.2
+:END:
+#+attr_latex: :width 1.5cm :center nil
+[[file:figs/logo-deforisk.png]]
 
 * Last slide                                                         :ignore:
     

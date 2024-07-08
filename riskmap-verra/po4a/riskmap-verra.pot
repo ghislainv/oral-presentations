@@ -1,0 +1,1468 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2024-07-06 20:51-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#.  Created 2024-07-06 Sat 20:51
+#.  Intended LaTeX compiler: pdflatex
+#.  vert moyen
+#.  vert moyen
+#.  varier la largeur du tableau
+#. % dashlines for tabular
+#. type: Plain text
+#: riskmap-verra.tex:41
+msgid ""
+"\\usetheme{default} \\useinnertheme{rounded} "
+"\\useoutertheme[subsection=false]{miniframes} \\date{} "
+"\\title{Jurisdictional risk maps for allocating deforestation} "
+"\\title[riskmaps]{Jurisdictional risk maps for allocating deforestation} "
+"\\definecolor{darkgreen}{RGB}{34,139,34} \\usepackage{float} "
+"\\usepackage{lmodern} \\usepackage{pgf} \\usepackage{color} "
+"\\usepackage[english,french]{babel} \\definecolor{vertmoyen}{RGB}{51,110,23} "
+"\\definecolor{blueFRB}{HTML}{31859c} "
+"\\usecolortheme[named=blueFRB]{structure} \\usepackage{tabularx} "
+"\\usepackage{layout} \\setlength{\\LTleft}{-5cm plus 1 fill} "
+"\\setlength{\\LTright}{-5cm plus 1 fill} \\usepackage{booktabs} "
+"\\usepackage{arydshln} \\newcommand{\\logit}{\\text{logit}} "
+"\\newcommand{\\bs}[1]{\\boldsymbol{#1}} "
+"\\newcommand{\\R}{\\textnormal{\\sffamily\\bfseries R}} "
+"\\newcommand{\\pkg}[1]{{\\fontseries{b}\\selectfont #1}} "
+"\\newcolumntype{C}[1]{>{\\centering\\arraybackslash}m{#1}}"
+msgstr ""
+
+#.  To avoid fluctuations per frame
+#. type: Plain text
+#: riskmap-verra.tex:50
+msgid ""
+"\\setbeamertemplate{footline}[frame number] "
+"\\setbeamertemplate{frametitle}{\\usebeamerfont{frametitle}\\insertframetitle\\vphantom{g} "
+"\\par \\centering \\includegraphics[width=\\textwidth]{figs/Barre_couleur} } "
+"\\beamertemplatenavigationsymbolsempty"
+msgstr ""
+
+#.  Logo
+#.  create a new conditional
+#. type: Plain text
+#: riskmap-verra.tex:54
+msgid ""
+"\\newif\\ifplacelogo "
+"\\logo{\\ifplacelogo\\includegraphics[width=0.5\\textwidth]{figs/partners_logos}\\fi}"
+msgstr ""
+
+#. Call table of contents at the beginning of each section
+#. type: Plain text
+#: riskmap-verra.tex:75
+msgid ""
+"\\AtBeginSection[]{ \\placelogotrue \\begin{frame} \\frametitle{Outline} "
+"\\begin{columns}[c] \\begin{column}{0.5\\textwidth} "
+"\\tableofcontents[sections=1,currentsection] \\vspace{0.5cm} "
+"\\tableofcontents[sections=2,currentsection] \\end{column} "
+"\\begin{column}{0.5\\textwidth} \\tableofcontents[sections=3,currentsection] "
+"\\vspace{0.5cm} \\tableofcontents[sections=4,currentsection] \\end{column} "
+"\\end{columns} \\end{frame} \\placelogofalse }"
+msgstr ""
+
+#. type: Plain text
+#: riskmap-verra.tex:77
+msgid "\\AtBeginSubsection[]{}"
+msgstr ""
+
+#. type: hypersetup{#1}
+#: riskmap-verra.tex:84
+msgid ""
+"colorlinks=true, linkcolor=Black, filecolor=Maroon, citecolor=Blue, "
+"urlcolor=Maroon"
+msgstr ""
+
+#. type: hypersetup{#1}
+#: riskmap-verra.tex:96
+msgid ""
+"pdfauthor={Ghislain Vieilledent}, pdftitle={Jurisdictional risk maps for "
+"allocating deforestation}, pdfkeywords={}, pdfsubject={}, pdfcreator={Emacs "
+"29.3 (Org mode 9.6.15)}, pdflang={English}"
+msgstr ""
+
+#.  Title page
+#.  Presentation first page
+#. type: document
+#: riskmap-verra.tex:148
+msgid ""
+"{ \\setbeamertemplate{navigation symbols}{} \\begin{frame}[plain, "
+"noframenumbering] \\begin{center} \\small{\\textbf{FAO workshop -- Santa "
+"Marta (Colombia), July 2024}} \\end{center} \\vspace{-0.5cm} \\titlepage "
+"\\vspace{-3cm} \\begin{center} "
+"\\includegraphics[width=\\textwidth]{figs/Barre_couleur} \\vspace{0.25cm} "
+"\\includegraphics[width=10cm]{figs/Banniere} \\small{Ghislain "
+"VIEILLEDENT$^{1}$\\hspace{0.25cm}Thomas ARSOUZE$^{1}$\\hspace{0.25cm}FAO "
+"team$^{2}$} \\vspace{0.25cm} {\\scriptsize \\begin{tabular}{l} $[1]$ "
+"\\textbf{Cirad} UMR AMAP, $[2]$ \\textbf{FAO} Rome and Latin America "
+"\\end{tabular} } "
+"\\includegraphics[width=0.8\\textwidth]{figs/partners_logos} \\end{center} "
+"\\end{frame} }"
+msgstr ""
+
+#. type: document
+#: riskmap-verra.tex:168
+msgid "\\placelogotrue"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:168
+msgid "\\frametitle{Outline}"
+msgstr ""
+
+#. type: columns
+#: riskmap-verra.tex:168
+msgid "[c]"
+msgstr ""
+
+#. type: column
+#: riskmap-verra.tex:168
+msgid ""
+"{0.5\\textwidth} \\tableofcontents[sections=1] \\vspace{0.5cm} "
+"\\tableofcontents[sections=2]"
+msgstr ""
+
+#. type: column
+#: riskmap-verra.tex:168
+msgid ""
+"{0.5\\textwidth} \\tableofcontents[sections=3] \\vspace{0.5cm} "
+"\\tableofcontents[sections=4]"
+msgstr ""
+
+#. type: document
+#: riskmap-verra.tex:168
+msgid "\\placelogofalse"
+msgstr ""
+
+#. type: section{#2}
+#: riskmap-verra.tex:171
+msgid "Introduction"
+msgstr ""
+
+#. type: subsection{#2}
+#: riskmap-verra.tex:174
+msgid "Improving certification methodologies"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:177
+msgid ""
+"[label={sec:org23f7ea1}]{Several criticisms to project-based approach} "
+"Several criticisms were addressed to previous REDD+ methodologies for carbon "
+"credit certification accusing them to oversell credits."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:183
+msgid ""
+"\\textbf{Non-additionnality}: Emissions reductions would have happened "
+"anyway. Inflated project-level baselines. Jurisdictional reference levels "
+"are reasonably good predictors of future trends."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:183
+msgid ""
+"\\textbf{Leakage}: The larger the area covered by a REDD+ initiative, the "
+"lower the leakage risk."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:183
+msgid ""
+"\\textbf{Reversal}: Jurisdictions are less likely than projects to have "
+"their forest carbon stocks decimated by a disturbance event."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:186
+msgid ""
+"Frances Seymour (WRI): "
+"\\href{https://www.wri.org/insights/insider-4-reasons-why-jurisdictional-approach-redd-crediting-superior-project-based}{4 "
+"Reasons Why a Jurisdictional Approach for REDD+ Crediting Is Superior to a "
+"Project-Based Approach}."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:195
+msgid "[label={sec:org792918b}]{New jurisdictional approach}"
+msgstr ""
+
+#. type: block{#1}
+#: riskmap-verra.tex:195
+msgid "Deforestation intensity"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:195
+msgid ""
+"Baseline activity data or Forest Reference Emission Level at the "
+"jurisdictional level"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:195
+msgid "Amount of deforestation."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:195
+msgid "Deforestation ``quantity'' or ``intensity''."
+msgstr ""
+
+#. type: block{#1}
+#: riskmap-verra.tex:204
+msgid "Spatial deforestation risk"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:204
+msgid "Map of the deforestation risk at the jurisdictional level."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:204
+msgid "Spatial relative probability of deforestation."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:204
+msgid "Deforestation ``location''."
+msgstr ""
+
+#. type: subsection{#2}
+#: riskmap-verra.tex:207
+msgid "Allocating deforestation to projects"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:220
+msgid "[label={sec:org9e6b533}]{Risk map at the jurisdictional level}"
+msgstr ""
+
+#. type: column
+#: riskmap-verra.tex:220 riskmap-verra.tex:230
+msgid "{0.5\\columnwidth}"
+msgstr ""
+
+#. type: block{#1}
+#: riskmap-verra.tex:220
+msgid "Objectives"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:220
+msgid "Identifying hot-spots/cold-spots of deforestation."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:220
+msgid "Classifying forest pixels by risk of being deforested."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:220
+msgid ""
+"One unique model for the whole jurisdiction (no methodological discrepancies "
+"between projects)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:220
+msgid ""
+"Use this map to allocate deforestation (estimated for the jurisdiction) per "
+"project."
+msgstr ""
+
+#. type: caption{#2}
+#: riskmap-verra.tex:230
+msgid ""
+"Map of the deforestation risk for Perou.\\newline "
+"\\textcolor{darkgreen}{Green}: low, \\textcolor{red}{Red}/\\textbf{Black}: "
+"high."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:237
+msgid "[label={sec:org7629f10}]{Allocating deforestation to projects}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:237
+msgid "Jurisdictional risk map: a map with class of deforestation risk."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:237
+msgid ""
+"Obtaining a deforestation density map:\\newline Class of defor. risk [1, 2, "
+"\\ldots{}, \\(I\\)] \\(\\rightarrow\\) Defor. density (ha/yr/pixel)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:237
+msgid "Can be used to allocate deforestation per project."
+msgstr ""
+
+#. type: caption{#2}
+#: riskmap-verra.tex:244 riskmap-verra.tex:380
+msgid "Allocating deforestation to projects within the jurisdiction."
+msgstr ""
+
+#. type: section{#2}
+#: riskmap-verra.tex:247
+msgid "Verra methodology for risk mapping"
+msgstr ""
+
+#. type: subsection{#2}
+#: riskmap-verra.tex:250
+msgid "VT0007 tool"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:256
+msgid "[label={sec:orgfbfcecf}]{VT0007 tool}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:256
+msgid ""
+"Developed by Clark University (J. R. Eastman and R. G. Pontius Jr.) for "
+"Verra."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:256
+msgid ""
+"\\textbf{Aim}: Obtaining the best risk map possible at the jurisdictional "
+"level."
+msgstr ""
+
+#. type: block{#1}
+#: riskmap-verra.tex:266
+msgid "Basic steps"
+msgstr ""
+
+#. type: enumerate
+#: riskmap-verra.tex:266
+msgid "Use a reasonably good reference model to map the deforestation risk."
+msgstr ""
+
+#. type: enumerate
+#: riskmap-verra.tex:266
+msgid "Let the user propose alternative maps from alternative models."
+msgstr ""
+
+#. type: enumerate
+#: riskmap-verra.tex:266
+msgid ""
+"Validation step: check that alternative models are better than the benchmark "
+"model."
+msgstr ""
+
+#. type: enumerate
+#: riskmap-verra.tex:266
+msgid "Use the best alternative map to allocate deforestation."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:271
+msgid "[label={sec:org224354f}]{Modelling periods}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:279
+msgid "Three dates: t1, t2, t3."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:279
+msgid ""
+"Four periods: calibration, validation, historical, (baseline validity "
+"period)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:279
+msgid ""
+"Why different periods: model predictions must be compared with "
+"\\textbf{independent data} (validation period)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:279
+msgid ""
+"To forecast after t3, we want to use as much data as possible (historical "
+"period)."
+msgstr ""
+
+#. type: subsection{#2}
+#: riskmap-verra.tex:282
+msgid "Benchmark model"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:290
+msgid "[label={sec:org85fc087}]{Benchmark model}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:290
+msgid "Benchmark model or reference model."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:290
+msgid "A reasonably good deforestation model (better than a null model)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:290
+msgid ""
+"Assuming a \\emph{decrease of deforestation with distance to forest edge} "
+"(commonly admitted)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:290
+msgid ""
+"And a \\emph{different model between subjurisdictions} (regional "
+"variability)."
+msgstr ""
+
+#. type: caption{#2}
+#: riskmap-verra.tex:297
+msgid "Subjurisdictions in Martinique (MTQ)"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:303
+msgid "[label={sec:orgb63524a}]{Distance threshold}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:303
+msgid ""
+"Identify the distance to forest edge below which \\textbf{99.5\\%} of the "
+"deforestation occur."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:303
+msgid "Use this distance to define the first class of risk (class 1)."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:315
+msgid "[label={sec:org3cf8455}]{From distance to risk class}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:315
+msgid ""
+"Distances below the threshold are transformed into classes of deforestation "
+"risk."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:315
+msgid ""
+"A geometric series is used for that, ensuring that classes have a wider "
+"range for bigger distances."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:315
+msgid ""
+"We define 29 additional classes of risk from 2 to 30 (class 1 has already "
+"been defined)."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:329
+msgid "[label={sec:org4b8af87}]{Classes from subjurisdictions}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:329
+msgid "Each subjurisdiction get a number from 1 to (potentially) 999."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:329
+msgid ""
+"We combine classes derived from distance with subjurisdictions in the "
+"following way: \\(\\textbf{DD}\\text{SSS}\\), with \\textbf{DD} the distance "
+"class and SSS the subjurisdiction number."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:329
+msgid ""
+"We obtain classes going from 01001 to potentially 30999 if there are 999 "
+"subjurisdictions."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:329
+msgid ""
+"So for 10 subjurisdictions, we obtain \\textasciitilde{}300 classes (but "
+"some distance classes might be missing)."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:335
+msgid "[label={sec:org70d692a}]{Classes from subjurisdictions}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:335
+msgid ""
+"Following these steps, we obtain a map at the jurisdictional level where "
+"each forest pixel belongs to a given class of deforestation risk."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:335
+msgid ""
+"Area in dark green: classes \\(\\mathbf{1}\\text{SSS}\\), beyond the "
+"deforestation threshold."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:350
+msgid "[label={sec:orgcbb7733}]{Deforestation density}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:350
+msgid ""
+"Each class \\(i\\) has an associated \\textbf{deforestation probability}: "
+"\\(\\theta_{m,i} = d_{i} / n_{i}\\) (unitless), with \\(d_{i}\\) the number "
+"of deforested pixels during the period, and \\(n_{i}\\) the number of forest "
+"pixels at the beginning of the period."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:350
+msgid ""
+"\\textbf{Quantity adjustment \\(\\rho\\)}: \\(\\theta_{a,i} = \\rho "
+"\\theta_{m,i}\\), so that total predicted deforestation = observed (or "
+"expected) deforestation. For the benchmark model for the calibration and "
+"historical periods, \\(\\rho=1\\)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:350
+msgid ""
+"\\textbf{Deforestation density (in ha/yr per pixel)} computed as "
+"\\(\\delta_{i} = \\theta_{a,i} \\times A / T\\). \\(A\\): pixel area (in "
+"ha), \\(T\\): time-interval of the period (in yr)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:350
+msgid ""
+"The deforestation density is used to predict the amount of deforestation for "
+"each pixel belonging to a given class of deforestation risk."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:367
+msgid "[label={sec:orgf2b4ad4}]{Deforestation density}"
+msgstr ""
+
+#. type: caption{#2}
+#: riskmap-verra.tex:367
+msgid ""
+"Deforestation rates for each class of deforestation risk (numbers truncated "
+"to three decimal digits)."
+msgstr ""
+
+#. type: table
+#: riskmap-verra.tex:367 riskmap-verra.tex:451
+msgid "\\small"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "\\toprule cat"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "\\(n_i\\)"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "\\(d_i\\)"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "\\(\\theta_{m,i}\\)"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "\\(\\theta_{a,i}\\)"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "\\(T\\)"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "\\(A\\)"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "\\(\\delta_{i}\\)"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "[0pt] \\midrule 1001"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "33433"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "0"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "0.0"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "10"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "0.09"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "[0pt] 1002"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "12965"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "[0pt] 1003"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "91686"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "19"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "2.072e-04"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "1.865e-06"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "[0pt] 1004"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "82279"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "5"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "6.076e-05"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "5.469e-07"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "[0pt] 2001"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367
+msgid "1373"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:367 riskmap-verra.tex:451
+msgid "[0pt] \\bottomrule"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:370
+msgid ""
+"\\textbf{Deforestation density (in ha/yr per pixel)} computed as "
+"\\(\\delta_{i} = \\theta_{a,i} \\times A / T\\)"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:373
+msgid ""
+"[label={sec:org8465960}]{Deforestation density} Deforestation density can be "
+"used to allocate deforestation to projects within a jurisdiction."
+msgstr ""
+
+#. type: subsection{#2}
+#: riskmap-verra.tex:383
+msgid "Alternative models and validation"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:391
+msgid "[label={sec:org84a06d6}]{Alternative models}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:391
+msgid ""
+"Alternative maps from alternative models must be compared with the benchmark "
+"model."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:391
+msgid ""
+"The alternative model can be of different forms: geoprocessing model (moving "
+"window), statistical model (iCAR, GLM, RF)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:391
+msgid ""
+"E.g. Clark Labs propose the MLP (Multi-Layer Perceptron) statistical model "
+"in the Land Change Modeller module of the "
+"\\href{https://clarklabs.org/terrset/}{TerrSet} software."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:396
+msgid "[label={sec:org2f962a4}]{Alternative models}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:396
+msgid ""
+"A risk map with deforestation densities derived from the alternative model "
+"must be provided."
+msgstr ""
+
+#. type: caption{#2}
+#: riskmap-verra.tex:403
+msgid "Risk map obtained with a moving window model."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:409
+msgid "[label={sec:orgaf08b6a}]{Validation procedure}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:409
+msgid "Comparing predicted vs. observed deforestation (in ha) in a coarse grid."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:409
+msgid "For a given period of time."
+msgstr ""
+
+#. type: caption{#2}
+#: riskmap-verra.tex:416
+msgid "Coarse grid covering the area of interest."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:422
+msgid "[label={sec:org1e5fa33}]{Validation procedure}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:422
+msgid "Comparing predicted vs. observed deforestation."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:422
+msgid "Performance indices: \\(R^2\\), and median of absolute error (MedAE)."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:433
+msgid "[label={sec:org0e055a9}]{Validation procedure}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:433
+msgid "Performance indices are computed for each model."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:433
+msgid "The model with the higher \\(R^2\\) and the lower MedAE is selected."
+msgstr ""
+
+#. type: caption{#2}
+#: riskmap-verra.tex:451
+msgid "Performance indices."
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "\\toprule ncell"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "period"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "model"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "MedAE"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "R2"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "RMSE"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "wRMSE"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "[0pt] \\midrule 604"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "validation"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "bm"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "2.71"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "0.43"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "6.08"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "6.22"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "[0pt] 604"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "icar"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "1.78"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "0.65"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "4.79"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "4.59"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "glm"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "2.39"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "0.38"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "6.39"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "6.52"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "rf"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "2.09"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "0.50"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "5.69"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "5.74"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "mw\\_11"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "2.34"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "0.56"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "7.66"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "6.83"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "mw\\_21"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "2.51"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "7.54"
+msgstr ""
+
+#. type: tabular
+#: riskmap-verra.tex:451
+msgid "6.66"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:457
+msgid "[label={sec:orgfc9200d}]{Validation procedure}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:465
+msgid ""
+"We can compare predicted vs. observed deforestation for three time periods: "
+"\\textbf{calibration}, \\textbf{validation}, and \\textbf{historical "
+"period}."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:465
+msgid ""
+"To estimate model performance at forecasting deforestation in the future: "
+"\\textbf{predicted vs. observed deforestation} for the \\textbf{validation "
+"period} with a model fitted over the \\textbf{calibration period}."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:465
+msgid ""
+"This way, we use \\textbf{independent observations} of deforestation for "
+"model validation (observed deforestation over the validation period have not "
+"be used to calibrate the model)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:465
+msgid ""
+"Verra's methodology: the alternative model must be better for both the "
+"calibration and validation periods."
+msgstr ""
+
+#. type: section{#2}
+#: riskmap-verra.tex:468
+msgid "Software for deforestation risk mapping"
+msgstr ""
+
+#. type: subsection{#2}
+#: riskmap-verra.tex:471
+msgid "Verra/Clark Labs software"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:476
+msgid "[label={sec:orgd16808a}]{Verra/Clark Labs software}"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:480
+msgid ""
+"Standalone app: \\url{https://github.com/ClarkCGA/UDef-ARP} \\\\[0pt] "
+"\\centering QGIS plugin: \\url{https://github.com/ClarkCGA/UDef-ARP-Plugin}"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:485
+msgid "[label={sec:org4e71f43}]{Verra/Clark Labs software}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:495
+msgid ""
+"User must provide rasters: forest cover change, distance to forest edge at "
+"several dates, subjurisdictional borders, alternative risk maps at several "
+"dates."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:495
+msgid "Using this data, the UDef-ARP provides the basis:"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:495
+msgid "for developing a benchmark model."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:495
+msgid "for comparing the benchmark and alternative models."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:507
+msgid "[label={sec:orgab23372}]{Limitations}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:507
+msgid "No tool to help prepare the data."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:507
+msgid "No tool to help develop the \\textbf{alternative models}."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:507
+msgid "Windows only (at the moment)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:507
+msgid ""
+"Require a computer with high RAM for large jurisdiction: all rasters are "
+"stored in RAM during processing. Therefore, large jurisdictions will "
+"\\textbf{require substantial RAM allocations} (e.g., 64Gb)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:507
+msgid ""
+"Use of Float data for risk maps with deforestation density (ha/pixel/yr): "
+"\\textbf{large space on disk}."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:507
+msgid "Documentation in English only, \\textbf{no translations available}."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:507
+msgid ""
+"Recent tool, some feedbacks from users (e.g. Fronterra): "
+"\\href{https://www.linkedin.com/posts/fron-terra\\_forest-carbon-climatechange-activity-7179166090042732544-YnAK?utm\\_source=share\\&utm\\_medium=member\\_desktop}{Post "
+"1}, "
+"\\href{https://www.linkedin.com/posts/fron-terra\\_forest-carbon-climatechange-activity-7179721587267371008-PRXr?utm\\_source=share\\&utm\\_medium=member\\_desktop}{Post "
+"2}, "
+"\\href{https://www.linkedin.com/posts/fron-terra\\_carbon-climatechange-verra-activity-7180971577746862080-rolc?utm\\_source=share\\&utm\\_medium=member\\_desktop}{Post "
+"3}."
+msgstr ""
+
+#. type: subsection{#2}
+#: riskmap-verra.tex:510
+msgid "Existing software for alternative models"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:517
+msgid "[label={sec:org3572bfb}]{Existing software for alternative models}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:517
+msgid ""
+"\\href{https://csr.ufmg.br/dinamica/}{Dinamica EGO}: Universidade Federal de "
+"Minas Gerais, Brazil."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:517
+msgid ""
+"\\href{https://clarklabs.org/terrset/land-change-modeler/}{Land Change "
+"Modeler}: Clark Labs, Clark University, Worcester, USA."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:517
+msgid ""
+"\\href{https://www.environmentalgeography.nl/site/data-models/data/clue-model/}{CLUE}: "
+"Institute for Environmental Studies, Vrije Universiteit, Amsterdam, "
+"Netherlands ."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:522
+msgid ""
+"\\textbf{Great programs} with many applications. Many scientific studies, "
+"published in a large number of scientific articles, have used these "
+"programs."
+msgstr ""
+
+#. type: subsection{#2}
+#: riskmap-verra.tex:525
+msgid "Limitations"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:534
+msgid "[label={sec:org9bf2005}]{Limitations}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:534
+msgid "Not all are open source (e.g. Dinamica EGO and LCM): \\textbf{transparency}."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:534
+msgid ""
+"Not all are free (e.g. LCM): but discount for student and developing "
+"countries."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:534
+msgid "Not all allow scripting (e.g. LCM, CLUE): \\textbf{reproducibility}."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:534
+msgid ""
+"Might not work with high resolution (<= 30 m) rasters on large jurisdictions "
+"(country scale)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:534
+msgid ""
+"Limited number of statistical models for modelling land use change: limited "
+"accuracy and over-fitting."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:539
+msgid ""
+"See \\textbf{Vieilledent et al.} 2021, \\emph{JOSS}, doi: "
+"\\href{https://doi.org/10.21105/joss.02975}{10.21105/joss.02975} for more "
+"details."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:545
+msgid "[label={sec:org341817c}]{Limitations}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:545
+msgid ""
+"Verra's methodology includes \\textbf{several steps} (calibration, "
+"validation, forecast), which must be \\textbf{repeated} (model, period)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:545
+msgid ""
+"It must be possible to follow Verra's methodology with one of these programs "
+"(given some requirements, such as high RAM computer)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:545
+msgid ""
+"But it would require a lot of work for the user to adapt the use of the "
+"program to Verra's methodology (e.g. validation step with coarse grid)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:549
+msgid ""
+"\\textbf{Note}: in the documentation for UDef-ARP, Clark Labs indicates "
+"plans to offer a utility to facilitate the creation of vulnerability maps "
+"for alternative models in the near future."
+msgstr ""
+
+#. type: section{#2}
+#: riskmap-verra.tex:552
+msgid "Conclusion"
+msgstr ""
+
+#. type: subsection{#2}
+#: riskmap-verra.tex:555
+msgid "A not so simple methodology"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:564
+msgid "[label={sec:org4dba697}]{Summary}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:564
+msgid ""
+"We need a \\textbf{map of the deforestation risk} at the "
+"\\textbf{jurisdictional level}."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:564
+msgid "Deforestation risk: \\textbf{deforestation density} in ha/pixel/yr."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:564
+msgid "This map should be better than the map derived from the benchmark model."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:564
+msgid ""
+"The best map will be used to \\textbf{allocate deforestation} to projects "
+"within the jurisdiction."
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:573
+msgid "[label={sec:orgfa6a091}]{A not so simple methodology}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:573
+msgid "Risk map must be obtained following Verra/Clark Labs methodology."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:573
+msgid "The methodology was developed with simplicity in mind."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:573
+msgid ""
+"But modelling deforestation is inherently complicated and model comparison "
+"and validation require a minimal number of steps."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:573
+msgid ""
+"This makes hard to develop an alternative model better than the benchmark "
+"model using existing tools."
+msgstr ""
+
+#. type: subsection{#2}
+#: riskmap-verra.tex:576
+msgid "Need for an integrative tool: deforisk QGIS plugin"
+msgstr ""
+
+#. type: frame
+#: riskmap-verra.tex:588
+msgid ""
+"[label={sec:org7881967},fragile]{Need for an integrative tool: the deforisk "
+"QGIS plugin}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:588
+msgid ""
+"A utility to facilitate the creation of risk maps for alternative models is "
+"needed."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:588
+msgid "Specificities:"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:588
+msgid ""
+"\\textbf{Integrative}: all the steps of Verra's methodology (benchmark "
+"model, alternative models, validation, allocation)."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:588
+msgid "\\textbf{Accuracy}: high accuracy for forecasting deforestation."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:588
+msgid "\\textbf{Easy to use}: simple interface with documentation."
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:588
+msgid ""
+"\\textbf{Transparent and reproducible}: using open-source software "
+"(important for carbon/biodiversity credit certification)."
+msgstr ""
+
+#. type: column
+#: riskmap-verra.tex:595
+msgid "{0.8\\columnwidth}"
+msgstr ""
+
+#. type: itemize
+#: riskmap-verra.tex:595
+msgid ""
+"Cirad and FAO have worked at developing the \\texttt{deforisk} QGIS plugin "
+"to meet these objectives: "
+"\\url{https://ecology.ghislainv.fr/deforisk-qgis-plugin}"
+msgstr ""
+
+#. type: column
+#: riskmap-verra.tex:601
+msgid "{0.2\\columnwidth}"
+msgstr ""
+
+#.  Use background image
+#.  Remove shadow from block
+#. type: document
+#: riskmap-verra.tex:624
+msgid ""
+"{ \\usebackgroundtemplate{\\includegraphics[keepaspectratio=true, "
+"height=\\paperheight]{figs/Canopy-NC} } \\setbeamertemplate{navigation "
+"symbols}{} \\setbeamertemplate{blocks}[rounded][shadow=false] "
+"\\begin{frame}[plain] \\vspace*{\\stretch{100}} \\begin{block}{} "
+"\\begin{center} \\ldots~Thank you for attention~\\ldots \\\\ "
+"\\url{https://ecology.ghislainv.fr/deforisk-qgis-plugin} \\\\ \\textbf{> "
+"Articles > References > Presentations} \\\\ "
+"\\includegraphics[width=0.8\\textwidth]{figs/partners_logos} \\end{center} "
+"\\end{block} \\end{frame} }"
+msgstr ""

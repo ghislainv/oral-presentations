@@ -1,0 +1,6 @@
+# Getting info about resources
+
+oral-presentations.po4a/riskmap-verra.pot - Getting info
+oral-presentations.po4a/riskmap-verra.pot - Resource does not exist; creating
+oral-presentations.po4a/riskmap-verra.pot - Create resource
+oral-presentations.po4a/riskmap-verra.pot - Error while creating resource, 409..

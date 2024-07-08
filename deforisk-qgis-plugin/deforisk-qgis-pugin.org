@@ -1,0 +1,273 @@
+#+TITLE: Using the deforisk QGIS plugin for making and comparing deforestation risk maps
+#+AUTHOR: Ghislain Vieilledent
+#+DATE: @@latex:\today@@
+#+OPTIONS: author:nil date:nil title:nil H:3 toc:nil num:t ^:{}
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+STARTUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt,table,dvipsnames,compress]
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME: [subsection=false]miniframes
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
+#+BEAMER_HEADER: \title[deforisk QGIS plugin]{Using the \texttt{deforisk} QGIS plugin for making and comparing deforestation risk maps}
+#+BEAMER_HEADER: \definecolor{darkgreen}{RGB}{34,139,34} % vert moyen
+#+BEAMER_HEADER: \usepackage{float}
+
+# This is for translation with po4a
+#+latex: % po4a: environment frame
+#+latex: % po4a: environment column
+#+latex: % po4a: environment columns
+#+latex: % po4a: environment block {_}
+#+latex: % po4a: command -textcolor {}{_}
+#+latex: % po4a: command textbf {_}
+
+# This is used to avoid bold text to be translated as \alert{text}
+# https://tex.stackexchange.com/questions/637386/org-mode-export-bold-text-to-beamer
+#+BIND: org-export-filter-bold-functions (org-beamer-bold-as-textbf)
+#+BEGIN_SRC emacs-lisp :exports results :results none
+  (defun org-beamer-bold-as-textbf (s backend info)
+    (replace-regexp-in-string "\\\\alert" "\\\\textbf" s))
+#+END_SRC
+
+#+SETUPFILE: "header.org"
+
+* Title page                                                         :ignore:
+
+#+INCLUDE: "doc_prefix.tex" export latex
+
+* The deforisk QGIS plugin
+
+** Aim and specificities
+
+*** Aims
+
+*** Specificities
+
+*** Python based
+
+*Python based.* The ~deforisk~ plugin relies on four Python packages developed specifically for modelling deforestation: ~geefcc~, ~pywdpa~, ~forestatrisk~, and ~riskmapjnr~.
+
+- ~geefcc~: make forest cover change maps from Google Earth Engine (GEE).
+- ~pywdpa~: downloading protected areas from the World Database on Protected Areas (WDPA).
+- ~forestatrisk~: model deforestation and predict the spatial deforestation.
+- ~riskmapjnr~: risk maps following Verra JNR methodologies.
+
+#+attr_latex: :alt logos-packages :width 0.7\textwidth
+[[file:figs/logos-packages.png]]
+
+*** Processing raster by blocks
+
+- *Processing raster by blocks.* Raster files of forest cover change and explanatory variables might occupy a space of several gigabytes on disk. Processing such large rasters in memory can be prohibitively intensive on computers with limited RAM. Functions used in the ~deforisk~ plugin process large rasters by blocks of pixels representing subsets of the raster data. This makes computation efficient, with low memory usage. Reading and writing subsets of raster data is done by using functions from GDAL, a dependency of the plugin. Numerical computations on arrays are performed with the NumPy Python package, whose core is mostly made of optimized and compiled C code that runs quickly.
+
+*** Running tasks in parallel
+
+- *Running tasks in parallel.* State-of-the-art approach to select the best deforestation risk map and forecast deforestation implies comparing various models, fit the models using forest cover change over different time periods and predict the deforestation risk at several dates. This implies repeating a high number of tasks. To save computation time, the ~deforisk~ plugin use the QGIS task manager which allows running several analysis in parallel.
+
+** Website and documentation
+
+*** Website and documentation
+
+** Installation
+
+*** Installation
+
+* Data preparation
+
+** Forest cover change data
+
+*** GFC dataset
+
+*** TMF dataset
+    
+- Full Landsat archive (1982--2022), 30m pixel, time-series analysis.
+- Classification tree based on expert knowledge.
+- Tropical deforestation was underestimated (-33% in 2000--2012, Hansen
+  et al. 2013).
+- Maps and data: [[https://forobs.jrc.ec.europa.eu/TMF/]].
+
+\vspace{0.25cm}
+
+#+attr_latex: :width \textwidth
+[[file:figs/Vancutsem2021-maps-wide.png]]
+
+*** TMF dataset
+
+- Precise enough to visually identify the causes of deforestation
+  (logging, fires, agriculture)
+
+#+attr_latex: :width 0.5\textwidth
+[[file:figs/Vancutsem2021-patterns.png]]
+  
+** Spatial explanatory variables
+
+*** Spatial variables
+  
+- Height explanatory variables
+
+#+attr_latex: :width 0.75\textwidth
+[[file:figs/variables-tab.png]]
+
+*** Spatial variables
+
+#+attr_latex: :width 0.8\textwidth
+[[file:figs/sm/var.png]]
+
+@@latex:\centering@@ *Spatial explanatory variables in DRC*
+
+*** Roads
+    
+- OpenStreetMap (OSM)
+- "motorway", "trunk", "primary", "secondary" and "tertiary" roads
+- 3.6 million roads from OSM
+
+#+attr_latex: :width 0.7\textwidth
+[[file:figs/sm/roads.png]]
+
+*** Protected areas
+    
+- PA status: "Designated", "Inscribed", "Established", or "Proposed"
+  before 1\textsuperscript{st} January 2010
+- 85,000 protected areas from WDPA
+
+#+attr_latex: :width 0.7\textwidth
+[[file:figs/sm/pa.png]]
+
+** Sampling
+
+*** Sampling
+
+- Stratified sampling between deforested/non-deforested pixels in
+  2010--2020
+- Total number of points proportional to the forest cover in 2010 (from
+  20,000 to 100,000 points per study area)
+
+#+attr_latex: :width 0.7\textwidth
+[[file:figs/sm/sample.png]]
+
+* Models and validation
+
+** Benchmark model
+
+*** Benchmark model
+
+** Forestatrisk models
+
+*** Forestatrisk models
+
+
+*** iCAR model
+
+**** Text                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+    
+A logistic regression model with iCAR process
+
+\begin{equation*}
+\begin{split}
+  y_i \sim \mathcal{B}ernoulli(\theta_i)\\
+  \text{logit}(\theta_i) = \alpha + X_i \beta + \rho_{j(i)}\\
+  \rho_{j(i)} \sim \mathcal{N}ormal(\sum_{j^{\prime}} \rho_{j^{\prime}} / n_j,V_{\rho} / n_j)
+\end{split}
+\end{equation*}
+
+\footnotesize (NB: We can compare this model with a simple GLM and a Random
+Forest model using a cross-validation procedure)
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+attr_latex: :width \textwidth
+[[file:figs/sm/grid.png]]
+
+*Square grid of 10km cells over DRC*
+
+*** Spatial random effects
+
+#+attr_latex: :width 0.6\textwidth
+[[file:figs/sm/rho.png]]
+
+*Interpolation of spatial random effects at 1km in DRC*
+
+*** Spatial probability of deforestation
+    
+We use the fitted model to compute the spatial probability of
+deforestation.
+
+#+attr_latex: :width 0.5\textwidth
+[[file:figs/sm/prob.png]]
+
+*Relative spatial probability of deforestation in DRC for the year 2020*
+
+*** GLM model
+
+*** Random Forest model
+
+*** ForestAtRisk in the tropics
+  
+- *i.* Consider tropical moist forest in *92* countries (119 study areas)
+- *ii.* Estimate the current deforestation rate and uncertainty in each country
+- *iii.* Model the spatial risk of deforestation from environmental factors
+- *iv.* Forecast the deforestation assuming a business-as-usual scenario
+- *v.* Consequences in terms of carbon emissions
+
+\vspace{0.5cm}
+\begin{center}
+\includegraphics[width=0.32\textwidth]{figs/sm/study_areas_America}
+\includegraphics[width=0.32\textwidth]{figs/sm/study_areas_Africa}
+\includegraphics[width=0.32\textwidth]{figs/sm/study_areas_Asia}
+\textbf{The 119 study areas in the 3 continents}
+\end{center}
+
+*** ForestAtRisk in the tropics
+
+#+attr_latex: :width 0.7\textwidth
+[[file:figs/article/prob.png]]
+
+*Pantropical map of the spatial probability of deforestation*
+
+Article in review: \href{https://doi.org/10.1101/2022.03.22.485306}{10.1101/2022.03.22.485306}
+
+[[https://forestatrisk.cirad.fr/maps.html]]
+
+** Moving window models
+
+*** Moving window models
+
+* Usage
+
+** Allocating deforestation
+
+*** Allocating deforestation
+
+** Subnational jurisdictions
+
+*** Subnational jurisdictions
+
+** User's data
+
+*** User's data
+
+* Conclusion
+
+** Week agenda
+
+*** Week agenda
+
+** Perspectives
+
+*** Perspectives
+
+- Increase computational speed (for predictions on large areas).
+- Adding more alternative models (MLP).
+
+* Last slide                                                         :ignore:
+    
+#+INCLUDE: "doc_suffix.tex" export latex
+
+# End Of File

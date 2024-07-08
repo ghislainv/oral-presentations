@@ -1,0 +1,28 @@
+\frametitle{Necesidad de una herramienta integradora: el plugin QGIS deforisk}
+\begin{itemize}
+\item Se necesita una utilidad que facilite la creación de mapas de riesgo para
+modelos alternativos.
+\item Especificidades:
+\begin{itemize}
+\item \textbf{Integrative}: todas las etapas de la metodología Verra (modelo de
+referencia, modelos alternativos, validación, asignación).
+\item \textbf{Precisión}: alta precisión para prever la deforestación.
+\item \textbf{Fácil de usar}: interfaz sencilla con documentación.
+\item \textbf{Transparente y reproducible}: utilizando software de código abierto
+(importante para la certificación de créditos de carbono/biodiversidad).
+\end{itemize}
+\end{itemize}
+
+\begin{columns}
+\begin{column}{0.8\columnwidth}
+\begin{itemize}
+\item El Cirad y la FAO han trabajado en el desarrollo del plugin
+\texttt{deforisk} de QGIS para cumplir estos objetivos:
+\url{https://ecology.ghislainv.fr/deforisk-qgis-plugin/es}
+\end{itemize}
+\end{column}
+
+\begin{column}{0.2\columnwidth}
+\includegraphics[width=1.5cm]{figs/logo-deforisk.png}
+\end{column}
+\end{columns}

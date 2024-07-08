@@ -1,4 +1,4 @@
-% Created 2024-07-04 Thu 18:57
+% Created 2024-07-06 Sat 20:51
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,table,dvipsnames,compress]{beamer}
 \usepackage[utf8]{inputenc}
@@ -16,9 +16,10 @@
 \useinnertheme{rounded}
 \useoutertheme[subsection=false]{miniframes}
 \date{}
-\title{Risk maps for carbon credit certification}
-\title[riskmaps]{Risk maps for carbon credit certification}
+\title{Jurisdictional risk maps for allocating deforestation}
+\title[riskmaps]{Jurisdictional risk maps for allocating deforestation}
 \definecolor{darkgreen}{RGB}{34,139,34} % vert moyen
+\usepackage{float}
 \usepackage{lmodern}
 \usepackage{pgf}
 \usepackage{color}
@@ -86,13 +87,19 @@ urlcolor=Maroon}
 
 \hypersetup{
  pdfauthor={Ghislain Vieilledent},
- pdftitle={Risk maps for carbon credit certification},
+ pdftitle={Jurisdictional risk maps for allocating deforestation},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={Emacs 29.3 (Org mode 9.6.15)}, 
  pdflang={English}}
 \begin{document}
 
+% po4a: environment frame
+% po4a: environment column
+% po4a: environment columns
+% po4a: environment block {_}
+% po4a: command -\textcolor {}{#1}
+% po4a: separator \title []{#1}
 
 % {
 %   % Use background image
@@ -160,12 +167,12 @@ urlcolor=Maroon}
 \placelogofalse
 
 \section{Introduction}
-\label{sec:orgf39e6bc}
+\label{sec:org62b9fb3}
 
 \subsection{Improving certification methodologies}
-\label{sec:org9dddddb}
+\label{sec:orgabe5ab7}
 
-\begin{frame}[label={sec:orge296f3b}]{Several criticisms}
+\begin{frame}[label={sec:org23f7ea1}]{Several criticisms to project-based approach}
 Several criticisms were addressed to previous REDD+ methodologies for carbon credit certification accusing them to oversell credits.
 
 \begin{itemize}
@@ -177,7 +184,7 @@ Several criticisms were addressed to previous REDD+ methodologies for carbon cre
 Frances Seymour (WRI): \href{https://www.wri.org/insights/insider-4-reasons-why-jurisdictional-approach-redd-crediting-superior-project-based}{4 Reasons Why a Jurisdictional Approach for REDD+ Crediting Is Superior to a Project-Based Approach}.
 \end{frame}
 
-\begin{frame}[label={sec:org3f9ed0a}]{New jurisdictional approach}
+\begin{frame}[label={sec:org792918b}]{New jurisdictional approach}
 \begin{block}{Deforestation intensity}
 \begin{itemize}
 \item Baseline activity data or Forest Reference Emission Level at the jurisdictional level
@@ -196,9 +203,9 @@ Frances Seymour (WRI): \href{https://www.wri.org/insights/insider-4-reasons-why-
 \end{frame}
 
 \subsection{Allocating deforestation to projects}
-\label{sec:org8963e8b}
+\label{sec:org3bc11bd}
 
-\begin{frame}[label={sec:org4efbce3}]{Risk map at the jurisdictional level}
+\begin{frame}[label={sec:org9e6b533}]{Risk map at the jurisdictional level}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
 \begin{block}{Objectives}
@@ -221,7 +228,7 @@ Frances Seymour (WRI): \href{https://www.wri.org/insights/insider-4-reasons-why-
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgbdbe4cc}]{Allocating deforestation to projects}
+\begin{frame}[label={sec:org7629f10}]{Allocating deforestation to projects}
 \begin{itemize}
 \item Jurisdictional risk map: a map with class of deforestation risk.
 \item Obtaining a deforestation density map:\newline Class of defor. risk [1, 2, \ldots{}, \(I\)] \(\rightarrow\) Defor. density (ha/yr/pixel).
@@ -236,12 +243,12 @@ Frances Seymour (WRI): \href{https://www.wri.org/insights/insider-4-reasons-why-
 \end{frame}
 
 \section{Verra methodology for risk mapping}
-\label{sec:org4364be7}
+\label{sec:orgb558d7e}
 
 \subsection{VT0007 tool}
-\label{sec:org5f6c214}
+\label{sec:orgdb1d27f}
 
-\begin{frame}[label={sec:orgd71804e}]{VT0007 tool}
+\begin{frame}[label={sec:orgfbfcecf}]{VT0007 tool}
 \begin{itemize}
 \item Developed by Clark University (J. R. Eastman and R. G. Pontius Jr.) for Verra.
 \item \textbf{Aim}: Obtaining the best risk map possible at the jurisdictional level.
@@ -257,7 +264,7 @@ Frances Seymour (WRI): \href{https://www.wri.org/insights/insider-4-reasons-why-
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:org995ff90}]{Modelling periods}
+\begin{frame}[label={sec:org224354f}]{Modelling periods}
 \begin{center}
 \includegraphics[width=9cm]{figs/get_started/periods.png}
 \end{center}
@@ -271,9 +278,9 @@ Frances Seymour (WRI): \href{https://www.wri.org/insights/insider-4-reasons-why-
 \end{frame}
 
 \subsection{Benchmark model}
-\label{sec:orgafe633d}
+\label{sec:orga2b3651}
 
-\begin{frame}[label={sec:orgda7bb02}]{Benchmark model}
+\begin{frame}[label={sec:org85fc087}]{Benchmark model}
 \begin{itemize}
 \item Benchmark model or reference model.
 \item A reasonably good deforestation model (better than a null model).
@@ -288,7 +295,7 @@ Frances Seymour (WRI): \href{https://www.wri.org/insights/insider-4-reasons-why-
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:orgb0fbcc4}]{Distance threshold}
+\begin{frame}[label={sec:orgb63524a}]{Distance threshold}
 \begin{itemize}
 \item Identify the distance to forest edge below which \textbf{99.5\%} of the deforestation occur.
 \item Use this distance to define the first class of risk (class 1).
@@ -299,7 +306,7 @@ Frances Seymour (WRI): \href{https://www.wri.org/insights/insider-4-reasons-why-
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgc111a1b}]{From distance to risk class}
+\begin{frame}[label={sec:org3cf8455}]{From distance to risk class}
 \begin{itemize}
 \item Distances below the threshold are transformed into classes of deforestation risk.
 \item A geometric series is used for that, ensuring that classes have a wider range for bigger distances.
@@ -311,7 +318,7 @@ Frances Seymour (WRI): \href{https://www.wri.org/insights/insider-4-reasons-why-
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org7753b21}]{Classes from subjurisdictions}
+\begin{frame}[label={sec:org4b8af87}]{Classes from subjurisdictions}
 \begin{itemize}
 \item Each subjurisdiction get a number from 1 to (potentially) 999.
 \item We combine classes derived from distance with subjurisdictions in the following way: \(\textbf{DD}\text{SSS}\), with \textbf{DD} the distance class and SSS the subjurisdiction number.
@@ -320,7 +327,7 @@ Frances Seymour (WRI): \href{https://www.wri.org/insights/insider-4-reasons-why-
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgb6fa767}]{Classes from subjurisdictions}
+\begin{frame}[label={sec:org70d692a}]{Classes from subjurisdictions}
 \begin{itemize}
 \item Following these steps, we obtain a map at the jurisdictional level where each forest pixel belongs to a given class of deforestation risk.
 \item Area in dark green: classes \(\mathbf{1}\text{SSS}\), beyond the deforestation threshold.
@@ -332,7 +339,7 @@ Frances Seymour (WRI): \href{https://www.wri.org/insights/insider-4-reasons-why-
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org7a2c9a0}]{Deforestation density}
+\begin{frame}[label={sec:orgcbb7733}]{Deforestation density}
 \begin{itemize}
 \item Each class \(i\) has an associated \textbf{deforestation probability}: \(\theta_{m,i} = d_{i} / n_{i}\) (unitless), with \(d_{i}\) the number of deforested pixels during the period, and \(n_{i}\) the number of forest pixels at the beginning of the period.
 \item \textbf{Quantity adjustment \(\rho\)}: \(\theta_{a,i} = \rho \theta_{m,i}\), so that total predicted deforestation = observed (or expected) deforestation. For the benchmark model for the calibration and historical periods, \(\rho=1\).
@@ -341,9 +348,9 @@ Frances Seymour (WRI): \href{https://www.wri.org/insights/insider-4-reasons-why-
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org4faf57a}]{Deforestation density}
+\begin{frame}[label={sec:orgf2b4ad4}]{Deforestation density}
 \begin{table}[htbp]
-\caption{\label{tab:org9b4cc66}Deforestation rates for each class of deforestation risk (numbers truncated to three decimal digits).}
+\caption{\label{tab:org09a753e}Deforestation rates for each class of deforestation risk (numbers truncated to three decimal digits).}
 \small
 \begin{tabular}{rrrrrrrr}
 \toprule
@@ -361,7 +368,7 @@ cat & \(n_i\) & \(d_i\) & \(\theta_{m,i}\) & \(\theta_{a,i}\) & \(T\) & \(A\) & 
 \textbf{Deforestation density (in ha/yr per pixel)} computed as \(\delta_{i} = \theta_{a,i} \times A / T\)
 \end{frame}
 
-\begin{frame}[label={sec:orgd2ac877}]{Deforestation density}
+\begin{frame}[label={sec:org8465960}]{Deforestation density}
 Deforestation density can be used to allocate deforestation to projects within a jurisdiction.
 
 \begin{figure}[htbp]
@@ -372,9 +379,9 @@ Deforestation density can be used to allocate deforestation to projects within a
 \end{frame}
 
 \subsection{Alternative models and validation}
-\label{sec:org8c758b3}
+\label{sec:org8cdbf76}
 
-\begin{frame}[label={sec:org386aa07}]{Alternative models}
+\begin{frame}[label={sec:org84a06d6}]{Alternative models}
 \begin{itemize}
 \item Alternative maps from alternative models must be compared with the benchmark model.
 \item The alternative model can be of different forms: geoprocessing model (moving window), statistical model (iCAR, GLM, RF).
@@ -382,7 +389,7 @@ Deforestation density can be used to allocate deforestation to projects within a
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org63b692c}]{Alternative models}
+\begin{frame}[label={sec:org2f962a4}]{Alternative models}
 \begin{itemize}
 \item A risk map with deforestation densities derived from the alternative model must be provided.
 \end{itemize}
@@ -394,7 +401,7 @@ Deforestation density can be used to allocate deforestation to projects within a
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:org6bc41e5}]{Validation procedure}
+\begin{frame}[label={sec:orgaf08b6a}]{Validation procedure}
 \begin{itemize}
 \item Comparing predicted vs. observed deforestation (in ha) in a coarse grid.
 \item For a given period of time.
@@ -407,7 +414,7 @@ Deforestation density can be used to allocate deforestation to projects within a
 \end{figure}
 \end{frame}
 
-\begin{frame}[label={sec:org9d792a4}]{Validation procedure}
+\begin{frame}[label={sec:org1e5fa33}]{Validation procedure}
 \begin{itemize}
 \item Comparing predicted vs. observed deforestation.
 \item Performance indices: \(R^2\), and median of absolute error (MedAE).
@@ -418,14 +425,14 @@ Deforestation density can be used to allocate deforestation to projects within a
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org91fade6}]{Validation procedure}
+\begin{frame}[label={sec:org0e055a9}]{Validation procedure}
 \begin{itemize}
 \item Performance indices are computed for each model.
 \item The model with the higher \(R^2\) and the lower MedAE is selected.
 \end{itemize}
 
 \begin{table}[htbp]
-\caption{\label{tab:org5ccf43b}Performance indices.}
+\caption{\label{tab:orga96bff6}Performance indices.}
 \small
 \begin{tabular}{rllrrrr}
 \toprule
@@ -442,10 +449,10 @@ ncell & period & model & MedAE & R2 & RMSE & wRMSE\\[0pt]
 \end{table}
 \end{frame}
 
-\begin{frame}[label={sec:org535fc57}]{Validation procedure}
+\begin{frame}[label={sec:orgfc9200d}]{Validation procedure}
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/periods.png}
-\label{org4853a11}
+\label{org9c58444}
 \end{center}
 
 \begin{itemize}
@@ -457,12 +464,12 @@ ncell & period & model & MedAE & R2 & RMSE & wRMSE\\[0pt]
 \end{frame}
 
 \section{Software for deforestation risk mapping}
-\label{sec:org618d252}
+\label{sec:org9fa4114}
 
 \subsection{Verra/Clark Labs software}
-\label{sec:orge9dd6f8}
+\label{sec:orge59843f}
 
-\begin{frame}[label={sec:orgb166138}]{Verra/Clark Labs software}
+\begin{frame}[label={sec:orgd16808a}]{Verra/Clark Labs software}
 \begin{center}
 \includegraphics[width=9cm]{figs/verra_tool.png}
 \end{center}
@@ -471,7 +478,7 @@ ncell & period & model & MedAE & R2 & RMSE & wRMSE\\[0pt]
 \centering QGIS plugin: \url{https://github.com/ClarkCGA/UDef-ARP-Plugin}
 \end{frame}
 
-\begin{frame}[label={sec:org9bf3947}]{Verra/Clark Labs software}
+\begin{frame}[label={sec:org4e71f43}]{Verra/Clark Labs software}
 \begin{center}
 \includegraphics[width=6cm]{figs/verra_tool.png}
 \end{center}
@@ -486,58 +493,110 @@ ncell & period & model & MedAE & R2 & RMSE & wRMSE\\[0pt]
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org6e5dc64}]{Limitations}
+\begin{frame}[label={sec:orgab23372}]{Limitations}
 \begin{itemize}
 \item No tool to help prepare the data.
-\item No tool to help develop the alternative models.
+\item No tool to help develop the \textbf{alternative models}.
 \item Windows only (at the moment).
-\item Require a computer with high RAM for large jurisdiction: all rasters are stored in RAM during processing. Therefore, large jurisdictions will require substantial RAM allocations (e.g., 64Gb).
-\item Use of Float data for risk maps with deforestation density (ha/pixel/yr): large space on disk.
-\item Documentation in English only, no translations available.
+\item Require a computer with high RAM for large jurisdiction: all rasters are stored in RAM during processing. Therefore, large jurisdictions will \textbf{require substantial RAM allocations} (e.g., 64Gb).
+\item Use of Float data for risk maps with deforestation density (ha/pixel/yr): \textbf{large space on disk}.
+\item Documentation in English only, \textbf{no translations available}.
 \item Recent tool, some feedbacks from users (e.g. Fronterra): \href{https://www.linkedin.com/posts/fron-terra\_forest-carbon-climatechange-activity-7179166090042732544-YnAK?utm\_source=share\&utm\_medium=member\_desktop}{Post 1}, \href{https://www.linkedin.com/posts/fron-terra\_forest-carbon-climatechange-activity-7179721587267371008-PRXr?utm\_source=share\&utm\_medium=member\_desktop}{Post 2}, \href{https://www.linkedin.com/posts/fron-terra\_carbon-climatechange-verra-activity-7180971577746862080-rolc?utm\_source=share\&utm\_medium=member\_desktop}{Post 3}.
 \end{itemize}
 \end{frame}
 
 \subsection{Existing software for alternative models}
-\label{sec:org2ab8053}
+\label{sec:orgda91c23}
 
-\begin{frame}[label={sec:orgb19ceb0}]{Existing software for alternative models}
+\begin{frame}[label={sec:org3572bfb}]{Existing software for alternative models}
 \begin{itemize}
-\item Dinamica EGO:
-\item Land Change Modeler (Clark Labs):
-\item CLUE-S:
-\item Note, in the documentation for UDef-ARP: Clark Labs plans to offer a utility to facilitate the creation of vulnerability maps for
-alternative models in the near future.
+\item \href{https://csr.ufmg.br/dinamica/}{Dinamica EGO}: Universidade Federal de Minas Gerais, Brazil.
+\item \href{https://clarklabs.org/terrset/land-change-modeler/}{Land Change Modeler}: Clark Labs, Clark University, Worcester, USA.
+\item \href{https://www.environmentalgeography.nl/site/data-models/data/clue-model/}{CLUE}: Institute for Environmental Studies, Vrije Universiteit, Amsterdam, Netherlands .
 \end{itemize}
+
+\vspace{0.25cm}
+
+\textbf{Great programs} with many applications. Many scientific studies, published in a large number of scientific articles, have used these programs.
 \end{frame}
 
 \subsection{Limitations}
-\label{sec:org54aac28}
+\label{sec:org4838a92}
 
-\begin{frame}[label={sec:org563810b},fragile]{Limitations}
- \begin{itemize}
-\item All are not open source (transparency).
-\item Difficulty to reproduce the results (transparency, reproducibility).
-\item Large rasters on large jurisdiction ?
-\item No scripting: not well adapted to repeat computation.
+\begin{frame}[label={sec:org9bf2005}]{Limitations}
+\begin{itemize}
+\item Not all are open source (e.g. Dinamica EGO and LCM): \textbf{transparency}.
+\item Not all are free (e.g. LCM): but discount for student and developing countries.
+\item Not all allow scripting (e.g. LCM, CLUE): \textbf{reproducibility}.
+\item Might not work with high resolution (<= 30 m) rasters on large jurisdictions (country scale).
+\item Limited number of statistical models for modelling land use change: limited accuracy and over-fitting.
 \end{itemize}
 
-\textbf{Vieilledent G.} 2021. \texttt{forestatrisk}: a Python package for modelling and forecasting deforestation in the tropics. \emph{Journal of Open Source Software}. \textbf{6} (59): 2975. doi: \href{https://doi.org/10.21105/joss.02975}{10.21105/joss.02975}.
+\vspace{0.25cm}
+
+See \textbf{Vieilledent et al.} 2021, \emph{JOSS}, doi: \href{https://doi.org/10.21105/joss.02975}{10.21105/joss.02975} for more details.
+\end{frame}
+
+\begin{frame}[label={sec:org341817c}]{Limitations}
+\begin{itemize}
+\item Verra's methodology includes \textbf{several steps} (calibration, validation, forecast), which must be \textbf{repeated} (model, period).
+\item It must be possible to follow Verra's methodology with one of these programs (given some requirements, such as high RAM computer).
+\item But it would require a lot of work for the user to adapt the use of the program to Verra's methodology (e.g. validation step with coarse grid).
+
+\item \textbf{Note}: in the documentation for UDef-ARP, Clark Labs indicates plans to offer a utility to facilitate the creation of vulnerability maps for alternative models in the near future.
+\end{itemize}
 \end{frame}
 
 \section{Conclusion}
-\label{sec:org5dd7c99}
+\label{sec:org943fe8a}
 
 \subsection{A not so simple methodology}
-\label{sec:org2508ac5}
+\label{sec:orgfd50e8c}
 
-\begin{frame}[label={sec:org86df0e5}]{A not so simple methodology}
+\begin{frame}[label={sec:org4dba697}]{Summary}
+\begin{itemize}
+\item We need a \textbf{map of the deforestation risk} at the \textbf{jurisdictional level}.
+\item Deforestation risk: \textbf{deforestation density} in ha/pixel/yr.
+\item This map should be better than the map derived from the benchmark model.
+\item The best map will be used to \textbf{allocate deforestation} to projects within the jurisdiction.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:orgfa6a091}]{A not so simple methodology}
+\begin{itemize}
+\item Risk map must be obtained following Verra/Clark Labs methodology.
+\item The methodology was developed with simplicity in mind.
+\item But modelling deforestation is inherently complicated and model comparison and validation require a minimal number of steps.
+\item This makes hard to develop an alternative model better than the benchmark model using existing tools.
+\end{itemize}
 \end{frame}
 
 \subsection{Need for an integrative tool: deforisk QGIS plugin}
-\label{sec:org099a3ee}
+\label{sec:org7378434}
 
-\begin{frame}[label={sec:orgc26d126}]{Need for an integrative tool: the deforisk QGIS plugin}
+\begin{frame}[label={sec:org7881967},fragile]{Need for an integrative tool: the deforisk QGIS plugin}
+ \begin{itemize}
+\item A utility to facilitate the creation of risk maps for alternative models is needed.
+\item Specificities:
+\begin{itemize}
+\item \textbf{Integrative}: all the steps of Verra's methodology (benchmark model, alternative models, validation, allocation).
+\item \textbf{Accuracy}: high accuracy for forecasting deforestation.
+\item \textbf{Easy to use}: simple interface with documentation.
+\item \textbf{Transparent and reproducible}: using open-source software (important for carbon/biodiversity credit certification).
+\end{itemize}
+\end{itemize}
+
+\begin{columns}
+\begin{column}{0.8\columnwidth}
+\begin{itemize}
+\item Cirad and FAO have worked at developing the \texttt{deforisk} QGIS plugin to meet these objectives: \url{https://ecology.ghislainv.fr/deforisk-qgis-plugin}
+\end{itemize}
+\end{column}
+
+\begin{column}{0.2\columnwidth}
+\includegraphics[width=1.5cm]{figs/logo-deforisk.png}
+\end{column}
+\end{columns}
 \end{frame}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
