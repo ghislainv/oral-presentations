@@ -43,11 +43,27 @@
 
 *** Aims
 
+- Provide *a tool* to create and compare *deforestation risk maps*.
+- At the *jurisdictional* level.
+- Following *Verra's methodology* for certification.
+- *Allocating deforestation* to projects within the jurisdiction.
+
 *** Specificities
+
+- Open-source and Python based: transparency, reproducibility.
+- Computationally efficient:
+  - Processing raster by blocks.
+  - Running tasks in parallel.
+- OS independent: Windows, Linux, MacOS.
+- Should run on any computer with average performance.
+- Performant alternative statistical models (iCAR).
+- Fully documented and translated (English, Spanish, French).
+- Help with data preparation.
+- Should be (relatively) easy to use.
 
 *** Python based
 
-*Python based.* The ~deforisk~ plugin relies on four Python packages developed specifically for modelling deforestation: ~geefcc~, ~pywdpa~, ~forestatrisk~, and ~riskmapjnr~.
+The ~deforisk~ plugin relies on four Python packages developed specifically for modelling deforestation:
 
 - ~geefcc~: make forest cover change maps from Google Earth Engine (GEE).
 - ~pywdpa~: downloading protected areas from the World Database on Protected Areas (WDPA).
@@ -59,33 +75,108 @@
 
 *** Processing raster by blocks
 
-- *Processing raster by blocks.* Raster files of forest cover change and explanatory variables might occupy a space of several gigabytes on disk. Processing such large rasters in memory can be prohibitively intensive on computers with limited RAM. Functions used in the ~deforisk~ plugin process large rasters by blocks of pixels representing subsets of the raster data. This makes computation efficient, with low memory usage. Reading and writing subsets of raster data is done by using functions from GDAL, a dependency of the plugin. Numerical computations on arrays are performed with the NumPy Python package, whose core is mostly made of optimized and compiled C code that runs quickly.
+- Raster files of forest cover change and explanatory variables might occupy a space of several gigabytes on disk.
+- Processing such large rasters in memory can be prohibitively intensive on computers with limited RAM.
+- Functions used in the ~deforisk~ plugin process large rasters by blocks of pixels representing subsets of the raster data.
+- This makes computation efficient, with low memory usage.
+
+#+attr_latex: :width 6cm
+[[file:figs/raster_block.png]]
 
 *** Running tasks in parallel
 
-- *Running tasks in parallel.* State-of-the-art approach to select the best deforestation risk map and forecast deforestation implies comparing various models, fit the models using forest cover change over different time periods and predict the deforestation risk at several dates. This implies repeating a high number of tasks. To save computation time, the ~deforisk~ plugin use the QGIS task manager which allows running several analysis in parallel.
+- State-of-the-art approach to select the best risk map implies repeating tasks (model, periods).
+- To save computation time, the ~deforisk~ plugin use the QGIS task manager.
+- Allows running several analysis in parallel.
+
+\vspace{0.25cm}
+  
+#+attr_latex: :width 9cm
+[[file:figs/parallel_tasks.png]]
 
 ** Website and documentation
 
 *** Website and documentation
 
+The website includes all the documentation to use the plugin:
+
+- [[https://deforisk-qgis-plugin/installation.html][Installation page]]: How to install the plugin?
+- [[https://deforisk-qgis-plugin/plugin_api.html][Plugin API page]]: What is the meaning of each parameter?
+- [[https://deforisk-qgis-plugin/get_started.html][Get started page]]. How to start using the plugin on a small area of interest?
+- [[https://deforisk-qgis-plugin/articles.html][Articles' page]]. How can I use the plugin for specific cases (subnational jurisdictions, user's data)?
+- [[https://deforisk-qgis-plugin.org/articles/references.html][References' page]]: A page with reference documents including presentations. 
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+\flushright https://deforisk-qgis-plugin.org
+**** Logo                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 2cm
+[[file:figs/logo-deforisk.png]]
+
 ** Installation
 
 *** Installation
 
+Reduced number of steps for installing the plugin:
+
+- Install QGIS and GDAL on you system (using ~OSGeo4W~ on Windows).
+- Install the ~forestatrisk~ and ~riskmapjnr~ Python packages using pip.
+- [[https://github.com/ghislainv/deforisk-qgis-plugin/archive/refs/heads/main.zip][Download]] and install the ~deforisk~ plugin from QGIS.
+- (Unix-like systems only: install OSM tools).
+
+#+attr_latex: :width 0.9\textwidth
+[[file:figs/installation.png]]
+
 * Data preparation
+
+** Get variables
+
+*** Get variables
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+- Functions to help prepare the data for modelling deforestation.
+- Two different sources for *forest cover change* (GFC or TMF).
+- Spatial explanatory variables describing *forest accessibility* and
+  *land tenure* (altitude, slope, distance to roads, protected areas, etc.).
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+attr_latex: :width 5cm
+[[file:figs/plugin_api/interface_variables.png]]
 
 ** Forest cover change data
 
 *** GFC dataset
 
+- Hansen et al. 2013.
+- Global dataset encompassing all forest types.
+- Tree cover and annual tree cover loss.
+- 30m resolution, from 2000 on.
+- Data: https://glad.earthengine.app/view/global-forest-change
+
+#+attr_latex: :width \textwidth
+[[file:figs/gfc.png]]
+
 *** TMF dataset
     
-- Full Landsat archive (1982--2022), 30m pixel, time-series analysis.
-- Classification tree based on expert knowledge.
+- Vancutsem et al. 2021.
+  Tropical Moist Forests (evergreen forest, no dry deciduous forests).
+- 30m resolution, from 1990 on.
 - Tropical deforestation was underestimated (-33% in 2000--2012, Hansen
-  et al. 2013).
-- Maps and data: [[https://forobs.jrc.ec.europa.eu/TMF/]].
+  et al. 2013), especially in Africa.
+- Data: [[https://forobs.jrc.ec.europa.eu/TMF/]].
 
 \vspace{0.25cm}
 
@@ -104,7 +195,7 @@
 
 *** Spatial variables
   
-- Height explanatory variables
+The plugin helps computing height explanatory variables.
 
 #+attr_latex: :width 0.75\textwidth
 [[file:figs/variables-tab.png]]
@@ -127,24 +218,11 @@
 
 *** Protected areas
     
-- PA status: "Designated", "Inscribed", "Established", or "Proposed"
-  before 1\textsuperscript{st} January 2010
-- 85,000 protected areas from WDPA
+- PA status: "Designated", "Inscribed", "Established", or "Proposed".
+- 85,000 protected areas from WDPA.
 
 #+attr_latex: :width 0.7\textwidth
 [[file:figs/sm/pa.png]]
-
-** Sampling
-
-*** Sampling
-
-- Stratified sampling between deforested/non-deforested pixels in
-  2010--2020
-- Total number of points proportional to the forest cover in 2010 (from
-  20,000 to 100,000 points per study area)
-
-#+attr_latex: :width 0.7\textwidth
-[[file:figs/sm/sample.png]]
 
 * Models and validation
 
@@ -152,10 +230,57 @@
 
 *** Benchmark model
 
+**** Text                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+- Benchmark model or reference model.
+- A reasonably good deforestation model (better than a null model).
+- Assuming a /decrease of deforestation with distance to forest edge/ (commonly admitted).
+- And a /different model between subjurisdictions/ (regional variability).
+- See presentation *Cirad and FAO*. 2024. [[https://deforisk-qgis-plugin.org/_static/references/Cirad2024-riskmap-verra.pdf][Jurisdictional risk maps for allocating deforestation]]. 
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+attr_latex: :width 5cm
+[[file:figs/plugin_api/interface_benchmark.png]]  
+
 ** Forestatrisk models
 
 *** Forestatrisk models
 
+**** Text                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+    
+- Three statistical models: iCAR, GLM, RF.
+- iCAR: Logistic regression with spatial random effects (iCAR process).
+- GLM: Generalized Linear Model, simple logistic regression (no random effects).
+- Random Forest model: random regression trees.
+- Statistical models based on a sample of the observations.
+
+**** Figure                                                        :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+#+attr_latex: :width 5cm
+[[file:figs/plugin_api/interface_far_models.png]]  
+
+*** Sampling for FAR models
+
+- We consider the forest cover change between $t$ and $t+1$.
+- Stratified sampling between deforested/non-deforested pixels.
+- Total number of points proportional to the forest cover (from
+  20,000 to 100,000 points per study area).
+
+#+attr_latex: :width 0.7\textwidth
+[[file:figs/sm/sample.png]]
 
 *** iCAR model
 
@@ -164,7 +289,7 @@
 :BEAMER_col: 0.5
 :END:
     
-A logistic regression model with iCAR process
+A logistic regression model with iCAR process:
 
 \begin{equation*}
 \begin{split}
@@ -174,8 +299,7 @@ A logistic regression model with iCAR process
 \end{split}
 \end{equation*}
 
-\footnotesize (NB: We can compare this model with a simple GLM and a Random
-Forest model using a cross-validation procedure)
+*Random effects $\rho_{j(i)}$ allows accounting for residual spatial variation not taken into account by model variables $X_i$.*
 
 **** Figure                                                        :BMCOL:
 :PROPERTIES:
@@ -185,28 +309,46 @@ Forest model using a cross-validation procedure)
 #+attr_latex: :width \textwidth
 [[file:figs/sm/grid.png]]
 
-*Square grid of 10km cells over DRC*
+\centering *Square grid of 10km cells over DRC*
 
 *** Spatial random effects
 
 #+attr_latex: :width 0.6\textwidth
 [[file:figs/sm/rho.png]]
 
-*Interpolation of spatial random effects at 1km in DRC*
+\centering *Interpolation of spatial random effects at 1km in DRC*
 
 *** Spatial probability of deforestation
     
-We use the fitted model to compute the spatial probability of
+- We use the fitted model to compute the spatial probability of
 deforestation.
+- Probabilities in [0, 1] are transformed into classes in [1, 65535].
 
 #+attr_latex: :width 0.5\textwidth
 [[file:figs/sm/prob.png]]
 
-*Relative spatial probability of deforestation in DRC for the year 2020*
+\centering *Relative spatial probability of deforestation in DRC*
 
 *** GLM model
 
+A simple logistic regression model without random effects:
+
+\begin{equation*}
+\begin{split}
+  y_i \sim \mathcal{B}ernoulli(\theta_i)\\
+  \text{logit}(\theta_i) = \alpha + X_i \beta
+\end{split}
+\end{equation*}
+
+Easy to compare with iCAR to see the impact of spatial random effects.
+
 *** Random Forest model
+
+- Random Forest is an ensemble machine learning algorithm.
+- Combines multiple decision trees to create a more robust and accurate predictive model.
+
+#+attr_latex: :width 0.7\textwidth
+[[file:figs/random_forest.png]]
 
 *** ForestAtRisk in the tropics
   

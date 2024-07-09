@@ -1,4 +1,4 @@
-% Created 2024-07-08 Mon 18:42
+% Created 2024-07-09 Tue 15:54
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt,table,dvipsnames,compress]{beamer}
 \usepackage[utf8]{inputenc}
@@ -171,19 +171,39 @@ urlcolor=Maroon}
 \placelogofalse
 
 \section{The deforisk QGIS plugin}
-\label{sec:orga583b1a}
+\label{sec:org9850c0d}
 
 \subsection{Aim and specificities}
-\label{sec:orgc8a08d6}
+\label{sec:orgf11df72}
 
-\begin{frame}[label={sec:org46f9bdf}]{Aims}
+\begin{frame}[label={sec:org5ba602a}]{Aims}
+\begin{itemize}
+\item Provide \textbf{a tool} to create and compare \textbf{deforestation risk maps}.
+\item At the \textbf{jurisdictional} level.
+\item Following \textbf{Verra's methodology} for certification.
+\item \textbf{Allocating deforestation} to projects within the jurisdiction.
+\end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org9745e5e}]{Specificities}
+\begin{frame}[label={sec:orgf802a0a}]{Specificities}
+\begin{itemize}
+\item Open-source and Python based: transparency, reproducibility.
+\item Computationally efficient:
+\begin{itemize}
+\item Processing raster by blocks.
+\item Running tasks in parallel.
+\end{itemize}
+\item OS independent: Windows, Linux, MacOS.
+\item Should run on any computer with average performance.
+\item Performant alternative statistical models (iCAR).
+\item Fully documented and translated (English, Spanish, French).
+\item Help with data preparation.
+\item Should be (relatively) easy to use.
+\end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org08148c9},fragile]{Python based}
- \textbf{Python based.} The \texttt{deforisk} plugin relies on four Python packages developed specifically for modelling deforestation: \texttt{geefcc}, \texttt{pywdpa}, \texttt{forestatrisk}, and \texttt{riskmapjnr}.
+\begin{frame}[label={sec:orgc281ac2},fragile]{Python based}
+ The \texttt{deforisk} plugin relies on four Python packages developed specifically for modelling deforestation:
 
 \begin{itemize}
 \item \texttt{geefcc}: make forest cover change maps from Google Earth Engine (GEE).
@@ -197,46 +217,127 @@ urlcolor=Maroon}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org084c211},fragile]{Processing raster by blocks}
+\begin{frame}[label={sec:orgf1660cc},fragile]{Processing raster by blocks}
  \begin{itemize}
-\item \textbf{Processing raster by blocks.} Raster files of forest cover change and explanatory variables might occupy a space of several gigabytes on disk. Processing such large rasters in memory can be prohibitively intensive on computers with limited RAM. Functions used in the \texttt{deforisk} plugin process large rasters by blocks of pixels representing subsets of the raster data. This makes computation efficient, with low memory usage. Reading and writing subsets of raster data is done by using functions from GDAL, a dependency of the plugin. Numerical computations on arrays are performed with the NumPy Python package, whose core is mostly made of optimized and compiled C code that runs quickly.
+\item Raster files of forest cover change and explanatory variables might occupy a space of several gigabytes on disk.
+\item Processing such large rasters in memory can be prohibitively intensive on computers with limited RAM.
+\item Functions used in the \texttt{deforisk} plugin process large rasters by blocks of pixels representing subsets of the raster data.
+\item This makes computation efficient, with low memory usage.
 \end{itemize}
+
+\begin{center}
+\includegraphics[width=6cm]{figs/raster_block.png}
+\end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgb49bad9},fragile]{Running tasks in parallel}
+\begin{frame}[label={sec:org6dbff18},fragile]{Running tasks in parallel}
  \begin{itemize}
-\item \textbf{Running tasks in parallel.} State-of-the-art approach to select the best deforestation risk map and forecast deforestation implies comparing various models, fit the models using forest cover change over different time periods and predict the deforestation risk at several dates. This implies repeating a high number of tasks. To save computation time, the \texttt{deforisk} plugin use the QGIS task manager which allows running several analysis in parallel.
+\item State-of-the-art approach to select the best risk map implies repeating tasks (model, periods).
+\item To save computation time, the \texttt{deforisk} plugin use the QGIS task manager.
+\item Allows running several analysis in parallel.
 \end{itemize}
+
+\vspace{0.25cm}
+
+\begin{center}
+\includegraphics[width=9cm]{figs/parallel_tasks.png}
+\end{center}
 \end{frame}
 
 \subsection{Website and documentation}
-\label{sec:org72981d7}
+\label{sec:org7f2ce28}
 
-\begin{frame}[label={sec:org91a1837}]{Website and documentation}
+\begin{frame}[label={sec:org6c026ea}]{Website and documentation}
+The website includes all the documentation to use the plugin:
+
+\begin{itemize}
+\item \href{https://deforisk-qgis-plugin/installation.html}{Installation page}: How to install the plugin?
+\item \href{https://deforisk-qgis-plugin/plugin\_api.html}{Plugin API page}: What is the meaning of each parameter?
+\item \href{https://deforisk-qgis-plugin/get\_started.html}{Get started page}. How to start using the plugin on a small area of interest?
+\item \href{https://deforisk-qgis-plugin/articles.html}{Articles' page}. How can I use the plugin for specific cases (subnational jurisdictions, user's data)?
+\item \href{https://deforisk-qgis-plugin.org/articles/references.html}{References' page}: A page with reference documents including presentations.
+\end{itemize}
+
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\flushright \url{https://deforisk-qgis-plugin.org}
+\end{column}
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[width=2cm]{figs/logo-deforisk.png}
+\end{center}
+\end{column}
+\end{columns}
 \end{frame}
 
 \subsection{Installation}
-\label{sec:org2ce624d}
+\label{sec:orgfff0012}
 
-\begin{frame}[label={sec:org695b58f}]{Installation}
+\begin{frame}[label={sec:org7337406},fragile]{Installation}
+ Reduced number of steps for installing the plugin:
+
+\begin{itemize}
+\item Install QGIS and GDAL on you system (using \texttt{OSGeo4W} on Windows).
+\item Install the \texttt{forestatrisk} and \texttt{riskmapjnr} Python packages using pip.
+\item \href{https://github.com/ghislainv/deforisk-qgis-plugin/archive/refs/heads/main.zip}{Download} and install the \texttt{deforisk} plugin from QGIS.
+\item (Unix-like systems only: install OSM tools).
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{figs/installation.png}
+\end{center}
 \end{frame}
 
 \section{Data preparation}
-\label{sec:orgd689b08}
+\label{sec:org075a2c7}
 
-\subsection{Forest cover change data}
-\label{sec:org0f3c058}
+\subsection{Get variables}
+\label{sec:org9703005}
 
-\begin{frame}[label={sec:orgb5717aa}]{GFC dataset}
+\begin{frame}[label={sec:orgb3013e4}]{Get variables}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{itemize}
+\item Functions to help prepare the data for modelling deforestation.
+\item Two different sources for \textbf{forest cover change} (GFC or TMF).
+\item Spatial explanatory variables describing \textbf{forest accessibility} and
+\textbf{land tenure} (altitude, slope, distance to roads, protected areas, etc.).
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[width=5cm]{figs/plugin_api/interface_variables.png}
+\end{center}
+\end{column}
+\end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:org5354625}]{TMF dataset}
+\subsection{Forest cover change data}
+\label{sec:orgcf5ecd8}
+
+\begin{frame}[label={sec:org67ec52b}]{GFC dataset}
 \begin{itemize}
-\item Full Landsat archive (1982--2022), 30m pixel, time-series analysis.
-\item Classification tree based on expert knowledge.
+\item Hansen et al. 2013.
+\item Global dataset encompassing all forest types.
+\item Tree cover and annual tree cover loss.
+\item 30m resolution, from 2000 on.
+\item Data: \url{https://glad.earthengine.app/view/global-forest-change}
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=\textwidth]{figs/gfc.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:org3cd736c}]{TMF dataset}
+\begin{itemize}
+\item Vancutsem et al. 2021.
+Tropical Moist Forests (evergreen forest, no dry deciduous forests).
+\item 30m resolution, from 1990 on.
 \item Tropical deforestation was underestimated (-33\% in 2000--2012, Hansen
-et al. 2013).
-\item Maps and data: \url{https://forobs.jrc.ec.europa.eu/TMF/}.
+et al. 2013), especially in Africa.
+\item Data: \url{https://forobs.jrc.ec.europa.eu/TMF/}.
 \end{itemize}
 
 \vspace{0.25cm}
@@ -246,7 +347,7 @@ et al. 2013).
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org9cc5c5f}]{TMF dataset}
+\begin{frame}[label={sec:orgae8b85b}]{TMF dataset}
 \begin{itemize}
 \item Precise enough to visually identify the causes of deforestation
 (logging, fires, agriculture)
@@ -258,19 +359,17 @@ et al. 2013).
 \end{frame}
 
 \subsection{Spatial explanatory variables}
-\label{sec:org227c2a6}
+\label{sec:org75f280d}
 
-\begin{frame}[label={sec:org453b1f7}]{Spatial variables}
-\begin{itemize}
-\item Height explanatory variables
-\end{itemize}
+\begin{frame}[label={sec:orgaac5087}]{Spatial variables}
+The plugin helps computing height explanatory variables.
 
 \begin{center}
 \includegraphics[width=0.75\textwidth]{figs/variables-tab.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org40757fa}]{Spatial variables}
+\begin{frame}[label={sec:orgfdeaa52}]{Spatial variables}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{figs/sm/var.png}
 \end{center}
@@ -278,7 +377,7 @@ et al. 2013).
 \centering \textbf{Spatial explanatory variables in DRC}
 \end{frame}
 
-\begin{frame}[label={sec:orge28d3b6}]{Roads}
+\begin{frame}[label={sec:orgbad9b56}]{Roads}
 \begin{itemize}
 \item OpenStreetMap (OSM)
 \item ``motorway'', ``trunk'', ``primary'', ``secondary'' and ``tertiary'' roads
@@ -290,11 +389,10 @@ et al. 2013).
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org9ce4fc8}]{Protected areas}
+\begin{frame}[label={sec:org11e2e7c}]{Protected areas}
 \begin{itemize}
-\item PA status: ``Designated'', ``Inscribed'', ``Established'', or ``Proposed''
-before 1\textsuperscript{st} January 2010
-\item 85,000 protected areas from WDPA
+\item PA status: ``Designated'', ``Inscribed'', ``Established'', or ``Proposed''.
+\item 85,000 protected areas from WDPA.
 \end{itemize}
 
 \begin{center}
@@ -302,15 +400,61 @@ before 1\textsuperscript{st} January 2010
 \end{center}
 \end{frame}
 
-\subsection{Sampling}
-\label{sec:org28b713c}
+\section{Models and validation}
+\label{sec:orgb92fcc6}
 
-\begin{frame}[label={sec:orgb2dd237}]{Sampling}
+\subsection{Benchmark model}
+\label{sec:org6ebc96a}
+
+\begin{frame}[label={sec:org2e32298}]{Benchmark model}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
 \begin{itemize}
-\item Stratified sampling between deforested/non-deforested pixels in
-2010--2020
-\item Total number of points proportional to the forest cover in 2010 (from
-20,000 to 100,000 points per study area)
+\item Benchmark model or reference model.
+\item A reasonably good deforestation model (better than a null model).
+\item Assuming a \emph{decrease of deforestation with distance to forest edge} (commonly admitted).
+\item And a \emph{different model between subjurisdictions} (regional variability).
+\item See presentation \textbf{Cirad and FAO}. 2024. \href{https://deforisk-qgis-plugin.org/\_static/references/Cirad2024-riskmap-verra.pdf}{Jurisdictional risk maps for allocating deforestation}.
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[width=5cm]{figs/plugin_api/interface_benchmark.png}
+\end{center}  
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Forestatrisk models}
+\label{sec:org63e7522}
+
+\begin{frame}[label={sec:orgefdba21}]{Forestatrisk models}
+\begin{columns}
+\begin{column}{0.5\columnwidth}
+\begin{itemize}
+\item Three statistical models: iCAR, GLM, RF.
+\item iCAR: Logistic regression with spatial random effects (iCAR process).
+\item GLM: Generalized Linear Model, simple logistic regression (no random effects).
+\item Random Forest model: random regression trees.
+\item Statistical models based on a sample of the observations.
+\end{itemize}
+\end{column}
+
+\begin{column}{0.5\columnwidth}
+\begin{center}
+\includegraphics[width=5cm]{figs/plugin_api/interface_far_models.png}
+\end{center}  
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:org073c55e}]{Sampling for FAR models}
+\begin{itemize}
+\item We consider the forest cover change between \(t\) and \(t+1\).
+\item Stratified sampling between deforested/non-deforested pixels.
+\item Total number of points proportional to the forest cover (from
+20,000 to 100,000 points per study area).
 \end{itemize}
 
 \begin{center}
@@ -318,26 +462,10 @@ before 1\textsuperscript{st} January 2010
 \end{center}
 \end{frame}
 
-\section{Models and validation}
-\label{sec:org35f1d54}
-
-\subsection{Benchmark model}
-\label{sec:org24b7bb0}
-
-\begin{frame}[label={sec:orgaf18810}]{Benchmark model}
-\end{frame}
-
-\subsection{Forestatrisk models}
-\label{sec:org21a965e}
-
-\begin{frame}[label={sec:orgfd062d7}]{Forestatrisk models}
-\end{frame}
-
-
-\begin{frame}[label={sec:orgd4bc244}]{iCAR model}
+\begin{frame}[label={sec:org165f56f}]{iCAR model}
 \begin{columns}
 \begin{column}{0.5\columnwidth}
-A logistic regression model with iCAR process
+A logistic regression model with iCAR process:
 
 \begin{equation*}
 \begin{split}
@@ -347,8 +475,7 @@ A logistic regression model with iCAR process
 \end{split}
 \end{equation*}
 
-\footnotesize (NB: We can compare this model with a simple GLM and a Random
-Forest model using a cross-validation procedure)
+\textbf{Random effects \(\rho_{j(i)}\) allows accounting for residual spatial variation not taken into account by model variables \(X_i\).}
 \end{column}
 
 \begin{column}{0.5\columnwidth}
@@ -356,37 +483,60 @@ Forest model using a cross-validation procedure)
 \includegraphics[width=\textwidth]{figs/sm/grid.png}
 \end{center}
 
-\textbf{Square grid of 10km cells over DRC}
+\centering \textbf{Square grid of 10km cells over DRC}
 \end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}[label={sec:orgbafa8c3}]{Spatial random effects}
+\begin{frame}[label={sec:org1ad1a41}]{Spatial random effects}
 \begin{center}
 \includegraphics[width=0.6\textwidth]{figs/sm/rho.png}
 \end{center}
 
-\textbf{Interpolation of spatial random effects at 1km in DRC}
+\centering \textbf{Interpolation of spatial random effects at 1km in DRC}
 \end{frame}
 
-\begin{frame}[label={sec:org6d7004f}]{Spatial probability of deforestation}
-We use the fitted model to compute the spatial probability of
+\begin{frame}[label={sec:orgfcc2a82}]{Spatial probability of deforestation}
+\begin{itemize}
+\item We use the fitted model to compute the spatial probability of
+\end{itemize}
 deforestation.
+\begin{itemize}
+\item Probabilities in [0, 1] are transformed into classes in [1, 65535].
+\end{itemize}
 
 \begin{center}
 \includegraphics[width=0.5\textwidth]{figs/sm/prob.png}
 \end{center}
 
-\textbf{Relative spatial probability of deforestation in DRC for the year 2020}
+\centering \textbf{Relative spatial probability of deforestation in DRC}
 \end{frame}
 
-\begin{frame}[label={sec:org31c88ab}]{GLM model}
+\begin{frame}[label={sec:org2ef0ac7}]{GLM model}
+A simple logistic regression model without random effects:
+
+\begin{equation*}
+\begin{split}
+  y_i \sim \mathcal{B}ernoulli(\theta_i)\\
+  \text{logit}(\theta_i) = \alpha + X_i \beta
+\end{split}
+\end{equation*}
+
+Easy to compare with iCAR to see the impact of spatial random effects.
 \end{frame}
 
-\begin{frame}[label={sec:orgff7a149}]{Random Forest model}
+\begin{frame}[label={sec:orgbf834e3}]{Random Forest model}
+\begin{itemize}
+\item Random Forest is an ensemble machine learning algorithm.
+\item Combines multiple decision trees to create a more robust and accurate predictive model.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{figs/random_forest.png}
+\end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org38f39a7}]{ForestAtRisk in the tropics}
+\begin{frame}[label={sec:org6854c2d}]{ForestAtRisk in the tropics}
 \begin{itemize}
 \item \textbf{i.} Consider tropical moist forest in \textbf{92} countries (119 study areas)
 \item \textbf{ii.} Estimate the current deforestation rate and uncertainty in each country
@@ -404,7 +554,7 @@ deforestation.
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:org6d0c9bb}]{ForestAtRisk in the tropics}
+\begin{frame}[label={sec:org2dafe56}]{ForestAtRisk in the tropics}
 \begin{center}
 \includegraphics[width=0.7\textwidth]{figs/article/prob.png}
 \end{center}
@@ -417,45 +567,45 @@ Article in review: \href{https://doi.org/10.1101/2022.03.22.485306}{10.1101/2022
 \end{frame}
 
 \subsection{Moving window models}
-\label{sec:org49fd4f6}
+\label{sec:org40ee9dc}
 
-\begin{frame}[label={sec:orge573e0a}]{Moving window models}
+\begin{frame}[label={sec:org25eb7c1}]{Moving window models}
 \end{frame}
 
 \section{Usage}
-\label{sec:org3ba92f7}
+\label{sec:org94ce2c4}
 
 \subsection{Allocating deforestation}
-\label{sec:org5e0ee9a}
+\label{sec:org159daca}
 
-\begin{frame}[label={sec:orged23e10}]{Allocating deforestation}
+\begin{frame}[label={sec:orgb0ea3a5}]{Allocating deforestation}
 \end{frame}
 
 \subsection{Subnational jurisdictions}
-\label{sec:org5d6c8ab}
+\label{sec:org7f33d2f}
 
-\begin{frame}[label={sec:org29bc259}]{Subnational jurisdictions}
+\begin{frame}[label={sec:orgd839180}]{Subnational jurisdictions}
 \end{frame}
 
 \subsection{User's data}
-\label{sec:org1d9f05d}
+\label{sec:org2337ee1}
 
-\begin{frame}[label={sec:org126a04c}]{User's data}
+\begin{frame}[label={sec:org00152ad}]{User's data}
 \end{frame}
 
 \section{Conclusion}
-\label{sec:org4aef317}
+\label{sec:orga9b4560}
 
 \subsection{Week agenda}
-\label{sec:orgec453e1}
+\label{sec:org822e37d}
 
-\begin{frame}[label={sec:org2baf735}]{Week agenda}
+\begin{frame}[label={sec:org4be7945}]{Week agenda}
 \end{frame}
 
 \subsection{Perspectives}
-\label{sec:org69dbd4f}
+\label{sec:org9e9a308}
 
-\begin{frame}[label={sec:org122d457}]{Perspectives}
+\begin{frame}[label={sec:org967046d}]{Perspectives}
 \begin{itemize}
 \item Increase computational speed (for predictions on large areas).
 \item Adding more alternative models (MLP).
@@ -477,7 +627,7 @@ Article in review: \href{https://doi.org/10.1101/2022.03.22.485306}{10.1101/2022
     \begin{block}{}
       \begin{center}
         \ldots~Thank you for attention~\ldots \\
-        \url{https://ecology.ghislainv.fr/deforisk-qgis-plugin} \\
+        \url{https://deforisk-qgis-plugin.org} \\
         \textbf{> Articles > References > Presentations} \\
         \includegraphics[width=0.8\textwidth]{figs/partners_logos}
       \end{center}
