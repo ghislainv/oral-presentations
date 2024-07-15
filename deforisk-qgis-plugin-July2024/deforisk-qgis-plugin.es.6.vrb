@@ -1,0 +1,17 @@
+\frametitle{Basado sobre Python}
+El plugin \texttt{deforisk} se basa en cuatro paquetes de Python
+desarrollados específicamente para modelar la deforestación:
+
+\begin{itemize}
+\item \texttt{geefcc}: realizar mapas de cambios en la cubierta forestal a partir
+de Google Earth Engine (GEE).
+\item \texttt{pywdpa}: descarga de áreas protegidas de la Base de Datos Mundial
+sobre Áreas Protegidas (WDPA).
+\item \texttt{forestatrisk}: modelizar la deforestación y predecir la
+deforestación espacial.
+\item \texttt{riskmapjnr}: mapas de riesgo según las metodologías Verra JNR.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{figs/logos-packages.png}
+\end{center}

@@ -1,0 +1,15 @@
+\frametitle{Procesamiento de rasters por bloques.}
+\begin{itemize}
+\item Los archivos raster de cambio de cubierta forestal y las variables
+explicativas pueden ocupar un espacio de varios gigabytes en disco.
+\item El procesamiento en memoria de rasters tan grandes puede ser imposible en
+ordenadores con una memoria RAM limitada.
+\item Las funciones utilizadas en el plugin \texttt{deforisk} procesan grandes
+rásters por bloques de píxeles que representan subconjuntos de los datos
+ráster.
+\item Esto hace que el cálculo sea eficiente, con un bajo uso de memoria.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=6cm]{figs/raster_block.png}
+\end{center}

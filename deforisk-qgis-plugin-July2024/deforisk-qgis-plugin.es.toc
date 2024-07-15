@@ -1,0 +1,21 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{El plugin QGIS deforisk}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Objetivo y especificidades}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Sitio web y documentación}{10}{0}{1}
+\beamer@subsectionintoc {1}{3}{Instalación}{12}{0}{1}
+\beamer@sectionintoc {2}{Preparación de datos}{14}{0}{2}
+\beamer@subsectionintoc {2}{1}{Obtener variables}{15}{0}{2}
+\beamer@subsectionintoc {2}{2}{Datos sobre cambios en la cubierta forestal}{17}{0}{2}
+\beamer@subsectionintoc {2}{3}{Variables explicativas espaciales}{21}{0}{2}
+\beamer@sectionintoc {3}{Modelos y validación}{26}{0}{3}
+\beamer@subsectionintoc {3}{1}{Modelo de referencia}{27}{0}{3}
+\beamer@subsectionintoc {3}{2}{Modelos forestatrisk}{29}{0}{3}
+\beamer@subsectionintoc {3}{3}{Modelos de ventanas móviles}{39}{0}{3}
+\beamer@subsectionintoc {3}{4}{Validación}{42}{0}{3}
+\beamer@sectionintoc {4}{Utilización}{45}{0}{4}
+\beamer@subsectionintoc {4}{1}{Asignación de la deforestación}{46}{0}{4}
+\beamer@subsectionintoc {4}{2}{Jurisdicciones subnacionales}{50}{0}{4}
+\beamer@subsectionintoc {4}{3}{Datos del usuario}{52}{0}{4}
+\beamer@sectionintoc {5}{Conclusión}{54}{0}{5}
+\beamer@subsectionintoc {5}{1}{Programa del taller}{55}{0}{5}
+\beamer@subsectionintoc {5}{2}{Perspectivas}{57}{0}{5}

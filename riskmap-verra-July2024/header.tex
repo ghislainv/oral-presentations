@@ -1,0 +1,117 @@
+% Created 2024-07-13 Sat 15:58
+% Intended LaTeX compiler: pdflatex
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usetheme{default}
+\author{Ghislain Vieilledent}
+\date{\today}
+\title{}
+\usepackage{lmodern}
+\usepackage{pgf}
+\usepackage{color}
+\usepackage[english,french]{babel}
+\definecolor{vertmoyen}{RGB}{51,110,23} % vert moyen
+\definecolor{blueFRB}{HTML}{31859c}
+\usecolortheme[named=blueFRB]{structure}
+\usepackage{tabularx} % varier la largeur du tableau
+\usepackage{layout}
+\setlength{\LTleft}{-5cm plus 1 fill}
+\setlength{\LTright}{-5cm plus 1 fill}
+\usepackage{booktabs}
+\usepackage{arydshln} %% dashlines for tabular
+\newcommand{\logit}{\text{logit}}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\R}{\textnormal{\sffamily\bfseries R}}
+\newcommand{\pkg}[1]{{\fontseries{b}\selectfont #1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{frametitle}{%
+\usebeamerfont{frametitle}\insertframetitle%
+\vphantom{g} % To avoid fluctuations per frame
+\par
+\centering \includegraphics[width=\textwidth]{figs/Barre_couleur}
+}
+\beamertemplatenavigationsymbolsempty
+
+% Logo
+\newif\ifplacelogo % create a new conditional
+\logo{\ifplacelogo\includegraphics[width=0.5\textwidth]{figs/partners_logos}\fi}
+
+%Call table of contents at the beginning of each section
+\AtBeginSection[]{
+\placelogotrue
+\begin{frame}
+\frametitle{Outline}
+\begin{columns}[c]
+\begin{column}{0.5\textwidth}
+\tableofcontents[sections=1,currentsection]
+\vspace{0.5cm}
+\tableofcontents[sections=2,currentsection]
+\end{column}
+\begin{column}{0.5\textwidth}
+\tableofcontents[sections=3,currentsection]
+\vspace{0.5cm}
+\tableofcontents[sections=4,currentsection]
+\end{column}
+\end{columns}
+\end{frame}
+\placelogofalse
+}
+
+%Call table of contents at the beginning of each subsection
+\AtBeginSubsection[]{
+\placelogotrue
+\begin{frame}
+\frametitle{Outline}
+\begin{columns}[c]
+\begin{column}{0.5\textwidth}
+\tableofcontents[sections=1,currentsection, currentsubsection]
+\vspace{0.5cm}
+\tableofcontents[sections=2,currentsection, currentsubsection]
+\end{column}
+\begin{column}{0.5\textwidth}
+\tableofcontents[sections=3,currentsection, currentsubsection]
+\vspace{0.5cm}
+\tableofcontents[sections=4,currentsection, currentsubsection]
+\end{column}
+\end{columns}
+\end{frame}
+\placelogofalse
+}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=Black,
+filecolor=Maroon,
+citecolor=Blue,
+urlcolor=Maroon}
+
+% Disable monospaced font for URLs
+\urlstyle{same}
+
+\hypersetup{
+ pdfauthor={Ghislain Vieilledent},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.3 (Org mode 9.6.15)}, 
+ pdflang={English}}
+\begin{document}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+
+\end{document}

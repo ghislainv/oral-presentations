@@ -1,0 +1,19 @@
+\frametitle{Programa del taller}
+Cuatro sesiones
+prácticas:
+
+\begin{itemize}
+\item Instalar el software y ejecutar el tutorial \texttt{Get Started}.
+\item Elegir una jurisdicción subnacional pequeña y seleccione el mejor mapa de
+riesgos.
+\item Derivar el mejor mapa de riesgos para una gran jurisdicción (por ejemplo, a
+nivel nacional).
+\item Ejercicios:
+\begin{itemize}
+\item Cambiar los parámetros del modelo para ver su comportamiento (por ejemplo,
+el tamaño de las celdas espaciales para el modelo iCAR).
+\item Utilizar datos del país (por ejemplo, mapa nacional de cambios en la
+cubierta forestal).
+\item Asignar la deforestación futura a un proyecto.
+\end{itemize}
+\end{itemize}

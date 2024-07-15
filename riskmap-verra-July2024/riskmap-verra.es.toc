@@ -1,0 +1,15 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{Introducción}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Mejorar las metodologías de certificación}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Asignación de la deforestación a proyectos}{7}{0}{1}
+\beamer@sectionintoc {2}{Metodología Verra para la cartografía de riesgos}{10}{0}{2}
+\beamer@subsectionintoc {2}{1}{Herramienta VT0007}{11}{0}{2}
+\beamer@subsectionintoc {2}{2}{Modelo de referencia}{14}{0}{2}
+\beamer@subsectionintoc {2}{3}{Modelos alternativos y validación}{23}{0}{2}
+\beamer@sectionintoc {3}{Programa informático de cartografía del riesgo de deforestación}{30}{0}{3}
+\beamer@subsectionintoc {3}{1}{Software Verra/Clark Labs}{31}{0}{3}
+\beamer@subsectionintoc {3}{2}{Programas informáticos existentes para modelos alternativos}{35}{0}{3}
+\beamer@subsectionintoc {3}{3}{Limitaciones}{37}{0}{3}
+\beamer@sectionintoc {4}{Conclusión}{40}{0}{4}
+\beamer@subsectionintoc {4}{1}{Una metodología no tan sencilla}{41}{0}{4}
+\beamer@subsectionintoc {4}{2}{Necesidad de una herramienta integradora: deforisk plugin}{44}{0}{4}

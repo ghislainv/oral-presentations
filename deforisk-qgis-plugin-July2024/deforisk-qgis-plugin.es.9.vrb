@@ -1,0 +1,16 @@
+\frametitle{Instalación}
+Bajo número de pasos para
+instalar el plugin:
+
+\begin{itemize}
+\item Instale QGIS y GDAL en su sistema (utilizando \texttt{OSGeo4W} en Windows).
+\item Instale los paquetes de Python \texttt{forestatrisk} y \texttt{riskmapjnr}
+utilizando pip.
+\item \href{https://github.com/ghislainv/deforisk-qgis-plugin/archive/refs/heads/main.zip}{Descargar}
+e instalar el plugin \texttt{deforisk} de QGIS.
+\item (Sólo sistemas tipo Unix: instalar herramientas OSM).
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{figs/installation.png}
+\end{center}

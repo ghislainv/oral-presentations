@@ -1,0 +1,2067 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.28)  15 JUL 2024 08:15
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**deforisk-qgis-plugin.es.tex
+(./deforisk-qgis-plugin.es.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
+Document Class: beamer 2024/01/06 v3.71 A class for typesetting presentations
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemodes.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count187
+)
+\beamer@tempbox=\box51
+\beamer@tempcount=\count188
+\c@beamerpauses=\count189
+
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
+\beamer@slideinframe=\count190
+\beamer@minimum=\count191
+\beamer@decode@box=\box52
+)
+\beamer@commentbox=\box53
+\beamer@modecount=\count192
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+\headdp=\dimen140
+\footheight=\dimen141
+\sidebarheight=\dimen142
+\beamer@tempdim=\dimen143
+\beamer@finalheight=\dimen144
+\beamer@animht=\dimen145
+\beamer@animdp=\dimen146
+\beamer@animwd=\dimen147
+\beamer@leftmargin=\dimen148
+\beamer@rightmargin=\dimen149
+\beamer@leftsidebar=\dimen150
+\beamer@rightsidebar=\dimen151
+\beamer@boxsize=\dimen152
+\beamer@vboxoffset=\dimen153
+\beamer@descdefault=\dimen154
+\beamer@descriptionwidth=\dimen155
+\beamer@lastskip=\skip48
+\beamer@areabox=\box54
+\beamer@animcurrent=\box55
+\beamer@animshowbox=\box56
+\beamer@sectionbox=\box57
+\beamer@logobox=\box58
+\beamer@linebox=\box59
+\beamer@sectioncount=\count193
+\beamer@subsubsectionmax=\count194
+\beamer@subsectionmax=\count195
+\beamer@sectionmax=\count196
+\beamer@totalheads=\count197
+\beamer@headcounter=\count198
+\beamer@partstartpage=\count199
+\beamer@sectionstartpage=\count266
+\beamer@subsectionstartpage=\count267
+\beamer@animationtempa=\count268
+\beamer@animationtempb=\count269
+\beamer@xpos=\count270
+\beamer@ypos=\count271
+\beamer@ypos@offset=\count272
+\beamer@showpartnumber=\count273
+\beamer@currentsubsection=\count274
+\beamer@coveringdepth=\count275
+\beamer@sectionadjust=\count276
+\beamer@toclastsection=\count277
+\beamer@tocsectionnumber=\count278
+
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+))
+\beamer@paperwidth=\skip49
+\beamer@paperheight=\skip50
+
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count279
+\Gm@cntv=\count280
+\c@Gm@tempcnt=\count281
+\Gm@bindingoffset=\dimen156
+\Gm@wd@mp=\dimen157
+\Gm@odd@mp=\dimen158
+\Gm@even@mp=\dimen159
+\Gm@layoutwidth=\dimen160
+\Gm@layoutheight=\dimen161
+\Gm@layouthoffset=\dimen162
+\Gm@layoutvoffset=\dimen163
+\Gm@dimlist=\toks18
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen164
+\pgfutil@tempdimb=\dimen165
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box60
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
+.code.tex
+\pgfkeys@tmptoks=\toks22
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
+\pgf@x=\dimen166
+\pgf@xa=\dimen167
+\pgf@xb=\dimen168
+\pgf@xc=\dimen169
+\pgf@y=\dimen170
+\pgf@ya=\dimen171
+\pgf@yb=\dimen172
+\pgf@yc=\dimen173
+\c@pgf@counta=\count282
+\c@pgf@countb=\count283
+\c@pgf@countc=\count284
+\c@pgf@countd=\count285
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen174
+\pgfmath@count=\count286
+\pgfmath@box=\box61
+\pgfmath@toks=\toks23
+\pgfmath@stack@operand=\toks24
+\pgfmath@stack@operation=\toks25
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count287
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen175
+\Gin@req@width=\dimen176
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+\pgf@x=\dimen177
+\pgf@y=\dimen178
+\pgf@xa=\dimen179
+\pgf@ya=\dimen180
+\pgf@xb=\dimen181
+\pgf@yb=\dimen182
+\pgf@xc=\dimen183
+\pgf@yc=\dimen184
+\pgf@xd=\dimen185
+\pgf@yd=\dimen186
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count288
+\c@pgf@countb=\count289
+\c@pgf@countc=\count290
+\c@pgf@countd=\count291
+\t@pgf@toka=\toks26
+\t@pgf@tokb=\toks27
+\t@pgf@tokc=\toks28
+\pgf@sys@id@count=\count292
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count293
+\pgfsyssoftpath@bigbuffer@items=\count294
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen187
+\ar@mcellbox=\box62
+\extrarowheight=\dimen188
+\NC@list=\toks29
+\extratabsurround=\skip51
+\backup@length=\skip52
+\ar@cellbox=\box63
+)
+\everycr=\toks30
+\minrowclearance=\skip53
+\rownum=\count295
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen189
+\pgf@picmaxx=\dimen190
+\pgf@picminy=\dimen191
+\pgf@picmaxy=\dimen192
+\pgf@pathminx=\dimen193
+\pgf@pathmaxx=\dimen194
+\pgf@pathminy=\dimen195
+\pgf@pathmaxy=\dimen196
+\pgf@xx=\dimen197
+\pgf@xy=\dimen198
+\pgf@yx=\dimen199
+\pgf@yy=\dimen256
+\pgf@zx=\dimen257
+\pgf@zy=\dimen258
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen259
+\pgf@path@lasty=\dimen260
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen261
+\pgf@shorten@start@additional=\dimen262
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box64
+\pgf@hbox=\box65
+\pgf@layerbox@main=\box66
+\pgf@picture@serial@count=\count296
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen263
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen264
+\pgf@pt@y=\dimen265
+\pgf@pt@temp=\dimen266
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen267
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen268
+\pgf@sys@shading@range@num=\count297
+\pgf@shadingcount=\count298
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box67
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
+Package: xxcolor 2003/10/24 ver 0.1
+\XC@nummixins=\count299
+\XC@countmixins=\count300
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count301
+)
+\@linkdim=\dimen269
+\Hy@linkcounter=\count302
+\Hy@pagecounter=\count303
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count304
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4062.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4062.
+Package hyperref Info: Option `implicit' set `false' on input line 4062.
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count305
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen270
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count306
+\Field@Width=\dimen271
+\Fld@charsize=\dimen272
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+\Hy@abspage=\count307
+
+
+Package hyperref Message: Stopped early.
+
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count308
+\c@bookmark@seq@number=\count309
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaserequires.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasecompatibility.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasefont.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks31
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+Package: sansmathaccent 2020/01/31
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
+)))))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
+Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
+))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasemisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
+\beamer@argscount=\count310
+\beamer@lastskipcover=\skip54
+\beamer@trivlistdepth=\count311
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetitle.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasesection.sty
+\c@lecture=\count312
+\c@part=\count313
+\c@section=\count314
+\c@subsection=\count315
+\c@subsubsection=\count316
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
+\beamer@framebox=\box68
+\beamer@frametitlebox=\box69
+\beamer@zoombox=\box70
+\beamer@zoomcount=\count317
+\beamer@zoomframecount=\count318
+\beamer@frametextheight=\dimen273
+\c@subsectionslide=\count319
+\beamer@frametopskip=\skip55
+\beamer@framebottomskip=\skip56
+\beamer@frametopskipautobreak=\skip57
+\beamer@framebottomskipautobreak=\skip58
+\beamer@envbody=\toks32
+\framewidth=\dimen274
+\c@framenumber=\count320
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
+\beamer@verbatimfileout=\write4
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
+\beamer@splitbox=\box71
+\beamer@autobreakcount=\count321
+\beamer@autobreaklastheight=\dimen275
+\beamer@frametitletoks=\toks33
+\beamer@framesubtitletoks=\toks34
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.sty
+\beamer@footins=\box72
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasecolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasenotes.sty
+\beamer@frameboxcopy=\box73
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetoc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
+\beamer@sbttoks=\toks35
+
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
+\bmb@box=\box74
+\bmb@colorbox=\box75
+\bmb@boxwidth=\dimen276
+\bmb@boxheight=\dimen277
+\bmb@prevheight=\dimen278
+\bmb@temp=\dimen279
+\bmb@dima=\dimen280
+\bmb@dimb=\dimen281
+\bmb@prevheight=\dimen282
+)
+\beamer@blockheadheight=\dimen283
+))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
+\@enLab=\toks36
+)
+\beamer@bibiconwidth=\skip59
+\c@figure=\count322
+\c@table=\count323
+\abovecaptionskip=\skip60
+\belowcaptionskip=\skip61
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasenavigationsymbols.tex
+)
+\beamer@section@min@dim=\dimen284
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip62
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks37
+\ex@=\dimen285
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen286
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count324
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count325
+\leftroot@=\count326
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count327
+\DOTSCASE@=\count328
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box76
+\strutbox@=\box77
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen287
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count329
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count330
+\dotsspace@=\muskip17
+\c@parentequation=\count331
+\dspbrk@lvl=\count332
+\tag@help=\toks38
+\row@=\count333
+\column@=\count334
+\maxfields@=\count335
+\andhelp@=\toks39
+\eqnshift@=\dimen288
+\alignsep@=\dimen289
+\tagshift@=\dimen290
+\tagwidth@=\dimen291
+\totwidth@=\dimen292
+\lineht@=\dimen293
+\@envbody=\toks40
+\multlinegap=\skip63
+\multlinetaggap=\skip64
+\mathdisplay@stack=\toks41
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks42
+\thm@bodyfont=\toks43
+\thm@headfont=\toks44
+\thm@notefont=\toks45
+\thm@headpunct=\toks46
+\thm@preskip=\skip65
+\thm@postskip=\skip66
+\thm@headsep=\skip67
+\dth@everypar=\toks47
+)
+\c@theorem=\count336
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemedefault.sty
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
+\beamer@dima=\dimen294
+\beamer@dimb=\dimen295
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks48
+\inpenc@posthook=\toks49
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip68
+\LTright=\skip69
+\LTpre=\skip70
+\LTpost=\skip71
+\LTchunksize=\count337
+\LTcapwidth=\dimen296
+\LT@head=\box78
+\LT@firsthead=\box79
+\LT@foot=\box80
+\LT@lastfoot=\box81
+\LT@gbox=\box82
+\LT@cols=\count338
+\LT@rows=\count339
+\c@LT@tables=\count340
+\c@LT@chunks=\count341
+\LT@p@ftn=\toks50
+)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen297
+\WF@size=\dimen298
+\c@WF@wrappedlines=\count342
+\WF@box=\box83
+\WF@everypar=\toks51
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count343
+\rotFPtop=\skip72
+\rotFPbot=\skip73
+\rot@float@box=\box84
+\rot@mess@toks=\toks52
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box85
+\UL@hyphenbox=\box86
+\UL@skip=\skip74
+\UL@hook=\toks53
+\UL@height=\dimen299
+\UL@pe=\count344
+\UL@pixel=\dimen300
+\ULC@box=\box87
+Package: ulem 2019/11/18
+\ULdepth=\dimen301
+)
+(/usr/share/texlive/texmf-dist/tex/latex/capt-of/capt-of.sty
+Package: capt-of 2009/12/29 v0.2 standard captions outside of floats
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthememiniframes.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count345
+\float@exts=\toks54
+\float@box=\box88
+\@float@everytoks=\toks55
+\@floatcapt=\box89
+)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box90
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen302
+\pgf@nodesepend=\dimen303
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count346
+\U@D=\dimen304
+\l@unhyphenated=\language11
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read3
+LaTeX Info: Redefining \textlatin on input line 3986.
+\bbl@dirlevel=\count347
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'british' set to \l@english
+(babel)             (\language0). Reported on input line 82.
+Package babel Info: Hyphen rules for 'UKenglish' set to \l@english
+(babel)             (\language0). Reported on input line 83.
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@english
+(babel)             (\language0). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@english
+(babel)             (\language0). Reported on input line 108.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
+Language: french 2023-12-19 v3.5r French support from the babel system
+Package babel Info: Hyphen rules for 'acadian' set to \l@french
+(babel)             (\language8). Reported on input line 91.
+Package babel Info: Hyphen rules for 'canadien' set to \l@french
+(babel)             (\language8). Reported on input line 92.
+\FB@stdchar=\count348
+Package babel Info: Making : an active character on input line 420.
+Package babel Info: Making ; an active character on input line 421.
+Package babel Info: Making ! an active character on input line 422.
+Package babel Info: Making ? an active character on input line 423.
+\FBguill@level=\count349
+\FBold@everypar=\toks56
+\FB@Mht=\dimen305
+\mc@charclass=\count350
+\mc@charfam=\count351
+\mc@charslot=\count352
+\std@mcc=\count353
+\dec@mcc=\count354
+\FB@parskip=\dimen306
+\listindentFB=\dimen307
+\descindentFB=\dimen308
+\labelindentFB=\dimen309
+\labelwidthFB=\dimen310
+\leftmarginFB=\dimen311
+\parindentFFN=\dimen312
+\FBfnindent=\dimen313
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/fr/babel-french.tex
+Package babel Info: Importing font and identification data for french
+(babel)             from babel-fr.ini. Reported on input line 11.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+Package french.ldf Info: No list customisation for the beamer class,
+(french.ldf)             reported on input line 22.
+
+(/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemestructure.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen314
+\TX@old@table=\dimen315
+\TX@old@col=\dimen316
+\TX@target=\dimen317
+\TX@delta=\dimen318
+\TX@cols=\count355
+\TX@ftn=\toks57
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/layout.sty
+Package: layout 2023-08-20 v1.2e Show layout parameters
+\oneinch=\count356
+\cnt@paperwidth=\count357
+\cnt@paperheight=\count358
+\cnt@hoffset=\count359
+\cnt@voffset=\count360
+\cnt@textheight=\count361
+\cnt@textwidth=\count362
+\cnt@topmargin=\count363
+\cnt@oddsidemargin=\count364
+\cnt@evensidemargin=\count365
+\cnt@headheight=\count366
+\cnt@headsep=\count367
+\cnt@marginparsep=\count368
+\cnt@marginparwidth=\count369
+\cnt@marginparpush=\count370
+\cnt@footskip=\count371
+\fheight=\count372
+\ref@top=\count373
+\ref@hoffset=\count374
+\ref@voffset=\count375
+\ref@head=\count376
+\ref@body=\count377
+\ref@foot=\count378
+\ref@margin=\count379
+\ref@marginwidth=\count380
+\ref@marginpar=\count381
+\Interval=\count382
+\ExtraYPos=\count383
+\PositionX=\count384
+\PositionY=\count385
+\ArrowLength=\count386
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen319
+\lightrulewidth=\dimen320
+\cmidrulewidth=\dimen321
+\belowrulesep=\dimen322
+\belowbottomsep=\dimen323
+\aboverulesep=\dimen324
+\abovetopsep=\dimen325
+\cmidrulesep=\dimen326
+\cmidrulekern=\dimen327
+\defaultaddspace=\dimen328
+\@cmidla=\count387
+\@cmidlb=\count388
+\@aboverulesep=\dimen329
+\@belowrulesep=\dimen330
+\@thisruleclass=\count389
+\@lastruleclass=\count390
+\@thisrulewidth=\dimen331
+)
+(/usr/share/texlive/texmf-dist/tex/latex/arydshln/arydshln.sty
+Package: arydshln 2019/02/21 v1.76 
+\dashlinedash=\dimen332
+\dashlinegap=\dimen333
+\adl@box=\box91
+\adl@height=\dimen334
+\adl@heightsave=\dimen335
+\adl@depth=\dimen336
+\adl@depthsave=\dimen337
+\adl@finaldepth=\dimen338
+\adl@columns=\count391
+\adl@ncol=\count392
+\adl@currentcolumn=\count393
+\adl@currentcolumnsave=\count394
+\adl@totalheight=\count395
+\adl@totalheightsave=\count396
+\adl@dash=\count397
+\adl@gap=\count398
+\adl@cla=\count399
+\adl@clb=\count400
+\adl@everyvbox=\toks58
+\adl@LTpagetotal=\dimen339
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 62.
+
+
+Package hyperref Warning: Invalid language identifier `Español'
+(hyperref)                for option `pdflang' (RFC 3066) on input line 69.
+
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 7
+0.
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count401
+\l__pdf_internal_box=\box92
+)
+(./deforisk-qgis-plugin.es.aux)
+\openout1 = `deforisk-qgis-plugin.es.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
+* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
+* \paperwidth=364.19536pt
+* \paperheight=273.14662pt
+* \textwidth=307.28987pt
+* \textheight=244.6939pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \topskip=10.0pt
+* \footskip=14.22636pt
+* \marginparwidth=3.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count402
+\scratchdimen=\dimen340
+\scratchbox=\box93
+\nofMPsegments=\count403
+\nofMParguments=\count404
+\everyMPshowfont=\toks59
+\MPscratchCnt=\count405
+\MPscratchDim=\dimen341
+\MPnumerator=\count406
+\makeMPintoPDFobject=\count407
+\everyMPtoPDFconversion=\toks60
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package hyperref Info: Link coloring ON on input line 70.
+
+(./deforisk-qgis-plugin.es.out) (./deforisk-qgis-plugin.es.out)
+\@outlinefile=\write5
+\openout5 = `deforisk-qgis-plugin.es.out'.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 70.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 70.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 70.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 70.
+\symnumbers=\mathgroup6
+\sympureletters=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 70.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 70.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 70.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 70.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 70.
+LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 70.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 70.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 70.
+
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
+-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-bibliography-dic
+tionary-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-environment-dict
+ionary-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-months-dictionar
+y-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-numbers-dictiona
+ry-English.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictiona
+ry-English.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+)
+LaTeX Info: Redefining \degres on input line 70.
+LaTeX Info: Redefining \up on input line 70.
+ (./deforisk-qgis-plugin.es.nav)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
+5.
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<figs/Barre_couleur.png, id=217, 762.85pt x 12.045pt>
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 85.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+<figs/Banniere.png, id=219, 781.92125pt x 174.6525pt>
+File: figs/Banniere.png Graphic file (type png)
+<use figs/Banniere.png>
+Package pdftex.def Info: figs/Banniere.png  used on input line 85.
+(pdftex.def)             Requested size: 284.52756pt x 63.55174pt.
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
+85.
+
+(/usr/share/texmf/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
+5.
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+85.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+85.
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 85.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 85.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 85.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 85.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 85.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 85.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 85.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 85.
+<figs/partners_logos.png, id=220, 1047.915pt x 117.3183pt>
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 85.
+(pdftex.def)             Requested size: 245.83282pt x 27.52147pt.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
+dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc} <./figs/Barr
+e_couleur.png> <./figs/Banniere.png> <./figs/partners_logos.png>] (./deforisk-q
+gis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.t
+oc)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 99.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 99.
+
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 99.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 99.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [2
+
+]
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 102.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 102.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [3
+
+] (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 105.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 105.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [4
+
+]
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 116.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [5
+
+]
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 133.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+
+[6
+
+]
+\openout4 = `deforisk-qgis-plugin.es.6.vrb'.
+
+ (./deforisk-qgis-plugin.es.6.vrb
+<figs/logos-packages.png, id=1141, 744.7825pt x 218.8175pt>
+File: figs/logos-packages.png Graphic file (type png)
+<use figs/logos-packages.png>
+Package pdftex.def Info: figs/logos-packages.png  used on input line 16.
+(pdftex.def)             Requested size: 215.10196pt x 63.195pt.
+)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 152.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [7
+
+ <./figs/logos-packages.png>]
+\openout4 = `deforisk-qgis-plugin.es.7.vrb'.
+
+
+(./deforisk-qgis-plugin.es.7.vrb
+<figs/raster_block.png, id=1337, 669.702pt x 377.2494pt>
+File: figs/raster_block.png Graphic file (type png)
+<use figs/raster_block.png>
+Package pdftex.def Info: figs/raster_block.png  used on input line 14.
+(pdftex.def)             Requested size: 170.71652pt x 96.16566pt.
+)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 169.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [8
+
+ <./figs/raster_block.png>]
+\openout4 = `deforisk-qgis-plugin.es.8.vrb'.
+
+
+(./deforisk-qgis-plugin.es.8.vrb
+<figs/parallel_tasks.png, id=1531, 559.08875pt x 131.49126pt>
+File: figs/parallel_tasks.png Graphic file (type png)
+<use figs/parallel_tasks.png>
+Package pdftex.def Info: figs/parallel_tasks.png  used on input line 13.
+(pdftex.def)             Requested size: 256.0748pt x 60.22787pt.
+)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 185.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [9
+
+ <./figs/parallel_tasks.png>]
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 187.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 187.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [10
+
+]
+<figs/logo-deforisk.png, id=1819, 41.6757pt x 48.18pt>
+File: figs/logo-deforisk.png Graphic file (type png)
+<use figs/logo-deforisk.png>
+Package pdftex.def Info: figs/logo-deforisk.png  used on input line 216.
+(pdftex.def)             Requested size: 56.9055pt x 65.79222pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 216.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [11
+
+ <./figs/logo-deforisk.png>]
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 218.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 218.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [12
+
+]
+\openout4 = `deforisk-qgis-plugin.es.12.vrb'.
+
+ (./deforisk-qgis-plugin.es.12.vrb
+<figs/installation.png, id=2166, 1301.86375pt x 418.56375pt>
+File: figs/installation.png Graphic file (type png)
+<use figs/installation.png>
+Package pdftex.def Info: figs/installation.png  used on input line 14.
+(pdftex.def)             Requested size: 276.559pt x 88.91647pt.
+)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 236.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+
+[13
+
+ <./figs/installation.png>] (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 238.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 238.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [14
+
+]
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 241.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 241.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [15
+
+]
+<figs/plugin_api/interface_variables.png, id=2600, 531.9875pt x 667.49374pt>
+File: figs/plugin_api/interface_variables.png Graphic file (type png)
+<use figs/plugin_api/interface_variables.png>
+Package pdftex.def Info: figs/plugin_api/interface_variables.png  used on input
+ line 264.
+(pdftex.def)             Requested size: 142.26378pt x 178.49425pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 264.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [16
+
+ <./figs/plugin_api/interface_variables.png>] (./deforisk-qgis-plugin.es.toc) (
+./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 266.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 266.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [17
+
+]
+<figs/gfc.png, id=2885, 1358.07375pt x 369.38pt>
+File: figs/gfc.png Graphic file (type png)
+<use figs/gfc.png>
+Package pdftex.def Info: figs/gfc.png  used on input line 281.
+(pdftex.def)             Requested size: 307.28987pt x 83.57472pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 281.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [18
+
+ <./figs/gfc.png>]
+<figs/Vancutsem2021-maps-wide.png, id=3018, 1252.68pt x 251.94125pt>
+File: figs/Vancutsem2021-maps-wide.png Graphic file (type png)
+<use figs/Vancutsem2021-maps-wide.png>
+Package pdftex.def Info: figs/Vancutsem2021-maps-wide.png  used on input line 2
+98.
+(pdftex.def)             Requested size: 307.28987pt x 61.8011pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 298.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [19
+
+ <./figs/Vancutsem2021-maps-wide.png>]
+<figs/Vancutsem2021-patterns.png, id=3151, 551.05875pt x 620.3175pt>
+File: figs/Vancutsem2021-patterns.png Graphic file (type png)
+<use figs/Vancutsem2021-patterns.png>
+Package pdftex.def Info: figs/Vancutsem2021-patterns.png  used on input line 30
+9.
+(pdftex.def)             Requested size: 153.64493pt x 172.94942pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 309.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [20
+
+ <./figs/Vancutsem2021-patterns.png>]
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 311.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 311.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [21
+
+]
+<figs/variables-tab.png, id=3433, 847.165pt x 545.03625pt>
+File: figs/variables-tab.png Graphic file (type png)
+<use figs/variables-tab.png>
+Package pdftex.def Info: figs/variables-tab.png  used on input line 320.
+(pdftex.def)             Requested size: 230.46739pt x 148.26785pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 320.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [22
+
+ <./figs/variables-tab.png>]
+<figs/sm/var.png, id=3565, 472.164pt x 314.8563pt>
+File: figs/sm/var.png Graphic file (type png)
+<use figs/sm/var.png>
+Package pdftex.def Info: figs/sm/var.png  used on input line 328.
+(pdftex.def)             Requested size: 245.83282pt x 163.928pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 328.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [23
+
+ <./figs/sm/var.png (PNG copy)>]
+<figs/sm/roads.png, id=3697, 472.164pt x 344.7279pt>
+File: figs/sm/roads.png Graphic file (type png)
+<use figs/sm/roads.png>
+Package pdftex.def Info: figs/sm/roads.png  used on input line 341.
+(pdftex.def)             Requested size: 215.10196pt x 157.04605pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 341.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [24
+
+ <./figs/sm/roads.png (PNG copy)>]
+<figs/sm/pa.png, id=3829, 472.164pt x 344.7279pt>
+File: figs/sm/pa.png Graphic file (type png)
+<use figs/sm/pa.png>
+Package pdftex.def Info: figs/sm/pa.png  used on input line 352.
+(pdftex.def)             Requested size: 215.10196pt x 157.04605pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 352.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [25
+
+ <./figs/sm/pa.png (PNG copy)>] (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 354.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 354.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [26
+
+]
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 357.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 357.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [27
+
+]
+<figs/plugin_api/interface_benchmark.png, id=4263, 531.9875pt x 667.49374pt>
+File: figs/plugin_api/interface_benchmark.png Graphic file (type png)
+<use figs/plugin_api/interface_benchmark.png>
+Package pdftex.def Info: figs/plugin_api/interface_benchmark.png  used on input
+ line 384.
+(pdftex.def)             Requested size: 142.26378pt x 178.49425pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 384.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [28
+
+ <./figs/plugin_api/interface_benchmark.png>] (./deforisk-qgis-plugin.es.toc) (
+./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 386.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 386.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [29
+
+]
+<figs/plugin_api/interface_far_models.png, id=4550, 531.9875pt x 667.49374pt>
+File: figs/plugin_api/interface_far_models.png Graphic file (type png)
+<use figs/plugin_api/interface_far_models.png>
+Package pdftex.def Info: figs/plugin_api/interface_far_models.png  used on inpu
+t line 408.
+(pdftex.def)             Requested size: 142.26378pt x 178.49425pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 408.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [30
+
+ <./figs/plugin_api/interface_far_models.png>]
+<figs/sm/sample.png, id=4683, 472.164pt x 236.082pt>
+File: figs/sm/sample.png Graphic file (type png)
+<use figs/sm/sample.png>
+Package pdftex.def Info: figs/sm/sample.png  used on input line 421.
+(pdftex.def)             Requested size: 215.10196pt x 107.55075pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 421.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [31
+
+ <./figs/sm/sample.png (PNG copy)>]
+<figs/sm/grid.png, id=4817, 472.164pt x 464.4552pt>
+File: figs/sm/grid.png Graphic file (type png)
+<use figs/sm/grid.png>
+Package pdftex.def Info: figs/sm/grid.png  used on input line 447.
+(pdftex.def)             Requested size: 153.64493pt x 151.1375pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 447.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [32
+
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/
+dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc} <./f
+igs/sm/grid.png (PNG copy)>]
+<figs/sm/rho.png, id=4955, 472.164pt x 472.164pt>
+File: figs/sm/rho.png Graphic file (type png)
+<use figs/sm/rho.png>
+Package pdftex.def Info: figs/sm/rho.png  used on input line 455.
+(pdftex.def)             Requested size: 184.3758pt x 184.37376pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 455.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+
+[33
+
+ <./figs/sm/rho.png (PNG copy)>]
+<figs/sm/prob.png, id=5086, 472.164pt x 464.4552pt>
+File: figs/sm/prob.png Graphic file (type png)
+<use figs/sm/prob.png>
+Package pdftex.def Info: figs/sm/prob.png  used on input line 469.
+(pdftex.def)             Requested size: 153.64493pt x 151.1375pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 469.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [34
+
+ <./figs/sm/prob.png (PNG copy)>]
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 483.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+
+[35
+
+]
+<figs/random_forest.png, id=5349, 722.7pt x 471.7625pt>
+File: figs/random_forest.png Graphic file (type png)
+<use figs/random_forest.png>
+Package pdftex.def Info: figs/random_forest.png  used on input line 495.
+(pdftex.def)             Requested size: 215.10196pt x 140.41406pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 495.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [36
+
+ <./figs/random_forest.png>]
+<figs/sm/study_areas_America.png, id=5481, 562.9833pt x 418.2024pt>
+File: figs/sm/study_areas_America.png Graphic file (type png)
+<use figs/sm/study_areas_America.png>
+Package pdftex.def Info: figs/sm/study_areas_America.png  used on input line 51
+7.
+(pdftex.def)             Requested size: 98.335pt x 73.04613pt.
+<figs/sm/study_areas_Africa.png, id=5482, 670.1838pt x 350.9913pt>
+File: figs/sm/study_areas_Africa.png Graphic file (type png)
+<use figs/sm/study_areas_Africa.png>
+Package pdftex.def Info: figs/sm/study_areas_Africa.png  used on input line 517
+.
+(pdftex.def)             Requested size: 98.335pt x 51.5003pt.
+<figs/sm/study_areas_Asia.png, id=5483, 656.6934pt x 358.4592pt>
+File: figs/sm/study_areas_Asia.png Graphic file (type png)
+<use figs/sm/study_areas_Asia.png>
+Package pdftex.def Info: figs/sm/study_areas_Asia.png  used on input line 517.
+(pdftex.def)             Requested size: 98.335pt x 53.67357pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 517.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [37
+
+ <./figs/sm/study_areas_America.png> <./figs/sm/study_areas_Africa.png> <./figs
+/sm/study_areas_Asia.png>]
+<figs/article/prob.png, id=5619, 472.164pt x 344.7279pt>
+File: figs/article/prob.png Graphic file (type png)
+<use figs/article/prob.png>
+Package pdftex.def Info: figs/article/prob.png  used on input line 530.
+(pdftex.def)             Requested size: 215.10196pt x 157.04605pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 530.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [38
+
+ <./figs/article/prob.png (PNG copy)>] (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 532.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 532.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [39
+
+]
+<figs/get_started/perc_dist.png, id=5903, 462.528pt x 346.896pt>
+File: figs/get_started/perc_dist.png Graphic file (type png)
+<use figs/get_started/perc_dist.png>
+Package pdftex.def Info: figs/get_started/perc_dist.png  used on input line 557
+.
+(pdftex.def)             Requested size: 169.01036pt x 126.75624pt.
+<figs/plugin_api/interface_mw_models.png, id=5904, 531.9875pt x 667.49374pt>
+File: figs/plugin_api/interface_mw_models.png Graphic file (type png)
+<use figs/plugin_api/interface_mw_models.png>
+Package pdftex.def Info: figs/plugin_api/interface_mw_models.png  used on input
+ line 557.
+(pdftex.def)             Requested size: 124.4507pt x 156.14809pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 557.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [40
+
+ <./figs/get_started/perc_dist.png> <./figs/plugin_api/interface_mw_models.png>
+]
+<figs/moving_window.png, id=6038, 1588.93625pt x 319.1925pt>
+File: figs/moving_window.png Graphic file (type png)
+<use figs/moving_window.png>
+Package pdftex.def Info: figs/moving_window.png  used on input line 572.
+(pdftex.def)             Requested size: 245.83282pt x 49.38177pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 572.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+
+[41
+
+ <./figs/moving_window.png>] (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 574.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 574.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [42
+
+]
+<figs/grid.png, id=6320, 408.52625pt x 486.81876pt>
+File: figs/grid.png Graphic file (type png)
+<use figs/grid.png>
+Package pdftex.def Info: figs/grid.png  used on input line 595.
+(pdftex.def)             Requested size: 107.55098pt x 128.15953pt.
+<figs/plugin_api/interface_validation.png, id=6321, 531.9875pt x 667.49374pt>
+File: figs/plugin_api/interface_validation.png Graphic file (type png)
+<use figs/plugin_api/interface_validation.png>
+Package pdftex.def Info: figs/plugin_api/interface_validation.png  used on inpu
+t line 595.
+(pdftex.def)             Requested size: 153.64493pt x 192.77379pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 595.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+
+Overfull \vbox (2.03462pt too high) detected at line 595
+ []
+
+[43
+
+ <./figs/grid.png> <./figs/plugin_api/interface_validation.png>]
+<figs/get_started/pred_obs_icar_validation_50.png, id=6456, 462.528pt x 462.528
+pt>
+File: figs/get_started/pred_obs_icar_validation_50.png Graphic file (type png)
+<use figs/get_started/pred_obs_icar_validation_50.png>
+Package pdftex.def Info: figs/get_started/pred_obs_icar_validation_50.png  used
+ on input line 607.
+(pdftex.def)             Requested size: 184.3758pt x 184.37979pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 607.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+
+Overfull \vbox (18.25488pt too high) detected at line 607
+ []
+
+[44
+
+ <./figs/get_started/pred_obs_icar_validation_50.png>]
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 609.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 609.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [45
+
+] (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 612.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 612.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [46
+
+]
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 630.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [47
+
+]
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 653.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+
+[48
+
+]
+<figs/get_started/allocation.png, id=7156, 850.17625pt x 524.96124pt>
+File: figs/get_started/allocation.png Graphic file (type png)
+<use figs/get_started/allocation.png>
+Package pdftex.def Info: figs/get_started/allocation.png  used on input line 66
+5.
+(pdftex.def)             Requested size: 227.62204pt x 140.5479pt.
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 665.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [49
+
+ <./figs/get_started/allocation.png>] (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 667.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 667.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [50
+
+]
+\openout4 = `deforisk-qgis-plugin.es.50.vrb'.
+
+
+(./deforisk-qgis-plugin.es.50.vrb
+<figs/select_subjurisdictions.png, id=7503, 1371.1225pt x 734.745pt>
+File: figs/select_subjurisdictions.png Graphic file (type png)
+<use figs/select_subjurisdictions.png>
+Package pdftex.def Info: figs/select_subjurisdictions.png  used on input line 1
+5.
+(pdftex.def)             Requested size: 199.16928pt x 106.72028pt.
+)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 686.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [51
+
+ <./figs/select_subjurisdictions.png>]
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 688.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 688.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [52
+
+]
+\openout4 = `deforisk-qgis-plugin.es.52.vrb'.
+
+ (./deforisk-qgis-plugin.es.52.vrb)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 705.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+
+[53
+
+] (./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 707.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 707.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [54
+
+] (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 710.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 710.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [55
+
+]
+\openout4 = `deforisk-qgis-plugin.es.55.vrb'.
+
+
+(./deforisk-qgis-plugin.es.55.vrb)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 731.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [56
+
+] (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+(./deforisk-qgis-plugin.es.toc) (./deforisk-qgis-plugin.es.toc)
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 733.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 733.
+(pdftex.def)             Requested size: 153.64493pt x 17.19957pt.
+ [57
+
+]
+File: figs/Barre_couleur.png Graphic file (type png)
+<use figs/Barre_couleur.png>
+Package pdftex.def Info: figs/Barre_couleur.png  used on input line 747.
+(pdftex.def)             Requested size: 307.28987pt x 4.8519pt.
+ [58
+
+]
+File: figs/partners_logos.png Graphic file (type png)
+<use figs/partners_logos.png>
+Package pdftex.def Info: figs/partners_logos.png  used on input line 758.
+(pdftex.def)             Requested size: 245.83282pt x 27.52147pt.
+<figs/Canopy-NC.jpg, id=8759, 218.2554pt x 144.54pt>
+File: figs/Canopy-NC.jpg Graphic file (type jpg)
+<use figs/Canopy-NC.jpg>
+Package pdftex.def Info: figs/Canopy-NC.jpg  used on input line 758.
+(pdftex.def)             Requested size: 412.47488pt x 273.14662pt.
+
+[59
+
+ <./figs/Canopy-NC.jpg>]
+\tf@nav=\write6
+\openout6 = `deforisk-qgis-plugin.es.nav'.
+
+\tf@toc=\write7
+\openout7 = `deforisk-qgis-plugin.es.toc'.
+
+\tf@snm=\write8
+\openout8 = `deforisk-qgis-plugin.es.snm'.
+
+ (./deforisk-qgis-plugin.es.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+Package rerunfilecheck Info: File `deforisk-qgis-plugin.es.out' has not changed
+.
+(rerunfilecheck)             Checksum: 3884DD298ADC36CF8939333A61CC2251;3340.
+ ) 
+Here is how much of TeX's memory you used:
+ 27038 strings out of 476080
+ 521886 string characters out of 5792744
+ 1973975 words of memory out of 5000000
+ 48010 multiletter control sequences out of 15000+600000
+ 623604 words of font info for 83 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 128i,22n,123p,434b,1129s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/pub
+lic/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss
+o10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso8.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmsso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
+Output written on deforisk-qgis-plugin.es.pdf (59 pages, 13156783 bytes).
+PDF statistics:
+ 8899 PDF objects out of 8907 (max. 8388607)
+ 4538 compressed objects within 46 object streams
+ 233 named destinations out of 1000 (max. 500000)
+ 413 words of extra memory for PDF output out of 10000 (max. 10000000)
+

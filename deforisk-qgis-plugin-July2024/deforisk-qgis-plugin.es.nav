@@ -1,0 +1,168 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\sectionentry {1}{El plugin QGIS deforisk}{3}{El plugin QGIS deforisk}{0}}
+\headcommand {\slideentry {1}{0}{1}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{4}{Objetivo y especificidades}}
+\headcommand {\slideentry {1}{1}{1}{4/4}{Objetivo y especificidades}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\slideentry {1}{1}{2}{5/5}{Objetivo y especificidades}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\slideentry {1}{1}{3}{6/6}{Objetivo y especificidades}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {1}{1}{4}{7/7}{Objetivo y especificidades}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\slideentry {1}{1}{5}{8/8}{Objetivo y especificidades}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {1}{1}{6}{9/9}{Objetivo y especificidades}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@subsectionpages {4}{9}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{10}{Sitio web y documentación}}
+\headcommand {\slideentry {1}{2}{1}{10/10}{Sitio web y documentación}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\slideentry {1}{2}{2}{11/11}{Sitio web y documentación}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@subsectionpages {10}{11}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{12}{Instalación}}
+\headcommand {\slideentry {1}{3}{1}{12/12}{Instalación}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {1}{3}{2}{13/13}{Instalación}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\beamer@sectionpages {3}{13}}
+\headcommand {\beamer@subsectionpages {12}{13}}
+\headcommand {\sectionentry {2}{Preparación de datos}{14}{Preparación de datos}{0}}
+\headcommand {\slideentry {2}{0}{1}{14/14}{}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\beamer@subsectionpages {14}{14}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{15}{Obtener variables}}
+\headcommand {\slideentry {2}{1}{1}{15/15}{Obtener variables}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\slideentry {2}{1}{2}{16/16}{Obtener variables}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\beamer@subsectionpages {15}{16}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{17}{Datos sobre cambios en la cubierta forestal}}
+\headcommand {\slideentry {2}{2}{1}{17/17}{Datos sobre cambios en la cubierta forestal}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {2}{2}{2}{18/18}{Datos sobre cambios en la cubierta forestal}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {2}{2}{3}{19/19}{Datos sobre cambios en la cubierta forestal}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {2}{2}{4}{20/20}{Datos sobre cambios en la cubierta forestal}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\beamer@subsectionpages {17}{20}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{21}{Variables explicativas espaciales}}
+\headcommand {\slideentry {2}{3}{1}{21/21}{Variables explicativas espaciales}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {2}{3}{2}{22/22}{Variables explicativas espaciales}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\slideentry {2}{3}{3}{23/23}{Variables explicativas espaciales}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {2}{3}{4}{24/24}{Variables explicativas espaciales}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {2}{3}{5}{25/25}{Variables explicativas espaciales}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\beamer@sectionpages {14}{25}}
+\headcommand {\beamer@subsectionpages {21}{25}}
+\headcommand {\sectionentry {3}{Modelos y validación}{26}{Modelos y validación}{0}}
+\headcommand {\slideentry {3}{0}{1}{26/26}{}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@subsectionpages {26}{26}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{27}{Modelo de referencia}}
+\headcommand {\slideentry {3}{1}{1}{27/27}{Modelo de referencia}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\slideentry {3}{1}{2}{28/28}{Modelo de referencia}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\beamer@subsectionpages {27}{28}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{29}{Modelos forestatrisk}}
+\headcommand {\slideentry {3}{2}{1}{29/29}{Modelos forestatrisk}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\slideentry {3}{2}{2}{30/30}{Modelos forestatrisk}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\slideentry {3}{2}{3}{31/31}{Modelos forestatrisk}{0}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\slideentry {3}{2}{4}{32/32}{Modelos forestatrisk}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\slideentry {3}{2}{5}{33/33}{Modelos forestatrisk}{0}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\slideentry {3}{2}{6}{34/34}{Modelos forestatrisk}{0}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\slideentry {3}{2}{7}{35/35}{Modelos forestatrisk}{0}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\slideentry {3}{2}{8}{36/36}{Modelos forestatrisk}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\slideentry {3}{2}{9}{37/37}{Modelos forestatrisk}{0}}
+\headcommand {\beamer@framepages {37}{37}}
+\headcommand {\slideentry {3}{2}{10}{38/38}{Modelos forestatrisk}{0}}
+\headcommand {\beamer@framepages {38}{38}}
+\headcommand {\beamer@subsectionpages {29}{38}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{39}{Modelos de ventanas móviles}}
+\headcommand {\slideentry {3}{3}{1}{39/39}{Modelos de ventanas móviles}{0}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\slideentry {3}{3}{2}{40/40}{Modelos de ventanas móviles}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\slideentry {3}{3}{3}{41/41}{Modelos de ventanas móviles}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\beamer@subsectionpages {39}{41}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{42}{Validación}}
+\headcommand {\slideentry {3}{4}{1}{42/42}{Validación}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\slideentry {3}{4}{2}{43/43}{Validación}{0}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\slideentry {3}{4}{3}{44/44}{Validación}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\beamer@sectionpages {26}{44}}
+\headcommand {\beamer@subsectionpages {42}{44}}
+\headcommand {\sectionentry {4}{Utilización}{45}{Utilización}{0}}
+\headcommand {\slideentry {4}{0}{1}{45/45}{}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\beamer@subsectionpages {45}{45}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{46}{Asignación de la deforestación}}
+\headcommand {\slideentry {4}{1}{1}{46/46}{Asignación de la deforestación}{0}}
+\headcommand {\beamer@framepages {46}{46}}
+\headcommand {\slideentry {4}{1}{2}{47/47}{Asignación de la deforestación}{0}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\slideentry {4}{1}{3}{48/48}{Asignación de la deforestación}{0}}
+\headcommand {\beamer@framepages {48}{48}}
+\headcommand {\slideentry {4}{1}{4}{49/49}{Asignación de la deforestación}{0}}
+\headcommand {\beamer@framepages {49}{49}}
+\headcommand {\beamer@subsectionpages {46}{49}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{50}{Jurisdicciones subnacionales}}
+\headcommand {\slideentry {4}{2}{1}{50/50}{Jurisdicciones subnacionales}{0}}
+\headcommand {\beamer@framepages {50}{50}}
+\headcommand {\slideentry {4}{2}{2}{51/51}{Jurisdicciones subnacionales}{0}}
+\headcommand {\beamer@framepages {51}{51}}
+\headcommand {\beamer@subsectionpages {50}{51}}
+\headcommand {\beamer@subsectionentry {0}{4}{3}{52}{Datos del usuario}}
+\headcommand {\slideentry {4}{3}{1}{52/52}{Datos del usuario}{0}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\slideentry {4}{3}{2}{53/53}{Datos del usuario}{0}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\beamer@sectionpages {45}{53}}
+\headcommand {\beamer@subsectionpages {52}{53}}
+\headcommand {\sectionentry {5}{Conclusión}{54}{Conclusión}{0}}
+\headcommand {\slideentry {5}{0}{1}{54/54}{}{0}}
+\headcommand {\beamer@framepages {54}{54}}
+\headcommand {\beamer@subsectionpages {54}{54}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{55}{Programa del taller}}
+\headcommand {\slideentry {5}{1}{1}{55/55}{Programa del taller}{0}}
+\headcommand {\beamer@framepages {55}{55}}
+\headcommand {\slideentry {5}{1}{2}{56/56}{Programa del taller}{0}}
+\headcommand {\beamer@framepages {56}{56}}
+\headcommand {\beamer@subsectionpages {55}{56}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{57}{Perspectivas}}
+\headcommand {\slideentry {5}{2}{1}{57/57}{Perspectivas}{0}}
+\headcommand {\beamer@framepages {57}{57}}
+\headcommand {\slideentry {5}{2}{2}{58/58}{Perspectivas}{0}}
+\headcommand {\beamer@framepages {58}{58}}
+\headcommand {\slideentry {5}{2}{3}{59/59}{Perspectivas}{0}}
+\headcommand {\beamer@framepages {59}{59}}
+\headcommand {\beamer@partpages {1}{59}}
+\headcommand {\beamer@subsectionpages {57}{59}}
+\headcommand {\beamer@sectionpages {54}{59}}
+\headcommand {\beamer@documentpages {59}}
+\headcommand {\gdef \inserttotalframenumber {58}}

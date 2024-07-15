@@ -1,0 +1,14 @@
+\frametitle{Ejecución de tareas en paralelo.}
+\begin{itemize}
+\item El enfoque más avanzado para seleccionar el mejor mapa de riesgos implica
+repetir tareas (modelo, periodos).
+\item Para ahorrar tiempo de cálculo, el plugin \texttt{deforisk} utiliza el
+gestor de tareas de QGIS.
+\item Permite ejecutar varios análisis en paralelo.
+\end{itemize}
+
+\vspace{0.25cm}
+
+\begin{center}
+\includegraphics[width=9cm]{figs/parallel_tasks.png}
+\end{center}

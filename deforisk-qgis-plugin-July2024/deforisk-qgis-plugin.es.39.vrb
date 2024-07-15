@@ -1,0 +1,14 @@
+\frametitle{User's data}
+\begin{itemize}
+\item Posibilidad de utilizar datos del usuario: mapa nacional de cambios en la
+cubierta forestal, otras variables explicativas (por ejemplo, concesiones
+mineras).
+\item Pasos manuales por el momento.
+\item Los archivos de la carpeta \texttt{data} deben ser reemplazados por los
+datos del usuario.
+\item Se pueden añadir variables raster adicionales a la carpeta \texttt{data}.
+\item Deben existir enlaces simbólicos en las carpetas \texttt{data\_*}.
+\item Más detalles en la página web
+\href{https://deforisk-qgis-plugin.org/es/articles/user\_data.html}{Datos
+del usuario}.
+\end{itemize}

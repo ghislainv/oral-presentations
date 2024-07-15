@@ -1,0 +1,1506 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Ghislain Vieilledent, 2024
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2024-07-13 18:09-0500\n"
+"PO-Revision-Date: 2024-07-14 22:06-0500\n"
+"Last-Translator: Ghislain Vieilledent, 2024\n"
+"Language-Team: Spanish (https://app.transifex.com/cirad/teams/195077/es/)\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#.  Created 2024-07-13 Sat 18:09
+#.  Intended LaTeX compiler: pdflatex
+#.  vert moyen
+#.  vert moyen
+#.  varier la largeur du tableau
+#. % dashlines for tabular
+#. type: Plain text
+#: deforisk-qgis-plugin.tex:41
+msgid ""
+"\\usetheme{default} \\useinnertheme{rounded} "
+"\\useoutertheme[subsection=false]{miniframes} \\date{} \\title{Using the "
+"deforisk QGIS plugin for making and comparing deforestation risk maps} "
+"\\title[deforisk QGIS plugin]{Using the \\texttt{deforisk} QGIS plugin for "
+"making and comparing deforestation risk maps} \\definecolor{darkgreen}{RGB}"
+"{34,139,34} \\usepackage{float} \\usepackage{lmodern} \\usepackage{pgf} "
+"\\usepackage{color} \\usepackage[english,french]{babel} "
+"\\definecolor{vertmoyen}{RGB}{51,110,23} \\definecolor{blueFRB}{HTML}"
+"{31859c} \\usecolortheme[named=blueFRB]{structure} \\usepackage{tabularx} "
+"\\usepackage{layout} \\setlength{\\LTleft}{-5cm plus 1 fill} "
+"\\setlength{\\LTright}{-5cm plus 1 fill} \\usepackage{booktabs} "
+"\\usepackage{arydshln} \\newcommand{\\logit}{\\text{logit}} "
+"\\newcommand{\\bs}[1]{\\boldsymbol{#1}} \\newcommand{\\R}"
+"{\\textnormal{\\sffamily\\bfseries R}} \\newcommand{\\pkg}[1]"
+"{{\\fontseries{b}\\selectfont #1}} \\newcolumntype{C}[1]"
+"{>{\\centering\\arraybackslash}m{#1}}"
+msgstr ""
+"\\usetheme{default} \\useinnertheme{rounded} "
+"\\useoutertheme[subsection=false]{miniframes} \\date{} \\title{Usar el "
+"plugin QGIS deforisk para elaborar y comparar mapas de riesgo de "
+"deforestación} \\title[plugin QGIS deforisk]{Usar el plugin QGIS "
+"\\texttt{deforisk} para elaborar y comparar mapas de riesgo de "
+"deforestación} \\definecolor{darkgreen}{RGB}{34,139,34} \\usepackage{float} "
+"\\usepackage{lmodern} \\usepackage{pgf} \\usepackage{color} "
+"\\usepackage[english,french]{babel} \\definecolor{vertmoyen}{RGB}{51,110,23} "
+"\\definecolor{blueFRB}{HTML}{31859c} \\usecolortheme[named=blueFRB]"
+"{structure} \\usepackage{tabularx} \\usepackage{layout} \\setlength{\\LTleft}"
+"{-5cm plus 1 fill} \\setlength{\\LTright}{-5cm plus 1 fill} "
+"\\usepackage{booktabs} \\usepackage{arydshln} \\newcommand{\\logit}"
+"{\\text{logit}} \\newcommand{\\bs}[1]{\\boldsymbol{#1}} \\newcommand{\\R}"
+"{\\textnormal{\\sffamily\\bfseries R}} \\newcommand{\\pkg}[1]"
+"{{\\fontseries{b}\\selectfont #1}} \\newcolumntype{C}[1]"
+"{>{\\centering\\arraybackslash}m{#1}}"
+
+#.  To avoid fluctuations per frame
+#. type: Plain text
+#: deforisk-qgis-plugin.tex:50
+msgid ""
+"\\setbeamertemplate{footline}[frame number] \\setbeamertemplate{frametitle}"
+"{\\usebeamerfont{frametitle}\\insertframetitle\\vphantom{g} \\par "
+"\\centering \\includegraphics[width=\\textwidth]{figs/Barre_couleur} } "
+"\\beamertemplatenavigationsymbolsempty"
+msgstr ""
+"\\setbeamertemplate{footline}[frame number] \\setbeamertemplate{frametitle}"
+"{\\usebeamerfont{frametitle}\\insertframetitle\\vphantom{g} \\par "
+"\\centering \\includegraphics[width=\\textwidth]{figs/Barre_couleur} } "
+"\\beamertemplatenavigationsymbolsempty"
+
+#.  Logo
+#.  create a new conditional
+#. type: Plain text
+#: deforisk-qgis-plugin.tex:54
+msgid ""
+"\\newif\\ifplacelogo "
+"\\logo{\\ifplacelogo\\includegraphics[width=0.5\\textwidth]{figs/"
+"partners_logos}\\fi}"
+msgstr ""
+"\\newif\\ifplacelogo "
+"\\logo{\\ifplacelogo\\includegraphics[width=0.5\\textwidth]{figs/"
+"partners_logos}\\fi}"
+
+#. Call table of contents at the beginning of each section
+#. type: Plain text
+#: deforisk-qgis-plugin.tex:77
+msgid ""
+"\\AtBeginSection[]{ \\placelogotrue \\begin{frame} \\frametitle{Outline} "
+"\\begin{columns}[c] \\begin{column}{0.5\\textwidth} "
+"\\tableofcontents[sections=1,currentsection] \\vspace{0.5cm} "
+"\\tableofcontents[sections=2,currentsection] \\vspace{0.5cm} "
+"\\tableofcontents[sections=3,currentsection] \\end{column} \\begin{column}"
+"{0.5\\textwidth} \\tableofcontents[sections=4,currentsection] "
+"\\vspace{0.5cm} \\tableofcontents[sections=5,currentsection] \\end{column} "
+"\\end{columns} \\end{frame} \\placelogofalse }"
+msgstr "\\AtBeginSection[]{ \\placelogotrue \\begin{frame} \\frametitle{Contenido} \\begin{columns}[c] \\begin{column}{0.5\\textwidth} \\tableofcontents[sections=1,currentsection] \\vspace{0.5cm} \\tableofcontents[sections=2,currentsection] \\vspace{0.5cm} \\tableofcontents[sections=3,currentsection] \\end{column} \\begin{column}{0.5\\textwidth} \\tableofcontents[sections=4,currentsection] \\vspace{0.5cm} \\tableofcontents[sections=5,currentsection] \\end{column} \\end{columns} \\end{frame} \\placelogofalse }"
+
+#. Call table of contents at the beginning of each subsection
+#. type: Plain text
+#: deforisk-qgis-plugin.tex:100
+msgid ""
+"\\AtBeginSubsection[]{ \\placelogotrue \\begin{frame} \\frametitle{Outline} "
+"\\begin{columns}[c] \\begin{column}{0.5\\textwidth} "
+"\\tableofcontents[sections=1,currentsection, currentsubsection] "
+"\\vspace{0.5cm} \\tableofcontents[sections=2,currentsection, "
+"currentsubsection] \\vspace{0.5cm} \\tableofcontents[sections=3,"
+"currentsection, currentsubsection] \\end{column} \\begin{column}"
+"{0.5\\textwidth} \\tableofcontents[sections=4,currentsection, "
+"currentsubsection] \\vspace{0.5cm} \\tableofcontents[sections=5,"
+"currentsection, currentsubsection] \\end{column} \\end{columns} \\end{frame} "
+"\\placelogofalse }"
+msgstr "\\AtBeginSubsection[]{ \\placelogotrue \\begin{frame} \\frametitle{Contenido} \\begin{columns}[c] \\begin{column}{0.5\\textwidth} \\tableofcontents[sections=1,currentsection, currentsubsection] \\vspace{0.5cm} \\tableofcontents[sections=2,currentsection, currentsubsection] \\vspace{0.5cm} \\tableofcontents[sections=3,currentsection, currentsubsection] \\end{column} \\begin{column}{0.5\\textwidth} \\tableofcontents[sections=4,currentsection, currentsubsection] \\vspace{0.5cm} \\tableofcontents[sections=5,currentsection, currentsubsection] \\end{column} \\end{columns} \\end{frame} \\placelogofalse }"
+
+#. type: hypersetup{#1}
+#: deforisk-qgis-plugin.tex:107
+msgid ""
+"colorlinks=true, linkcolor=Black, filecolor=Maroon, citecolor=Blue, "
+"urlcolor=Maroon"
+msgstr ""
+"colorlinks=true, linkcolor=Black, filecolor=Maroon, citecolor=Blue, "
+"urlcolor=Maroon"
+
+#. type: hypersetup{#1}
+#: deforisk-qgis-plugin.tex:119
+msgid ""
+"pdfauthor={Ghislain Vieilledent}, pdftitle={Using the deforisk QGIS plugin "
+"for making and comparing deforestation risk maps}, pdfkeywords={}, "
+"pdfsubject={}, pdfcreator={Emacs 29.3 (Org mode 9.6.15)}, pdflang={English}"
+msgstr ""
+"pdfauthor={Ghislain Vieilledent}, pdftitle={Usar el plugin QGIS deforisk "
+"para elaborar y comparar mapas de riesgo de deforestación}, pdfkeywords={}, "
+"pdfsubject={}, pdfcreator={Emacs 29.3 (Org mode 9.6.15)}, pdflang={Español}"
+
+#.  Title page
+#.  Presentation first page
+#. type: document
+#: deforisk-qgis-plugin.tex:174
+msgid ""
+"{ \\setbeamertemplate{navigation symbols}{} \\begin{frame}[plain, "
+"noframenumbering] \\begin{center} \\small{\\textbf{FAO workshop -- Santa "
+"Marta (Colombia), July 2024}} \\end{center} \\vspace{-0.5cm} \\titlepage "
+"\\vspace{-3cm} \\begin{center} \\includegraphics[width=\\textwidth]{figs/"
+"Barre_couleur} \\vspace{0.25cm} \\includegraphics[width=10cm]{figs/Banniere} "
+"\\small{Ghislain VIEILLEDENT$^{1}$\\hspace{0.25cm}Thomas ARSOUZE$^{1}$"
+"\\hspace{0.25cm}FAO team$^{2}$} \\vspace{0.25cm} {\\scriptsize "
+"\\begin{tabular}{l} $[1]$ \\textbf{Cirad} UMR AMAP, $[2]$ \\textbf{FAO} Rome "
+"and Latin America \\end{tabular} } \\includegraphics[width=0.8\\textwidth]"
+"{figs/partners_logos} \\end{center} \\end{frame} }"
+msgstr ""
+"{ \\setbeamertemplate{navigation symbols}{} \\begin{frame}[plain, "
+"noframenumbering] \\begin{center} \\small{\\textbf{Taller FAO -- Santa Marta "
+"(Colombia), Julio 2024}} \\end{center} \\vspace{-0.5cm} \\titlepage "
+"\\vspace{-3cm} \\begin{center} \\includegraphics[width=\\textwidth]{figs/"
+"Barre_couleur} \\vspace{0.25cm} \\includegraphics[width=10cm]{figs/Banniere} "
+"\\small{Ghislain VIEILLEDENT$^{1}$\\hspace{0.25cm}Thomas ARSOUZE$^{1}$"
+"\\hspace{0.25cm}Equipo FAO$^{2}$} \\vspace{0.25cm} {\\scriptsize "
+"\\begin{tabular}{l} $[1]$ \\textbf{Cirad} UMR AMAP, $[2]$ \\textbf{FAO} Roma "
+"y America Latina\\end{tabular} } \\includegraphics[width=0.8\\textwidth]"
+"{figs/partners_logos} \\end{center} \\end{frame} }"
+
+#. type: document
+#: deforisk-qgis-plugin.tex:196
+msgid "\\placelogotrue"
+msgstr "\\placelogotrue"
+
+#. type: frame
+#: deforisk-qgis-plugin.tex:196
+msgid "\\frametitle{Outline}"
+msgstr "\\frametitle{Contenido}"
+
+#. type: columns
+#: deforisk-qgis-plugin.tex:196
+msgid "[c]"
+msgstr "[c]"
+
+#. type: column
+#: deforisk-qgis-plugin.tex:196
+msgid ""
+"{0.5\\textwidth} \\tableofcontents[sections=1] \\vspace{0.5cm} "
+"\\tableofcontents[sections=2] \\vspace{0.5cm} \\tableofcontents[sections=3]"
+msgstr ""
+"{0.5\\textwidth} \\tableofcontents[sections=1] \\vspace{0.5cm} "
+"\\tableofcontents[sections=2] \\vspace{0.5cm} \\tableofcontents[sections=3]"
+
+#. type: column
+#: deforisk-qgis-plugin.tex:196
+msgid ""
+"{0.5\\textwidth} \\tableofcontents[sections=4] \\vspace{0.5cm} "
+"\\tableofcontents[sections=5]"
+msgstr ""
+"{0.5\\textwidth} \\tableofcontents[sections=4] \\vspace{0.5cm} "
+"\\tableofcontents[sections=5]"
+
+#. type: document
+#: deforisk-qgis-plugin.tex:196
+msgid "\\placelogofalse"
+msgstr "\\placelogofalse"
+
+#. type: section{#2}
+#: deforisk-qgis-plugin.tex:199
+msgid "The deforisk QGIS plugin"
+msgstr "El plugin QGIS deforisk"
+
+#. type: subsection{#2}
+#: deforisk-qgis-plugin.tex:202
+msgid "Aim and specificities"
+msgstr "Objetivo y especificidades"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:211
+msgid "Aims"
+msgstr "Objetivos"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:211
+msgid ""
+"Provide \\textbf{a tool} to create and compare \\textbf{deforestation risk "
+"maps}."
+msgstr ""
+"Proporcionar \\textbf{una herramienta} para elaborar y comparar "
+"\\textbf{mapas de riesgo de deforestación}."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:211
+msgid "At the \\textbf{jurisdictional} level."
+msgstr "Al nivel \\textbf{jurisdictional}."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:211
+msgid "Following \\textbf{Verra's methodology} for certification."
+msgstr "Siguiendo la \\textbf{metodología de Verra} para la certificación."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:211
+msgid "\\textbf{Allocating deforestation} to projects within the jurisdiction."
+msgstr ""
+"\\textbf{Asignar la deforestación} a proyectos dentro de la jurisdicción."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:228
+msgid "Specificities"
+msgstr "Especificidades"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:228
+msgid "Open-source and Python based: transparency, reproducibility."
+msgstr "De código abierto y basado en Python: transparencia, reproducibilidad."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:228
+msgid "Computationally efficient:"
+msgstr "Cálculos rápidos:"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:228
+msgid "Processing raster by blocks."
+msgstr "Procesamiento de rasters por bloques."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:228
+msgid "Running tasks in parallel."
+msgstr "Ejecución de tareas en paralelo."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:228
+msgid "OS independent: Windows, Linux, MacOS."
+msgstr "Independiente del sistema operativo: Windows, Linux, MacOS."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:228
+msgid "Should run on any computer with average performance."
+msgstr "Debería funcionar en cualquier ordenador con un rendimiento medio."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:228
+msgid "Performant alternative statistical models (iCAR)."
+msgstr "Modelos estadísticos alternativos eficaces (iCAR)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:228
+msgid "Fully documented and translated (English, Spanish, French)."
+msgstr "Totalmente documentado y traducido (inglés, español, francés)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:228
+msgid "Help with data preparation."
+msgstr "Ayuda en la preparación de datos."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:228
+msgid "Should be (relatively) easy to use."
+msgstr "Debería ser (relativamente) fácil de usar."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:231
+msgid "Python based"
+msgstr "Basado sobre Python"
+
+#. type: frame
+#: deforisk-qgis-plugin.tex:231
+msgid ""
+"The \\texttt{deforisk} plugin relies on four Python packages developed "
+"specifically for modelling deforestation:"
+msgstr "El plugin \\texttt{deforisk} se basa en cuatro paquetes de Python desarrollados específicamente para modelar la deforestación:"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:238
+msgid ""
+"\\texttt{geefcc}: make forest cover change maps from Google Earth Engine "
+"(GEE)."
+msgstr ""
+"\\texttt{geefcc}: realizar mapas de cambios en la cubierta forestal a partir "
+"de Google Earth Engine (GEE)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:238
+msgid ""
+"\\texttt{pywdpa}: downloading protected areas from the World Database on "
+"Protected Areas (WDPA)."
+msgstr ""
+"\\texttt{pywdpa}: descarga de áreas protegidas de la Base de Datos Mundial "
+"sobre Áreas Protegidas (WDPA)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:238
+msgid ""
+"\\texttt{forestatrisk}: model deforestation and predict the spatial "
+"deforestation."
+msgstr ""
+"\\texttt{forestatrisk}: modelizar la deforestación y predecir la "
+"deforestación espacial."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:238
+msgid "\\texttt{riskmapjnr}: risk maps following Verra JNR methodologies."
+msgstr ""
+"\\texttt{riskmapjnr}: mapas de riesgo según las metodologías Verra JNR."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:251
+msgid "Processing raster by blocks"
+msgstr "Procesamiento de rasters por bloques."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:251
+msgid ""
+"Raster files of forest cover change and explanatory variables might occupy a "
+"space of several gigabytes on disk."
+msgstr ""
+"Los archivos raster de cambio de cubierta forestal y las variables "
+"explicativas pueden ocupar un espacio de varios gigabytes en disco."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:251
+msgid ""
+"Processing such large rasters in memory can be prohibitively intensive on "
+"computers with limited RAM."
+msgstr ""
+"El procesamiento en memoria de rasters tan grandes puede ser imposible en "
+"ordenadores con una memoria RAM limitada."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:251
+msgid ""
+"Functions used in the \\texttt{deforisk} plugin process large rasters by "
+"blocks of pixels representing subsets of the raster data."
+msgstr ""
+"Las funciones utilizadas en el plugin \\texttt{deforisk} procesan grandes "
+"rásters por bloques de píxeles que representan subconjuntos de los datos "
+"ráster."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:251
+msgid "This makes computation efficient, with low memory usage."
+msgstr "Esto hace que el cálculo sea eficiente, con un bajo uso de memoria."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:263
+msgid "Running tasks in parallel"
+msgstr "Ejecución de tareas en paralelo."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:263
+msgid ""
+"State-of-the-art approach to select the best risk map implies repeating "
+"tasks (model, periods)."
+msgstr ""
+"El enfoque más avanzado para seleccionar el mejor mapa de riesgos implica "
+"repetir tareas (modelo, periodos)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:263
+msgid ""
+"To save computation time, the \\texttt{deforisk} plugin use the QGIS task "
+"manager."
+msgstr ""
+"Para ahorrar tiempo de cálculo, el plugin \\texttt{deforisk} utiliza el "
+"gestor de tareas de QGIS."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:263
+msgid "Allows running several analysis in parallel."
+msgstr "Permite ejecutar varios análisis en paralelo."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:273 deforisk-qgis-plugin.tex:276
+msgid "Website and documentation"
+msgstr "Sitio web y documentación"
+
+#. type: frame
+#: deforisk-qgis-plugin.tex:276
+msgid "The website includes all the documentation to use the plugin:"
+msgstr "El sitio web incluye toda la documentación para utilizar el plugin:"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:284
+msgid ""
+"\\href{https://deforisk-qgis-plugin.org/installation.html}{Installation "
+"page}: How to install the plugin?"
+msgstr ""
+"\\href{https://deforisk-qgis-plugin.org/es/installation.html}{Página de "
+"instalación}: ¿Cómo instalar el plugin?"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:284
+msgid ""
+"\\href{https://deforisk-qgis-plugin.org/plugin\\_api.html}{Plugin API page}: "
+"What is the meaning of each parameter?"
+msgstr ""
+"\\href{https://deforisk-qgis-plugin.org/es/plugin\\_api.html}{Página API del "
+"plugin}: ¿Cuál es el significado de cada parámetro?"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:284
+msgid ""
+"\\href{https://deforisk-qgis-plugin.org/get\\_started.html}{Get started "
+"page}. How to start using the plugin on a small area of interest?"
+msgstr ""
+"\\href{https://deforisk-qgis-plugin.org/es/get_started.html}{Página de "
+"inicio}. Cómo empezar a utilizar el plugin en una pequeña área de interés?"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:284
+msgid ""
+"\\href{https://deforisk-qgis-plugin.org/articles.html}{Articles' page}. How "
+"can I use the plugin for specific cases (subnational jurisdictions, user's "
+"data)?"
+msgstr ""
+"\\href{https://deforisk-qgis-plugin.org/es/articles.html}{Página de "
+"artículos}. Cómo puedo utilizar el plugin para casos específicos "
+"(jurisdicciones subnacionales, datos del usuario)?"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:284
+msgid ""
+"\\href{https://deforisk-qgis-plugin.org/articles/references.html}"
+"{References' page}: A page with reference documents including presentations."
+msgstr ""
+"\\href{https://deforisk-qgis-plugin.org/es/articles/references.html}"
+"{Referencias}: Una página con documentos de referencia, incluidas "
+"presentaciones."
+
+#. type: column
+#: deforisk-qgis-plugin.tex:296
+msgid "{0.5\\columnwidth} \\flushright \\url{https://deforisk-qgis-plugin.org}"
+msgstr ""
+"{0.5\\columnwidth} \\flushright \\url{https://deforisk-qgis-plugin.org}"
+
+#. type: column
+#: deforisk-qgis-plugin.tex:296 deforisk-qgis-plugin.tex:331
+#: deforisk-qgis-plugin.tex:339 deforisk-qgis-plugin.tex:444
+#: deforisk-qgis-plugin.tex:452 deforisk-qgis-plugin.tex:467
+#: deforisk-qgis-plugin.tex:475 deforisk-qgis-plugin.tex:509
+#: deforisk-qgis-plugin.tex:651
+msgid "{0.5\\columnwidth}"
+msgstr "{0.5\\columnwidth}"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:299 deforisk-qgis-plugin.tex:302
+msgid "Installation"
+msgstr "Instalación"
+
+#. type: frame
+#: deforisk-qgis-plugin.tex:302
+msgid "Reduced number of steps for installing the plugin:"
+msgstr "Bajo número de pasos para instalar el plugin:"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:309
+msgid ""
+"Install QGIS and GDAL on you system (using \\texttt{OSGeo4W} on Windows)."
+msgstr ""
+"Instale QGIS y GDAL en su sistema (utilizando \\texttt{OSGeo4W} en Windows)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:309
+msgid ""
+"Install the \\texttt{forestatrisk} and \\texttt{riskmapjnr} Python packages "
+"using pip."
+msgstr ""
+"Instale los paquetes de Python \\texttt{forestatrisk} y \\texttt{riskmapjnr} "
+"utilizando pip."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:309
+msgid ""
+"\\href{https://github.com/ghislainv/deforisk-qgis-plugin/archive/refs/heads/"
+"main.zip}{Download} and install the \\texttt{deforisk} plugin from QGIS."
+msgstr ""
+"\\href{https://github.com/ghislainv/deforisk-qgis-plugin/archive/refs/heads/"
+"main.zip}{Descargar} e instalar el plugin \\texttt{deforisk} de QGIS."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:309
+msgid "(Unix-like systems only: install OSM tools)."
+msgstr "(Sólo sistemas tipo Unix: instalar herramientas OSM)."
+
+#. type: section{#2}
+#: deforisk-qgis-plugin.tex:317
+msgid "Data preparation"
+msgstr "Preparación de datos"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:320 deforisk-qgis-plugin.tex:331
+msgid "Get variables"
+msgstr "Obtener variables"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:331
+msgid "Functions to help prepare the data for modelling deforestation."
+msgstr ""
+"Funciones que ayudan a preparar los datos para la modelización de la "
+"deforestación."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:331
+msgid "Two different sources for \\textbf{forest cover change} (GFC or TMF)."
+msgstr ""
+"Dos fuentes diferentes para \\textbf{cambio en la cubierta forestal} (GFC o "
+"TMF)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:331
+msgid ""
+"Spatial explanatory variables describing \\textbf{forest accessibility} and "
+"\\textbf{land tenure} (altitude, slope, distance to roads, protected areas, "
+"etc.)."
+msgstr ""
+"Variables explicativas espaciales que describen la \\textbf{accesibilidad a "
+"los bosques} y la \\textbf{tenencia de la tierra} (altitud, pendiente, "
+"distancia a carreteras, zonas protegidas, etc.)."
+
+#. type: subsection{#2}
+#: deforisk-qgis-plugin.tex:342
+msgid "Forest cover change data"
+msgstr "Datos sobre cambios en la cubierta forestal"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:351
+msgid "GFC dataset"
+msgstr "Datos de GFC"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:351
+msgid "Hansen et al. 2013."
+msgstr "Hansen et al.  2013."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:351
+msgid "Global dataset encompassing all forest types."
+msgstr "Conjunto de datos global que abarca todos los tipos de bosque."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:351
+msgid "Tree cover and annual tree cover loss."
+msgstr "Cubierta arbórea y pérdida anual de cubierta arbórea."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:351
+msgid "30m resolution, from 2000 on."
+msgstr "Resolución de 30 m, a partir de 2000."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:351
+msgid "Data: \\url{https://glad.earthengine.app/view/global-forest-change}"
+msgstr "Datos: \\url{https://glad.earthengine.app/view/global-forest-change}"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:366 deforisk-qgis-plugin.tex:379
+msgid "TMF dataset"
+msgstr "Datos de TMF"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:366
+msgid ""
+"Vancutsem et al. 2021.  Tropical Moist Forests (evergreen forest, no dry "
+"deciduous forests)."
+msgstr ""
+"Vancutsem et al.  2021.  Bosques húmedos tropicales (bosque perennifolio, no "
+"hay bosques caducifolios secos)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:366
+msgid "30m resolution, from 1990 on."
+msgstr "Resolución de 30 m, a partir de 1990."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:366
+msgid ""
+"Tropical deforestation was underestimated (-33\\% in 2000--2012, Hansen et "
+"al. 2013), especially in Africa."
+msgstr ""
+"La deforestación tropical se subestimó (-33\\% en 2000--2012, Hansen et al.  "
+"2013), especialmente en África."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:366
+msgid "Data: \\url{https://forobs.jrc.ec.europa.eu/TMF/}."
+msgstr "Datos: \\url{https://forobs.jrc.ec.europa.eu/TMF/}."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:379
+msgid ""
+"Precise enough to visually identify the causes of deforestation (logging, "
+"fires, agriculture)"
+msgstr ""
+"Suficientemente precisos para identificar visualmente las causas de la "
+"deforestación (tala, incendios, agricultura)."
+
+#. type: subsection{#2}
+#: deforisk-qgis-plugin.tex:387
+msgid "Spatial explanatory variables"
+msgstr "Variables explicativas espaciales"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:390 deforisk-qgis-plugin.tex:400
+msgid "Spatial variables"
+msgstr "Variables explicativas espaciales"
+
+#. type: frame
+#: deforisk-qgis-plugin.tex:390
+msgid "The plugin helps computing eight explanatory variables."
+msgstr "El plugin ayuda a calcular ocho variables explicativas."
+
+#. type: textbf{#1}
+#: deforisk-qgis-plugin.tex:403
+msgid "Spatial explanatory variables in DRC"
+msgstr "Variables explicativas espaciales en la RDC"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:410
+msgid "Roads"
+msgstr "Carreteras"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:410
+msgid "OpenStreetMap (OSM)"
+msgstr "OpenStreetMap (OSM)"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:410
+msgid ""
+"``motorway'', ``trunk'', ``primary'', ``secondary'' and ``tertiary'' roads"
+msgstr ""
+"``motorway'', ``trunk'', ``primary'', ``secondary'' y ``tertiary'' carreteras"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:410
+msgid "3.6 million roads from OSM"
+msgstr "3,6 millones de carreteras de OSM"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:421
+msgid "Protected areas"
+msgstr "Areas protegidas"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:421
+msgid ""
+"PA status: ``Designated'', ``Inscribed'', ``Established'', or ``Proposed''."
+msgstr ""
+"Estado de la AP: \"Designada\", \"Inscrita\", \"Establecida\" o "
+"\"Propuesta\"."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:421
+msgid "85,000 protected areas from WDPA."
+msgstr "85.000 zonas protegidas de la WDPA."
+
+#. type: section{#2}
+#: deforisk-qgis-plugin.tex:429
+msgid "Models and validation"
+msgstr "Modelos y validación"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:432 deforisk-qgis-plugin.tex:444
+msgid "Benchmark model"
+msgstr "Modelo de referencia"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:444
+msgid "Benchmark model or reference model."
+msgstr "Modelo de referencia."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:444
+msgid "A reasonably good deforestation model (better than a null model)."
+msgstr ""
+"Un modelo de deforestación razonablemente bueno (mejor que un modelo nulo)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:444
+msgid ""
+"Assuming a \\emph{decrease of deforestation with distance to forest edge} "
+"(commonly admitted)."
+msgstr ""
+"Asumiendo una \\emph{disminución de la deforestación con la distancia al "
+"borde del bosque} (comúnmente admitido)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:444
+msgid ""
+"And a \\emph{different model between subjurisdictions} (regional "
+"variability)."
+msgstr ""
+"Y un \\emph{modelo diferente entre subjurisdicciones} (variabilidad "
+"regional)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:444
+msgid ""
+"See presentation \\textbf{Cirad and FAO}. 2024. \\href{https://deforisk-qgis-"
+"plugin.org/\\_static/references/Cirad2024-riskmap-verra.pdf}{Jurisdictional "
+"risk maps for allocating deforestation}."
+msgstr ""
+"Ver presentación \\textbf{Cirad y FAO}. 2024. \\href{https://deforisk-qgis-"
+"plugin.org/es/\\_static/references/Cirad2024-riskmap-verra.es.pdf}{Mapas de "
+"riesgo jurisdiccional para la asignación de la deforestación}."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:455 deforisk-qgis-plugin.tex:467
+msgid "Forestatrisk models"
+msgstr "Modelos forestatrisk"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:467
+msgid "Three statistical models: iCAR, GLM, RF."
+msgstr "Tres modelos estadísticos: iCAR, GLM, RF."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:467
+msgid "iCAR: Logistic regression with spatial random effects (iCAR process)."
+msgstr ""
+"iCAR: Regresión logística con efectos aleatorios espaciales (proceso iCAR)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:467
+msgid ""
+"GLM: Generalized Linear Model, simple logistic regression (no random "
+"effects)."
+msgstr ""
+"MLG: Modelo lineal generalizado, regresión logística simple (sin efectos "
+"aleatorios)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:467
+msgid "Random Forest model: random regression trees."
+msgstr "Modelo Random Forest: árboles de regresión aleatorios."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:467
+msgid "Statistical models based on a sample of the observations."
+msgstr "Modelos estadísticos basados en una muestra de las observaciones."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:483
+msgid "Sampling for FAR models"
+msgstr "Muestreo para modelos FAR"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:483
+msgid "We consider the forest cover change between \\(t\\) and \\(t+1\\)."
+msgstr "Consideramos el cambio de cubierta forestal entre \\(t\\) y \\(t+1\\)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:483
+msgid "Stratified sampling between deforested/non-deforested pixels."
+msgstr "Muestreo estratificado entre píxeles deforestados/no deforestados."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:483
+msgid ""
+"Total number of points proportional to the forest cover (from 20,000 to "
+"100,000 points per study area)."
+msgstr ""
+"Número total de puntos proporcional a la cubierta forestal (de 20.000 a "
+"100.000 puntos por zona de estudio)."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:493
+msgid "iCAR model"
+msgstr "Modelo iCAR"
+
+#. type: column
+#: deforisk-qgis-plugin.tex:493
+msgid "{0.5\\columnwidth} A logistic regression model with iCAR process:"
+msgstr "{0,5\\columnwidth} Un modelo de regresión logística con proceso iCAR:"
+
+#. type: split
+#: deforisk-qgis-plugin.tex:501
+msgid ""
+"y_i \\sim \\mathcal{B}ernoulli(\\theta_i)\\\\ \\text{logit}(\\theta_i) = "
+"\\alpha + X_i \\beta + \\rho_{j(i)}\\\\ \\rho_{j(i)} \\sim \\mathcal{N}"
+"ormal(\\sum_{j^{\\prime}} \\rho_{j^{\\prime}} / n_j,V_{\\rho} / n_j)"
+msgstr ""
+"y_i \\sim \\mathcal{B}ernoulli(\\theta_i)\\\\ \\text{logit}(\\theta_i) = "
+"\\alpha + X_i \\beta + \\rho_{j(i)}\\\\ \\rho_{j(i)} \\sim \\mathcal{N}"
+"ormal(\\sum_{j^{\\prime}} \\rho_{j^{\\prime}} / n_j,V_{\\rho} / n_j)"
+
+#. type: textbf{#1}
+#: deforisk-qgis-plugin.tex:504
+msgid ""
+"Random effects \\(\\rho_{j(i)}\\) allows accounting for residual spatial "
+"variation not taken into account by model variables \\(X_i\\)."
+msgstr ""
+"Los efectos aleatorios \\(\\rho_{j(i)}\\) permiten dar cuenta de la "
+"variación espacial residual no tenida en cuenta por las variables del modelo "
+"\\(X_i\\)."
+
+#. type: textbf{#1}
+#: deforisk-qgis-plugin.tex:514
+msgid "Square grid of 10km cells over DRC"
+msgstr "Cuadrícula cuadrada de 10 km sobre la RDC"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:519
+msgid "Spatial random effects"
+msgstr "Efectos aleatorios espaciales"
+
+#. type: textbf{#1}
+#: deforisk-qgis-plugin.tex:522
+msgid "Interpolation of spatial random effects at 1km in DRC"
+msgstr "Interpolación de efectos aleatorios espaciales a 1 km en la RDC"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:528
+msgid "Spatial probability of deforestation"
+msgstr "Probabilidad espacial relativa de deforestación"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:528
+msgid ""
+"We use the fitted model to compute the spatial probability of deforestation."
+msgstr ""
+"Utilizamos el modelo ajustado para calcular la probabilidad espacial de "
+"deforestación"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:528
+msgid "Probabilities in [0, 1] are transformed into classes in [1, 65535]."
+msgstr "Las probabilidades en [0, 1] se transforman en clases [1, 65535]."
+
+#. type: textbf{#1}
+#: deforisk-qgis-plugin.tex:535
+msgid "Relative spatial probability of deforestation in DRC"
+msgstr "Probabilidad espacial relativa de deforestación en la RDC"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:538
+msgid "GLM model"
+msgstr "Modelo GLM"
+
+#. type: frame
+#: deforisk-qgis-plugin.tex:538
+msgid "A simple logistic regression model without random effects:"
+msgstr "Un modelo de regresión logística simple sin efectos aleatorios:"
+
+#. type: split
+#: deforisk-qgis-plugin.tex:545
+msgid ""
+"y_i \\sim \\mathcal{B}ernoulli(\\theta_i)\\\\ \\text{logit}(\\theta_i) = "
+"\\alpha + X_i \\beta"
+msgstr ""
+"y_i \\sim \\mathcal{B}ernoulli(\\theta_i)\\\\texto{logit}(\\theta_i) = "
+"\\alpha + X_i \\beta"
+
+#. type: frame
+#: deforisk-qgis-plugin.tex:548
+msgid "Easy to compare with iCAR to see the impact of spatial random effects."
+msgstr ""
+"Fácil de comparar con iCAR para ver el impacto de los efectos aleatorios "
+"espaciales."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:554
+msgid "Random Forest model"
+msgstr "Modelo Random Forest"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:554
+msgid "Random Forest is an ensemble machine learning algorithm."
+msgstr "Random Forest es un algoritmo de aprendizaje automático por conjuntos."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:554
+msgid ""
+"Combines multiple decision trees to create a more robust and accurate "
+"predictive model."
+msgstr ""
+"Combina varios árboles de decisión para crear un modelo predictivo más "
+"sólido y preciso."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:568 deforisk-qgis-plugin.tex:582
+msgid "ForestAtRisk in the tropics"
+msgstr "ForestAtRisk en los trópicos"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:568
+msgid ""
+"\\textbf{i.} Consider tropical moist forest in \\textbf{92} countries (119 "
+"study areas)"
+msgstr ""
+"\\textbf{i.} Considerar el bosque húmedo tropical en \\textbf{92} países "
+"(119 áreas de estudio)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:568
+msgid ""
+"\\textbf{ii.} Estimate the current deforestation rate and uncertainty in "
+"each country"
+msgstr ""
+"\\textbf{ii.} Estimar la tasa de deforestación actual y la incertidumbre en "
+"cada país"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:568
+msgid ""
+"\\textbf{iii.} Model the spatial risk of deforestation from environmental "
+"factors"
+msgstr ""
+"\\textbf{iii.} Modelizar el riesgo espacial de deforestación a partir de "
+"factores medioambientales"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:568
+msgid ""
+"\\textbf{iv.} Forecast the deforestation assuming a business-as-usual "
+"scenario"
+msgstr ""
+"\\textbf{iv.} Previsión de la deforestación suponiendo un escenario sin "
+"cambios"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:568
+msgid "\\textbf{v.} Consequences in terms of carbon emissions"
+msgstr "\\textbf{v.} Consecuencias en términos de emisiones de carbono"
+
+#. type: textbf{#1}
+#: deforisk-qgis-plugin.tex:577
+msgid "The 119 study areas in the 3 continents"
+msgstr "Las 119 zonas de estudio en los 3 continentes"
+
+#. type: textbf{#1}
+#: deforisk-qgis-plugin.tex:584
+msgid "Pantropical map of the spatial probability of deforestation"
+msgstr "Mapa pantropical de la probabilidad espacial de deforestación"
+
+#. type: frame
+#: deforisk-qgis-plugin.tex:586
+msgid ""
+"Article in review: \\href{https://doi.org/10.1101/2022.03.22.485306}"
+"{10.1101/2022.03.22.485306}"
+msgstr ""
+"Artículo en revisión: \\href{https://doi.org/10.1101/2022.03.22.485306}"
+"{10.1101/2022.03.22.485306}"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:592 deforisk-qgis-plugin.tex:598
+#: deforisk-qgis-plugin.tex:622
+msgid "Moving window models"
+msgstr "Modelos de ventanas móviles"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:598
+msgid "Model proposed by previous Verra's methodology."
+msgstr "Modelo propuesto por la anterior metodología de Verra."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:598
+msgid ""
+"Find a distance threshold to define class 1 for the deforestation risk (same "
+"thing as for the benchmark model)."
+msgstr ""
+"Encontrar un umbral de distancia para definir la clase 1 para el riesgo de "
+"deforestación (lo mismo que para el modelo de referencia)."
+
+#. type: column
+#: deforisk-qgis-plugin.tex:607
+msgid "{0.55\\columnwidth}"
+msgstr "{0.55\\columnwidth}"
+
+#. type: caption{#2}
+#: deforisk-qgis-plugin.tex:607
+msgid "Cumulative deforestation as a function of the distance to forest edge."
+msgstr ""
+"Deforestación acumulada en función de la distancia al borde del bosque."
+
+#. type: column
+#: deforisk-qgis-plugin.tex:615
+msgid "{0.45\\columnwidth}"
+msgstr "{0.45\\columnwidth}"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:622
+msgid ""
+"Compute a local risk of deforestation at the pixel level using a moving "
+"window."
+msgstr ""
+"Calcular un riesgo local de deforestación a nivel de píxel utilizando una "
+"ventana móvil."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:622
+msgid "The moving window can be of different sizes."
+msgstr "La ventana móvil puede ser de distintos tamaños."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:622
+msgid "Deforestation rates in [0, 1] are converted to [2, 65535]."
+msgstr "Las tasas de deforestación en [0, 1] se convierten a [2, 65535]."
+
+#. type: caption{#2}
+#: deforisk-qgis-plugin.tex:629
+msgid "Moving window."
+msgstr "Ventana móvil."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:632 deforisk-qgis-plugin.tex:651
+#: deforisk-qgis-plugin.tex:657
+msgid "Validation"
+msgstr "Validación"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:651
+msgid ""
+"Comparing predicted vs. observed deforestation (in ha) for each cell in a "
+"coarse grid."
+msgstr ""
+"Comparación de la deforestación prevista frente a la observada (en ha) para "
+"cada celda de una cuadrícula gruesa."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:651
+msgid "For a given period of time."
+msgstr "Durante un periodo de tiempo determinado."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:657
+msgid "Performance indices: \\(R^2\\), and median of absolute error (MedAE)."
+msgstr ""
+"Índices de rendimiento: \\(R^2\\), y mediana del error absoluto (MedAE)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:657
+msgid ""
+"Computed for each model and each period (calibration, validation, "
+"historical)."
+msgstr ""
+"Calculados para cada modelo y cada periodo (calibración, validación, "
+"histórico)."
+
+#. type: section{#2}
+#: deforisk-qgis-plugin.tex:665
+msgid "Usage"
+msgstr "Utilización"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:668 deforisk-qgis-plugin.tex:675
+#: deforisk-qgis-plugin.tex:705 deforisk-qgis-plugin.tex:716
+msgid "Allocating deforestation"
+msgstr "Asignación de la deforestación"
+
+#. type: frame
+#: deforisk-qgis-plugin.tex:675
+msgid "For the best model, we obtain at t3:"
+msgstr "Para el mejor modelo, obtenemos en t3:"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:675
+msgid "A jurisdictional map with classes of deforestation risk."
+msgstr "Mapa jurisdiccional con clases de riesgo de deforestación."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:675
+msgid "A table with relative deforestation rates for each class."
+msgstr "Una tabla con las tasas relativas de deforestación de cada clase."
+
+#. type: caption{#2}
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid ""
+"Deforestation rates at t3 for each class of deforestation risk (numbers "
+"truncated to three decimal digits)."
+msgstr ""
+"Tasas de deforestación en t3 para cada clase de riesgo de deforestación "
+"(cifras truncadas a tres dígitos decimales)."
+
+#. type: table
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "\\small"
+msgstr "\\small"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "\\toprule cat"
+msgstr "\\toprule cat"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "\\(n_i\\)"
+msgstr "\\(n_i\\)"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "\\(d_i\\)"
+msgstr "\\(d_i\\)"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "\\(\\theta_{m,i}\\)"
+msgstr "\\(\\theta_{m,i}\\)"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "\\(\\theta_{a,i}\\)"
+msgstr "\\(\\theta_{a,i}\\)"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "\\(T\\)"
+msgstr "\\(T\\)"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "\\(A\\)"
+msgstr "\\(A\\)"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "\\(\\delta_{i}\\)"
+msgstr "\\(\\delta_{i}\\)"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "[0pt] \\midrule 1"
+msgstr "[0pt] \\midrule 1"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "137575"
+msgstr "137575"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "--"
+msgstr "--"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "1.000e-06"
+msgstr "1.000e-06"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "0.09"
+msgstr "0.09"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692
+msgid "[0pt] 2"
+msgstr "[0pt] 2"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692
+msgid "5425"
+msgstr "5425"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692
+msgid "1.625e-05"
+msgstr "1.625e-05"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692
+msgid "[0pt] 3"
+msgstr "[0pt] 3"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692
+msgid "3523"
+msgstr "3523"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692
+msgid "3.151e-05"
+msgstr "3.151e-05"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692
+msgid "[0pt] 4"
+msgstr "[0pt] 4"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692
+msgid "2458"
+msgstr "2458"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692
+msgid "4.677e-05"
+msgstr "4.677e-05"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692
+msgid "[0pt] 5"
+msgstr "[0pt] 5"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692
+msgid "2078"
+msgstr "2078"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692
+msgid "6.203"
+msgstr "6.203"
+
+#. type: tabular
+#: deforisk-qgis-plugin.tex:692 deforisk-qgis-plugin.tex:705
+msgid "[0pt] \\bottomrule"
+msgstr "[0pt] \\bottomrule"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:713
+msgid ""
+"Considering a total \\textbf{deforestation} \\(D\\) (in ha) for the next "
+"\\(Y\\) \\textbf{years} at the jurisdictional level."
+msgstr ""
+"Considerando un total de \\textbf{deforestación} \\(D\\) (en ha) para los "
+"próximos \\(Y\\) \\textbf{años} a nivel jurisdiccional."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:713
+msgid ""
+"\\textbf{Adjustment factor} is \\(\\rho = D / (A \\sum_i n_{i} \\theta_{m,"
+"i})\\), with \\(A\\) the pixel area in ha."
+msgstr ""
+"\\textbf{Factor de ajuste} es \\(\\rho = D / (A \\sum_i n_{i} \\theta_{m,"
+"i})\\), siendo \\(A\\) el área del píxel en ha."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:713
+msgid ""
+"\\textbf{Absolute rate} is \\(\\theta_{a,i} = \\rho \\theta_{m,i}\\): so "
+"that total predicted deforestation = expected deforestation."
+msgstr ""
+"\\textbf{Tasa absoluta} es \\(\\theta_{a,i} = \\rho \\theta_{m,i}\\): de "
+"modo que deforestación total = deforestación prevista por los datos de "
+"actividad."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:713
+msgid ""
+"\\textbf{Deforestation density} is \\(\\delta_{i} = \\theta_{a,i} \\times "
+"A / Y\\). Used to predict the amount of deforestation (in ha/yr) for each "
+"forest pixel."
+msgstr ""
+"\\textbf{Densidad de deforestación} es \\(\\delta_{i} = \\theta_{a,i} "
+"\\times A / Y\\). Se utiliza para predecir la cantidad de deforestación (en "
+"ha/año) de cada píxel forestal."
+
+#. type: frame
+#: deforisk-qgis-plugin.tex:716
+msgid ""
+"\\textbf{Deforestation density} is \\(\\delta_{i}\\) (in ha/yr) is used to "
+"predict the amount of deforestation for each forest pixel."
+msgstr ""
+"\\textbf{Densidad de deforestación} es \\(\\delta_{i} = \\theta_{a,i} "
+"\\times A / Y\\). Se utiliza para predecir la cantidad de deforestación (en "
+"ha/año) de cada píxel forestal."
+
+#. type: caption{#2}
+#: deforisk-qgis-plugin.tex:723
+msgid "Allocating deforestation to projects within the jurisdiction."
+msgstr "Asignación de la deforestación a proyectos dentro de la jurisdicción."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:726 deforisk-qgis-plugin.tex:734
+msgid "Subnational jurisdictions"
+msgstr "Jurisdicciones subnacionales"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:734
+msgid "Possibility to work with subnational jurisdictions."
+msgstr "Posibilidad de trabajar con jurisdicciones subnacionales."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:734
+msgid ""
+"GPKG file named \\texttt{aoi\\_latlon.gpkg} with two layers named "
+"\\texttt{aoi} for the jurisdiction and \\texttt{subj} for the "
+"subjurisdictions."
+msgstr ""
+"Archivo GPKG llamado \\texttt{aoi\\_latlon.gpkg} con dos capas llamadas "
+"\\texttt{aoi} para la jurisdicción y \\texttt{subj} para las "
+"subjurisdicciones."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:734
+msgid ""
+"This file can then be used with the \\texttt{deforisk} plugin to define the "
+"area of interest (AOI)."
+msgstr ""
+"Este archivo se puede utilizar con el plugin \\texttt{deforisk} para definir "
+"el área de interés (AOI)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:734
+msgid ""
+"More details on the website page \\href{https://deforisk-qgis-plugin.org/"
+"articles/subnational\\_jurisd.html}{Subnational jurisdictions}."
+msgstr ""
+"Más información en la página web \\href{https://deforisk-qgis-plugin.org/es/"
+"articles/subnational\\_jurisd.html}{Jurisdicciones subnacionales}."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:742 deforisk-qgis-plugin.tex:753
+msgid "User's data"
+msgstr "Datos del usuario"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:753
+msgid ""
+"Possibility to use user's data: national forest cover change map, other "
+"explanatory variables (e.g. mining concessions)."
+msgstr ""
+"Posibilidad de utilizar datos del usuario: mapa nacional de cambios en la "
+"cubierta forestal, otras variables explicativas (por ejemplo, concesiones "
+"mineras)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:753
+msgid "Manual steps at the moment."
+msgstr "Pasos manuales por el momento."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:753
+msgid "Files in the \\texttt{data} folder must be replaced with user's data."
+msgstr ""
+"Los archivos de la carpeta \\texttt{data} deben ser reemplazados por los "
+"datos del usuario."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:753
+msgid "Additional raster variables can be added to the \\texttt{data} folder."
+msgstr ""
+"Se pueden añadir variables raster adicionales a la carpeta \\texttt{data}."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:753
+msgid "Symbolic links in \\texttt{data\\_*} folders must exist."
+msgstr "Deben existir enlaces simbólicos en las carpetas \\texttt{data\\_*}."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:753
+msgid ""
+"More details on the website page \\href{https://deforisk-qgis-plugin.org/"
+"articles/user\\_data.html}{User's data}."
+msgstr ""
+"Más detalles en la página web \\href{https://deforisk-qgis-plugin.org/es/"
+"articles/user\\_data.html}{Datos del usuario}."
+
+#. type: section{#2}
+#: deforisk-qgis-plugin.tex:756
+msgid "Conclusion"
+msgstr "Conclusión"
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:759 deforisk-qgis-plugin.tex:762
+msgid "Workshop agenda"
+msgstr "Programa del taller"
+
+#. type: frame
+#: deforisk-qgis-plugin.tex:762
+msgid "Four practical sessions:"
+msgstr "Cuatro sesiones prácticas:"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:775
+msgid "Installing the software and run the \\texttt{Get Started} tutorial."
+msgstr "Instalar el software y ejecutar el tutorial \\texttt{Get Started}."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:775
+msgid "Chose a small subnational jurisdiction and select the best risk map."
+msgstr ""
+"Elegir una jurisdicción subnacional pequeña y seleccione el mejor mapa de "
+"riesgos."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:775
+msgid "Derive the best risk map for a large jurisdiction (e.g. country scale)."
+msgstr ""
+"Derivar el mejor mapa de riesgos para una gran jurisdicción (por ejemplo, a "
+"nivel nacional)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:775
+msgid "Exercices:"
+msgstr "Ejercicios:"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:775
+msgid ""
+"Change model parameters to see models' behavior (e.g. size of spatial cells "
+"for iCAR model)."
+msgstr ""
+"Cambiar los parámetros del modelo para ver su comportamiento (por ejemplo, "
+"el tamaño de las celdas espaciales para el modelo iCAR)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:775
+msgid "Use country data (e.g. national forest cover change map)."
+msgstr ""
+"Utilizar datos del país (por ejemplo, mapa nacional de cambios en la "
+"cubierta forestal)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:775
+msgid "Allocate future deforestation to a project."
+msgstr "Asignar la deforestación futura a un proyecto."
+
+#. type: frame{#2}
+#: deforisk-qgis-plugin.tex:778 deforisk-qgis-plugin.tex:790
+msgid "Perspectives"
+msgstr "Perspectivas"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:790
+msgid "Recent plugin (first version in July 2024)."
+msgstr "Plugin reciente (primera versión en julio de 2024)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:790
+msgid "Improvements are expected:"
+msgstr "Se esperan mejoras:"
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:790
+msgid "Increase computational speed (for predictions on large areas)."
+msgstr ""
+"Aumentar la velocidad de cálculo (para predicciones sobre grandes "
+"superficies)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:790
+msgid "Adding more alternative models (MLP)."
+msgstr "Añadir más modelos alternativos (MLP)."
+
+#. type: itemize
+#: deforisk-qgis-plugin.tex:790
+msgid "Modifications from users' feedback."
+msgstr "Modificaciones a partir de los comentarios de los usuarios."
+
+#.  Use background image
+#.  Remove shadow from block
+#. type: document
+#: deforisk-qgis-plugin.tex:813
+msgid ""
+"{ \\usebackgroundtemplate{\\includegraphics[keepaspectratio=true, "
+"height=\\paperheight]{figs/Canopy-NC} } \\setbeamertemplate{navigation "
+"symbols}{} \\setbeamertemplate{blocks}[rounded][shadow=false] \\begin{frame}"
+"[plain] \\vspace*{\\stretch{100}} \\begin{block}{} \\begin{center} "
+"\\ldots~Thank you for attention~\\ldots \\\\ \\url{https://deforisk-qgis-"
+"plugin.org} \\\\ \\textbf{> Articles > References > Presentations} \\\\ "
+"\\includegraphics[width=0.8\\textwidth]{figs/partners_logos} \\end{center} "
+"\\end{block} \\end{frame} }"
+msgstr ""
+"{ \\usebackgroundtemplate{\\includegraphics[keepaspectratio=true, "
+"height=\\paperheight]{figs/Canopy-NC} } \\setbeamertemplate{navigation "
+"symbols}{} \\setbeamertemplate{blocks}[rounded][shadow=false] \\begin{frame}"
+"[plain] \\vspace*{\\stretch{100}} \\begin{block}{} \\begin{center} "
+"\\ldots~Gracias por su atención~\\ldots \\\\ \\url{https://deforisk-qgis-"
+"plugin.org} \\\\ \\textbf{> Artículos > Referencias > Presentaciones} \\\\ "
+"\\includegraphics[width=0.8\\textwidth]{figs/partners_logos} \\end{center} "
+"\\end{block} \\end{frame} }"

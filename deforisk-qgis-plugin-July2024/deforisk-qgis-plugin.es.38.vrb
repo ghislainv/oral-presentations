@@ -1,0 +1,16 @@
+\frametitle{Subnational jurisdictions}
+\begin{itemize}
+\item Posibilidad de trabajar con jurisdicciones subnacionales.
+\item Archivo GPKG llamado \texttt{aoi\_latlon.gpkg} con dos capas llamadas
+\texttt{aoi} para la jurisdicción y \texttt{subj} para las
+subjurisdicciones.
+\item Este archivo se puede utilizar con el plugin \texttt{deforisk} para definir
+el área de interés (AOI).
+\item Más información en la página web
+\href{https://deforisk-qgis-plugin.org/es/articles/subnational\_jurisd.html}{Jurisdicciones
+subnacionales}.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=7cm]{figs/select_subjurisdictions.png}
+\end{center}
