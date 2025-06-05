@@ -1,0 +1,64 @@
+#+BEAMER_HEADER: \usepackage{lmodern}
+#+BEAMER_HEADER: \usepackage{pgf}
+#+BEAMER_HEADER: \usepackage{color}
+#+BEAMER_HEADER: \usepackage[french,english]{babel}
+#+BEAMER_HEADER: \definecolor{vertmoyen}{RGB}{51,110,23} % vert moyen
+#+BEAMER_HEADER: \definecolor{blueFRB}{HTML}{31859c}
+#+BEAMER_HEADER: \usecolortheme[named=blueFRB]{structure}
+#+BEAMER_HEADER: \usepackage{tabularx} % varier la largeur du tableau
+#+BEAMER_HEADER: \usepackage{layout}
+#+BEAMER_HEADER: \setlength{\LTleft}{-5cm plus 1 fill}
+#+BEAMER_HEADER: \setlength{\LTright}{-5cm plus 1 fill}
+#+BEAMER_HEADER: \usepackage{booktabs}
+#+BEAMER_HEADER: \usepackage{arydshln} %% dashlines for tabular
+#+BEAMER_HEADER: \newcommand{\logit}{\text{logit}}
+#+BEAMER_HEADER: \newcommand{\bs}[1]{\boldsymbol{#1}}
+#+BEAMER_HEADER: \newcommand{\R}{\textnormal{\sffamily\bfseries R}}
+#+BEAMER_HEADER: \newcommand{\pkg}[1]{{\fontseries{b}\selectfont #1}}
+#+BEAMER_HEADER: \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+#+BEAMER_HEADER: 
+#+BEAMER_HEADER: \setbeamertemplate{footline}[frame number]
+#+BEAMER_HEADER: \setbeamertemplate{frametitle}{%
+#+BEAMER_HEADER:     \usebeamerfont{frametitle}\insertframetitle%
+#+BEAMER_HEADER:     \vphantom{g} % To avoid fluctuations per frame
+#+BEAMER_HEADER:     \par
+#+BEAMER_HEADER:     \centering \includegraphics[width=\textwidth]{figs/Barre_couleur}
+#+BEAMER_HEADER: }
+#+BEAMER_HEADER: \beamertemplatenavigationsymbolsempty
+#+BEAMER_HEADER: 
+#+BEAMER_HEADER: % Logo
+#+BEAMER_HEADER: \newif\ifplacelogo % create a new conditional
+#+BEAMER_HEADER: \logo{\ifplacelogo\includegraphics[width=0.4\textwidth]{figs/partners_logos}\fi}
+#+BEAMER_HEADER: 
+#+BEAMER_HEADER: %Call table of contents at the beginning of each section
+#+BEAMER_HEADER: \AtBeginSection[]{
+#+BEAMER_HEADER: \placelogotrue
+#+BEAMER_HEADER:   \begin{frame}
+#+BEAMER_HEADER:     \frametitle{Plan de la présentation}
+#+BEAMER_HEADER:     \begin{columns}[c]
+#+BEAMER_HEADER:       \begin{column}{0.5\textwidth}
+#+BEAMER_HEADER:         \tableofcontents[sections=1,currentsection]
+#+BEAMER_HEADER:         \vspace{0.5cm}
+#+BEAMER_HEADER:         \tableofcontents[sections=2,currentsection]
+#+BEAMER_HEADER:       \end{column}
+#+BEAMER_HEADER:       \begin{column}{0.5\textwidth}
+#+BEAMER_HEADER:         \tableofcontents[sections=3,currentsection]
+#+BEAMER_HEADER:         \vspace{0.5cm}
+#+BEAMER_HEADER:         \tableofcontents[sections=4,currentsection]
+#+BEAMER_HEADER:       \end{column}
+#+BEAMER_HEADER:     \end{columns}
+#+BEAMER_HEADER:   \end{frame}
+#+BEAMER_HEADER: \placelogofalse
+#+BEAMER_HEADER: }
+#+BEAMER_HEADER: 
+#+BEAMER_HEADER: \hypersetup{
+#+BEAMER_HEADER:   colorlinks=true,
+#+BEAMER_HEADER:   linkcolor=Black,
+#+BEAMER_HEADER:   filecolor=Maroon,
+#+BEAMER_HEADER:   citecolor=Blue,
+#+BEAMER_HEADER:   urlcolor=Maroon}
+#+BEAMER_HEADER: 
+#+BEAMER_HEADER: % Disable monospaced font for URLs
+#+BEAMER_HEADER: \urlstyle{same}
+#+BEAMER_HEADER:
+

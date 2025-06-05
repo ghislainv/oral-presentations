@@ -1,0 +1,107 @@
+#+TITLE: The deforisk QGIS plugin for making and comparing deforestation risk maps
+#+AUTHOR: Ghislain Vieilledent
+#+DATE: @@latex:\today@@
+#+OPTIONS: author:nil date:nil title:nil H:3 toc:nil num:t ^:{}
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+STARTUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt,table,dvipsnames,compress]
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME: [subsection=false]miniframes
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
+#+BEAMER_HEADER: \title[deforisk QGIS plugin]{The \texttt{deforisk} QGIS plugin for making and comparing deforestation risk maps}
+#+BEAMER_HEADER: \definecolor{darkgreen}{RGB}{34,139,34} % vert moyen
+#+BEAMER_HEADER: \usepackage{float}
+
+# This is used to avoid bold text to be translated as \alert{text}
+# https://tex.stackexchange.com/questions/637386/org-mode-export-bold-text-to-beamer
+#+BIND: org-export-filter-bold-functions (org-beamer-bold-as-textbf)
+#+BEGIN_SRC emacs-lisp :exports results :results none
+  (defun org-beamer-bold-as-textbf (s backend info)
+    (replace-regexp-in-string "\\\\alert" "\\\\textbf" s))
+#+END_SRC
+
+#+SETUPFILE: "header.org"
+
+* Title page                                                         :ignore:
+
+#+INCLUDE: "doc_prefix.tex" export latex
+
+* The deforisk QGIS plugin
+
+** Website and documentation
+
+*** Website and documentation
+
+The website includes all the documentation to use the plugin:\\
+
+#+attr_latex: :width 2cm
+[[file:figs/logo-deforisk.png]]
+
+\centering https://deforisk-qgis-plugin.org
+
+** Aim and specificities
+
+*** Aims and specificities
+
+- Provide *a tool* to create and compare *deforestation risk maps*.
+- At the *jurisdictional* level.
+- Following *Verra's VT0007 v1 principles* (comparison to benchmark map).
+- Open-source and *Python based*: transparency, reproducibility.
+- Computationally *efficient* (no need of a large RAM).
+- *OS independent*: Windows, Linux, MacOS.
+
+** Alternative models
+
+*** Alternative models to benchmark
+
+- Three statistical models with explanatory variables: iCAR, GLM, Random Forest.
+- One phenomenological model: moving-window model.
+- Map with classes of deforestation risks (up to 65535 classes) and associated deforestation probabilities.
+- Alternative maps can be compared to the benchmark following Verra VT0007-v1.0 2024 methodology.
+- Alternative maps can be used to allocate deforestation to projects within the jurisdiction.
+
+* deforisk and VT0007
+
+** deforisk alternative maps and VT0007
+
+*** deforisk alternative maps and VT0007
+
+- Alternative maps do not totally match the requisites of Verra VT0007-v1.0 2024.
+- In VT0007:
+  - Section 5.4.1 p. 21: Alternative vulnerability maps should have vulnerability scaled from 1 to 30.
+  - Section 5.4.2 p. 22: Vulnerability maps should be overlayed with administrative divisions as for the benchmark.
+- This is *not the case* for alternative maps obtained with the deforisk plugin.
+
+** deforisk validation approach and VT0007
+
+*** deforisk validation approach and VT0007
+
+- No Theissen polygons are used for validation but a simple regular grid.
+- Additional metrics to the MedAE for validation: R2, RMSE.
+
+* Questions and remarks
+
+** Regarding VT0007
+
+*** Questions regarding VT0007
+
+- Is the benchmark model good enough? (cf. hotspots of deforestation within the jurisdictions).
+- Why putting these restrictions on the alternative models. In particular regarding the necessity to overlap with administrative divisions. Several models already incorporate spatial effects to account for regional variability (eg. between administrative divisions).
+- Why using the MedAE and not the R2 and RMSE which are more common?
+- Why using Theissen polygons which implies removing irregular polygons at the edge of the jurisdiction? 
+
+** Regarding deforisk and VT0007
+
+*** Questions regarding deforisk and VT0007
+
+- Have you heard about and tested the deforisk QGIS plugin?
+- What do you think about it, in particular with regards to VT0007?
+
+* Last slide                                                         :ignore:
+    
+#+INCLUDE: "doc_suffix.tex" export latex
+
+# End Of File

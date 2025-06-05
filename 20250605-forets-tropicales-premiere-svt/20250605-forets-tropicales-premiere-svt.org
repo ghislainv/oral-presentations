@@ -1,0 +1,343 @@
+#+TITLE: Les forêts tropicales et leur importance pour nos sociétés
+#+AUTHOR: Ghislain Vieilledent
+#+DATE: @@latex:\today@@
+#+OPTIONS: author:nil date:nil title:nil H:3 toc:nil num:t ^:{}
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+STARTUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt,table,dvipsnames,compress]
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME: [subsection=false]miniframes
+#+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col)
+#+BEAMER_HEADER: \title[Les forêts tropicales]{Les forêts tropicales et leur importance\\pour nos sociétés}
+#+BEAMER_HEADER: \definecolor{darkgreen}{RGB}{34,139,34} % vert moyen
+#+BEAMER_HEADER: \usepackage{float}
+
+# This is used to avoid bold text to be translated as \alert{text}
+# https://tex.stackexchange.com/questions/637386/org-mode-export-bold-text-to-beamer
+#+BIND: org-export-filter-bold-functions (org-beamer-bold-as-textbf)
+#+BEGIN_SRC emacs-lisp :exports results :results none
+  (defun org-beamer-bold-as-textbf (s backend info)
+    (replace-regexp-in-string "\\\\alert" "\\\\textbf" s))
+#+END_SRC
+
+#+SETUPFILE: "header.org"
+
+* Links                                                              :noexport:
+
+See nice photos on https://worldrainforests.com/.
+
+* Title page                                                         :ignore:
+
+#+INCLUDE: "doc_prefix.tex" export latex
+
+* Les forêts tropicales
+
+** Qu'est-ce qu'une forêt tropicale ?
+
+*** Qu'est-ce qu'une forêt ?
+
+#+attr_latex: :width \textwidth
+[[file:figs/vue-drone-foret-tropicale-2.jpg]]
+
+- Forêt: ensemble d'arbres de plus de 5 m de haut et de 0.5 ha (définition de la FAO).
+
+*** Qu'est-ce qu'une forêt tropicale ?
+
+#+attr_latex: :width \textwidth
+[[file:figs/carte-des-forets-tropicales.jpg]]
+
+- Forêt tropicale: qui se trouve entre les tropiques. \pm23^{\deg} au nord ou au sud de l'équateur.
+
+*** Qu'est-ce qu'une forêt tropicale ?
+
+**** Image 1                                                       :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+
+#+attr_latex: :width \textwidth
+[[file:figs/forest-one-third-of-earth-land.png]]
+Les forêts couvrent 1/3 de la surface des terres émergées.
+  
+**** Image 2                                                       :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+
+#+attr_latex: :width \textwidth
+[[file:figs/45-percent-of-forest-cover-in-the-tropics.png]]
+- Les forêts tropicales représentent 45% des forêts du monde.
+- Petit calcul: (1/3 \times 0.45) \rightarrow forêts tropicales couvrent \approx15% des terres.
+  
+** Un réservoir de biodiversité
+
+*** Un réservoir de biodiversité
+
+#+attr_latex: :width 0.8\textwidth
+[[file:figs/vue-drone-foret-tropicale.jpg]]
+
+Plus de 100 espèces d'arbres à l'hectare en forêt tropicale.
+
+*** Un réservoir de biodiversité
+
+**** Image 1                                                       :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width \textwidth
+[[file:figs/vegetation-profile-rainforest.png]]
+
+**** Image 2                                                       :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width \textwidth
+[[file:figs/biodiversity-in-tropical-forests.jpg]]
+
+**** Text                                                :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+Un habitat en trois dimensions abritant une multitude d'espèces animales et végétales.
+
+*** Un réservoir de biodiversité
+
+#+attr_latex: :width 0.7\textwidth
+[[file:figs/planete-svt.png]]
+
+Le radeau des cimes inventé par Francis Hallé, chercheur et botaniste à l'Université de Montpellier.
+
+*** Un réservoir de biodiversité
+
+#+attr_latex: :width 0.8\textwidth
+[[file:figs/biodiversity-in-tropical-forests-2.jpg]]
+
+Les forêts tropicales ne représentent que 15% des terres émergées mais elles abritent >50% des espèces vivant sur ces terres.
+
+*** Importance de la biodiversité
+
+#+attr_latex: :width 0.8\textwidth
+[[file:figs/biodiversity-network.jpg]]
+
+- Les espèces interagissent entre elles et dépendent les unes des autres.
+- Si les espèces disparaissent, l'écosystème peut s'effondrer et ne plus fournir de services (cf. plus bas).
+- Analogie avec un avion: on pert un boulon ça peut passer mais si on pert tous les boulons...
+- Actuellement, perte d'un grand nombre d'espèces à un rythme rapide (cf. crise de l'Anthropocène, 6^{ième} extinction de masse).
+  
+* Les services rendus par les forêts tropicales
+
+** Le stockage du carbone
+
+*** Le stockage de carbone (ou CO2)
+
+#+attr_latex: :width 0.6\textwidth
+[[file:figs/carbon-sequestration-by-forests.png]]
+
+- Via la photosynthèse.
+- Les forêts absorbent environ 20% des émissions de CO2 associées aux activités humaines. Elles limitent le changement climatique.
+- En forêt tropicale, un gros arbre séquestre plusieurs tonnes de carbone. 70% des stocks de carbone sur les terres se situent en forêt tropicale. 
+
+** Les forêts et le cycle de l'eau
+
+*** Les forêts et le cycle de l'eau
+
+#+attr_latex: :width 0.7\textwidth
+[[file:figs/evapotranspiration-amazonie.png]]
+
+- Les forêts contribuent à la formation des nuages et au régime des précipitations à une échelle régionale via l'évapotranspiration.
+- Les forêts par interception de la pluie, stockage et filtration de l'eau dans les sols forestiers permettent un apport d'eau régulier et de qualité aux populations locales. 
+
+** Les ressources forestières
+
+*** Les ressources forestières
+
+**** Image 1                                                       :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width \textwidth
+[[file:figs/costa_rica_osa_0077_1280x670.jpg]]
+
+**** Image 2                                                       :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width 0.6\textwidth
+[[file:figs/cueillette.jpg]]
+
+**** Text                                                :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+- Ressources en bois.
+- Ressources alimentaires: chasse, cueillette, miel.
+- Soins: plantes médicinales et pharmacopée traditionnelle.
+- 1.6 milliard d'êtres humains (nous sommes 8 milliards en 2025) dépendent *directement* des forêts pour leur survie quotidienne.
+
+* L'homme destructeur ou protecteur des forêts
+
+** La déforestation
+
+*** La déforestation
+
+#+attr_latex: :width 0.6\textwidth
+[[file:figs/tarzan.jpg]]
+
+- 10 millions d'hectares par an sont déforestés (1/5 de la France tous les ans, 1 ha \approx 1 terrain de foot).
+- En conséquence: perte de biodiversité, émissions de CO2, érosion des sols et désertification. 
+
+*** Les causes de la déforestation
+
+#+attr_latex: :width 0.6\textwidth
+#+caption: Déforestation pour la plantation d'huile de palme à Bornéo (Indonésie).
+[[file:figs/plantations-huile-de-palme.jpg]]
+
+- Agriculture: soja, café, cacao, arachide, pâturages.
+- Plantations: palmiers à huile, hévéa, acacia pour la pâte à papier.
+- Activités minières.
+
+** Le changement climatique
+
+*** Le changement climatique
+
+#+attr_latex: :width 0.6\textwidth
+[[file:figs/sabah_1899-forest-dieback.jpg]]
+
+- Mortalité en masse de certaines espèces qui ne résistent pas à l'augmentation des températures.
+- Augmentation de la fréquence des feux et des cyclones qui détruisent la forêt.
+- On ne sait pas dire aujourd'hui si les forêts tropicales pourront résister au changement climatique. Cela reste un sujet de recherche.
+
+** La conservation des forêts
+
+*** Les aires naturelles protégées
+
+#+attr_latex: :width 0.8\textwidth
+[[file:figs/carte-aires-protegees.jpg]]
+
+- Protection de la nature dans des zones d'intérêt identifiées.
+- Objectif 30/30: protéger 30% de la planète à l'horizon 2030.
+- Décidé en 2022 à la COP15 de la Convention pour la diversité biologique.
+- Actuellement: 8% pour les mers et 16.8% des terres.
+
+*** La liste rouge des espèces et des écosystèmes
+
+**** Image 1                                                       :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width \textwidth
+[[file:figs/iucn-logo.jpg]]
+
+**** Image 2                                                       :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+attr_latex: :width \textwidth
+[[file:figs/Categories_UICN_niveau_régional_fr_2018.png]]
+
+**** Text                                                :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+- UICN (Union internationale pour la conservation de la nature, en anglais IUCN)
+- Lister les espèces du vivant.
+- Estimer leur niveau de menace.
+- Informe et influe sur les politiques nationales et internationales de conservation.
+
+*** La lutte contre la déforestation importée
+
+#+attr_latex: :width 0.6\textwidth
+[[file:figs/eudr-europe.jpg]]
+
+- Politique à l'échelle européenne.
+- Consommation en Europe: 10% de la déforestation mondiale.
+- Les produit issus de la déforestation (cd. huile de palme, viande, soja, café, cacao, bois, caoutchouc) ne pourront plus être importés en Europe.
+
+*** Que peut-on faire à notre échelle ?
+
+**** Text                                                          :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.7
+:END:
+
+- On pourrait penser que les forêts tropicales sont éloignées et qu'on n'a pas de rôle à jouer dans leur protection. Mais plusieurs leviers d'action.
+- Prendre conscience de leur importance pour nos sociétés.
+- Mieux consommer: consommer local et éviter les produits issus de la déforestation. Moins consommer aussi...
+- Faire des choix raisonnés le jour où l'on a des responsabilités: banques éthiques, vote sur des programmes appropriés.
+- Beaucoup d'enjeux en France également sur la conservation des écosystèmes (A69, pesticides, loi contre l'artificialisation des sols, etc.).
+
+**** Image                                                         :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.3
+:END:
+#+attr_latex: :width \textwidth
+[[file:figs/echelle.jpg]]
+
+* Le métier de chercheur en écologie
+
+** Le terrain
+
+*** Le terrain
+
+#+attr_latex: :width 0.6\textwidth
+[[file:figs/terrain-collage.png]]
+
+- Mesure des arbres (diamètre, hauteur) et inventaires forestiers.
+- Collecte de spécimens d'herbier, de feuilles, d'échantillon de bois.
+- Survols des forêts par drone-LiDAR.
+- Au moins 1 mois de terrain par an.
+
+** L'analyse de données
+
+*** L'analyse de données
+
+#+attr_latex: :width 0.7\textwidth
+#+caption: Nuage de points obtenus par drone-lidar au dessus de la forêt calédonienne.
+[[file:figs/drone-analyse-de-donnees.png]]
+
+- Beaucoup d'analyses statistiques sur ordinateur.
+- Réalisation de graphiques, de cartes.
+- Programmation de logiciels pour la simulation (code R, Python).
+
+** Le transfert de connaissances
+
+*** Le transfert de connaissances
+
+#+attr_latex: :width 0.6\textwidth
+[[file:figs/ecriture-article-scientifique.png]]
+
+- Articles scientifiques.
+- Rapport pour les décideurs.
+- Création d'outils: cartes, logiciels informatique, ex. https://forestatrisk.cirad.fr.
+- Interaction avec les médias (radio, presse) pour le grand public.
+- Cours aux étudiants.  
+
+** Devenir chercheur
+
+*** Devenir chercheur
+
+- A l'école: français (rédaction), math (statistiques), physique (cycle de l'eau et du carbone), biologie (photosynthèse), géographie (cartes), langues étrangères (contexte international), sport (terrain). Toutes ces disciplines sont mobilisées dans le travail de chercheur.
+- Parcours LMD: Plusieurs options pour LM: parcours universitaire ou prépa et école d'ingénieur. Doctorat dans un labo de recherche avec inscription à l'université.
+- Post-doctorats à l'étranger (CDD de chercheur).
+- Concours pour devenir chercheur dans un centre de recherche: ex. CNRS, IRD, INRAe, Cirad, BRGM, CEA, IFREMER, etc.
+- Accessible à tous si on s'en donne les moyens, métier passionnant.
+  
+*** En savoir plus
+
+En savoir plus sur mon métier de chercheur en écologie forestière:
+
+- [[https://www.youtube.com/watch?v=4kxdB6Jd4Nw][Portrait vidéo]] par le Cirad.
+- Le site de mon unité de recherche: [[https://amap.cirad.fr][UMR AMAP]].
+- Mon [[https://ecology.ghislainv.fr][site web]] académique.
+
+* Last slide                                                         :ignore:
+    
+#+INCLUDE: "doc_suffix.tex" export latex
+
+# End Of File
